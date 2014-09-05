@@ -39,32 +39,3 @@
     }
   }
 }
-
-@media(max-width: 23.9em) {
-  [class*="col"] {
-    border: 1px solid red;
-  }
-
-  .container {
-    max-width: 100%;
-  }
-}
-@media(min-width: 24em) {
-  [class*="col"] {
-    border: 1px solid blue;
-  }
-
-  .container {
-    max-width: 100%;
-  }
-}
-@media(min-width: 36em) {
-  [class*="col"] {
-    border: 1px solid orange;
-  }
-}
-@media(min-width: 48em) {
-  [class*="col"] {
-    border: 1px solid green;
-  }
-}
