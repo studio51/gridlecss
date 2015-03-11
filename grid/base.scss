@@ -1,54 +1,45 @@
-@import "../mixins/*";
+@mixin flex        { flex: 0 1 auto }
+@mixin flex-grow($value: 0) {
+  flex-grow: $value;
+}
+
+@mixin flex-shrink($value: 0) {
+  flex-shrink: $value;
+}
+
+@mixin flexbox {
+  display: flex
+}
+
+@mixin flexbox-direction($direction: column) {
+  flex-direction: $direction
+}
 
 @mixin grid-size($value: auto) {
-  -webkit-flex-basis: $value;
-  -ms-flex-preferred-size: $value;
-  -moz-flex-basis: $value;
   flex-basis: $value;
   max-width: $value;
 }
-
-$columns: 12;
 
 .grid-container {
   margin-right: auto;
   margin-left: auto;
 }
 
-.grid {
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
+  .grid {
+    @include flexbox;
+    @include flex;
+    @include flexbox-direction(row);
 
-.grid.reverse {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-}
+    box-sizing: border-box;
+    flex-wrap: wrap;
+
+    &.reverse {
+      @include flexbox-direction(row-reverse);
+    }
+  }
 
 .grid-cell.reverse {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-  -webkit-flex-direction: column-reverse;
-  -ms-flex-direction: column-reverse;
-  flex-direction: column-reverse;
+  @include flexbox-direction(column-reverse);
 }
 
 
@@ -71,12 +62,8 @@ $columns: 12;
 }
 
 .grid-cell-xs {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -webkit-flex-basis: 0;
-  -ms-flex-preferred-size: 0;
+  @include flex-grow(1);
+
   flex-basis: 0;
   max-width: 100%;
 }
@@ -117,14 +104,10 @@ $columns: 12;
   }
 
   .grid-cell-sm {
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -webkit-flex-basis: 0;
-    -ms-flex-preferred-size: 0;
     flex-basis: 0;
     max-width: 100%;
+
+    @include flex-grow(1);
   }
 
   @for $i from 1 through $columns {
@@ -164,14 +147,10 @@ $columns: 12;
   }
 
   .grid-cell-md {
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -webkit-flex-basis: 0;
-    -ms-flex-preferred-size: 0;
     flex-basis: 0;
     max-width: 100%;
+
+    @include flex-grow(1);
   }
 
   @for $i from 1 through $columns {
@@ -211,13 +190,9 @@ $columns: 12;
   }
 
   .grid-cell-lg {
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -webkit-flex-basis: 0;
-    -ms-flex-preferred-size: 0;
     flex-basis: 0;
+
+    @include flex-grow(1);
     max-width: 100%;
   }
 
