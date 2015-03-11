@@ -1,3 +1,14 @@
+.grid {
+  border: 1px solid red;
+
+  &-cell {
+    border: 1px solid red;
+    padding: 5px;
+  }
+}
+
+$columns: 12;
+
 @mixin flex        { flex: 0 1 auto }
 @mixin flex-grow($value: 0) {
   flex-grow: $value;
