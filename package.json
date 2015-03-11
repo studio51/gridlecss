@@ -1,0 +1,22 @@
+{
+  "name": "gridleCSS",
+  "version": "1.0.0",
+  "description": "A simple 12 column SASS flex-box grid",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/studio51/framework-gridlex.git"
+  },
+  "keywords": [
+    "CSS",
+    "Grid",
+    "Flexbox",
+    "SASS",
+    "NPM"
+  ],
+  "author": "Vlad Radulescu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/studio51/framework-gridlex/issues"
+  },
+  "homepage": "https://github.com/studio51/framework-gridlex"
+}
