@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   var appConfig = {
     host: 'localhost',
     port: 1337,
-    appDir: 'dist'
+    appDir: 'web'
   };
 
   require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
@@ -36,7 +36,20 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/css/grid.css': 'grid/*.scss'
+          'dist/grid.css': 'grid/grid.scss',
+          'web/css/theme.css': 'grid/theme.scss'
+        }
+      }
+    },
+
+    cssnext: {
+      options: {
+        sourcemap: true
+      },
+      dist: {
+        files: {
+          "dist/grid.css": "dist/grid.css",
+          'web/css/theme.css': 'web/css/theme.css'
         }
       }
     },
@@ -46,23 +59,23 @@ module.exports = function(grunt) {
         map: true,
         processors: [
           require('autoprefixer-core')({
-            browsers: 'last 5 version'
+            browsers: ['last 2 versions', '> 5%']
           }).postcss
         ]
       },
       dist: {
-        src: 'dist/css/*.css'
+        src: ['dist/grid.css', 'web/css/theme.css']
       }
     },
 
-    clean: {
-      options: {
-        dot: true
-      },
-      dist: {
-        src: ['dist/css', '!dist/index.html']
-      }
-    },
+    // clean: {
+    //   options: {
+    //     dot: true
+    //   },
+    //   dist: {
+    //     src: ['dist/css', '!dist/index.html']
+    //   }
+    // },
 
     watch: {
       options: {
@@ -73,16 +86,16 @@ module.exports = function(grunt) {
       },
       sass: {
         files: 'grid/*.scss',
-        tasks: ['sass', 'postcss']
+        tasks: ['sass', 'postcss', 'cssnext']
       },
       html: {
-        files: 'dist/*.html'
+        files: 'web/*.html'
       }
     }
   });
 
   grunt.registerTask('serve', [
-    'clean',
+    // 'clean',
     'sass',
     'connect',
     'open',
