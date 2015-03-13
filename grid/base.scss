@@ -1,102 +1,120 @@
-.grid {
-  border: 1px solid red;
 
-  &-cell {
-    border: 1px solid red;
-    padding: 5px;
+:root {
+  --borderSize: 2px;
+  --borderColor: #000;
+  --columns: 12;
+}
+
+@mixin flexbox                              { display: flex }
+@mixin box-sizing                           { box-sizing: border-box }
+
+@mixin flex($string: 0 1 auto)              { flex: $string }
+@mixin flex-basis($value: 0)                { flex-basis: $value }
+@mixin flex-direction($direction: column)   { flex-direction: $direction }
+@mixin flex-flow                            { flex-flow: row wrap }
+@mixin flex-grow($value: 0)                 { flex-grow: $value }
+@mixin flex-shrink($value: 0)               { flex-shrink: $value }
+@mixin flex-wrap                            { flex-wrap: wrap }
+
+.grid-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  border: 1px solid red;
+  padding-top: 42px;
+
+  &:before {
+    content: "This is the Mobile media screen";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #efefef;
+    color: #999;
+    z-index: 1;
+    width: 100%;
+    padding: 15px;
+    font-size: 12px;
+
+    @media screen and (min-width: 768px) {
+      content: "This is the Tablet media screen";
+    }
+
+    @media screen and (min-width: 992px) {
+      content: "This is the '' media screen";
+    }
+
+    @media screen and (min-width: 1200px) {
+      content: "This is the Desktop media screen";
+    }
   }
 }
 
-$columns: 12;
 
-@mixin flex        { flex: 0 1 auto }
-@mixin flex-grow($value: 0) {
-  flex-grow: $value;
-}
 
-@mixin flex-shrink($value: 0) {
-  flex-shrink: $value;
-}
+  .grid {
+    @include box-sizing;
 
-@mixin flexbox {
-  display: flex
-}
+    @include flexbox;
+    @include flex;
+    @include flex-direction(row);
+    @include flex-wrap;
 
-@mixin flexbox-direction($direction: column) {
-  flex-direction: $direction
-}
+    &.reverse {
+      @include flex-direction(row-reverse);
+    }
+
+    &-cell {
+      flex-basis: 0;
+      max-width: 100%;
+
+      @include flex-grow(1);
+
+      .reverse {
+        @include flex-direction(column-reverse);
+      }
+    }
+  }
 
 @mixin grid-size($value: auto) {
   flex-basis: $value;
   max-width: $value;
 }
 
-.grid-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-  .grid {
-    @include flexbox;
-    @include flex;
-    @include flexbox-direction(row);
-
-    box-sizing: border-box;
-    flex-wrap: wrap;
-
-    &.reverse {
-      @include flexbox-direction(row-reverse);
-    }
-  }
-
-.grid-cell.reverse {
-  @include flexbox-direction(column-reverse);
-}
 
 
-@for $i from 1 through $columns {
-  .grid-cell-xs-#{ $i },
-  .grid-cell-xs-offset-#{ $i } {
-    @extend %grid-xs-list-styles;
-  }
-}
+// .grid-cell-xs {
+//   @include flex-basis;
+//   @include flex-grow(1);
 
-%grid-xs-list-styles {
-  box-sizing: border-box;
+//   max-width: 100%;
+// }
 
-  @include flexbox;
-  @include flexbox-direction;
+// @for $i from 1 through 12 {
+//   .grid-cell-xs-#{ $i },
+//   .grid-cell-xs-offset-#{ $i } {
+//     @extend %grid-xs-list-styles;
+//   }
+// }
 
-  @include flex;
-  @include flex-grow;
-  @include flex-shrink;
-}
+// %grid-xs-list-styles {
+//   @include box-sizing;
 
-.grid-cell-xs {
-  @include flex-grow(1);
+//   @include flexbox;
+//   @include flex;
+//   @include flex-direction;
+//   @include flex-grow;
+//   @include flex-shrink;
+// }
 
-  flex-basis: 0;
-  max-width: 100%;
-}
 
-@for $i from 1 through $columns {
-  $calc: ((100 / $columns) * $i) * 1%;
+// @media only screen and (min-width: 48em) {
+  // .grid-container {
+  //   width: 60rem;
+  // }
 
-  .grid-cell-xs-#{ $i } {
-    @include grid-size($calc)
-  }
-
-  .grid-cell-xs-offset-#{ $i } {
-    margin-left: $calc;
-  }
-}
-
-@media only screen and (min-width: 48em) {
-  .grid-container {
-    width: 60rem;
-  }
-
-  @for $i from 1 through $columns {
+  @for $i from 1 through 12 {
     .grid-cell-sm-#{ $i },
     .grid-cell-sm-offset-#{ $i } {
       @extend %grid-sm-list-styles;
@@ -107,22 +125,15 @@ $columns: 12;
     box-sizing: border-box;
 
     @include flexbox;
-    @include flexbox-direction;
+    @include flex-direction;
 
     @include flex;
     @include flex-grow;
     @include flex-shrink;
   }
 
-  .grid-cell-sm {
-    flex-basis: 0;
-    max-width: 100%;
-
-    @include flex-grow(1);
-  }
-
-  @for $i from 1 through $columns {
-    $calc: ((100 / $columns) * $i) * 1%;
+  @for $i from 1 through 12 {
+    $calc: ((100 / 12) * $i) * 1%;
 
     .grid-cell-sm-#{ $i } {
       @include grid-size($calc)
@@ -132,95 +143,115 @@ $columns: 12;
       margin-left: $calc;
     }
   }
-}
+// }
 
-@media only screen and (min-width: 62em) {
-  .grid-container {
-    width: 80rem;
-  }
 
-  @for $i from 1 through $columns {
-    .grid-cell-md-#{ $i },
-    .grid-cell-md-offset-#{ $i } {
-      @extend %grid-md-list-styles;
-    }
-  }
 
-  %grid-md-list-styles {
-    box-sizing: border-box;
 
-    @include flexbox;
-    @include flexbox-direction;
 
-    @include flex;
-    @include flex-grow;
-    @include flex-shrink;
-  }
 
-  .grid-cell-md {
-    flex-basis: 0;
-    max-width: 100%;
 
-    @include flex-grow(1);
-  }
+// @for $i from 1 through var(--columns) {
+//   $calc: ((100 / var(--columns)) * $i) * 1%;
 
-  @for $i from 1 through $columns {
-    $calc: ((100 / $columns) * $i) * 1%;
+//   .grid-cell-xs-#{ $i } {
+//     @include grid-size($calc)
+//   }
 
-    .grid-cell-md-#{ $i } {
-      @include grid-size($calc)
-    }
+//   .grid-cell-xs-offset-#{ $i } {
+//     margin-left: $calc;
+//   }
+// }
 
-    .grid-cell-md-offset-#{ $i } {
-      margin-left: $calc;
-    }
-  }
-}
 
-@media only screen and (min-width: 75em) {
-  .grid-container {
-    width: 100rem;
-  }
 
-  @for $i from 1 through $columns {
-    .grid-cell-lg-#{ $i },
-    .grid-cell-lg-offset-#{ $i } {
-      @extend %grid-lg-list-styles;
-    }
-  }
+// @media only screen and (min-width: 62em) {
+//   .grid-container {
+//     width: 80rem;
+//   }
 
-  %grid-lg-list-styles {
-    box-sizing: border-box;
+//   @for $i from 1 through var(--columns) {
+//     .grid-cell-md-#{ $i },
+//     .grid-cell-md-offset-#{ $i } {
+//       @extend %grid-md-list-styles;
+//     }
+//   }
 
-    @include flexbox;
-    @include flexbox-direction;
+//   %grid-md-list-styles {
+//     box-sizing: border-box;
 
-    @include flex;
-    @include flex-grow;
-    @include flex-shrink;
-  }
+//     @include flexbox;
+//     @include flex-direction;
 
-  .grid-cell-lg {
-    flex-basis: 0;
+//     @include flex;
+//     @include flex-grow;
+//     @include flex-shrink;
+//   }
 
-    @include flex-grow(1);
-    max-width: 100%;
-  }
+//   .grid-cell-md {
+//     flex-basis: 0;
+//     max-width: 100%;
 
-  @for $i from 1 through $columns {
-    $calc: ((100 / $columns) * $i) * 1%;
+//     @include flex-grow(1);
+//   }
 
-    .grid-cell-lg-#{ $i } {
-      @include grid-size($calc)
-    }
+//   @for $i from 1 through var(--columns) {
+//     $calc: ((100 / var(--columns)) * $i) * 1%;
 
-    .grid-cell-lg-offset-#{ $i } {
-      margin-left: $calc;
-    }
-  }
-}
+//     .grid-cell-md-#{ $i } {
+//       @include grid-size($calc)
+//     }
 
-.grid-cell-content-center {
-  align-items: center;
-  justify-content: center;
-}
+//     .grid-cell-md-offset-#{ $i } {
+//       margin-left: $calc;
+//     }
+//   }
+// }
+
+// @media only screen and (min-width: 75em) {
+//   .grid-container {
+//     width: 100rem;
+//   }
+
+//   @for $i from 1 through var(--columns) {
+//     .grid-cell-lg-#{ $i },
+//     .grid-cell-lg-offset-#{ $i } {
+//       @extend %grid-lg-list-styles;
+//     }
+//   }
+
+//   %grid-lg-list-styles {
+//     box-sizing: border-box;
+
+//     @include flexbox;
+//     @include flex-direction;
+
+//     @include flex;
+//     @include flex-grow;
+//     @include flex-shrink;
+//   }
+
+//   .grid-cell-lg {
+//     flex-basis: 0;
+
+//     @include flex-grow(1);
+//     max-width: 100%;
+//   }
+
+//   @for $i from 1 through var(--columns) {
+//     $calc: ((100 / var(--columns)) * $i) * 1%;
+
+//     .grid-cell-lg-#{ $i } {
+//       @include grid-size($calc)
+//     }
+
+//     .grid-cell-lg-offset-#{ $i } {
+//       margin-left: $calc;
+//     }
+//   }
+// }
+
+// .grid-cell-content-center {
+//   align-items: center;
+//   justify-content: center;
+// }
