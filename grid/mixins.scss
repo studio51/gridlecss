@@ -1,0 +1,10 @@
+@mixin flexbox                              { display: flex }
+@mixin box-sizing                           { box-sizing: border-box }
+// /0 1 auto
+@mixin flex($string: 1)                     { flex: $string }
+@mixin flex-basis($value: 0)                { flex-basis: $value }
+@mixin flex-direction($direction: column)   { flex-direction: $direction }
+@mixin flex-flow                            { flex-flow: row wrap }
+@mixin flex-grow($value: 0)                 { flex-grow: $value }
+@mixin flex-shrink($value: 0)               { flex-shrink: $value }
+@mixin flex-wrap                            { flex-wrap: wrap }

@@ -1,3 +1,4 @@
+@import "mixins";
 
 :root {
   --borderSize: 2px;
@@ -5,24 +6,58 @@
   --columns: 12;
 }
 
-@mixin flexbox                              { display: flex }
-@mixin box-sizing                           { box-sizing: border-box }
-
-@mixin flex($string: 0 1 auto)              { flex: $string }
-@mixin flex-basis($value: 0)                { flex-basis: $value }
-@mixin flex-direction($direction: column)   { flex-direction: $direction }
-@mixin flex-flow                            { flex-flow: row wrap }
-@mixin flex-grow($value: 0)                 { flex-grow: $value }
-@mixin flex-shrink($value: 0)               { flex-shrink: $value }
-@mixin flex-wrap                            { flex-wrap: wrap }
-
 .grid-container {
   margin-left: auto;
   margin-right: auto;
+
+  @media only screen {
+    // width: 100%;
+  }
+
+  // @media only screen and (min-width: 40em) {
+  //   width: 0;
+  // }
+
+  @media only screen and (min-width: 40.063em)  {
+    width: 40.063em;
+  }
+
+  // @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  //   width: 0;
+  // }
+
+  @media only screen and (min-width: 64.063em) {
+    width: 64.063em;
+  }
+
+  // @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+  //   width: 0;
+  // }
+
+  @media only screen and (min-width: 90.063em) {
+    width: 90.063em;
+  }
+
+  // @media only screen and (min-width: 90.063em) and (max-width: 120em) {
+  //   width: 0;
+  // }
+
+  @media only screen and (min-width: 120.063em) {
+    width: 120.063em;
+  }
+}
+
+.grid {
+  border: 1px solid red;
+  padding: 1px;
+
+  &-cell {
+    border: 1px solid blue;
+    padding: 1px;
+  }
 }
 
 body {
-  border: 1px solid red;
   padding-top: 42px;
 
   &:before {
@@ -36,22 +71,45 @@ body {
     width: 100%;
     padding: 15px;
     font-size: 12px;
+    box-sizing: border-box;
 
-    @media screen and (min-width: 768px) {
-      content: "This is the Tablet media screen";
+    @media only screen {
+      content: "Define mobile styles";
     }
 
-    @media screen and (min-width: 992px) {
-      content: "This is the '' media screen";
+    // @media only screen and (min-width: 40em) {
+    //   content: "max-width 640px, mobile-only styles, use when QAing mobile issues";
+    // }
+
+    @media only screen and (min-width: 40.063em)  {
+      content: "min-width 641px, medium screens";
     }
 
-    @media screen and (min-width: 1200px) {
-      content: "This is the Desktop media screen";
+    // @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+    //   content: "min-width 641px and max-width 1024px, use when QAing tablet-only issues";
+    // }
+
+    @media only screen and (min-width: 64.063em) {
+      content: "min-width 1025px, large screens";
+    }
+
+    // @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+    //   content: "min-width 1025px and max-width 1440px, use when QAing large screen-only issues";
+    // }
+
+    @media only screen and (min-width: 90.063em) {
+      content: "min-width 1441px, xlarge screens";
+    }
+
+    // @media only screen and (min-width: 90.063em) and (max-width: 120em) {
+    //   content: "min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues";
+    // }
+
+    @media only screen and (min-width: 120.063em) {
+      content: "min-width 1921px, xxlarge screens";
     }
   }
 }
-
-
 
   .grid {
     @include box-sizing;
@@ -66,6 +124,8 @@ body {
     }
 
     &-cell {
+      @include flex;
+
       flex-basis: 0;
       max-width: 100%;
 
