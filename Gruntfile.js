@@ -1,15 +1,15 @@
 module.exports = function(grunt) {
 
   var appConfig = {
-    host: "localhost",
+    host: 'localhost',
     port: 1337,
-    appDir: "web"
+    appDir: 'web'
   };
 
-  require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON("package.json"),
+    pkg: grunt.file.readJSON('package.json'),
     appConfig: appConfig,
 
     connect: {
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
       },
       dist: {
         options: {
-          base: appConfig.appDir
+          base: ['web', '']
         }
       }
     },
@@ -36,8 +36,8 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          "dist/grid.css": "grid/base.scss",
-          "web/css/theme.css": "grid/theme.scss"
+          'dist/gridlecss.css': 'grid/base.scss',
+          'web/css/theme.css': 'grid/theme.scss'
         }
       }
     },
@@ -48,8 +48,8 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          "dist/grid.css": "dist/grid.css",
-          "web/css/theme.css": "web/css/theme.css"
+          'dist/gridlecss.css': 'dist/gridlecss.css',
+          'web/css/theme.css': 'web/css/theme.css'
         }
       }
     },
@@ -58,13 +58,25 @@ module.exports = function(grunt) {
       options: {
         map: true,
         processors: [
-          require("autoprefixer-core")({
-            browsers: ["last 2 versions", "> 5%"]
+          require('autoprefixer-core')({
+            browsers: ['last 7 versions', '> 5%']
           }).postcss
         ]
       },
       dist: {
-        src: ["dist/grid.css", "web/css/theme.css"]
+        src: ['dist/gridlecss.css', 'web/css/theme.css']
+      }
+    },
+
+    jade: {
+      html: {
+        files: {
+          'web/': ['web/*.jade']
+        },
+        options: {
+          client: false,
+          pretty: true
+        }
       }
     },
 
@@ -73,7 +85,7 @@ module.exports = function(grunt) {
         dot: true
       },
       dist: {
-        src: ["dist/"]
+        src: ['dist/']
       }
     },
 
@@ -82,25 +94,27 @@ module.exports = function(grunt) {
         livereload: true
       },
       grunt: {
-        files: "Gruntfile.js"
+        files: 'Gruntfile.js'
       },
       sass: {
-        files: "grid/*.scss",
-        tasks: ["sass", "postcss", "cssnext"]
+        files: 'grid/*.scss',
+        tasks: ['sass', 'postcss', 'cssnext']
       },
-      html: {
-        files: "web/*.html"
+      jade: {
+        files: 'web/*.jade',
+        tasks: ['jade']
       }
     }
   });
 
-  grunt.registerTask("serve", [
-    "clean",
-    "sass",
-    "connect",
-    "open",
-    "watch"
+  grunt.registerTask('serve', [
+    'clean',
+    'sass',
+    'jade',
+    'connect',
+    'open',
+    'watch'
   ]);
 
-  grunt.registerTask("default", ["serve"]);
+  grunt.registerTask('default', ['serve']);
 }

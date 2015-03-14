@@ -29,6 +29,7 @@
     "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-cssnext": "^1.0.0",
+    "grunt-jade": "^0.5.1",
     "grunt-open": "^0.2.3",
     "grunt-postcss": "^0.3.0",
     "grunt-sass": "^0.18.1",
