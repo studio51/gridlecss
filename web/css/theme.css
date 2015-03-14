@@ -135,9 +135,66 @@ td, th {
 body {
   font-family: 'Raleway', sans-serif; }
 
-.demo .grid-cell {
-  border: 1px solid #efefef;
-  padding: 10px;
+.grid-image {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  box-sizing: border-box; }
+  @media only screen and (min-width: 40.063em) {
+    .grid-image {
+      height: 600px; } }
+  @media only screen and (min-width: 64.063em) {
+    .grid-image {
+      height: 700px; } }
+  @media only screen and (min-width: 90.063em) {
+    .grid-image {
+      height: 1000px; } }
+  .grid-image--device {
+    background-image: url("../images/phone.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
+    @media only screen and (min-width: 40.063em) {
+      .grid-image--device {
+        background-image: url("../images/tablet.png"); } }
+    @media only screen and (min-width: 64.063em) {
+      .grid-image--device {
+        background-image: url("../images/laptop.png");
+        background-size: contain; } }
+    @media only screen and (min-width: 90.063em) {
+      .grid-image--device {
+        background-image: url("../images/desktop.png"); } }
+
+.browser-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+  @media only screen and (min-width: 40.063em) {
+    .browser-window {
+      margin: 72px 153px 0 152px; } }
+  @media only screen and (min-width: 64.063em) {
+    .browser-window {
+      margin: 77px 124px 0 126px; } }
+  @media only screen and (min-width: 90.063em) {
+    .browser-window {
+      margin: 123px 188px 0 186px; } }
+  .browser-window .grid {
+    border: 1px solid red;
+    padding: 5px; }
+    .browser-window .grid-cell {
+      padding: 5px;
+      border: 1px solid blue; }
+
+.demo .grid {
   background-color: #efefef;
-  margin: 1px; }
+  padding: 2px; }
+  .demo .grid-cell {
+    background-color: #fff;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin: 10px; }
 /*# sourceMappingURL=theme.css.map */

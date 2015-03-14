@@ -1,44 +1,99 @@
 <!DOCTYPE html>
-
-  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-
-<head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <title>GridleCSS | Yet another Flexbox Grid</title>
-
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Open+Sans+Condensed:300,700,300italic|Raleway:400,200,300,100,500,600,700,800,900' rel='stylesheet'>
-
-  <link rel="stylesheet" href="../dist/grid.css">
-  <link rel="stylesheet" href="css/theme.css">
-
-</head>
-<body>
-
-  <div class="grid-container">
-    <div class="grid">
-      <div class="header">
-        <div class="grid-cell">
-          <h1>gridleCSS</h1>
-          <span>pronounced, gridlex</span>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GridleCSS | Yet another Flexbox Grid</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Open+Sans+Condensed:300,700,300italic|Raleway:400,200,300,100,500,600,700,800,900">
+    <link rel="stylesheet" href="../dist/gridlecss.css">
+    <link rel="stylesheet" href="css/theme.css">
+  </head>
+  <body>
+    <header>
+      <div class="grid-container">
+        <div class="grid">
+          <div class="grid-cell"></div>
         </div>
-      </div> <!-- .header -->
-    </div> <!-- .grid -->
-
-    <div class="grid">
-      <div class="grid-cell">
-
       </div>
-    </div> <!-- .grid -->
-  </div>
-
-</body>
+    </header>
+    <div id="main">
+      <div class="grid-container">
+        <div class="grid">
+          <div class="grid-cell">
+            <h1>gridleCSS</h1><span>the CSS is silent ( gridlex )</span>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="grid-cell">
+            <div class="grid-image grid-image--device">
+              <div class="browser-window">
+                <div class="mock-header">
+                  <div class="grid">
+                    <div class="grid-cell grid-cell-sm-1">
+                      <Studio51></Studio51>
+                    </div>
+                    <div class="grid-cell grid-cell-sm-2">
+                      <Link></Link>
+                    </div>
+                    <div class="grid-cell grid-cell-sm-2">
+                      <Link></Link>
+                    </div>
+                    <div class="grid-cell grid-cell-sm-2">
+                      <Link></Link>
+                    </div>
+                  </div>
+                </div>
+                <div class="mock-main">
+                  <div class="grid">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell grid-cell-sm-1"></div>
+                  </div>
+                </div>
+                <div class="mock-footer">
+                  <div class="grid">
+                    <div class="grid-cell">
+                      <p>Studio51 &copy; 2015. All rights Reserved</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="demo">
+          <div class="grid">
+            <div class="grid-cell">auto</div>
+            <div class="grid-cell">auto</div>
+            <div class="grid-cell grid-cell-sm-2">2</div>
+          </div>
+          <div class="grid">
+            <div class="grid-cell grid-cell-sm-1">1</div>
+            <div class="grid-cell grid-cell-sm-1">1</div>
+            <div class="grid-cell grid-cell-sm-1">1</div>
+            <div class="grid-cell grid-cell-sm-1">1</div>
+            <div class="grid-cell grid-cell-sm-1">1</div>
+            <div class="grid-cell grid-cell-sm-1">1</div>
+            <div class="grid-cell grid-cell-sm-1">1</div>
+            <div class="grid-cell grid-cell-sm-1">1</div>
+            <div class="grid-cell grid-cell-sm-1">1</div>
+            <div class="grid-cell grid-cell-sm-1">1</div>
+            <div class="grid-cell grid-cell-sm-1">1</div>
+            <div class="grid-cell grid-cell-sm-1">1</div>
+          </div>
+          <div class="grid">
+            <div class="grid-cell grid-cell-sm-2">2</div>
+            <div class="grid-cell grid-cell-sm-2">2</div>
+            <div class="grid-cell grid-cell-sm-2">2</div>
+            <div class="grid-cell grid-cell-sm-2">2</div>
+            <div class="grid-cell grid-cell-sm-2">2</div>
+            <div class="grid-cell grid-cell-sm-2">2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer></footer>
+  </body>
 </html>
