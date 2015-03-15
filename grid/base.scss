@@ -14,8 +14,8 @@ $grid-lg-min: 90.063em;
 
 @import "mixins";
 
-.grid-container,
-.grid-container-fluid {
+.grid,
+.grid-fluid {
   @include box-sizing;
 
   width: 100%;
@@ -23,7 +23,7 @@ $grid-lg-min: 90.063em;
   margin-right: auto;
 }
 
-.grid {
+.row {
   @include box-sizing;
   @include flexbox;
 
@@ -72,7 +72,7 @@ $grid-breakpoints: xs sm md lg;
 
     // This is where we define the width of the grids container
     //
-    .grid-container {
+    .grid {
       width: var(--grid-#{ $breakpoint }-min);
     }
 
