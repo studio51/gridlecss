@@ -1,317 +1,122 @@
-@import "mixins";
+$grid-columns: 12;
+
+$grid-sm-min: 40.063em;
+$grid-md-min: 64.063em;
+$grid-lg-min: 90.063em;
 
 :root {
-  --borderSize: 2px;
-  --borderColor: #000;
-  --columns: 12;
+  --border-size: 2px;
+  --border-olor: #000;
+  --grid-sm-min: $grid-sm-min;
+  --grid-md-min: $grid-md-min;
+  --grid-lg-min: $grid-lg-min;
 }
 
+@import "mixins";
+
 .grid-container {
+  box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
-
-  @media only screen {
-    // width: 100%;
-  }
-
-  // @media only screen and (min-width: 40em) {
-  //   width: 0;
-  // }
-
-  @media only screen and (min-width: 40.063em)  {
-    width: 40.063em;
-  }
-
-  // @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  //   width: 0;
-  // }
-
-  @media only screen and (min-width: 64.063em) {
-    width: 64.063em;
-  }
-
-  // @media only screen and (min-width: 64.063em) and (max-width: 90em) {
-  //   width: 0;
-  // }
-
-  @media only screen and (min-width: 90.063em) {
-    width: 90.063em;
-  }
-
-  // @media only screen and (min-width: 90.063em) and (max-width: 120em) {
-  //   width: 0;
-  // }
-
-  @media only screen and (min-width: 120.063em) {
-    width: 120.063em;
-  }
+  width: 100%;
 }
 
 .grid {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+
   border: 1px solid red;
-  padding: 1px;
+  padding: 2px;
+  background-color: #efefef;
 
-  &-cell {
-    border: 1px solid blue;
-    padding: 1px;
+  &.reverse {
+    flex-direction: row-reverse;
   }
 }
 
-body {
-  padding-top: 42px;
+.cell {
 
-  &:before {
-    content: "This is the Mobile media screen";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #efefef;
-    color: #999;
-    z-index: 1;
-    width: 100%;
-    padding: 15px;
-    font-size: 12px;
-    box-sizing: border-box;
+  border: 1px solid blue;
+  background-color: #f6f6f6;
+  padding: 2px;
 
-    @media only screen {
-      content: "Define mobile styles";
-    }
-
-    // @media only screen and (min-width: 40em) {
-    //   content: "max-width 640px, mobile-only styles, use when QAing mobile issues";
-    // }
-
-    @media only screen and (min-width: 40.063em)  {
-      content: "min-width 641px, medium screens";
-    }
-
-    // @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-    //   content: "min-width 641px and max-width 1024px, use when QAing tablet-only issues";
-    // }
-
-    @media only screen and (min-width: 64.063em) {
-      content: "min-width 1025px, large screens";
-    }
-
-    // @media only screen and (min-width: 64.063em) and (max-width: 90em) {
-    //   content: "min-width 1025px and max-width 1440px, use when QAing large screen-only issues";
-    // }
-
-    @media only screen and (min-width: 90.063em) {
-      content: "min-width 1441px, xlarge screens";
-    }
-
-    // @media only screen and (min-width: 90.063em) and (max-width: 120em) {
-    //   content: "min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues";
-    // }
-
-    @media only screen and (min-width: 120.063em) {
-      content: "min-width 1921px, xxlarge screens";
-    }
+  &.reverse {
+    flex-direction: column-reverse;
   }
 }
 
-  .grid {
-    @include box-sizing;
+%cell-styles {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
 
-    @include flexbox;
-    @include flex;
-    @include flex-direction(row);
-    @include flex-wrap;
+$grid-breakpoints: sm md lg;
 
-    &.reverse {
-      @include flex-direction(row-reverse);
+// For each breakpoint we have specified, we create a block
+//
+// dependency: $grid-breakpoints
+//
+@each $breakpoint in $grid-breakpoints {
+
+  // Starting with the first ( not 0 ) breakpoint, we create media queries for
+  // responsiveness
+  //
+  // dependency: mixins.scss @media
+  //
+  @include media($breakpoint) {
+
+    // This is where we define the width of the grids container
+    //
+    .grid-container {
+      width: var(--grid-#{ $breakpoint }-min);
     }
 
-    &-cell {
-      @include flex;
+    // From 1 to 12, where "$grid-columns" is the number of our columns we
+    // defined, we create the cells of the grid
+    //
+    // cell-x, cell-x-#, cell-x-offset-# { }
+    //
+    @for $i from 1 through $grid-columns {
 
+      .cell-#{ $breakpoint },
+      .cell-#{ $breakpoint }-#{ $i },
+      .cell-#{ $breakpoint }-offset-#{ $i } {
+        @extend %cell-styles;
+      }
+    }
+
+    //
+    //
+    .cell-#{ $breakpoint } {
+      flex-grow: 1;
       flex-basis: 0;
       max-width: 100%;
+    }
 
-      @include flex-grow(1);
+    //
+    //
+    @for $i from 1 through $grid-columns {
+      $calc: (( 100 / $grid-columns ) * $i) * 1%;
 
-      .reverse {
-        @include flex-direction(column-reverse);
+      //
+      //
+      .cell-#{ $breakpoint }-#{ $i } {
+        flex-basis: $calc;
+        max-width: $calc;
+      }
+
+      //
+      //
+      .cell-#{ $breakpoint }-offset-#{ $i } {
+        margin-left: $calc;
       }
     }
   }
-
-@mixin grid-size($value: auto) {
-  flex-basis: $value;
-  max-width: $value;
 }
-
-
-
-// .grid-cell-xs {
-//   @include flex-basis;
-//   @include flex-grow(1);
-
-//   max-width: 100%;
-// }
-
-// @for $i from 1 through 12 {
-//   .grid-cell-xs-#{ $i },
-//   .grid-cell-xs-offset-#{ $i } {
-//     @extend %grid-xs-list-styles;
-//   }
-// }
-
-// %grid-xs-list-styles {
-//   @include box-sizing;
-
-//   @include flexbox;
-//   @include flex;
-//   @include flex-direction;
-//   @include flex-grow;
-//   @include flex-shrink;
-// }
-
-
-// @media only screen and (min-width: 48em) {
-  // .grid-container {
-  //   width: 60rem;
-  // }
-
-  @for $i from 1 through 12 {
-    .grid-cell-sm-#{ $i },
-    .grid-cell-sm-offset-#{ $i } {
-      @extend %grid-sm-list-styles;
-    }
-  }
-
-  %grid-sm-list-styles {
-    box-sizing: border-box;
-
-    @include flexbox;
-    @include flex-direction;
-
-    @include flex;
-    @include flex-grow;
-    @include flex-shrink;
-  }
-
-  @for $i from 1 through 12 {
-    $calc: ((100 / 12) * $i) * 1%;
-
-    .grid-cell-sm-#{ $i } {
-      @include grid-size($calc)
-    }
-
-    .grid-cell-sm-offset-#{ $i } {
-      margin-left: $calc;
-    }
-  }
-// }
-
-
-
-
-
-
-
-// @for $i from 1 through var(--columns) {
-//   $calc: ((100 / var(--columns)) * $i) * 1%;
-
-//   .grid-cell-xs-#{ $i } {
-//     @include grid-size($calc)
-//   }
-
-//   .grid-cell-xs-offset-#{ $i } {
-//     margin-left: $calc;
-//   }
-// }
-
-
-
-// @media only screen and (min-width: 62em) {
-//   .grid-container {
-//     width: 80rem;
-//   }
-
-//   @for $i from 1 through var(--columns) {
-//     .grid-cell-md-#{ $i },
-//     .grid-cell-md-offset-#{ $i } {
-//       @extend %grid-md-list-styles;
-//     }
-//   }
-
-//   %grid-md-list-styles {
-//     box-sizing: border-box;
-
-//     @include flexbox;
-//     @include flex-direction;
-
-//     @include flex;
-//     @include flex-grow;
-//     @include flex-shrink;
-//   }
-
-//   .grid-cell-md {
-//     flex-basis: 0;
-//     max-width: 100%;
-
-//     @include flex-grow(1);
-//   }
-
-//   @for $i from 1 through var(--columns) {
-//     $calc: ((100 / var(--columns)) * $i) * 1%;
-
-//     .grid-cell-md-#{ $i } {
-//       @include grid-size($calc)
-//     }
-
-//     .grid-cell-md-offset-#{ $i } {
-//       margin-left: $calc;
-//     }
-//   }
-// }
-
-// @media only screen and (min-width: 75em) {
-//   .grid-container {
-//     width: 100rem;
-//   }
-
-//   @for $i from 1 through var(--columns) {
-//     .grid-cell-lg-#{ $i },
-//     .grid-cell-lg-offset-#{ $i } {
-//       @extend %grid-lg-list-styles;
-//     }
-//   }
-
-//   %grid-lg-list-styles {
-//     box-sizing: border-box;
-
-//     @include flexbox;
-//     @include flex-direction;
-
-//     @include flex;
-//     @include flex-grow;
-//     @include flex-shrink;
-//   }
-
-//   .grid-cell-lg {
-//     flex-basis: 0;
-
-//     @include flex-grow(1);
-//     max-width: 100%;
-//   }
-
-//   @for $i from 1 through var(--columns) {
-//     $calc: ((100 / var(--columns)) * $i) * 1%;
-
-//     .grid-cell-lg-#{ $i } {
-//       @include grid-size($calc)
-//     }
-
-//     .grid-cell-lg-offset-#{ $i } {
-//       margin-left: $calc;
-//     }
-//   }
-// }
-
-// .grid-cell-content-center {
-//   align-items: center;
-//   justify-content: center;
-// }

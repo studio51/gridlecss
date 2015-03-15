@@ -1,10 +1,36 @@
+// Flexbox grid mixins
+
 @mixin flexbox                              { display: flex }
 @mixin box-sizing                           { box-sizing: border-box }
-// /0 1 auto
-@mixin flex($string: 1)                     { flex: $string }
+
+@mixin flex($string: 0 1 auto)                     { flex: $string }
 @mixin flex-basis($value: 0)                { flex-basis: $value }
 @mixin flex-direction($direction: column)   { flex-direction: $direction }
 @mixin flex-flow                            { flex-flow: row wrap }
 @mixin flex-grow($value: 0)                 { flex-grow: $value }
 @mixin flex-shrink($value: 0)               { flex-shrink: $value }
 @mixin flex-wrap                            { flex-wrap: wrap }
+
+// Conditional Media Query
+//
+// http://codepen.io/dsheiko/pen/KeLGy
+
+@function translate-media-condition($condition) {
+  $condMap: (
+    "sm": "(min-width: #{$grid-sm-min})",
+    "md": "(min-width: #{$grid-md-min})",
+    "lg": "(min-width: #{$grid-lg-min})",
+  );
+
+  @return map-get( $condMap, $condition );
+}
+
+@mixin media($args...) {
+  $query: "";
+
+  @each $arg in $args {
+    $query: translate-media-condition($arg);
+  }
+
+  @media only screen and #{$query} { @content; }
+}
