@@ -21,10 +21,7 @@
           flex-direction: row;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  border: 1px solid red;
-  padding: 2px;
-  background-color: #efefef; }
+          flex-wrap: wrap; }
   .grid.reverse {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
@@ -32,16 +29,12 @@
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse; }
 
-.cell {
-  border: 1px solid blue;
-  background-color: #f6f6f6;
-  padding: 2px; }
-  .cell.reverse {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-    -webkit-flex-direction: column-reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse; }
+.cell.reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse; }
 
 .cell-sm, .cell-sm-1, .cell-sm-offset-1, .cell-sm-2, .cell-sm-offset-2, .cell-sm-3, .cell-sm-offset-3, .cell-sm-4, .cell-sm-offset-4, .cell-sm-5, .cell-sm-offset-5, .cell-sm-6, .cell-sm-offset-6, .cell-sm-7, .cell-sm-offset-7, .cell-sm-8, .cell-sm-offset-8, .cell-sm-9, .cell-sm-offset-9, .cell-sm-10, .cell-sm-offset-10, .cell-sm-11, .cell-sm-offset-11, .cell-sm-12, .cell-sm-offset-12, .cell-md, .cell-md-1, .cell-md-offset-1, .cell-md-2, .cell-md-offset-2, .cell-md-3, .cell-md-offset-3, .cell-md-4, .cell-md-offset-4, .cell-md-5, .cell-md-offset-5, .cell-md-6, .cell-md-offset-6, .cell-md-7, .cell-md-offset-7, .cell-md-8, .cell-md-offset-8, .cell-md-9, .cell-md-offset-9, .cell-md-10, .cell-md-offset-10, .cell-md-11, .cell-md-offset-11, .cell-md-12, .cell-md-offset-12, .cell-lg, .cell-lg-1, .cell-lg-offset-1, .cell-lg-2, .cell-lg-offset-2, .cell-lg-3, .cell-lg-offset-3, .cell-lg-4, .cell-lg-offset-4, .cell-lg-5, .cell-lg-offset-5, .cell-lg-6, .cell-lg-offset-6, .cell-lg-7, .cell-lg-offset-7, .cell-lg-8, .cell-lg-offset-8, .cell-lg-9, .cell-lg-offset-9, .cell-lg-10, .cell-lg-offset-10, .cell-lg-11, .cell-lg-offset-11, .cell-lg-12, .cell-lg-offset-12 {
   box-sizing: border-box;

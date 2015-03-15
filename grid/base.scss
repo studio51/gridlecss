@@ -15,46 +15,42 @@ $grid-lg-min: 90.063em;
 @import "mixins";
 
 .grid-container {
-  box-sizing: border-box;
+  @include box-sizing;
+
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 }
 
 .grid {
-  box-sizing: border-box;
-  display: flex;
-  flex: 0 1 auto;
-  flex-direction: row;
-  flex-wrap: wrap;
+  @include box-sizing;
+  @include flexbox;
 
-  border: 1px solid red;
-  padding: 2px;
-  background-color: #efefef;
+  @include flex;
+  @include flex-direction(row);
+  @include flex-wrap;
 
   &.reverse {
-    flex-direction: row-reverse;
+    @include flex-direction(row-reverse);
   }
 }
 
 .cell {
 
-  border: 1px solid blue;
-  background-color: #f6f6f6;
-  padding: 2px;
-
   &.reverse {
-    flex-direction: column-reverse;
+    @include flex-direction(row-reverse);
   }
 }
 
 %cell-styles {
-  box-sizing: border-box;
-  display: flex;
-  flex: 0 1 auto;
-  flex-direction: column;
-  flex-grow: 0;
-  flex-shrink: 0;
+
+  @include box-sizing;
+  @include flexbox;
+
+  @include flex;
+  @include flex-direction;
+  @include flex-grow;
+  @include flex-shrink;
 }
 
 $grid-breakpoints: sm md lg;
@@ -92,28 +88,22 @@ $grid-breakpoints: sm md lg;
       }
     }
 
-    //
-    //
     .cell-#{ $breakpoint } {
-      flex-grow: 1;
-      flex-basis: 0;
+      @include flex-grow(1);
+      @include flex-basis(0);
+
       max-width: 100%;
     }
 
-    //
-    //
     @for $i from 1 through $grid-columns {
       $calc: (( 100 / $grid-columns ) * $i) * 1%;
 
-      //
-      //
       .cell-#{ $breakpoint }-#{ $i } {
-        flex-basis: $calc;
+        @include flex-basis($calc);
+
         max-width: $calc;
       }
 
-      //
-      //
       .cell-#{ $breakpoint }-offset-#{ $i } {
         margin-left: $calc;
       }
