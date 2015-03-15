@@ -66,6 +66,7 @@ figure {
   margin: 1em 40px; }
 
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -108,6 +109,7 @@ input[type='number']::-webkit-inner-spin-button, input[type='number']::-webkit-o
   height: auto; }
 
 input[type='search'] {
+  -moz-box-sizing: content-box;
   box-sizing: content-box; }
 
 fieldset {
@@ -132,87 +134,42 @@ table {
 td, th {
   padding: 0; }
 
-.current-width:before {
-  content: "This is the Mobile media screen";
-  background-color: #efefef;
-  color: #999;
-  font-size: 12px; }
-  @media only screen {
-    .current-width:before {
-      content: "Define mobile styles"; } }
-  @media only screen and (min-width: 40.063em) {
-    .current-width:before {
-      content: "min-width 641px, medium screens"; } }
-  @media only screen and (min-width: 64.063em) {
-    .current-width:before {
-      content: "min-width 1025px, large screens"; } }
-  @media only screen and (min-width: 90.063em) {
-    .current-width:before {
-      content: "min-width 1441px, xlarge screens"; } }
-  @media only screen and (min-width: 120.063em) {
-    .current-width:before {
-      content: "min-width 1921px, xxlarge screens"; } }
-
 body {
-  font-family: 'Raleway', sans-serif;
-  font-size: .9em; }
+  font-family: 'Raleway', sans-serif; }
 
-.grid-image {
-  width: 100%;
-  height: 400px;
-  position: relative;
-  box-sizing: border-box; }
-  @media only screen and (min-width: 40.063em) {
-    .grid-image {
-      height: 600px; } }
-  @media only screen and (min-width: 64.063em) {
-    .grid-image {
-      height: 700px; } }
-  @media only screen and (min-width: 90.063em) {
-    .grid-image {
-      height: 1000px; } }
-  .grid-image--device {
-    background-image: url("../images/phone.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; }
-    @media only screen and (min-width: 40.063em) {
-      .grid-image--device {
-        background-image: url("../images/tablet.png"); } }
-    @media only screen and (min-width: 64.063em) {
-      .grid-image--device {
-        background-image: url("../images/laptop.png");
-        background-size: contain; } }
-    @media only screen and (min-width: 90.063em) {
-      .grid-image--device {
-        background-image: url("../images/desktop.png"); } }
+.row {
+  border: 1px solid #999;
+  padding: 5px;
+  margin: 5px 0; }
 
-.browser-window {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0; }
-  @media only screen and (min-width: 40.063em) {
-    .browser-window {
-      margin: 72px 153px 0 152px; } }
-  @media only screen and (min-width: 64.063em) {
-    .browser-window {
-      margin: 77px 124px 0 126px; } }
-  @media only screen and (min-width: 90.063em) {
-    .browser-window {
-      margin: 123px 188px 0 186px; } }
-  .browser-window .grid {
-    border: 1px solid red;
-    padding: 5px; }
-    .browser-window .grid-cell {
-      padding: 5px;
-      border: 1px solid blue; }
-
-.demo .grid {
+.cell {
   background-color: #efefef;
-  padding: 2px; }
-  .demo .grid-cell {
-    background-color: #fff;
-    margin: 10px; }
+  box-shadow: inset 0 0 0 1px #fff;
+  padding: 10px;
+  font-size: 10px; }
+
+@media only screen and (min-width: 40.063em) {
+  .visible-sm {
+    display: block; }
+  .visible-md {
+    display: none; }
+  .visible-lg {
+    display: none; } }
+
+@media only screen and (min-width: 64.063em) {
+  .visible-sm {
+    display: none; }
+  .visible-md {
+    display: block; }
+  .visible-lg {
+    display: none; } }
+
+@media only screen and (min-width: 90.063em) {
+  .visible-sm {
+    display: none; }
+  .visible-md {
+    display: none; }
+  .visible-lg {
+    display: block; } }
+
 /*# sourceMappingURL=theme.css.map */

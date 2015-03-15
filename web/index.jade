@@ -18,110 +18,15 @@ html(lang="en")
   body
 
     header.header
-      .grid
-        .row
-          .cell
-            span.current-width
 
     main.main
+
       .grid
 
-        .demo.grid-the
-          h1 The grid
-          span 12 columns
-
-          .row
-            .cell.cell-xs-1 cell-1
-            .cell.cell-xs-1 cell-1
-            .cell.cell-xs-1 cell-1
-            .cell.cell-xs-1 cell-1
-            .cell.cell-xs-1 cell-1
-            .cell.cell-xs-1 cell-1
-            .cell.cell-xs-1 cell-1
-            .cell.cell-xs-1 cell-1
-            .cell.cell-xs-1 cell-1
-            .cell.cell-xs-1 cell-1
-            .cell.cell-xs-1 cell-1
-            .cell.cell-xs-1 cell-1
-
-          .row
-            .cell.cell-xs-2 cell-2
-            .cell.cell-xs-2 cell-2
-            .cell.cell-xs-2 cell-2
-            .cell.cell-xs-2 cell-2
-            .cell.cell-xs-2 cell-2
-            .cell.cell-xs-2 cell-2
-
-          .row
-            .cell.cell-xs-1 cell-1
-            .cell.cell-xs-11 cell-11
-
-          .row
-            .cell.cell-xs-2 cell-2
-            .cell.cell-xs-10 cell-10
-
-          .row
-            .cell.cell-xs-3 cell-3
-            .cell.cell-xs-9 cell-9
-
-          .row
-            .cell.cell-xs-4 cell-4
-            .cell.cell-xs-8 cell-8
-
-          .row
-            .cell.cell-xs-5 cell-5
-            .cell.cell-xs-7 cell-7
-
-          .row
-            .cell.cell-xs-6 cell-6
-            .cell.cell-xs-6 cell-6
-
-        .demo.grid-basic
-          h1 Basic Grids
-          span
-            | Dynamic grid, features, expands to fit the grid row by default,
-            | if no (viewport size) is specified, the cell will default to 100%
-            | of the row `.cell` will default to 100% unless a viewport size is
-            | specified `.cell-#`
-
-          .row
-            .cell.cell-sm
-            .cell.cell-sm
-
-        .demo.grid-sizing
-          h1 Individual Sizing
-          span
-            | Unlike the basic grid, specifing a size on the class `cell-sm-#
-            | will only fit that portion of the row. bsaically, it sets the
-            | width of the cell, whereas not specifing, will let the grid figure
-            | it out
-
-          .row
-            .cell.cell-xs-1
-            .cell.cell-xs-3
-            .cell.cell-xs-8
-
-        .demo.grid-masonry
-          h1 Masonry
-          span
-            | The cube
-
-          .row
-            .cell.cell-xs-4
-            .cell.cell-xs-4
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ipsum assumenda neque deserunt sed soluta eos accusamus dignissimos at qui incidunt debitis, cum asperiores ea, hic culpa natus quisquam ex.
-            .cell.cell-xs-4
-
-            .cell.cell-xs-4
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ipsum assumenda neque deserunt sed soluta eos accusamus dignissimos at qui incidunt debitis, cum asperiores ea, hic culpa natus quisquam ex.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nesciunt architecto laborum alias cupiditate quis adipisci, molestias enim voluptatibus obcaecati corrupti, nam, nemo ex omnis, saepe nostrum! Eum, magni, deserunt.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet impedit eum, odio nostrum, dolorem quasi vitae quis molestiae praesentium! Assumenda itaque labore dolorum dolores laudantium earum expedita consequuntur placeat unde.
-            .cell.cell-xs-4
-            .cell.cell-xs-4
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis consequatur voluptate perspiciatis asperiores vel, ut, consectetur nulla quo quas atque deserunt distinctio, aspernatur provident? Esse sed, ad voluptate tempora voluptatibus.
-
-            .cell.cell-xs-4
-            .cell.cell-xs-4
-            .cell.cell-xs-4
-              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ipsum assumenda neque deserunt sed soluta eos accusamus dignissimos at qui incidunt debitis, cum asperiores ea, hic culpa natus quisquam ex.
+        include templates/the-grid.jade
+        include templates/basic-grid.jade
+        include templates/sized-grid.jade
+        include templates/masonry-grid.jade
 
     footer.footer
       p Studio51 &copy; 2015. Some rights reserved
