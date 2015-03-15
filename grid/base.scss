@@ -14,12 +14,13 @@ $grid-lg-min: 90.063em;
 
 @import "mixins";
 
-.grid-container {
+.grid-container,
+.grid-container-fluid {
   @include box-sizing;
 
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
 }
 
 .grid {
@@ -36,6 +37,7 @@ $grid-lg-min: 90.063em;
 }
 
 .cell {
+  width: 100%;
 
   &.reverse {
     @include flex-direction(row-reverse);
@@ -53,7 +55,7 @@ $grid-lg-min: 90.063em;
   @include flex-shrink;
 }
 
-$grid-breakpoints: sm md lg;
+$grid-breakpoints: xs sm md lg;
 
 // For each breakpoint we have specified, we create a block
 //
@@ -66,7 +68,7 @@ $grid-breakpoints: sm md lg;
   //
   // dependency: mixins.scss @media
   //
-  @include media($breakpoint) {
+  @include media("screen", $breakpoint) {
 
     // This is where we define the width of the grids container
     //

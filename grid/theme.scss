@@ -1,140 +1,157 @@
+html{font-family:sans-serif;}body{margin:0;}article,aside,details,figcaption,figure,footer,header,main,nav,section,summary{display:block;}audio,canvas,progress,video{display:inline-block;vertical-align:baseline;}audio:not([controls]){display:none;height:0;}[hidden],template{display:none;}a{background:transparent;}a:active,a:hover{outline:0;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}h1{font-size:2em;margin:.67em 0;}mark{background:#ff0;color:#000;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}img{border:0;}svg:not(:root){overflow:hidden;}figure{margin:1em 40px;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}pre{overflow:auto;}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em;}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0;}button{overflow:visible;}button,select{text-transform:none;}button,html input[type='button'],input[type='reset'],input[type='submit']{cursor:pointer;}button[disabled],html input[disabled]{cursor:default;}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}input{line-height:normal;}input[type='checkbox'],input[type='radio']{box-sizing:border-box;padding:0;}input[type='number']::-webkit-inner-spin-button,input[type='number']::-webkit-outer-spin-button{height:auto;}input[type='search']{-moz-box-sizing:content-box;box-sizing:content-box;}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em;}legend{border:0;padding:0;}textarea{overflow:auto;}optgroup{font-weight:bold;}table{border-collapse:collapse;border-spacing:0;}td,th{padding:0;}
+
 @import "mixins";
 
-html{font-family:sans-serif;}body{margin:0;}article,aside,details,figcaption,figure,footer,header,main,nav,section,summary{display:block;}audio,canvas,progress,video{display:inline-block;vertical-align:baseline;}audio:not([controls]){display:none;height:0;}[hidden],template{display:none;}a{background:transparent;}a:active,a:hover{outline:0;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}h1{font-size:2em;margin:.67em 0;}mark{background:#ff0;color:#000;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}img{border:0;}svg:not(:root){overflow:hidden;}figure{margin:1em 40px;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}pre{overflow:auto;}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em;}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0;}button{overflow:visible;}button,select{text-transform:none;}button,html input[type='button'],input[type='reset'],input[type='submit']{cursor:pointer;}button[disabled],html input[disabled]{cursor:default;}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}input{line-height:normal;}input[type='checkbox'],input[type='radio']{box-sizing:border-box;padding:0;}input[type='number']::-webkit-inner-spin-button,input[type='number']::-webkit-outer-spin-button{height:auto;}input[type='search']{-moz-box-sizing:content-box;box-sizing:content-box;}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em;}legend{border:0;padding:0;}textarea{overflow:auto;}optgroup{font-weight:bold;}table{border-collapse:collapse;border-spacing:0;}td,th{padding:0;}
-  .current-width {
-    &:before {
-      content: "This is the Mobile media screen";
-      // position: absolute;
-      // top: 0;
-      // left: 0;
-      background-color: #efefef;
-      color: #999;
-      // z-index: 1;
-      // width: 100%;
-      // padding: 15px;
-      font-size: 12px;
-      // box-sizing: border-box;
-
-      @media only screen {
-        content: "Define mobile styles";
-      }
-
-      // @media only screen and (min-width: 40em) {
-      //   content: "max-width 640px, mobile-only styles, use when QAing mobile issues";
-      // }
-
-      @media only screen and (min-width: 40.063em)  {
-        content: "min-width 641px, medium screens";
-      }
-
-      // @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-      //   content: "min-width 641px and max-width 1024px, use when QAing tablet-only issues";
-      // }
-
-      @media only screen and (min-width: 64.063em) {
-        content: "min-width 1025px, large screens";
-      }
-
-      // @media only screen and (min-width: 64.063em) and (max-width: 90em) {
-      //   content: "min-width 1025px and max-width 1440px, use when QAing large screen-only issues";
-      // }
-
-      @media only screen and (min-width: 90.063em) {
-        content: "min-width 1441px, xlarge screens";
-      }
-
-      // @media only screen and (min-width: 90.063em) and (max-width: 120em) {
-      //   content: "min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues";
-      // }
-
-      @media only screen and (min-width: 120.063em) {
-        content: "min-width 1921px, xxlarge screens";
-      }
-    }
-  }
-body {
-  font-family: 'Raleway', sans-serif;
-  font-size: .9em;
+.grid {
+  box-shadow: 0 0 0 2px #000;
+  padding: 2px;
+  // margin: 1px;
 }
 
-.grid-image {
-  width: 100%;
-  height: 400px;
-  position: relative;
-  box-sizing: border-box;
-
-  @media only screen and (min-width: 40.063em)  {
-    height: 600px;
-  }
-
-  @media only screen and (min-width: 64.063em) {
-    height: 700px;
-  }
-
-  @media only screen and (min-width: 90.063em) {
-    height: 1000px;
-  }
-
-  &--device {
-    background-image: url("../images/phone.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    @media only screen and (min-width: 40.063em)  {
-      background-image: url("../images/tablet.png");
-    }
-
-    @media only screen and (min-width: 64.063em) {
-      background-image: url("../images/laptop.png");
-      background-size: contain;
-    }
-
-    @media only screen and (min-width: 90.063em) {
-      background-image: url("../images/desktop.png");
-    }
-  }
+[class*="cell"] {
+  box-shadow: 0 0 0 2px red;
+  padding: 2px;
+  // margin: 1px;
 }
 
-.browser-window {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
 
-  @media only screen and (min-width: 40.063em)  {
-    margin: 72px 153px 0 152px;
-  }
-
-  @media only screen and (min-width: 64.063em) {
-    margin: 77px 124px 0 126px;
-  }
-
-  @media only screen and (min-width: 90.063em) {
-    margin: 123px 188px 0 186px;
-  }
-
-  .grid {
-    border: 1px solid red;
-    padding: 5px;
-
-    &-cell {
-      padding: 5px;
-      border: 1px solid blue;
-
-    }
-  }
+@media only screen and (min-width: 40.063em)  {
+  .visible-sm { display: block; }
+  .visible-md { display: none; }
+  .visible-lg { display: none; }
 }
 
-.demo {
-  .grid {
-    background-color: #efefef;
-    padding: 2px;
-
-    &-cell {
-      background-color: #fff;
-      margin: 10px;
-    }
-  }
+@media only screen and (min-width: 64.063em) {
+  .visible-sm { display: none; }
+  .visible-md { display: block; }
+  .visible-lg { display: none; }
 }
+
+@media only screen and (min-width: 90.063em) {
+  .visible-sm { display: none; }
+  .visible-md { display: none; }
+  .visible-lg { display: block; }
+}
+
+
+//   .current-width {
+//     &:before {
+//       content: "This is the Mobile media screen";
+//       // position: absolute;
+//       // top: 0;
+//       // left: 0;
+//       background-color: #efefef;
+//       color: #999;
+//       // z-index: 1;
+//       // width: 100%;
+//       // padding: 15px;
+//       font-size: 12px;
+//       // box-sizing: border-box;
+
+//       @media only screen {
+//         content: "Define mobile styles";
+//       }
+
+//       @media only screen and (min-width: 40.063em)  {
+//         content: "min-width 641px, medium screens";
+//       }
+
+//       @media only screen and (min-width: 64.063em) {
+//         content: "min-width 1025px, large screens";
+//       }
+
+//       @media only screen and (min-width: 90.063em) {
+//         content: "min-width 1441px, xlarge screens";
+//       }
+
+//       @media only screen and (min-width: 120.063em) {
+//         content: "min-width 1921px, xxlarge screens";
+//       }
+//     }
+//   }
+// body {
+//   font-family: 'Raleway', sans-serif;
+//   font-size: .9em;
+// }
+
+// .grid-image {
+//   width: 100%;
+//   height: 400px;
+//   position: relative;
+//   box-sizing: border-box;
+
+//   @media only screen and (min-width: 40.063em)  {
+//     height: 600px;
+//   }
+
+//   @media only screen and (min-width: 64.063em) {
+//     height: 700px;
+//   }
+
+//   @media only screen and (min-width: 90.063em) {
+//     height: 1000px;
+//   }
+
+//   &--device {
+//     background-image: url("../images/phone.png");
+//     background-size: cover;
+//     background-position: center;
+//     background-repeat: no-repeat;
+
+//     @media only screen and (min-width: 40.063em)  {
+//       background-image: url("../images/tablet.png");
+//     }
+
+//     @media only screen and (min-width: 64.063em) {
+//       background-image: url("../images/laptop.png");
+//       background-size: contain;
+//     }
+
+//     @media only screen and (min-width: 90.063em) {
+//       background-image: url("../images/desktop.png");
+//     }
+//   }
+// }
+
+// .browser-window {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+
+//   @media only screen and (min-width: 40.063em)  {
+//     margin: 72px 153px 0 152px;
+//   }
+
+//   @media only screen and (min-width: 64.063em) {
+//     margin: 77px 124px 0 126px;
+//   }
+
+//   @media only screen and (min-width: 90.063em) {
+//     margin: 123px 188px 0 186px;
+//   }
+
+//   .grid {
+//     border: 1px solid red;
+//     padding: 5px;
+
+//     &-cell {
+//       padding: 5px;
+//       border: 1px solid blue;
+
+//     }
+//   }
+// }
+
+// .demo {
+//   .grid {
+//     background-color: #efefef;
+//     padding: 2px;
+
+//     &-cell {
+//       background-color: #fff;
+//       margin: 10px;
+//     }
+//   }
+// }
