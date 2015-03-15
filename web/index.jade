@@ -17,94 +17,111 @@ html(lang="en")
 
   body
 
-    header
-      .grid-container
-        .grid
+    header.header
+      .grid
+        .row
           .cell
             span.current-width
 
-    #main
-      .grid-container
-        .grid
-          .cell
-            h1 gridleCSS
-            span the CSS is silent ( gridlex )
+    main.main
+      .grid
 
-        .grid
-          .cell
-            .grid-image.grid-image--device
+        .demo.grid-the
+          h1 The grid
+          span 12 columns
 
-              .browser-window
+          .row
+            .cell.cell-xs-1 cell-1
+            .cell.cell-xs-1 cell-1
+            .cell.cell-xs-1 cell-1
+            .cell.cell-xs-1 cell-1
+            .cell.cell-xs-1 cell-1
+            .cell.cell-xs-1 cell-1
+            .cell.cell-xs-1 cell-1
+            .cell.cell-xs-1 cell-1
+            .cell.cell-xs-1 cell-1
+            .cell.cell-xs-1 cell-1
+            .cell.cell-xs-1 cell-1
+            .cell.cell-xs-1 cell-1
 
-                .mock-header
-                  .grid
-                    .cell.cell-sm-1
-                      Studio51
+          .row
+            .cell.cell-xs-2 cell-2
+            .cell.cell-xs-2 cell-2
+            .cell.cell-xs-2 cell-2
+            .cell.cell-xs-2 cell-2
+            .cell.cell-xs-2 cell-2
+            .cell.cell-xs-2 cell-2
 
-                    .cell.cell-sm-2
-                      Link
-                    .cell.cell-sm-2
-                      Link
-                    .cell.cell-sm-2
-                      Link
+          .row
+            .cell.cell-xs-1 cell-1
+            .cell.cell-xs-11 cell-11
 
-                .mock-main
-                  .grid
-                    .cell
-                    .cell
-                    .cell.cell-sm-1
+          .row
+            .cell.cell-xs-2 cell-2
+            .cell.cell-xs-10 cell-10
 
-                .mock-footer
-                  .grid
-                    .cell
-                      p Studio51 &copy; 2015. All rights Reserved
+          .row
+            .cell.cell-xs-3 cell-3
+            .cell.cell-xs-9 cell-9
 
-        .demo
-          .grid
-            .cell auto
-            .cell auto
-            .cell.cell-sm-2 2
+          .row
+            .cell.cell-xs-4 cell-4
+            .cell.cell-xs-8 cell-8
 
-          .grid
-            .cell.cell-sm-1 1
-            .cell.cell-sm-1 1
-            .cell.cell-sm-1 1
-            .cell.cell-sm-1 1
-            .cell.cell-sm-1 1
-            .cell.cell-sm-1 1
-            .cell.cell-sm-1 1
-            .cell.cell-sm-1 1
-            .cell.cell-sm-1 1
-            .cell.cell-sm-1 1
-            .cell.cell-sm-1 1
-            .cell.cell-sm-1 1
+          .row
+            .cell.cell-xs-5 cell-5
+            .cell.cell-xs-7 cell-7
 
-          .grid
-            .cell.cell-sm-2 2
-            .cell.cell-sm-2 2
-            .cell.cell-sm-2 2
-            .cell.cell-sm-2 2
-            .cell.cell-sm-2 2
-            .cell.cell-sm-2 2
+          .row
+            .cell.cell-xs-6 cell-6
+            .cell.cell-xs-6 cell-6
 
-          .grid
-            .cell.cell-sm-3 3
-            .cell.cell-sm-3 3
-            .cell.cell-sm-3 3
-            .cell.cell-sm-3 3
+        .demo.grid-basic
+          h1 Basic Grids
+          span
+            | Dynamic grid, features, expands to fit the grid row by default,
+            | if no (viewport size) is specified, the cell will default to 100%
+            | of the row `.cell` will default to 100% unless a viewport size is
+            | specified `.cell-#`
 
-          .grid
-            .cell.cell-sm-4 4
-            .cell.cell-sm-4 4
-            .cell.cell-sm-4 4
+          .row
+            .cell.cell-sm
+            .cell.cell-sm
 
-          .grid
-            .cell.cell-sm-3 3
-            .cell.cell-sm-offset-8 1
+        .demo.grid-sizing
+          h1 Individual Sizing
+          span
+            | Unlike the basic grid, specifing a size on the class `cell-sm-#
+            | will only fit that portion of the row. bsaically, it sets the
+            | width of the cell, whereas not specifing, will let the grid figure
+            | it out
 
-          .grid
-            .cell.cell-sm-6 6
-            .cell.cell-sm-offset-4 2
+          .row
+            .cell.cell-xs-1
+            .cell.cell-xs-3
+            .cell.cell-xs-8
 
-    footer
+        .demo.grid-masonry
+          h1 Masonry
+          span
+            | The cube
+
+          .row
+            .cell.cell-xs-4
+            .cell.cell-xs-4
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ipsum assumenda neque deserunt sed soluta eos accusamus dignissimos at qui incidunt debitis, cum asperiores ea, hic culpa natus quisquam ex.
+            .cell.cell-xs-4
+
+            .cell.cell-xs-4
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ipsum assumenda neque deserunt sed soluta eos accusamus dignissimos at qui incidunt debitis, cum asperiores ea, hic culpa natus quisquam ex.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nesciunt architecto laborum alias cupiditate quis adipisci, molestias enim voluptatibus obcaecati corrupti, nam, nemo ex omnis, saepe nostrum! Eum, magni, deserunt.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet impedit eum, odio nostrum, dolorem quasi vitae quis molestiae praesentium! Assumenda itaque labore dolorum dolores laudantium earum expedita consequuntur placeat unde.
+            .cell.cell-xs-4
+            .cell.cell-xs-4
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis consequatur voluptate perspiciatis asperiores vel, ut, consectetur nulla quo quas atque deserunt distinctio, aspernatur provident? Esse sed, ad voluptate tempora voluptatibus.
+
+            .cell.cell-xs-4
+            .cell.cell-xs-4
+            .cell.cell-xs-4
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ipsum assumenda neque deserunt sed soluta eos accusamus dignissimos at qui incidunt debitis, cum asperiores ea, hic culpa natus quisquam ex.
+
+    footer.footer
       p Studio51 &copy; 2015. Some rights reserved
