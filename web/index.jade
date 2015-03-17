@@ -15,18 +15,37 @@ html(lang="en")
     link(rel='stylesheet', href='../dist/gridlecss.css')
     link(rel='stylesheet', href='css/theme.css')
 
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+
   body
 
-    header.header
-
-    main.main
+    header
 
       .grid
+        .row
+          .cell.cell-sm-8
+            h1 GridleCSS
+            span Yet Another Flex Grid framework!
 
-        include templates/the-grid.jade
-        include templates/basic-grid.jade
-        include templates/sized-grid.jade
-        include templates/masonry-grid.jade
+          .cell.cell-sm-4
+            nav
+              ul
+                li
+                  a.btn.btn-git(href="#")
+                    i.fa.fa-github
+                    | View on Github
+                li
+                  a.btn.btn-twt(href="#")
+                    i.fa.fa-twitter
+                    | Spread the word
 
-    footer.footer
+    main
+
+      include templates/the-grid.jade
+      include templates/responsive-grid.jade
+      include templates/basic-grid.jade
+      include templates/sized-grid.jade
+      include templates/nested-grid.jade
+
+    footer
       p Studio51 &copy; 2015. Some rights reserved

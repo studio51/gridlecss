@@ -9,37 +9,36 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Open+Sans+Condensed:300,700,300italic|Raleway:400,200,300,100,500,600,700,800,900">
     <link rel="stylesheet" href="../dist/gridlecss.css">
     <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
   <body>
-    <header class="header"></header>
-    <main class="main">
+    <header>
       <div class="grid">
-        <article>
+        <div class="row">
+          <div class="cell cell-sm-8">
+            <h1>GridleCSS</h1><span>Yet Another Flex Grid framework!</span>
+          </div>
+          <div class="cell cell-sm-4">
+            <nav>
+              <ul>
+                <li><a href="#" class="btn btn-git"><i class="fa fa-github"></i>View on Github</a></li>
+                <li><a href="#" class="btn btn-twt"><i class="fa fa-twitter"></i>Spread the word</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <article>
+        <div class="grid">
           <header>
             <h1>The grid</h1>
-          </header><span>12 columns</span>
+            <p>12 columns</p>
+          </header>
           <section class="grid-the">
             <div class="row">
-              <div class="cell cell-xs-1">cell-1</div>
-              <div class="cell cell-xs-1">cell-1</div>
-              <div class="cell cell-xs-1">cell-1</div>
-              <div class="cell cell-xs-1">cell-1</div>
-              <div class="cell cell-xs-1">cell-1</div>
-              <div class="cell cell-xs-1">cell-1</div>
-              <div class="cell cell-xs-1">cell-1</div>
-              <div class="cell cell-xs-1">cell-1</div>
-              <div class="cell cell-xs-1">cell-1</div>
-              <div class="cell cell-xs-1">cell-1</div>
-              <div class="cell cell-xs-1">cell-1</div>
-              <div class="cell cell-xs-1">cell-1</div>
-            </div>
-            <div class="row">
-              <div class="cell cell-xs-2">cell-2</div>
-              <div class="cell cell-xs-2">cell-2</div>
-              <div class="cell cell-xs-2">cell-2</div>
-              <div class="cell cell-xs-2">cell-2</div>
-              <div class="cell cell-xs-2">cell-2</div>
-              <div class="cell cell-xs-2">cell-2</div>
+              <div class="cell cell-xs">cell-12</div>
             </div>
             <div class="row">
               <div class="cell cell-xs-1">cell-1</div>
@@ -66,30 +65,58 @@
               <div class="cell cell-xs-6">cell-6</div>
             </div>
           </section>
-        </article>
-        <article>
+        </div>
+      </article>
+      <article>
+        <div class="grid">
           <header>
-            <h1>Basic Grids</h1>
-          </header><span>
-            Dynamic grid, features, expands to fit the grid row by default,
-            if no (viewport size) is specified, the cell will default to 100%
-            of the row `.cell` will default to 100% unless a viewport size is
-            specified `.cell-#`</span>
-          <section class="grid-basic">
+            <h1>Responsive Grid</h1>
+            <p>stuff</p>
+          </header>
+          <section class="grid-responsive">
             <div class="row">
-              <div class="cell cell-sm"></div>
-              <div class="cell cell-sm"></div>
+              <div class="cell cell-xs-5 cell-sm-4 cell-md-3 cell-lg-2"><span class="visible-xs">cell-xs-5</span><span class="visible-sm">cell-sm-4</span><span class="visible-md">cell-md-3</span><span class="visible-lg">cell-lg-2</span></div>
+              <div class="cell cell-xs-2 cell-sm-4 cell-md-6 cell-lg-8"><span class="visible-xs">cell-xs-2</span><span class="visible-sm">cell-sm-4</span><span class="visible-md">cell-md-6</span><span class="visible-lg">cell-lg-8</span></div>
+              <div class="cell cell-xs-5 cell-sm-4 cell-md-3 cell-lg-2"><span class="visible-xs">cell-xs-5</span><span class="visible-sm">cell-sm-4</span><span class="visible-md">cell-md-3</span><span class="visible-lg">cell-lg-2</span></div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-3 cell-sm-3 cell-md-2 cell-lg-2"><span class="visible-xs">cell-xs-3</span><span class="visible-sm">cell-sm-3</span><span class="visible-md">cell-md-2</span><span class="visible-lg">cell-lg-2</span></div>
+              <div class="cell cell-xs-9 cell-sm-6 cell-md-2 cell-lg-2"><span class="visible-xs">cell-xs-9</span><span class="visible-sm">cell-sm-6</span><span class="visible-md">cell-md-2</span><span class="visible-lg">cell-lg-2</span></div>
+              <div class="cell cell-xs cell-sm-3 cell-md-8 cell-lg"><span class="visible-xs">cell-xs</span><span class="visible-sm">cell-sm-3</span><span class="visible-md">cell-md-8</span><span class="visible-lg">cell-lg</span></div>
             </div>
           </section>
-        </article>
-        <article>
+        </div>
+      </article>
+      <article>
+        <div class="grid">
+          <header>
+            <h1>Basic Grids</h1>
+            <p>
+              Dynamic grid, features, expands to fit the grid row by default,
+              if no (viewport size) is specified, the cell will default to 100%
+              of the row `.cell` will default to 100% unless a viewport size is
+              specified `.cell-#`
+            </p>
+          </header>
+          <section class="grid-basic">
+            <div class="row">
+              <div class="cell cell-sm">cell-sm</div>
+              <div class="cell cell-sm">cell-sm</div>
+            </div>
+          </section>
+        </div>
+      </article>
+      <article>
+        <div class="grid">
           <header>
             <h1>Individual Sizing</h1>
-          </header><span>
-            Unlike the basic grid, specifing a size on the class `cell-sm-#
-            will only fit that portion of the row. bsaically, it sets the
-            width of the cell, whereas not specifing, will let the grid figure
-            it out</span>
+            <p>
+              Unlike the basic grid, specifing a size on the class `cell-sm-#
+              will only fit that portion of the row. bsaically, it sets the
+              width of the cell, whereas not specifing, will let the grid figure
+              it out
+            </p>
+          </header>
           <section class="grid-sizing">
             <div class="row">
               <div class="cell cell-xs-1"></div>
@@ -97,28 +124,71 @@
               <div class="cell cell-xs-8"></div>
             </div>
           </section>
-        </article>
-        <article>
+        </div>
+      </article>
+      <article>
+        <div class="grid">
           <header>
-            <h1>Masonry</h1>
-          </header><span>The cube</span>
-          <section class="grid-masonry">
+            <h1>Gridception</h1>
+            <p>A box, inside a box, inside a box, inside a box.. ooh you get it!</p>
+          </header>
+          <section id="nested-grid">
             <div class="row">
-              <div class="cell cell-xs-4"></div>
-              <div class="cell cell-xs-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ipsum assumenda neque deserunt sed soluta eos accusamus dignissimos at qui incidunt debitis, cum asperiores ea, hic culpa natus quisquam ex.</div>
-              <div class="cell cell-xs-4"></div>
-              <div class="cell cell-xs-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ipsum assumenda neque deserunt sed soluta eos accusamus dignissimos at qui incidunt debitis, cum asperiores ea, hic culpa natus quisquam ex.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nesciunt architecto laborum alias cupiditate quis adipisci, molestias enim voluptatibus obcaecati corrupti, nam, nemo ex omnis, saepe nostrum! Eum, magni, deserunt.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet impedit eum, odio nostrum, dolorem quasi vitae quis molestiae praesentium! Assumenda itaque labore dolorum dolores laudantium earum expedita consequuntur placeat unde.</div>
-              <div class="cell cell-xs-4"></div>
-              <div class="cell cell-xs-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis consequatur voluptate perspiciatis asperiores vel, ut, consectetur nulla quo quas atque deserunt distinctio, aspernatur provident? Esse sed, ad voluptate tempora voluptatibus.</div>
-              <div class="cell cell-xs-4"></div>
-              <div class="cell cell-xs-4"></div>
-              <div class="cell cell-xs-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo ipsum assumenda neque deserunt sed soluta eos accusamus dignissimos at qui incidunt debitis, cum asperiores ea, hic culpa natus quisquam ex.</div>
+              <div class="cell cell-sm-6">
+                <div class="row">
+                  <div class="cell cell-xs-12">
+                    <div class="row">
+                      <div class="cell cell-xs-3">
+                        <div class="row">
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                        </div>
+                      </div>
+                      <div class="cell cell-xs-3">
+                        <div class="row">
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                        </div>
+                      </div>
+                      <div class="cell cell-xs-3">
+                        <div class="row">
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                        </div>
+                      </div>
+                      <div class="cell cell-xs-3">
+                        <div class="row">
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cell cell-sm-6">
+                <div class="row">
+                  <div class="cell cell-xs-12">
+                    <div class="row">
+                      <div class="cell cell-xs-12">
+                        <div class="row">
+                          <div class="cell cell-xs-12"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
-        </article>
-      </div>
+        </div>
+      </article>
     </main>
-    <footer class="footer">
+    <footer>
       <p>Studio51 &copy; 2015. Some rights reserved</p>
     </footer>
   </body>

@@ -1,15 +1,17 @@
 article
-  header
-    h1 Basic Grids
 
-  span
-    | Dynamic grid, features, expands to fit the grid row by default,
-    | if no (viewport size) is specified, the cell will default to 100%
-    | of the row `.cell` will default to 100% unless a viewport size is
-    | specified `.cell-#`
+  .grid
 
-  section.grid-basic
+    header
+      h1 Basic Grids
+      p
+        | Dynamic grid, features, expands to fit the grid row by default,
+        | if no (viewport size) is specified, the cell will default to 100%
+        | of the row `.cell` will default to 100% unless a viewport size is
+        | specified `.cell-#`
 
-    .row
-      .cell.cell-sm
-      .cell.cell-sm
+    section.grid-basic
+
+      .row
+        .cell.cell-sm cell-sm
+        .cell.cell-sm cell-sm
