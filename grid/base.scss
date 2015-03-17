@@ -4,6 +4,8 @@ $grid-sm-min: 40.063em;
 $grid-md-min: 64.063em;
 $grid-lg-min: 90.063em;
 
+$gap: 10px;
+
 :root {
   --border-size: 2px;
   --border-olor: #000;
@@ -34,13 +36,18 @@ $grid-lg-min: 90.063em;
   @include flex-direction(row);
   @include flex-wrap;
 
+  padding: $gap/2;
   &.reverse {
     @include flex-direction(row-reverse);
   }
 }
 
 .cell {
-  width: 100%;
+  // margin-left: 1px;
+  // margin-right: 1px;
+  margin-bottom: 1px;
+
+    margin: $gap/2;
 
   &.reverse {
     @include flex-direction(row-reverse);
@@ -53,7 +60,7 @@ $grid-lg-min: 90.063em;
   @include flex;
   @include flex-direction;
   @include flex-grow;
-  @include flex-shrink;
+  @include flex-shrink(0);
 }
 
 $grid-breakpoints: xs sm md lg;
@@ -80,7 +87,7 @@ $grid-breakpoints: xs sm md lg;
     // From 1 to 12, where "$grid-columns" is the number of our columns we
     // defined, we create the cells of the grid
     //
-    // cell-x, cell-x-#, cell-x-offset-# { }
+    // Generates: cell-*, cell-*-# and cell-*-offset-#
     //
     @for $i from 1 through $grid-columns {
 
@@ -92,7 +99,9 @@ $grid-breakpoints: xs sm md lg;
     }
 
     .cell-#{ $breakpoint } {
+
       @include flex-grow(1);
+      @include flex-basis(0);
 
       max-width: 100%;
     }
@@ -101,7 +110,7 @@ $grid-breakpoints: xs sm md lg;
       $calc: (( 100 / $grid-columns ) * $i) * 1%;
 
       .cell-#{ $breakpoint }-#{ $i } {
-        @include flex-basis($calc);
+        @include flex-basis(calc(#{$calc} - #{$gap}));
 
         max-width: $calc;
       }
@@ -114,6 +123,17 @@ $grid-breakpoints: xs sm md lg;
 }
 
 /* Helpers */
+
+  .align {
+    &-center {
+      flex: 1;
+      align-items: center;
+
+      > div {
+        // justify-content: center;
+      }
+    }
+  }
 
   /* Stretch row' height to fit the parent height */
 
