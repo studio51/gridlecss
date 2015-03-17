@@ -66,7 +66,6 @@ figure {
   margin: 1em 40px; }
 
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -109,7 +108,6 @@ input[type='number']::-webkit-inner-spin-button, input[type='number']::-webkit-o
   height: auto; }
 
 input[type='search'] {
-  -moz-box-sizing: content-box;
   box-sizing: content-box; }
 
 fieldset {
@@ -137,39 +135,86 @@ td, th {
 body {
   font-family: 'Raleway', sans-serif; }
 
-.row {
-  border: 1px solid #999;
-  padding: 5px;
-  margin: 5px 0; }
-
-.cell {
-  background-color: #efefef;
-  box-shadow: inset 0 0 0 1px #fff;
-  padding: 10px;
-  font-size: 10px; }
+@media only screen {
+  [class*="visible"] {
+    display: none; }
+  .visible-xs {
+    display: block; } }
 
 @media only screen and (min-width: 40.063em) {
-  .visible-sm {
-    display: block; }
-  .visible-md {
+  [class*="visible"] {
     display: none; }
-  .visible-lg {
-    display: none; } }
+  .visible-sm {
+    display: block; } }
 
 @media only screen and (min-width: 64.063em) {
-  .visible-sm {
+  [class*="visible"] {
     display: none; }
   .visible-md {
-    display: block; }
-  .visible-lg {
-    display: none; } }
+    display: block; } }
 
 @media only screen and (min-width: 90.063em) {
-  .visible-sm {
-    display: none; }
-  .visible-md {
+  [class*="visible"] {
     display: none; }
   .visible-lg {
     display: block; } }
 
+article {
+  padding: 25px 0; }
+  article .cell {
+    background-color: rgba(236, 236, 236, 0.4);
+    box-shadow: inset 0 0 0 2px #fff;
+    padding: 12px;
+    font-size: 10px; }
+  article:nth-child(even) {
+    background-color: rgba(236, 236, 236, 0.4); }
+    article:nth-child(even) .cell {
+      background-color: #fff;
+      box-shadow: inset 0 0 0 2px rgba(236, 236, 236, 0.4); }
+  article header {
+    margin-bottom: 15px; }
+    article header h1 {
+      font-size: 20px;
+      font-weight: 400;
+      margin: 0; }
+    article header p {
+      font-weight: 300;
+      font-size: 12px;
+      margin-top: 5px;
+      margin-bottom: 0; }
+
+ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  ul li {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+
+header {
+  background-color: #efefef;
+  padding: 15px 0; }
+  header h1 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+
+.btn {
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 7.5px;
+  display: block; }
+  .btn i {
+    margin-right: 7.5px;
+    border: 1px solid red; }
+  .btn-git {
+    background-color: #4183c4; }
+  .btn-twt {
+    background-color: #55acee; }
 /*# sourceMappingURL=theme.css.map */
