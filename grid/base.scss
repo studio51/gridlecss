@@ -14,17 +14,20 @@ $grid-lg-min: 90.063em;
 
 @import "mixins";
 
+*,
+*:before,
+*:after {
+  @include box-sizing;
+}
+
 .grid,
 .grid-fluid {
-  @include box-sizing;
-
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .row {
-  @include box-sizing;
   @include flexbox;
 
   @include flex;
@@ -45,8 +48,6 @@ $grid-lg-min: 90.063em;
 }
 
 %cell-styles {
-
-  @include box-sizing;
   @include flexbox;
 
   @include flex;
@@ -92,7 +93,6 @@ $grid-breakpoints: xs sm md lg;
 
     .cell-#{ $breakpoint } {
       @include flex-grow(1);
-      @include flex-basis(0);
 
       max-width: 100%;
     }
@@ -112,3 +112,20 @@ $grid-breakpoints: xs sm md lg;
     }
   }
 }
+
+/* Helpers */
+
+  /* Stretch row' height to fit the parent height */
+
+
+  // .cell-full {
+  //   flex: 1;
+
+  //   &__child {
+  //     flex: 1;
+
+  //     .row {
+  //       flex: 1;
+  //     }
+  //   }
+  // }
