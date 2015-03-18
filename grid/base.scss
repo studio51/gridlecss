@@ -4,14 +4,12 @@ $grid-sm-min: 40.063em;
 $grid-md-min: 64.063em;
 $grid-lg-min: 90.063em;
 
-$gap: 10px;
-
 :root {
-  --border-size: 2px;
-  --border-olor: #000;
   --grid-sm-min: $grid-sm-min;
   --grid-md-min: $grid-md-min;
   --grid-lg-min: $grid-lg-min;
+  --grid-gutter: 2px;
+  --grid-gutter-calc: calc( var(--grid-gutter) / 2);
 }
 
 @import "mixins";
@@ -36,18 +34,19 @@ $gap: 10px;
   @include flex-direction(row);
   @include flex-wrap;
 
-  padding: $gap/2;
+  margin-left: -( var(--grid-gutter-calc));
+  margin-right: -( var(--grid-gutter-calc));
+
   &.reverse {
     @include flex-direction(row-reverse);
   }
 }
 
 .cell {
-  // margin-left: 1px;
-  // margin-right: 1px;
-  margin-bottom: 1px;
-
-    margin: $gap/2;
+  margin-bottom: var(--grid-gutter-calc);
+  margin-left: var(--grid-gutter-calc);
+  margin-right: var(--grid-gutter-calc);
+  margin-top: var(--grid-gutter-calc);
 
   &.reverse {
     @include flex-direction(row-reverse);
@@ -107,10 +106,10 @@ $grid-breakpoints: xs sm md lg;
     }
 
     @for $i from 1 through $grid-columns {
-      $calc: (( 100 / $grid-columns ) * $i) * 1%;
+      $calc: (( 100 / $grid-columns ) * $i ) * 1%;
 
       .cell-#{ $breakpoint }-#{ $i } {
-        @include flex-basis(calc(#{$calc} - #{$gap}));
+        @include flex-basis(calc(#{ $calc } - #{ var(--grid-gutter) }));
 
         max-width: $calc;
       }
@@ -121,31 +120,3 @@ $grid-breakpoints: xs sm md lg;
     }
   }
 }
-
-/* Helpers */
-
-  .align {
-    &-center {
-      flex: 1;
-      align-items: center;
-
-      > div {
-        // justify-content: center;
-      }
-    }
-  }
-
-  /* Stretch row' height to fit the parent height */
-
-
-  // .cell-full {
-  //   flex: 1;
-
-  //   &__child {
-  //     flex: 1;
-
-  //     .row {
-  //       flex: 1;
-  //     }
-  //   }
-  // }
