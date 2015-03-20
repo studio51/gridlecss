@@ -101,7 +101,7 @@ module.exports = function(grunt) {
         tasks: ['sass', 'postcss', 'cssnext']
       },
       jade: {
-        files: 'web/*.jade',
+        files: ['web/*.jade', 'web/templates/*.jade'],
         tasks: ['jade']
       }
     }
