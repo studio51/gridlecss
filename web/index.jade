@@ -16,36 +16,60 @@ html(lang="en")
     link(rel='stylesheet', href='css/theme.css')
 
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+    //- script(src='js/twtfetch.js')
+    //- script(type='text/javascript').
+
+      //- var config1 = {
+      //-   "id": '578119473917349889',
+      //-   "domId": 'twtfeed',
+      //-   "maxTweets": 10,
+      //-   "enableLinks": true,
+      //-   "showTime": false,
+      //-   "showRetweet": false,
+      //-   "showInteraction": false,
+      //-   "showUser": false
+      //- };
+
+      //- twitterFetcher.fetch(config1);
 
   body
 
-    header
+    header.header
 
       .grid
         .row
-          .cell.cell-sm-8
-            h1 GridleCSS
-            span Yet Another Flex Grid framework!
+          .cell.cell-sm
+            h1.brand GridleCSS
+              span /ɡrɪd.lɛx/
 
-          .cell.cell-sm-4
-            nav
-              ul
-                li
-                  a.btn.btn-git(href="#")
-                    i.fa.fa-github
-                    | View on Github
-                li
-                  a.btn.btn-twt(href="#")
-                    i.fa.fa-twitter
-                    | Spread the word
+            p.moto Yet Another Flex Grid framework!
+
+          .cell.cell-sm-6.cell-md-4.cell-lg-3
+            ul.list-inline
+              li
+                a.btn.btn-git(href="#")
+                  i.fa.fa-github
+                  span View on Github
+
+              li
+                a.btn.btn-twt(href="#")
+                  i.fa.fa-twitter
+                  span Spread the word
+
 
     main
 
-      include templates/the-grid.jade
-      include templates/responsive-grid.jade
-      include templates/basic-grid.jade
-      include templates/sized-grid.jade
-      include templates/nested-grid.jade
+      //- include templates/responsive-grid.jade
+      //- include templates/fluid-grid.jade
+      //- include templates/offsets-grid.jade
+      //- include templates/auto-grid.jade
+      //- include templates/nested-grid.jade
+      //- include templates/alignment-grid.jade
+      //- include templates/distribution-grid.jade
+      //- include templates/reversed-grid.jade
+      //- include templates/reordering-grid.jade
 
-    footer
-      p Studio51 &copy; 2015. Some rights reserved
+      //- include templates/basic-grid.jade
+      //- include templates/sized-grid.jade
+
+
