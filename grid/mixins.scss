@@ -10,9 +10,17 @@
   flex: $string;
 }
 
-@mixin flex-basis($value: 0) {
-  flex-basis: $value;
-}
+  @mixin flex-grow($value: 0) {
+    flex-grow: $value;
+  }
+
+  @mixin flex-shrink($value: 1) {
+    flex-shrink: $value;
+  }
+
+  @mixin flex-basis($value: auto) {
+    flex-basis: $value;
+  }
 
 @mixin flex-direction($direction: column) {
   flex-direction: $direction;
@@ -20,14 +28,6 @@
 
 @mixin flex-flow {
   flex-flow: row wrap;
-}
-
-@mixin flex-grow($value: 0) {
-  flex-grow: $value;
-}
-
-@mixin flex-shrink($value: 0) {
-  flex-shrink: $value;
 }
 
 @mixin flex-wrap {
