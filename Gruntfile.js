@@ -36,7 +36,8 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/gridlecss.css': 'grid/base.scss',
+          'dist/gridle.css': 'grid/gridle.scss',
+          'web/css/gridle.css': 'grid/gridle.scss',
           'web/css/theme.css': 'grid/theme.scss'
         }
       }
@@ -48,7 +49,8 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/gridlecss.css': 'dist/gridlecss.css',
+          'dist/gridle.css': 'dist/gridle.css',
+          'web/css/gridle.css': 'web/css/gridle.css',
           'web/css/theme.css': 'web/css/theme.css'
         }
       }
@@ -59,12 +61,13 @@ module.exports = function(grunt) {
         map: true,
         processors: [
           require('autoprefixer-core')({
-            browsers: ['last 7 versions', '> 5%']
+            browsers: ['last 7 versions', '> 5%'],
           }).postcss
         ]
       },
+
       dist: {
-        src: ['dist/gridlecss.css', 'web/css/theme.css']
+        src: ['dist/gridle.css', 'web/css/theme.css']
       }
     },
 
@@ -109,8 +112,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('serve', [
     'clean',
-    'sass',
-    'jade',
     'connect',
     'open',
     'watch'
