@@ -28,7 +28,304 @@
         </div>
       </div>
     </header>
-    <main>
+    <main class="main">
+      <article>
+        <div class="grid">
+          <header>
+            <h3>Responsive</h3>
+            <p>
+              Responsive modifiers enable specifing different column sizes, offsets
+              alignment and distribution at certain viewport widths.
+            </p>
+          </header>
+          <section class="grid-responsive">
+            <div class="row">
+              <div class="cell cell-xs-5 cell-sm-4 cell-md-3 cell-lg-2"><span class="visible-xs">cell-xs-5</span><span class="visible-sm">cell-sm-4</span><span class="visible-md">cell-md-3</span><span class="visible-lg">cell-lg-2</span></div>
+              <div class="cell cell-xs-2 cell-sm-4 cell-md-6 cell-lg-8"><span class="visible-xs">cell-xs-2</span><span class="visible-sm">cell-sm-4</span><span class="visible-md">cell-md-6</span><span class="visible-lg">cell-lg-8</span></div>
+              <div class="cell cell-xs-5 cell-sm-4 cell-md-3 cell-lg-2"><span class="visible-xs">cell-xs-5</span><span class="visible-sm">cell-sm-4</span><span class="visible-md">cell-md-3</span><span class="visible-lg">cell-lg-2</span></div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-3 cell-sm-3 cell-md-2 cell-lg-2"><span class="visible-xs">cell-xs-3</span><span class="visible-sm">cell-sm-3</span><span class="visible-md">cell-md-2</span><span class="visible-lg">cell-lg-2</span></div>
+              <div class="cell cell-xs-9 cell-sm-6 cell-md-2 cell-lg-2"><span class="visible-xs">cell-xs-9</span><span class="visible-sm">cell-sm-6</span><span class="visible-md">cell-md-2</span><span class="visible-lg">cell-lg-2</span></div>
+              <div class="cell cell-xs cell-sm-3 cell-md-8 cell-lg"><span class="visible-xs">cell-xs</span><span class="visible-sm">cell-sm-3</span><span class="visible-md">cell-md-8</span><span class="visible-lg">cell-lg</span></div>
+            </div>
+          </section>
+        </div>
+      </article>
+      <article>
+        <div class="grid">
+          <header>
+            <h3>Fluid</h3>
+            <p>Percent based widths allow fluid resizing of columns and rows</p>
+          </header>
+          <section class="grid-the">
+            <div class="row">
+              <div class="cell cell-xs">cell-12</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-1">cell-1</div>
+              <div class="cell cell-xs-11">cell-11</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-2">cell-2</div>
+              <div class="cell cell-xs-10">cell-10</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-3">cell-3</div>
+              <div class="cell cell-xs-9">cell-9</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-4">cell-4</div>
+              <div class="cell cell-xs-8">cell-8</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-5">cell-5</div>
+              <div class="cell cell-xs-7">cell-7</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-6">cell-6</div>
+              <div class="cell cell-xs-6">cell-6</div>
+            </div>
+          </section>
+        </div>
+      </article>
+      <article>
+        <div class="grid">
+          <header>
+            <h1>Offsets</h1>
+            <p>Offset columns</p>
+          </header>
+          <section id="offset-grid">
+            <div class="row">
+              <div class="cell cell-xs-offset-11 cell-xs-1">offset-11</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-offset-10 cell-xs-2">offset-10</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-offset-9 cell-xs-3">offset-9</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-offset-8 cell-xs-4">offset-8</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-offset-7 cell-xs-5">offset-7</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-offset-6 cell-xs-6">offset-6</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-offset-5 cell-xs-7">offset-5</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-offset-4 cell-xs-8">offset-4</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-offset-3 cell-xs-9">offset-3</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-offset-2 cell-xs-10">offset-2</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-offset-1 cell-xs-11">offset-1</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-3">cell-xs-3</div>
+              <div class="cell cell-xs-offset-3 cell-xs-2">cell-xs-2</div>
+              <div class="cell cell-xs-offset-1 cell-xs-1">cell-xs-1</div>
+              <div class="cell cell-xs-offset-1 cell-xs-1">cell-xs-1</div>
+            </div>
+          </section>
+        </div>
+      </article>
+      <article>
+        <div class="grid">
+          <header>
+            <h1>Auto Width</h1>
+            <p>
+              Add any number of auto sizing cells to a row. Let the grid figure it
+              out
+            </p>
+          </header>
+          <section id="auto-grid"></section>
+        </div>
+      </article>
+      <article>
+        <div class="grid">
+          <header>
+            <h1>Gridcellceptional!</h1>
+            <p>A box, inside a cell, inside a box, inside a cell.. ooh you get it!</p>
+          </header>
+          <section id="nested-grid">
+            <div class="row">
+              <div class="cell cell-sm-6">
+                <div class="row">
+                  <div class="cell cell-xs-12">
+                    <div class="row">
+                      <div class="cell cell-xs-3">
+                        <div class="row">
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                        </div>
+                      </div>
+                      <div class="cell cell-xs-3">
+                        <div class="row">
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                        </div>
+                      </div>
+                      <div class="cell cell-xs-3">
+                        <div class="row">
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                        </div>
+                      </div>
+                      <div class="cell cell-xs-3">
+                        <div class="row">
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cell cell-sm-6">
+                <div class="row">
+                  <div class="cell cell-xs-12">
+                    <div class="row">
+                      <div class="cell cell-xs-12">
+                        <div class="row">
+                          <div class="cell cell-xs-12"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </article>
+      <article>
+        <div class="grid">
+          <header>
+            <h1>Alignment</h1>
+            <p>
+              Add classes to align elements to the start, center or end of the row.
+              As well as the top, bottom or center of a column.
+            </p>
+          </header>
+          <section id="nested-grid">
+            <div class="row">
+              <div class="cell cell-xs cell-sm-4">
+                <div class="row cell-start">
+                  <div class="cell cell-xs-2"></div>
+                </div>
+              </div>
+              <div class="cell cell-xs cell-sm-4">
+                <div class="row cell-center">
+                  <div class="cell cell-xs-2"></div>
+                </div>
+              </div>
+              <div class="cell cell-xs cell-sm-4">
+                <div class="row cell-end">
+                  <div class="cell cell-xs-2"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </article>
+      <article>
+        <div class="grid">
+          <header>
+            <h1>Distribution</h1>
+            <p>Add classes to distribute the contents of a row or column</p>
+          </header>
+          <section id="nested-grid">
+          </section>
+        </div>
+      </article>
+      <article>
+        <div class="grid">
+          <header>
+            <h1>Reversing</h1>
+            <p></p>
+          </header>
+          <section id="auto-grid">
+          </section>
+        </div>
+      </article>
+      <article>
+        <div class="grid">
+          <header>
+            <h1>Reordering</h1>
+            <p>Add classes to reorder columns.</p>
+          </header>
+          <section id="auto-grid">
+          </section>
+        </div>
+      </article>
+      <article>
+        <div class="grid">
+          <header>
+            <h1>Basic Grids</h1>
+            <p>
+              Dynamic grid, features, expands to fit the grid row by default,
+              if no (viewport size) is specified, the cell will default to 100%
+              of the row `.cell` will default to 100% unless a viewport size is
+              specified `.cell-#`
+            </p>
+          </header>
+          <section class="grid-basic">
+            <div class="row">
+              <div class="cell cell-sm">cell-sm</div>
+              <div class="cell cell-sm">cell-sm</div>
+            </div>
+          </section>
+        </div>
+      </article>
+      <article>
+        <div class="grid">
+          <header>
+            <h1>Individual Sizing</h1>
+            <p>
+              Unlike the basic grid, specifing a size on the class `cell-sm-#
+              will only fit that portion of the row. bsaically, it sets the
+              width of the cell, whereas not specifing, will let the grid figure
+              it out
+            </p>
+          </header>
+          <section class="grid-sizing">
+            <div class="row">
+              <div class="cell cell-xs-1"></div>
+              <div class="cell cell-xs-3"></div>
+              <div class="cell cell-xs-8"></div>
+            </div>
+          </section>
+        </div>
+      </article>
     </main>
+    <footer class="footer">
+      <div class="grid">
+        <div class="row">
+          <div class="cell cell-sm">
+            <p>Project created and maintained by Studio51 © 2015</p>
+          </div>
+          <div class="cell cell-sm-6">
+            <ul class="list-inline">
+              <li><iframe src="https://ghbtns.com/github-btn.html?user=studio51&repo=gridlecss&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></li>
+              <li><iframe src="https://ghbtns.com/github-btn.html?user=studio51&repo=gridlecss&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></li>
+              <li><iframe src="https://ghbtns.com/github-btn.html?user=studio51&repo=gridlecss&type=fork&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

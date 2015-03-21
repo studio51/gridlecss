@@ -57,19 +57,34 @@ html(lang="en")
                   span Spread the word
 
 
-    main
+    main.main
 
-      //- include templates/responsive-grid.jade
-      //- include templates/fluid-grid.jade
-      //- include templates/offsets-grid.jade
-      //- include templates/auto-grid.jade
-      //- include templates/nested-grid.jade
-      //- include templates/alignment-grid.jade
-      //- include templates/distribution-grid.jade
-      //- include templates/reversed-grid.jade
-      //- include templates/reordering-grid.jade
+      include templates/responsive-grid.jade
+      include templates/fluid-grid.jade
+      include templates/offsets-grid.jade
+      include templates/auto-grid.jade
+      include templates/nested-grid.jade
+      include templates/alignment-grid.jade
+      include templates/distribution-grid.jade
+      include templates/reversed-grid.jade
+      include templates/reordering-grid.jade
 
-      //- include templates/basic-grid.jade
-      //- include templates/sized-grid.jade
+      include templates/basic-grid.jade
+      include templates/sized-grid.jade
 
+    footer.footer
 
+      .grid
+        .row
+          .cell.cell-sm
+            p
+              | Project created and maintained by Studio51 © 2015
+
+          .cell.cell-sm-6
+            ul.list-inline
+              li
+                <iframe src="https://ghbtns.com/github-btn.html?user=studio51&repo=gridlecss&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+              li
+                <iframe src="https://ghbtns.com/github-btn.html?user=studio51&repo=gridlecss&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+              li
+                <iframe src="https://ghbtns.com/github-btn.html?user=studio51&repo=gridlecss&type=fork&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
