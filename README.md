@@ -1,14 +1,14 @@
 # GridleCSS
 
-I created GridleCSS for another side project I'm currently working on, booqmark.it .
-At first, with booqmark.it, I've used Bootstrap and it did a great job, untill I
-started designing the user interface, I found that with Bootstrap I had to
-overwrite too much in order to achieve a "flat" design and get rid of that
-'bootstrap' look that many websites have these days.
+We created GridleCSS for another side project we're currently working on,
+booqmark.it . At first, with booqmark.it, we've used Bootstrap and it did a
+great job, untill we started designing the user interface, we found that with
+Bootstrap, we had to overwrite too much in order to achieve a "flat" design and
+get rid of that 'bootstrap' look that many websites have these days.
 
-Current flexbox grids out there are good, but I've felt that they're not exactly
-what I need either. So what better way to get what you want than to create your
-own? Plus, learning flexbox was on my to-do list for too long!
+Current flexbox grids out there are good, but they're not exactly what we need
+either. So what better way to get what you want than to create your own? Plus,
+learning flexbox was on our to-do list for far too long!
 
 ## Features
 
@@ -17,7 +17,7 @@ own? Plus, learning flexbox was on my to-do list for too long!
 
 ## Components
 
-At the moment, there are no components, but I do plan to write a few ( feel free to create your own and add them here ) .
+At the moment, there are no components, but we do plan to create a few ( feel free to create your own and add them here ) .
 
 * Buttons
 * Tables
