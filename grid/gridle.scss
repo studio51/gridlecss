@@ -35,11 +35,7 @@
   margin-right: var(--grid-gutter-calc);
   margin-top: var(--grid-gutter-calc);
 
-  width: 100%; // meh :/
-
-  &.reverse {
-    @include flex-direction(row-reverse);
-  }
+  width: 100%;
 }
 
 %cell-styles {
@@ -109,3 +105,83 @@ $grid-breakpoints: xs sm md lg;
     }
   }
 }
+
+.cells {
+
+  &-start {
+    justify-content: flex-start;
+    text-align: start;
+  }
+
+    &-top {
+      align-items: flex-start;
+    }
+
+  &-center {
+    justify-content: center;
+    text-align: center;
+  }
+
+    &-middle {
+      align-items: center;
+    }
+
+  &-end {
+    justify-content: flex-end;
+    text-align: end;
+  }
+
+    &-bottom {
+      align-items: flex-end;
+    }
+
+  &-baseline {
+    align-items: baseline;
+  }
+}
+
+.cells {
+  &-around {
+    justify-content: space-around;
+  }
+
+  &-between {
+    justify-content: space-between;
+  }
+}
+
+.cell {
+  &-last {
+    order: 1;
+  }
+
+  &-first {
+    order: -1;
+  }
+
+  &-fifth {
+    order: 5;
+  }
+
+  &-tenth {
+    order: 10;
+  }
+
+  &-second {
+    order: 2;
+  }
+}
+
+  // .cell-top {
+  //   align-self: flex-start;
+  // }
+
+
+
+  // .cell-middle {
+  //   align-self: center;
+  // }
+
+  // .cell-bottom {
+  //   align-self: flex-end;
+  // }
