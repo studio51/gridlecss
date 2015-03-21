@@ -1,17 +1,53 @@
-article
+article#grid-basic
+article#grid-basic
 
   .grid
 
     header
-      h1 Basic Grids
-      p
-        | Dynamic grid, features, expands to fit the grid row by default,
-        | if no (viewport size) is specified, the cell will default to 100%
-        | of the row `.cell` will default to 100% unless a viewport size is
-        | specified `.cell-#`
+      h3 Basic Grid
 
-    section.grid-basic
+    section
 
       .row
-        .cell.cell-sm cell-sm
-        .cell.cell-sm cell-sm
+        .cell.cell-xs-3 cell-xs-3
+        .cell.cell-xs-6 cell-xs-6
+        .cell.cell-xs-3 cell-xs-3
+
+      .row
+        .cell.cell-xs-10 cell-xs-10
+        .cell.cell-xs auto
+
+      .row
+        .cell.cell-xs
+          | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos blanditiis odit et ratione, id laboriosam sapiente consequuntur laborum officia, impedit eligendi natus quisquam dolor in at aliquam, tempore maiores est.
+
+        .cell.cell-xs-10.hidden-xs
+          .row
+            .cell.cell-xs-4 cell-xs-4
+            .cell.cell-xs-4 cell-xs-4
+            .cell.cell-xs-4 cell-xs-4
+
+          .row
+            .cell.cell-xs-2 cell-xs-2
+            .cell.cell-xs-2 cell-xs-2
+            .cell.cell-xs-2 cell-xs-2
+            .cell.cell-xs-2 cell-xs-2
+            .cell.cell-xs-2 cell-xs-2
+            .cell.cell-xs-2 cell-xs-2
+
+          .row
+            .cell.cell-xs-1 cell-xs-1
+            .cell.cell-xs-1 cell-xs-1
+            .cell.cell-xs-1 cell-xs-1
+            .cell.cell-xs-1 cell-xs-1
+            .cell.cell-xs-1 cell-xs-1
+            .cell.cell-xs-1 cell-xs-1
+            .cell.cell-xs-1 cell-xs-1
+            .cell.cell-xs-1 cell-xs-1
+            .cell.cell-xs-1 cell-xs-1
+            .cell.cell-xs-1 cell-xs-1
+            .cell.cell-xs-1 cell-xs-1
+            .cell.cell-xs-1 cell-xs-1
+
+          .row
+            .cell.cell-xs-12 cell-xs-12

@@ -1,11 +1,41 @@
-article
+article#grid-auto
 
   .grid
 
     header
-      h1 Auto Width
+      h3 Auto Width
       p
         | Add any number of auto sizing cells to a row. Let the grid figure it
         | out
 
-    section#auto-grid
+    section
+
+      .row
+        .cell.cell-xs auto
+        .cell.cell-xs auto
+        .cell.cell-xs auto
+        .cell.cell-xs auto
+
+      .row
+        .cell.cell-xs-3 cell-xs-3
+        .cell.cell-xs auto
+        .cell.cell-xs-2 cell-xs-2
+        .cell.cell-xs auto
+
+      .row
+        .cell.no-fill
+          p
+            | You can also specify on which viewport the grid should figure it
+            | out whether or not it should apply it.
+
+      .row
+        .cell.cell-sm.cell-md-3
+          span.visible-sm auto
+          span.visible-md cell-md-3
+
+        .cell.cell-sm.cell-md auto
+        .cell.cell-sm.cell-md-2
+          span.visible-sm auto
+          span.visible-md cell-md-2
+
+        .cell.cell-sm.cell-md auto

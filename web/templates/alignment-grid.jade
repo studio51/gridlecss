@@ -1,26 +1,58 @@
-article
+article#grid-alignment
 
   .grid
 
     header
-      h1 Alignment
+      h3 Alignment
       p
-        | Add classes to align elements to the start, center or end of the row.
-        | As well as the top, bottom or center of a column.
+        | This defines the alignment along the main axis. It helps distribute
+        | extra free space left over when either all the flex items on a line
+        | are inflexible, or are flexible but have reached their maximum size.
 
-    section#nested-grid
+    section
 
       .row
-        .cell.cell-xs.cell-sm-4
-          .row.cell-start
-            .cell.cell-xs-2
+        .cell.cell-xs
+          .row.cells-start
+            .cell.cell-xs-7 start
 
-        .cell.cell-xs.cell-sm-4
-          .row.cell-center
-            .cell.cell-xs-2
+        .cell.cell-xs
+          .row.cells-center
+            .cell.cell-xs-7 center
 
-        .cell.cell-xs.cell-sm-4
-          .row.cell-end
-            .cell.cell-xs-2
+        .cell.cell-xs
+          .row.cells-end
+            .cell.cell-xs-7 end
 
-    //- alignment top, middle and bottom
+      .row
+        .cell.no-fill
+          p
+            | Similar to the above except you can specify the behaviour of how
+            | flex-items are laid out along the cross axis, instead of main axix,
+            | of the current line.
+
+      .row.demo-alignment
+        .cell.cell-xs
+          .row.cells-top
+            .cell top
+
+        .cell.cell-xs
+          .row.cells-middle
+            .cell middle
+
+        .cell.cell-xs
+          .row.cells-bottom
+            .cell bottom
+
+        .cell.cell-xs
+          .row
+            .cell stretch
+
+        .cell.cell-md-4
+          .row.cells-baseline
+            .cell.cell-xs.demo-baseline-1
+              span baseline
+            .cell.cell-xs.demo-baseline-2
+              span baseline
+            .cell.cell-xs
+              span baseline
