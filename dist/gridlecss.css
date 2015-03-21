@@ -33,7 +33,10 @@
             flex-direction: row-reverse; }
 
 .cell {
-  margin: 1px;
+  margin-bottom: 1px;
+  margin-left: 1px;
+  margin-right: 1px;
+  margin-top: 1px;
   width: 100%; }
   .cell.reverse {
     -webkit-box-orient: horizontal;

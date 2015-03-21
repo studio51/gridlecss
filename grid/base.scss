@@ -30,12 +30,10 @@
 }
 
 .cell {
-  // margin-bottom: var(--grid-gutter-calc);
-  // margin-left: var(--grid-gutter-calc);
-  // margin-right: var(--grid-gutter-calc);
-  // margin-top: var(--grid-gutter-calc);
-
-  margin: var(--grid-gutter-calc);
+  margin-bottom: var(--grid-gutter-calc);
+  margin-left: var(--grid-gutter-calc);
+  margin-right: var(--grid-gutter-calc);
+  margin-top: var(--grid-gutter-calc);
 
   width: 100%; // meh :/
 

@@ -32,7 +32,7 @@ ul {
 
 $global-margin: 10px;
 
-body {
+.body {
 
   @include box-sizing;
   @include flexbox;
@@ -43,7 +43,7 @@ body {
   min-height: 100vh;
 }
 
-header.header {
+.header {
   background-color: rgba(236, 236, 236, 0.4);
   padding-bottom: $global-margin;
   padding-top: $global-margin;
@@ -80,7 +80,29 @@ header.header {
   }
 }
 
-main.main {
+.nav-bar {
+  margin-bottom: $global-margin;
+  margin-top: $global-margin;
+
+  ul {
+    li {
+      margin: 2px;
+
+      a {
+        font-size: .6em;
+        text-align: center;
+        padding: 10px 0;
+        display: block;
+        border: 2px solid #efefef;
+        border-radius: 2px;
+        color: #999;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.main {
   @include flex(1);
 
   article {
@@ -113,7 +135,7 @@ main.main {
   }
 }
 
-footer.footer {
+.footer {
   background-color: rgba(236, 236, 236, 0.4);
   padding-bottom: $global-margin;
   padding-top: $global-margin;
@@ -151,7 +173,7 @@ footer.footer {
     @include flexbox;
 
     li {
-      @include flex;
+      @include flex(1);
 
       margin-left: 1px;
     }
