@@ -6,23 +6,23 @@
   display: flex;
 }
 
-@mixin flex($string: 0 1 auto) {
+@mixin flex( $string: 0 1 auto ) {
   flex: $string;
 }
 
-  @mixin flex-grow($value: 0) {
+  @mixin flex-grow( $value: 0 ) {
     flex-grow: $value;
   }
 
-  @mixin flex-shrink($value: 1) {
+  @mixin flex-shrink( $value: 1 ) {
     flex-shrink: $value;
   }
 
-  @mixin flex-basis($value: auto) {
+  @mixin flex-basis( $value: auto ) {
     flex-basis: $value;
   }
 
-@mixin flex-direction($direction: column) {
+@mixin flex-direction( $direction: column ) {
   flex-direction: $direction;
 }
 
@@ -38,8 +38,8 @@
 //
 // http://codepen.io/dsheiko/pen/KeLGy
 
-@function translate-media-condition($condition) {
-  $condMap: (
+@function translate-media-condition( $condition ) {
+  $map: (
     "screen": "only screen",
     "xs": "",
     "sm": " and (min-width: #{$grid-sm-min})",
@@ -47,7 +47,7 @@
     "lg": " and (min-width: #{$grid-lg-min})"
   );
 
-  @return map-get( $condMap, $condition );
+  @return map-get( $map, $condition );
 }
 
 @mixin media($args...) {
@@ -58,4 +58,31 @@
   }
 
   @media #{ $query }  { @content; }
+}
+
+// Generate Flex Alignments
+
+@mixin flex-alignments( $parent, $axis, $class ) {
+
+  @each $element in $class {
+
+    #{ $parent }-#{ nth( $element, 1 )} {
+
+      @if $axis == "x" and not $element == "center" {
+
+        justify-content: flex-#{ $element };
+        text-align: unquote( $element );
+
+      } @else if $element == "center" {
+
+        justify-content: center;
+        text-align: center;
+      }
+
+      @if $axis == "y" {
+
+        align-items: unquote(nth( $element, 2 ));
+      }
+    }
+  }
 }
