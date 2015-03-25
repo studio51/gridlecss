@@ -9,9 +9,19 @@
 
 .grid,
 .grid-fluid {
-  width: 100%;
+  @include box-sizing;
+
   margin-left: auto;
   margin-right: auto;
+  padding-left: 2em;
+  padding-right: 2em;
+  width: 100%;
+
+  @include media("screen", "sm") {
+
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .row {
@@ -30,16 +40,12 @@
 }
 
 .cell {
-  margin-bottom: var(--grid-gutter-calc);
   margin-left: var(--grid-gutter-calc);
   margin-right: var(--grid-gutter-calc);
-  margin-top: var(--grid-gutter-calc);
 
-  width: 100%;
+  &-first { order: -1 }
+  &-last { order: 1 }
 }
-
-  .cell-first { order: -1; }
-  .cell-last { order: 1; }
 
 %cell-styles {
   @include flexbox;

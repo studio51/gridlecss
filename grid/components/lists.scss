@@ -1,0 +1,16 @@
+@import "../config";
+@import "../mixins";
+
+// Please note that this helpers are not made for use in production, their
+// purpose is merely to showcase the framework.
+//
+
+ul.list-inline {
+  @include flexbox;
+
+  li {
+    @include flex(1);
+
+    margin-left: 1px;
+  }
+}

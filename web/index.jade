@@ -12,53 +12,53 @@ html(lang="en")
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Open+Sans+Condensed:300,700,300italic|Raleway:400,200,300,100,500,600,700,800,900')
-    link(rel='stylesheet', href='css/gridle.css')
+    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css')
     link(rel='stylesheet', href='css/theme.css')
 
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
-    //- script(src='js/twtfetch.js')
-    //- script(type='text/javascript').
-
-      //- var config1 = {
-      //-   "id": '578119473917349889',
-      //-   "domId": 'twtfeed',
-      //-   "maxTweets": 10,
-      //-   "enableLinks": true,
-      //-   "showTime": false,
-      //-   "showRetweet": false,
-      //-   "showInteraction": false,
-      //-   "showUser": false
-      //- };
-
-      //- twitterFetcher.fetch(config1);
 
   body.body
 
     header.header
 
       .grid
-        .row.cells-middle
-          .cell.cell-sm
-            h1.brand GridleCSS
-              span /ɡrɪd.lɛx/
+        .row.cells-xs-middle
+          .cell.cell-xs
+            .brand
+              h1 GridleCSS
+                span /ɡrɪd.lɛx/
 
-            p.moto Yet Another Flex Grid framework!
+              p Yet Another Flex Grid framework!
 
           .cell.cell-sm-6.cell-md-4.cell-lg-3
             ul.list-inline
               li
                 a.btn.btn-md.btn-git(href="https://github.com/studio51/framework-gridlecss")
                   i.fa.fa-github
-                  span View on Github
+                  span.hidden-xs View on Github
 
               li
                 a.btn.btn-md.btn-twt(href="https://twitter.com/intent/tweet?text=A new simple Flexbox Grid on the block! Check it out http://studio51.github.io/framework-gridlecss/ &via=studiofifty1")
                   i.fa.fa-twitter
-                  span Spread the word
+                  span.hidden-xs Spread the word
+
+        .row
+          .cell.cell-xs
+
+            .device
+              .outter-frame
+                .camera
+                .mic
+                .inner-frame
+
+                  include templates/twitter-feed.jade
+
+                .button
 
     main.main
 
       .grid
+
         nav.nav-bar
           ul.list-inline
             li
@@ -81,6 +81,8 @@ html(lang="en")
               a.btn.btn-sm(data-target='#grid-reversed') Reversed
             li
               a.btn.btn-sm(data-target='#grid-reordered') Reordering
+            li
+              a.btn.btn-sm(data-target='#grid-masonry') Masonry
 
       include templates/basic-grid.jade
       include templates/responsive-grid.jade
@@ -92,6 +94,7 @@ html(lang="en")
       include templates/distribution-grid.jade
       include templates/reversed-grid.jade
       include templates/reordering-grid.jade
+      include templates/masonry-grid.jade
 
     footer.footer
 
@@ -101,7 +104,7 @@ html(lang="en")
             p
               | Project created and maintained by Studio51 © 2015
 
-          .cell.cell-sm-6
+          .cell.cell-sm-6.hidden-xs
             ul.list-inline
               li
                 <iframe src="https://ghbtns.com/github-btn.html?user=studio51&repo=framework-gridlecss&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
@@ -110,5 +113,7 @@ html(lang="en")
               li
                 <iframe src="https://ghbtns.com/github-btn.html?user=studio51&repo=framework-gridlecss&type=fork&count=true&v=2" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
 
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js')
+
     script(src='js/main.js')

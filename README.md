@@ -1,6 +1,6 @@
-# GridleCSS
+# Gridle.CSS
 
-We created GridleCSS for another side project we're currently working on,
+We created Gridle.CSS for another side project we're currently working on,
 booqmark.it . At first, with booqmark.it, we've used Bootstrap and it did a
 great job, untill we started designing the user interface, we found that with
 Bootstrap, we had to overwrite too much in order to achieve a "flat" design and
