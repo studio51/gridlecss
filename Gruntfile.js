@@ -61,7 +61,7 @@ module.exports = function(grunt) {
         map: true,
         processors: [
           require('autoprefixer-core')({
-            browsers: ['last 7 versions', '> 5%'],
+            browsers: ['last 5 versions', '> 5%'],
           }).postcss
         ]
       },

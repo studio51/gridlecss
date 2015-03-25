@@ -1,0 +1,24 @@
+@import "../config";
+@import "../mixins";
+
+// Please note that this helpers are not made for use in production, their
+// purpose is merely to showcase the framework.
+//
+
+.btn {
+  border-radius: $theme-border--radius;
+  color: #fff;
+  display: block;
+
+  &-sm {
+    padding: $theme-spacing;
+  }
+
+  &-md {
+    padding: ( $theme-spacing / 4 ) ( $theme-spacing / 2 );
+  }
+
+  &-outline {
+    border: $theme-border--size solid transparent;
+  }
+}

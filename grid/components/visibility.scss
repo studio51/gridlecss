@@ -1,0 +1,27 @@
+@import "../config";
+@import "../mixins";
+
+// Please note that this helpers are not made for use in production, their
+// purpose is merely to showcase the framework.
+//
+
+@include media("screen", "xs") {
+  [class*="visible"] { display: none; }
+
+  .visible-xs { display: block; }
+  .hidden-xs { display: none; }
+}
+
+@media only screen and (min-width: 40.063em)  {
+  [class*="hidden"] { display: inline-block; }
+  [class*="visible"] { display: none; }
+
+  .visible-sm { display: block; }
+}
+
+@media only screen and (min-width: 64.063em) {
+  [class*="hidden"] { display: inline-block; }
+  [class*="visible"] { display: none; }
+
+  .visible-md { display: block; }
+}

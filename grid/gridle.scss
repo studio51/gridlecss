@@ -9,9 +9,19 @@
 
 .grid,
 .grid-fluid {
-  width: 100%;
+  @include box-sizing;
+
   margin-left: auto;
   margin-right: auto;
+  padding-left: 2em;
+  padding-right: 2em;
+  width: 100%;
+
+  @include media("screen", "sm") {
+
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .row {
@@ -30,12 +40,11 @@
 }
 
 .cell {
-  margin-bottom: var(--grid-gutter-calc);
   margin-left: var(--grid-gutter-calc);
   margin-right: var(--grid-gutter-calc);
-  margin-top: var(--grid-gutter-calc);
 
-  width: 100%;
+  &-first { order: -1 }
+  &-last { order: 1 }
 }
 
 %cell-styles {
@@ -47,7 +56,35 @@
   @include flex-shrink(0);
 }
 
-$grid-breakpoints: xs sm md lg;
+// TODO: Find a better way!
+//
+// This feels repetitive, by doing it twice, but so far, this is the only option
+// for not repeating the code inside each media query definition
+//
+// Distribution for around and between
+//
+$flex-distributions: "around" "between";
+
+@each $distribution-option in $flex-distributions {
+
+  .cells-#{ $distribution-option } {
+    justify-content: space-#{ $distribution-option };
+  }
+}
+
+// Alignments for main axis  (x): start, center, end
+// Alignments for cross axis (y): top, middle, bottom, baseline
+//
+// dependency: mixins.scss @media
+//
+$flex-alignments: "x" ("start" "center" "end"),
+                  "y" ("top"("flex-start"), "middle"("center"), "bottom"("flex-end"), "baseline"("baseline"));
+
+@each $align-option in $flex-alignments {
+  @include flex-alignments( ".cells", nth($align-option, 1), nth($align-option, 2));
+}
+
+$grid-breakpoints: "xs" "sm" "md" "lg";
 
 // For each breakpoint we have specified, we create a block
 //
@@ -88,6 +125,23 @@ $grid-breakpoints: xs sm md lg;
       @include flex-basis(0);
 
       max-width: 100%;
+
+      &-first { order: -1; }
+      &-last { order: 1; }
+    }
+
+    .cells-#{ $breakpoint } {
+
+      @each $distribution-option in $flex-distributions {
+
+        &-#{ $distribution-option } {
+          justify-content: space-#{ $distribution-option };
+        }
+      }
+
+      @each $align-option in $flex-alignments {
+        @include flex-alignments( "&", nth($align-option, 1), nth($align-option, 2));
+      }
     }
 
     @for $i from 1 through $grid-columns {
@@ -105,83 +159,3 @@ $grid-breakpoints: xs sm md lg;
     }
   }
 }
-
-.cells {
-
-  &-start {
-    justify-content: flex-start;
-    text-align: start;
-  }
-
-    &-top {
-      align-items: flex-start;
-    }
-
-  &-center {
-    justify-content: center;
-    text-align: center;
-  }
-
-    &-middle {
-      align-items: center;
-    }
-
-  &-end {
-    justify-content: flex-end;
-    text-align: end;
-  }
-
-    &-bottom {
-      align-items: flex-end;
-    }
-
-  &-baseline {
-    align-items: baseline;
-  }
-}
-
-.cells {
-  &-around {
-    justify-content: space-around;
-  }
-
-  &-between {
-    justify-content: space-between;
-  }
-}
-
-.cell {
-  &-last {
-    order: 1;
-  }
-
-  &-first {
-    order: -1;
-  }
-
-  &-fifth {
-    order: 5;
-  }
-
-  &-tenth {
-    order: 10;
-  }
-
-  &-second {
-    order: 2;
-  }
-}
-
-  // .cell-top {
-  //   align-self: flex-start;
-  // }
-
-
-
-  // .cell-middle {
-  //   align-self: center;
-  // }
-
-  // .cell-bottom {
-  //   align-self: flex-end;
-  // }

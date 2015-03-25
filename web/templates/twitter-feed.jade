@@ -1,1 +1,38 @@
-#twtfeed
+.twitter-feed__header
+  .row.cells-middle
+    .cell
+      .twitter-feed__icon
+        i.fa.fa-twitter
+
+    .cell.cell-xs
+      .twitter-feed__user
+        p @Studiofifty1
+
+    .cell
+      .twitter-feed__button
+        a.btn(href="", title="Follow Studio51 on Twitter") follow
+
+.row
+  .cell.cell-xs
+
+    .twitter-feed__feed
+
+      article
+
+        - for (var i = 0; i < 10; ++i)
+
+          .row
+            .cell.cell-xs-12
+              .row
+                .cell.cell-xs-2.cell-sm-1
+                  .twt_picture
+
+                .cell.cell-xs-10.cell-sm-11.no-fill
+                  .row
+                    .cell.cell-xs-6.twt_user
+
+                  .row
+                    .cell.cell-xs-4.twt_handle
+
+                  .row
+                    .cell.cell-xs.twt_tweet
