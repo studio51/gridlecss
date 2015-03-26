@@ -4,11 +4,18 @@ html{font-family:sans-serif;}body{margin:0;}article,aside,details,figcaption,fig
 @import "mixins";
 @import "gridle";
 
-// *,
-// *:before,
-// *:after {
-//   transition: all 1s ease-in-out;
-// }
+@import "components/lists";
+@import "components/visibility";
+
+@import "components/columns"; // wip
+
+*,
+*:before,
+*:after {
+  transition: all 1s ease-in-out;
+
+  @include box-sizing;
+}
 
 h1, h2, h3, h4, h5, h6,
 p {
@@ -58,123 +65,147 @@ $theme-spacing: 15px;
 $theme-border--size: 1px;
 $theme-border--radius: 2px;
 
-// Layout
 
-.body {
-  @include box-sizing;
-  @include flexbox;
-  @include flex-direction;
+//////////// Theme
+//
+// Header
+//
+//// Brand
+//// Devices
+//// Navigation
+//
 
+html, body {
+  height: 100%;
+}
+
+body {
   font-family: 'Raleway', sans-serif;
-  font-size: 70%;
-  min-height: 100vh;
+  font-size: 80%;
+}
 
-  @include media("screen", "sm") {
-    font-size: 100%;
+  .grid {
+    padding-left: $theme-spacing;
+    padding-right: $theme-spacing;
   }
-}
-
-.main {
-  @include flex(1);
-}
-
-.footer {
-  background-color: rgba(nth($mediumgray, 1), .2);
-  padding-bottom: $theme-spacing;
-  padding-top: $theme-spacing;
-}
 
 // Header
 
 .header {
-  background-color: rgba(nth($bluejeans, 2), 1);
+  background-color: rgba(nth($bluejeans, 1), 1);
   color: #fff;
-  height: 86vh;
+  height: 100%;
+}
 
-  .brand {
-    padding-bottom: $theme-spacing * 2;
-    padding-top: $theme-spacing * 2;
+.brand {
 
-    span {
-      font-weight: 300;
-      margin-left: $theme-spacing / 2;
-    }
+  &-pronunciation {
+    font-weight: 300;
+    margin-left: $theme-spacing / 2;
   }
+}
 
-  @include media("screen", "md") {
+.social-buttons {
 
-    .btn {
-      border: $theme-border--size solid #fff;
-      line-height: $theme-spacing * 2;
-      margin-left: $theme-spacing;
+  .btn {
+    color: #fff;
+    margin-left: $theme-spacing;
 
-      .fa {
-        display: inline-block;
-        font-size: .7em;
-        margin-right: $theme-spacing / 2;
-      }
+    .fa {
+      font-size: 1.2em;
     }
   }
 }
 
-// Navigation
+.nav-menu {
+  // flex: 1;
 
-.nav-bar {
-  height: 14vh;
-  padding-bottom: $theme-spacing;
-  padding-top: $theme-spacing;
 
-  .toggle-menu-button {
-    border: $theme-border--size solid rgba(nth($bluejeans, 2), 1);
-    display: inline-block;
-    border-radius: 100%;
+  &.open {
+    .toggle-menu-button {
 
-    img {
-      height: 3em;
-      padding: 15px;
     }
 
-    @include media("screen", "sm") {
-      display: none;
+    ul {
+      display: block;
     }
   }
 
-  .collapsible {
-  }
+
 
   ul {
-    border: $theme-border--size solid rgba(nth($bluejeans, 2), 1);
-    border-radius: $theme-border--radius;
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    font-size: 70%;
+    // height: 80%;
+    // overflow: auto;
 
     li {
-      margin: 0;
+      color: #000;
+      padding: $theme-spacing;
+      background: #fff;
+      border-bottom: 1px solid #efefef;
+      backface-visibility: visible;
+      animation-name: bounceInDown;
+      animation-fill-mode: both;
+      animation-duration: 1s;
 
-      a.btn {
-        border-radius: 0;
-        color: rgba(nth($bluejeans, 2), 1);
-        cursor: pointer;
-        font-size: .7em;
-        font-weight: 600;
-        text-align: center;
-        transition-duration: .3s;
+      // argh! TODO: Find a better way!
+      @for $i from 1 through 9 {
 
-        &:hover {
-          color: #fff;
-          background-color: rgba(nth($bluejeans, 2), 1);
+        &.animated-#{$i} {
+          animation-delay: unquote("0.#{$i}s");
         }
+      }
+
+      @for $i from 10 through 13 {
+
+        &.animated-#{$i} {
+          animation-delay: unquote("1.#{$i - 10}s");
+        }
+      }
+
+      a {
+        font-weight: 700;
+        color: rgba(nth($bluejeans, 2), 1);
       }
     }
   }
 }
+@keyframes bounceInDown {
+  0%, 60%, 75%, 90%, 100% {
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
 
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
 
-// Content
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
 
-@import "components/visibility";
-@import "components/lists";
-@import "components/buttons";
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  100% {
+    transform: none;
+  }
+}
 
 .device {
+  @include flexbox;
+  @include flex(1);
+  @include flex-direction;
 
   @mixin phone-styles($bwidth: 1px, $bradius: 3em) {
     background-color: #fff;
@@ -182,30 +213,50 @@ $theme-border--radius: 2px;
     border-bottom: none;
     border-top-left-radius: $bradius;
     border-top-right-radius: $bradius;
+
+    @include flex(1);
   }
 
   .outter-frame {
     @include phone-styles(2px, 3em);
 
+    @include flexbox;
+    @include flex-direction;
+
     padding-left: .7em;
     padding-right: .7em;
+
+    .toggle-menu-button {
+      border: $theme-border--size solid rgba(nth($bluejeans, 1), 1);
+      box-shadow: 0 0 0 2px #fff;
+      display: block;
+      margin: 0 auto;
+      width: 2.5em;
+      padding: $theme-spacing / 1.5;
+      border-radius: 100%;
+      position: absolute;
+      bottom: $theme-spacing;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      background: #fff;
+    }
   }
 
   .inner-frame {
     @include phone-styles(1px, .2em);
 
-    max-height: 68vh;
+    overflow: auto;
+    position: relative;
+    width: 100%;
   }
 
   .camera {
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
     background-color: #C9CDC0;
-    display: block;
     margin-top: 1em;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50em;
+    border-radius: 100%;
 
     @include media("screen", "sm") {
       display: none;
@@ -218,8 +269,6 @@ $theme-border--radius: 2px;
     background-color: #C9CDC0;
     margin-top: 1em;
     margin-bottom: 2.5em;
-    margin-left: auto;
-    margin-right: auto;
     border-radius: 50em;
     position: relative;
 
@@ -227,77 +276,77 @@ $theme-border--radius: 2px;
       content: '';
       position: absolute;
       left: -2em;
-      top: -3px;
+      top: -2px;
       width: 10px;
       height: 10px;
-      border-radius: 50em;
+      border-radius: 100%;
       background: #C9CDC0;
     }
   }
 }
 
-.twitter-feed {
+// .twitter-feed {
 
-  &__header {
-    padding-top: $theme-spacing;
-    padding-bottom: $theme-spacing;
-    padding-left: $theme-spacing;
-    padding-right: $theme-spacing;
-  }
+//   &__header {
+//     padding-top: $theme-spacing;
+//     padding-bottom: $theme-spacing;
+//     padding-left: $theme-spacing;
+//     padding-right: $theme-spacing;
+//   }
 
-  &__icon {
-    font-size: 3em;
-    color: rgba(#55acee, 1);
-  }
+//   &__icon {
+//     font-size: 3em;
+//     color: rgba(#55acee, 1);
+//   }
 
-  &__user {
-    color: #000;
-    font-size: 2em;
-    font-weight: 700;
-    margin-left: $theme-spacing / 2;
-  }
+//   &__user {
+//     color: #000;
+//     font-size: 2em;
+//     font-weight: 700;
+//     margin-left: $theme-spacing / 2;
+//   }
 
-  &__button {
-    background-color: rgba(#55acee, 1);
-    border-radius: 2px;
-    font-size: .7em;
-    padding: ( $theme-spacing / 2 ) $theme-spacing;
-  }
+//   &__button {
+//     background-color: rgba(#55acee, 1);
+//     border-radius: 2px;
+//     font-size: .7em;
+//     padding: ( $theme-spacing / 2 ) $theme-spacing;
+//   }
 
-  &__feed {
+//   &__feed {
 
-    .twt {
-      &_picture {
-        border-radius: 50em;
-        height: 5em;
-        background-color: #fff;
-      }
+//     .twt {
+//       &_picture {
+//         border-radius: 50em;
+//         height: 5em;
+//         background-color: #fff;
+//       }
 
-      &_user {
-        padding: 7px !important;
-        margin-bottom: 2px;
-      }
+//       &_user {
+//         padding: 7px !important;
+//         margin-bottom: 2px;
+//       }
 
-      &_handle {
-        padding: 7px !important;
-        margin-bottom: 2px;
-      }
+//       &_handle {
+//         padding: 7px !important;
+//         margin-bottom: 2px;
+//       }
 
-      &_tweet {
-        padding: 15px !important;
-        margin-bottom: 2px;
-      }
-    }
+//       &_tweet {
+//         padding: 15px !important;
+//         margin-bottom: 2px;
+//       }
+//     }
 
-    article {
-      padding: 0;
+//     article {
+//       padding: 0;
 
-      > .row {
-        margin-bottom: 3px;
-      }
-    }
-  }
-}
+//       > .row {
+//         margin-bottom: 3px;
+//       }
+//     }
+//   }
+// }
 
 // .source {
 //   background-color: #fff;
@@ -318,69 +367,69 @@ $theme-border--radius: 2px;
 
 // // Hacks for demonstration purposes
 
-.demo-alignment .row {
-  height: 10em;
+// .demo-alignment .row {
+//   height: 10em;
 
-  span {
-    border-bottom: 1px dotted rgba(0, 0, 0, .4);
-    padding: 3px 0;
-  }
-}
+//   span {
+//     border-bottom: 1px dotted rgba(0, 0, 0, .4);
+//     padding: 3px 0;
+//   }
+// }
 
-.demo-baseline {
-  &-1 {
-    height: 5em;
+// .demo-baseline {
+//   &-1 {
+//     height: 5em;
 
-    span {
-      font-size: 3em;
-    }
-  }
+//     span {
+//       font-size: 3em;
+//     }
+//   }
 
-  &-2 {
-    height: 9em;
+//   &-2 {
+//     height: 9em;
 
-    span {
-      font-size: 4.5em;
-    }
-  }
-}
+//     span {
+//       font-size: 4.5em;
+//     }
+//   }
+// }
 
 
-  article {
-    padding-top: $theme-spacing * 2;
-    padding-bottom: $theme-spacing * 2;
+//   article {
+//     padding-top: $theme-spacing * 2;
+//     padding-bottom: $theme-spacing * 2;
 
-    header {
-      p {
-        margin-top: $theme-spacing / 2;
-      }
-    }
+//     header {
+//       p {
+//         margin-top: $theme-spacing / 2;
+//       }
+//     }
 
-    section {
-      margin-top: $theme-spacing;
-    }
+//     section {
+//       margin-top: $theme-spacing;
+//     }
 
-    .cell:not(.no-fill) {
-      background-color: rgba(nth($mediumgray, 1), .2);
-      padding: 10px;
-      font-size: .5em;
-    }
+//     .cell:not(.no-fill) {
+//       background-color: rgba(nth($mediumgray, 1), .2);
+//       padding: 10px;
+//       font-size: .5em;
+//     }
 
-    .cell.no-fill {
-      p {
-        margin-top: $theme-spacing;
-      }
+//     .cell.no-fill {
+//       p {
+//         margin-top: $theme-spacing;
+//       }
 
-      p, .alert {
-        margin-bottom: $theme-spacing;
-      }
-    }
+//       p, .alert {
+//         margin-bottom: $theme-spacing;
+//       }
+//     }
 
-    &:nth-child(even) {
-      background-color: rgba(nth($mediumgray, 1), .2);
+//     &:nth-child(even) {
+//       background-color: rgba(nth($mediumgray, 1), .2);
 
-      .cell:not(.no-fill) {
-        background-color: rgba(#fff, 1);
-      }
-    }
-  }
+//       .cell:not(.no-fill) {
+//         background-color: rgba(#fff, 1);
+//       }
+//     }
+//   }

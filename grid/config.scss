@@ -8,6 +8,10 @@ $grid-sm-min: 40.063em;
 $grid-md-min: 64.063em;
 $grid-lg-min: 90.063em;
 
+// $grid-sm-min: 768px;
+// $grid-md-min: 982px;
+// $grid-lg-min: 1200px;
+
 :root {
   --grid-sm-container: calc( #{$grid-sm-min} / 1.1);
   --grid-md-container: calc( #{$grid-md-min} / 1.1);

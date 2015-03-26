@@ -21,85 +21,85 @@ html(lang="en")
 
     header.header
 
-      .grid
-        .row.cells-middle
+      .grid.grid-columns
+
+        .row.row-whole.cells-middle
           .cell.cell-xs
+
             .brand
-              h1 GridleCSS
-                span /ɡrɪd.lɛx/
+              h1.brand-name GridleCSS
+                span.brand-pronunciation /ɡrɪd.lɛx/
 
-              p Yet Another Flex Grid framework!
+              p.brand-motto Yet Another Flex Grid framework!
 
-          .cell.cell-md-5.cell-lg-4
-            ul.list-inline
+          .cell.cell-xs-3.cell-sm-7
+
+            ul.list-inline.social-buttons
               li
                 a.btn.btn-md.btn-git(href="https://github.com/studio51/framework-gridlecss")
                   i.fa.fa-github
-                  span.hidden-xs.hidden-sm View on Github
+                  span.hidden-xs View on Github
 
               li
                 a.btn.btn-md.btn-twt(href="https://twitter.com/intent/tweet?text=A new simple Flexbox Grid on the block! Check it out http://studio51.github.io/framework-gridlecss/ &via=studiofifty1")
                   i.fa.fa-twitter
-                  span.hidden-xs.hidden-sm Spread the word
+                  span.hidden-xs Spread the word
 
-        .row
+        .row.row-auto
           .cell.cell-xs
 
             .device
-              .outter-frame
+              .outter-frame.cells-middle
+
+                a.toggle-menu-button(href="#")
+                  img(src="images/menu-burger.svg")
+
                 .camera
                 .mic
                 .inner-frame
 
-                  include templates/twitter-feed.jade
+                  //- include templates/twitter-feed.jade
 
-                .button
+                  nav.nav-menu
+
+                    .collapsible
+                      ul
+                        li.animated-1
+                          a.btn.btn-sm(href="#", data-target='#grid-basic') Basic
+                        li.animated-2
+                          a.btn.btn-sm(href="#", data-target='#grid-responsive') Responsive
+                        li.animated-3
+                          a.btn.btn-sm(href="#", data-target='#grid-fluid') Fluid
+                        li.animated-4
+                          a.btn.btn-sm(href="#", data-target='#grid-offset') Offsets
+                        li.animated-5
+                          a.btn.btn-sm(href="#", data-target='#grid-nested') Nested
+                        li.animated-6
+                          a.btn.btn-sm(href="#", data-target='#grid-auto') Auto
+                        li.animated-7
+                          a.btn.btn-sm(href="#", data-target='#grid-alignment') Alignments
+                        li.animated-8
+                          a.btn.btn-sm(href="#", data-target='#grid-distribution') Distribution
+                        li.animated-9
+                          a.btn.btn-sm(href="#", data-target='#grid-reversed') Reversed
+                        li.animated-10
+                          a.btn.btn-sm(href="#", data-target='#grid-reordered') Reordering
+                        li.animated-11
+                          a.btn.btn-sm(href="#", data-target='#grid-masonry') Masonry
 
     main.main
 
-      .grid
-
-        nav.nav-bar.cells-center
-
-          a#toggle-menu.toggle-menu-button(href="#")
-            img(src="images/menu-burger.svg")
-
-          .collapsible
-            ul.list-inline
-              li
-                a.btn.btn-sm(data-target='#grid-basic') Basic
-              li
-                a.btn.btn-sm(data-target='#grid-responsive') Responsive
-              li
-                a.btn.btn-sm(data-target='#grid-fluid') Fluid
-              li
-                a.btn.btn-sm(data-target='#grid-offset') Offsets
-              li
-                a.btn.btn-sm(data-target='#grid-nested') Nested
-              li
-                a.btn.btn-sm(data-target='#grid-auto') Auto
-              li
-                a.btn.btn-sm(data-target='#grid-alignment') Alignments
-              li
-                a.btn.btn-sm(data-target='#grid-distribution') Distribution
-              li
-                a.btn.btn-sm(data-target='#grid-reversed') Reversed
-              li
-                a.btn.btn-sm(data-target='#grid-reordered') Reordering
-              li
-                a.btn.btn-sm(data-target='#grid-masonry') Masonry
-
-      include templates/basic-grid.jade
-      include templates/responsive-grid.jade
-      include templates/fluid-grid.jade
-      include templates/offsets-grid.jade
-      include templates/nested-grid.jade
-      include templates/auto-grid.jade
-      include templates/alignment-grid.jade
-      include templates/distribution-grid.jade
-      include templates/reversed-grid.jade
-      include templates/reordering-grid.jade
-      include templates/masonry-grid.jade
+      //- include templates/basic-grid.jade
+      //- include templates/responsive-grid.jade
+      //- include templates/fluid-grid.jade
+      //- include templates/offsets-grid.jade
+      //- include templates/nested-grid.jade
+      //- include templates/auto-grid.jade
+      //- include templates/alignment-grid.jade
+      //- include templates/distribution-grid.jade
+      //- include templates/reversed-grid.jade
+      //- include templates/reordering-grid.jade
+      //- include templates/masonry-grid.jade
 
     footer.footer
 
