@@ -21,17 +21,20 @@ html(lang="en")
 
     header.header
 
-      .grid
-        .row.cells-xs-middle
+      .grid.grid-columns
+
+        .row.row-whole.cells-middle
           .cell.cell-xs
+
             .brand
-              h1 GridleCSS
-                span /ɡrɪd.lɛx/
+              h1.brand-name GridleCSS
+                span.brand-pronunciation /ɡrɪd.lɛx/
 
-              p Yet Another Flex Grid framework!
+              p.brand-motto Yet Another Flex Grid framework!
 
-          .cell.cell-sm-6.cell-md-4.cell-lg-3
-            ul.list-inline
+          .cell.cell-xs-3.cell-sm-7
+
+            ul.list-inline.social-buttons
               li
                 a.btn.btn-md.btn-git(href="https://github.com/studio51/framework-gridlecss")
                   i.fa.fa-github
@@ -42,47 +45,31 @@ html(lang="en")
                   i.fa.fa-twitter
                   span.hidden-xs Spread the word
 
-        .row
+        .row.row-auto
           .cell.cell-xs
 
             .device
-              .outter-frame
+              .outter-frame.cells-middle
+
+                a#toggle-menu.burger-button(href="#", role="show-menu")
+                  img(src="images/menu-burger.svg", title="Burger menu button", alt="Show Menu")
+
                 .camera
                 .mic
                 .inner-frame
 
-                  include templates/twitter-feed.jade
+                  nav.nav-menu(role="navigation")
+                    ul
 
-                .button
+                      - var nav_items = ['basic', 'responsive', 'fluid', 'offset', 'nested', 'auto', 'alignment', 'distribution', 'reversed', 'reordered', 'masonry']
+                      - var i = 1
+
+                      each val in nav_items
+
+                        li(class="animated-#{i++}")
+                          a.btn.btn-sm(href="#", data-target="#grid-#{val}") #{val}
 
     main.main
-
-      .grid
-
-        nav.nav-bar
-          ul.list-inline
-            li
-              a.btn.btn-sm(data-target='#grid-basic') Basic
-            li
-              a.btn.btn-sm(data-target='#grid-responsive') Responsive
-            li
-              a.btn.btn-sm(data-target='#grid-fluid') Fluid
-            li
-              a.btn.btn-sm(data-target='#grid-offset') Offsets
-            li
-              a.btn.btn-sm(data-target='#grid-nested') Nested
-            li
-              a.btn.btn-sm(data-target='#grid-auto') Auto
-            li
-              a.btn.btn-sm(data-target='#grid-alignment') Alignments
-            li
-              a.btn.btn-sm(data-target='#grid-distribution') Distribution
-            li
-              a.btn.btn-sm(data-target='#grid-reversed') Reversed
-            li
-              a.btn.btn-sm(data-target='#grid-reordered') Reordering
-            li
-              a.btn.btn-sm(data-target='#grid-masonry') Masonry
 
       include templates/basic-grid.jade
       include templates/responsive-grid.jade
@@ -100,18 +87,16 @@ html(lang="en")
 
       .grid
         .row
-          .cell.cell-sm
+          .cell.cell-xs
             p
-              | Project created and maintained by Studio51 © 2015
+              | Crafted with &#9829; by &nbsp;
+              a(href="//twitter.com/pacMakaveli90") Vlad Radulescu
+              | &nbsp; © 2015 and maintained by &nbsp;
+              a(href="//creative-studio51.co.uk") Studio51
 
-          .cell.cell-sm-6.hidden-xs
-            ul.list-inline
-              li
-                <iframe src="https://ghbtns.com/github-btn.html?user=studio51&repo=framework-gridlecss&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
-              li
-                <iframe src="https://ghbtns.com/github-btn.html?user=studio51&repo=framework-gridlecss&type=star&count=true&v=2" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
-              li
-                <iframe src="https://ghbtns.com/github-btn.html?user=studio51&repo=framework-gridlecss&type=fork&count=true&v=2" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+          .cell.cell-xs-1.cells-bottom
+            p
+              | v1.0.0
 
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js')
