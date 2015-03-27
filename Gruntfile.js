@@ -19,7 +19,7 @@ module.exports = function(grunt) {
       },
       dist: {
         options: {
-          base: ['web', '']
+          base: ['web/dist/']
         }
       }
     },
@@ -37,8 +37,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'dist/gridle.css': 'grid/gridle.scss',
-          'web/css/gridle.css': 'grid/gridle.scss',
-          'web/css/theme.css': 'grid/theme.scss'
+          'web/dist/css/theme.css': 'web/css/theme.scss'
         }
       }
     },
@@ -50,8 +49,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'dist/gridle.css': 'dist/gridle.css',
-          'web/css/gridle.css': 'web/css/gridle.css',
-          'web/css/theme.css': 'web/css/theme.css'
+          'web/dist/css/theme.css': 'web/dist/css/theme.css'
         }
       }
     },
@@ -67,14 +65,36 @@ module.exports = function(grunt) {
       },
 
       dist: {
-        src: ['dist/gridle.css', 'web/css/theme.css']
+        src: ['dist/gridle.css', 'web/dist/css/theme.css']
+      }
+    },
+
+    cssmin: {
+      options: {
+        shorthandCompacting: false,
+        roundingPrecision: -1
+      },
+
+      target: {
+        files: {
+          'dist/gridle.min.css': ['dist/gridle.css'],
+          'web/dist/css/theme.min.css': ['web/dist/css/theme.css'],
+        }
+      }
+    },
+
+    uglify: {
+      dist: {
+        files: {
+          'web/dist/js/main.min.js': ['web/js/main.js']
+        }
       }
     },
 
     jade: {
       html: {
         files: {
-          'web/': ['web/*.jade']
+          'web/dist/': ['web/*.jade']
         },
         options: {
           client: false,
@@ -88,7 +108,7 @@ module.exports = function(grunt) {
         dot: true
       },
       dist: {
-        src: ['dist/']
+        src: ['dist/', 'web/dist/']
       }
     },
 
@@ -100,18 +120,22 @@ module.exports = function(grunt) {
         files: 'Gruntfile.js'
       },
       sass: {
-        files: 'grid/*.scss',
-        tasks: ['sass', 'postcss', 'cssnext']
+        files: ['grid/*.scss', 'web/css/**/*.scss'],
+        tasks: ['sass', 'postcss', 'cssnext', 'cssmin']
+      },
+      uglify: {
+        files: ['web/js/**/*.js'],
+        tasks: ['uglify']
       },
       jade: {
-        files: ['web/*.jade', 'web/templates/*.jade'],
+        files: ['web/**/*.jade'],
         tasks: ['jade']
       }
     }
   });
 
   grunt.registerTask('serve', [
-    'clean',
+    // 'clean',
     'connect',
     'open',
     'watch'
