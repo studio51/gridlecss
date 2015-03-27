@@ -51,55 +51,37 @@ html(lang="en")
             .device
               .outter-frame.cells-middle
 
-                a.toggle-menu-button(href="#")
-                  img(src="images/menu-burger.svg")
+                a#toggle-menu.burger-button(href="#", role="show-menu")
+                  img(src="images/menu-burger.svg", title="Burger menu button", alt="Show Menu")
 
                 .camera
                 .mic
                 .inner-frame
 
-                  //- include templates/twitter-feed.jade
+                  nav.nav-menu(role="navigation")
+                    ul
 
-                  nav.nav-menu
+                      - var nav_items = ['basic', 'responsive', 'fluid', 'offset', 'nested', 'auto', 'alignment', 'distribution', 'reversed', 'reordered', 'masonry']
+                      - var i = 1
 
-                    .collapsible
-                      ul
-                        li.animated-1
-                          a.btn.btn-sm(href="#", data-target='#grid-basic') Basic
-                        li.animated-2
-                          a.btn.btn-sm(href="#", data-target='#grid-responsive') Responsive
-                        li.animated-3
-                          a.btn.btn-sm(href="#", data-target='#grid-fluid') Fluid
-                        li.animated-4
-                          a.btn.btn-sm(href="#", data-target='#grid-offset') Offsets
-                        li.animated-5
-                          a.btn.btn-sm(href="#", data-target='#grid-nested') Nested
-                        li.animated-6
-                          a.btn.btn-sm(href="#", data-target='#grid-auto') Auto
-                        li.animated-7
-                          a.btn.btn-sm(href="#", data-target='#grid-alignment') Alignments
-                        li.animated-8
-                          a.btn.btn-sm(href="#", data-target='#grid-distribution') Distribution
-                        li.animated-9
-                          a.btn.btn-sm(href="#", data-target='#grid-reversed') Reversed
-                        li.animated-10
-                          a.btn.btn-sm(href="#", data-target='#grid-reordered') Reordering
-                        li.animated-11
-                          a.btn.btn-sm(href="#", data-target='#grid-masonry') Masonry
+                      each val in nav_items
+
+                        li(class="animated-#{i++}")
+                          a.btn.btn-sm(href="#", data-target="#grid-#{val}") #{val}
 
     main.main
 
-      //- include templates/basic-grid.jade
-      //- include templates/responsive-grid.jade
-      //- include templates/fluid-grid.jade
-      //- include templates/offsets-grid.jade
-      //- include templates/nested-grid.jade
-      //- include templates/auto-grid.jade
-      //- include templates/alignment-grid.jade
-      //- include templates/distribution-grid.jade
-      //- include templates/reversed-grid.jade
-      //- include templates/reordering-grid.jade
-      //- include templates/masonry-grid.jade
+      include templates/basic-grid.jade
+      include templates/responsive-grid.jade
+      include templates/fluid-grid.jade
+      include templates/offsets-grid.jade
+      include templates/nested-grid.jade
+      include templates/auto-grid.jade
+      include templates/alignment-grid.jade
+      include templates/distribution-grid.jade
+      include templates/reversed-grid.jade
+      include templates/reordering-grid.jade
+      include templates/masonry-grid.jade
 
     footer.footer
 
@@ -107,10 +89,14 @@ html(lang="en")
         .row
           .cell.cell-xs
             p
-              | Crafted with &#9829; by
+              | Crafted with &#9829; by &nbsp;
               a(href="//twitter.com/pacMakaveli90") Vlad Radulescu
-              | © 2015 and maintained by
+              | &nbsp; © 2015 and maintained by &nbsp;
               a(href="//creative-studio51.co.uk") Studio51
+
+          .cell.cell-xs-1.cells-bottom
+            p
+              | v1.0.0
 
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js')

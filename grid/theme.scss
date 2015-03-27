@@ -82,6 +82,10 @@ html, body {
 body {
   font-family: 'Raleway', sans-serif;
   font-size: 80%;
+
+  @include media("screen", "sm") {
+    font-size: 100%;
+  }
 }
 
   .grid {
@@ -92,9 +96,9 @@ body {
 // Header
 
 .header {
-  background-color: rgba(nth($bluejeans, 1), 1);
   color: #fff;
   height: 100%;
+  background-color: rgba(nth($bluejeans, 1), 1);
 }
 
 .brand {
@@ -117,173 +121,8 @@ body {
   }
 }
 
-.nav-menu {
-  // flex: 1;
-
-
-  &.open {
-    .toggle-menu-button {
-
-    }
-
-    ul {
-      display: block;
-    }
-  }
-
-
-
-  ul {
-    display: none;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    font-size: 70%;
-    // height: 80%;
-    // overflow: auto;
-
-    li {
-      color: #000;
-      padding: $theme-spacing;
-      background: #fff;
-      border-bottom: 1px solid #efefef;
-      backface-visibility: visible;
-      animation-name: bounceInDown;
-      animation-fill-mode: both;
-      animation-duration: 1s;
-
-      // argh! TODO: Find a better way!
-      @for $i from 1 through 9 {
-
-        &.animated-#{$i} {
-          animation-delay: unquote("0.#{$i}s");
-        }
-      }
-
-      @for $i from 10 through 13 {
-
-        &.animated-#{$i} {
-          animation-delay: unquote("1.#{$i - 10}s");
-        }
-      }
-
-      a {
-        font-weight: 700;
-        color: rgba(nth($bluejeans, 2), 1);
-      }
-    }
-  }
-}
-@keyframes bounceInDown {
-  0%, 60%, 75%, 90%, 100% {
-    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  }
-
-  0% {
-    opacity: 0;
-    transform: translate3d(0, -3000px, 0);
-  }
-
-  60% {
-    opacity: 1;
-    transform: translate3d(0, 25px, 0);
-  }
-
-  75% {
-    transform: translate3d(0, -10px, 0);
-  }
-
-  90% {
-    transform: translate3d(0, 5px, 0);
-  }
-
-  100% {
-    transform: none;
-  }
-}
-
-.device {
-  @include flexbox;
-  @include flex(1);
-  @include flex-direction;
-
-  @mixin phone-styles($bwidth: 1px, $bradius: 3em) {
-    background-color: #fff;
-    border: $bwidth solid rgba(#C9CDC0, 1);
-    border-bottom: none;
-    border-top-left-radius: $bradius;
-    border-top-right-radius: $bradius;
-
-    @include flex(1);
-  }
-
-  .outter-frame {
-    @include phone-styles(2px, 3em);
-
-    @include flexbox;
-    @include flex-direction;
-
-    padding-left: .7em;
-    padding-right: .7em;
-
-    .toggle-menu-button {
-      border: $theme-border--size solid rgba(nth($bluejeans, 1), 1);
-      box-shadow: 0 0 0 2px #fff;
-      display: block;
-      margin: 0 auto;
-      width: 2.5em;
-      padding: $theme-spacing / 1.5;
-      border-radius: 100%;
-      position: absolute;
-      bottom: $theme-spacing;
-      left: 0;
-      right: 0;
-      z-index: 1;
-      background: #fff;
-    }
-  }
-
-  .inner-frame {
-    @include phone-styles(1px, .2em);
-
-    overflow: auto;
-    position: relative;
-    width: 100%;
-  }
-
-  .camera {
-    width: 6px;
-    height: 6px;
-    background-color: #C9CDC0;
-    margin-top: 1em;
-    border-radius: 100%;
-
-    @include media("screen", "sm") {
-      display: none;
-    }
-  }
-
-  .mic {
-    width: 45px;
-    height: 5px;
-    background-color: #C9CDC0;
-    margin-top: 1em;
-    margin-bottom: 2.5em;
-    border-radius: 50em;
-    position: relative;
-
-    &:before {
-      content: '';
-      position: absolute;
-      left: -2em;
-      top: -2px;
-      width: 10px;
-      height: 10px;
-      border-radius: 100%;
-      background: #C9CDC0;
-    }
-  }
-}
+@import "components/navigation";
+@import "components/device";
 
 // .twitter-feed {
 
@@ -395,41 +234,55 @@ body {
 // }
 
 
-//   article {
-//     padding-top: $theme-spacing * 2;
-//     padding-bottom: $theme-spacing * 2;
+.footer {
+  background-color: #efefef;
+  padding-bottom: $theme-spacing * 2;
+  padding-top: $theme-spacing * 2;
 
-//     header {
-//       p {
-//         margin-top: $theme-spacing / 2;
-//       }
-//     }
+  a {
+    font-size: 1em;
+  }
+}
 
-//     section {
-//       margin-top: $theme-spacing;
-//     }
+  article {
+    padding-top: $theme-spacing * 2;
+    padding-bottom: $theme-spacing * 2;
 
-//     .cell:not(.no-fill) {
-//       background-color: rgba(nth($mediumgray, 1), .2);
-//       padding: 10px;
-//       font-size: .5em;
-//     }
+.row {
+  margin-top: 2px;
+}
 
-//     .cell.no-fill {
-//       p {
-//         margin-top: $theme-spacing;
-//       }
+    header {
+      p {
+        margin-top: $theme-spacing / 2;
+      }
+    }
 
-//       p, .alert {
-//         margin-bottom: $theme-spacing;
-//       }
-//     }
+    section {
+      margin-top: $theme-spacing;
+    }
 
-//     &:nth-child(even) {
-//       background-color: rgba(nth($mediumgray, 1), .2);
+    .cell:not(.no-fill) {
+      background-color: rgba(nth($mediumgray, 1), .2);
+      padding: 10px;
+      font-size: .5em;
+    }
 
-//       .cell:not(.no-fill) {
-//         background-color: rgba(#fff, 1);
-//       }
-//     }
-//   }
+    .cell.no-fill {
+      p {
+        margin-top: $theme-spacing;
+      }
+
+      p, .alert {
+        margin-bottom: $theme-spacing;
+      }
+    }
+
+    &:nth-child(even) {
+      background-color: rgba(nth($mediumgray, 1), .2);
+
+      .cell:not(.no-fill) {
+        background-color: rgba(#fff, 1);
+      }
+    }
+  }
