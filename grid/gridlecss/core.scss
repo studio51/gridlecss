@@ -1,6 +1,3 @@
-@import "config";
-@import "mixins";
-
 *,
 *:before,
 *:after {
@@ -23,17 +20,12 @@
   @include flex-direction(row);
   @include flex-wrap;
 
-  margin-left: -( var(--grid-gutter-calc));
-  margin-right: -( var(--grid-gutter-calc));
-
   &.reverse {
     @include flex-direction(row-reverse);
   }
 }
 
 .cell {
-  margin-left: var(--grid-gutter-calc);
-  margin-right: var(--grid-gutter-calc);
 
   &-first { order: -1 }
   &-last { order: 1 }
@@ -48,46 +40,32 @@
   @include flex-shrink(0);
 }
 
-// TODO: Find a better way!
-//
-// This feels repetitive, by doing it twice, but so far, this is the only option
-// for not repeating the code inside each media query definition
-//
 // Distribution for around and between
 //
-$flex-distributions: "around" "between";
+@if $flex-distribution {
+  @each $distribution-option in $flex-distributions {
 
-@each $distribution-option in $flex-distributions {
-
-  .cells-#{ $distribution-option } {
-    justify-content: space-#{ $distribution-option };
+    .cells-#{ $distribution-option } {
+      justify-content: space-#{ $distribution-option };
+    }
   }
 }
 
 // Alignments for main axis  (x): start, center, end
 // Alignments for cross axis (y): top, middle, bottom, baseline
 //
-// dependency: mixins.scss @media
-//
-$flex-alignments: "x" ("start" "center" "end"),
-                  "y" ("top"("flex-start"), "middle"("center"), "bottom"("flex-end"), "baseline"("baseline"));
-
-@each $align-option in $flex-alignments {
-  @include flex-alignments( ".cells", nth($align-option, 1), nth($align-option, 2));
+@if $flex-alignment {
+  @each $align-option in $flex-alignments {
+    @include flex-alignments( ".cells", nth($align-option, 1), nth($align-option, 2));
+  }
 }
 
-$grid-breakpoints: "xs" "sm" "md" "lg";
-
-// For each breakpoint we have specified, we create a block
-//
-// dependency: $grid-breakpoints
+// Create the Grid
 //
 @each $breakpoint in $grid-breakpoints {
 
   // Starting with the first ( not 0 ) breakpoint, we create media queries for
   // responsiveness
-  //
-  // dependency: mixins.scss @media
   //
   @include media("screen", $breakpoint) {
 
@@ -124,15 +102,23 @@ $grid-breakpoints: "xs" "sm" "md" "lg";
 
     .cells-#{ $breakpoint } {
 
-      @each $distribution-option in $flex-distributions {
+      // Distribution for around and between for each $breakpoint defined
+      //
+      @if $flex-distribution {
+        @each $distribution-option in $flex-distributions {
 
-        &-#{ $distribution-option } {
-          justify-content: space-#{ $distribution-option };
+          &-#{ $distribution-option } {
+            justify-content: space-#{ $distribution-option };
+          }
         }
       }
 
-      @each $align-option in $flex-alignments {
-        @include flex-alignments( "&", nth($align-option, 1), nth($align-option, 2));
+      // Alignments for each $breakpoint defined
+      //
+      @if $flex-alignment {
+        @each $align-option in $flex-alignments {
+          @include flex-alignments( "&", nth($align-option, 1), nth($align-option, 2));
+        }
       }
     }
 

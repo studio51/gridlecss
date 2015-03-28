@@ -1,0 +1,60 @@
+//////////////////////////////////////
+//
+// Author: Vladut Radulescu @ Studio51
+// MIT LICENSE © 2015 Studio51
+//
+
+// The number of columns our grid will have
+//
+// GridleCSS supports up to 24 columns. Beyond that, it's up to you to make it
+// work
+//
+$grid-columns: 12;
+// $grid-columns: 24;
+
+// TODO v1.2: Create a single variable out of $grid-breakpoints and $grid-*-min
+
+// Grid breakpoints
+//
+$grid-breakpoints: "xs" "sm" "md" "lg";
+
+// Grid breakpoints
+// If you want to add more, just make sure you respect the naming convention:
+//
+// // $grid-#{key}-min: #{value};
+// //
+// // // key must be present in $grid-breakpoints ^;
+// // // value is the px/em value;
+//
+// $grid-sm-min: 40.063em;
+// $grid-md-min: 64.063em;
+// $grid-lg-min: 90.063em;
+//
+$grid-sm-min: 768px;
+$grid-md-min: 982px;
+$grid-lg-min: 1200px;
+
+// Distribution for around and between
+//
+$flex-distribution: true;
+$flex-distributions: "around" "between";
+
+// Alignments for main axis  (x): start, center, end
+// Alignments for cross axis (y): top, middle, bottom, baseline
+//
+$flex-alignment: true;
+$flex-alignments: "x" ("start" "center" "end"),
+                  "y" ("top"("flex-start"), "middle"("center"), "bottom"("flex-end"), "baseline"("baseline"));
+
+// Configuration
+//
+:root {
+  --grid-sm-container: calc( #{$grid-sm-min} / 1.1);
+  --grid-md-container: calc( #{$grid-md-min} / 1.1);
+  --grid-lg-container: calc( #{$grid-lg-min} / 1.1);
+  --grid-gutter: 0;
+  --grid-gutter-calc: calc( var(--grid-gutter) / 2);
+}
+
+@import "gridlecss/mixins";
+@import "gridlecss/core";
