@@ -1,28 +1,32 @@
 # GridleCSS
 
-We created GridleCSS for another side project we're currently working on, which
-you should totally check! :D
-
-[Booqmark.it]
+We created GridleCSS for [Booqmark.it], a side project we're currently working
+on. You should totally check it! :D
 
 With booqmark.it we've used Bootstrap and it did a great job, until we started
 creating the UI, like most websites this day, we've approached a flat style.
 We found Bootstrap inadequate for creating the UI we wanted.. so we've created
-our own.
+our own framework, with flex.
 
 ## Features
 
 | Responsive  | Fluid | Offsets | Nested | Auto Width | Alignments | Distributed | Reversed | Reordering | Masonry |
 | ----------- | ----- | ------- | ---- | ------ | --------- | ------------ | -------- | ---------- | ----- | ----- |
 
+## Customization
+
+`grid/gridlecss.scss` has variables that can be customized and it's also, poorly,
+documented.
+
 ## Components
 
 At the moment we don't have any components nor do we think we'll ever add any in
-this repository. GridleCSS was only created as a grid.
+this repository( please read bellow ). GridleCSS was only created as a grid not
+as a replacement for Bootstrap or Foundation.
 
-If you do whish to create components, do a pull request and we'll keep them in
-separate branches until we decide what's the best way to showcase them as a
-whole.
+However, we do accept pull requests for components. For now we will keep them in
+separate branches untill we decide what's the best way to showcase both
+GridleCSS and components.
 
 ## Installation
 
@@ -31,19 +35,17 @@ git clone git@github.com:studio51/framework-gridlecss.git
 npm install
 ```
 
-GridleCSS uses [Grunt.JS] as our Task Runner. If you're not familiar with grunt,
+GridleCSS uses [Grunt.JS] as a task runner. If you're not familiar with grunt,
 you should check it out.
 
 There are 3 tasks that matter if you want to develop on GridleCSS:
 
 `grunt`
-Will compile everything (SASS, JADE and JS) for you and launch a server for
-previewing the Grid.
-Any changes you make to the SASS files will show on the website as we use Watch
-and LiveReload.
+Will compile everything and launch the server for previewing the Grid.
+Any changes you make to the SASS files will show on the website.
 
 `grunt build`
-This just build the `web/dist` folder for the gh-pages, that means everything
+This just builds the `web/dist` folder for the `gh-pages`, that means everything
 compiled is also minified, whereas `grunt` gives you unminifed assets.
 
 `grunt clean`
