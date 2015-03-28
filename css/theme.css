@@ -1121,7 +1121,7 @@ body {
   .device .outter-frame {
     background-color: #fff;
     border: 2px solid #c9cdc0;
-    border-bottom: none;
+    border-bottom: none !important;
     border-top-left-radius: 3em;
     border-top-right-radius: 3em;
     -webkit-box-flex: 1;
@@ -1156,7 +1156,7 @@ body {
   .device .inner-frame {
     background-color: #fff;
     border: 1px solid #c9cdc0;
-    border-bottom: none;
+    border-bottom: none !important;
     border-top-left-radius: 0.2em;
     border-top-right-radius: 0.2em;
     -webkit-box-flex: 1;
@@ -1221,4 +1221,3 @@ article {
     background-color: rgba(204, 209, 217, 0.2); }
     article:nth-child(even) .cell:not(.no-fill) {
       background-color: white; }
-/*# sourceMappingURL=theme.css.map */
