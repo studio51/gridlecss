@@ -35,6 +35,7 @@
     "grunt-open": "^0.2.3",
     "grunt-postcss": "^0.3.0",
     "grunt-sass": "^0.18.1",
+    "grunt-svgmin": "^2.0.1",
     "matchdep": "^0.3.0"
   }
 }

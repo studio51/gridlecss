@@ -44,7 +44,7 @@ module.exports = function(grunt) {
 
     cssnext: {
       options: {
-        sourcemap: true
+        sourcemap: false
       },
       dist: {
         files: {
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
 
     postcss: {
       options: {
-        map: true,
+        map: false,
         processors: [
           require('autoprefixer-core')({
             browsers: ['last 5 versions', '> 5%'],
@@ -91,11 +91,27 @@ module.exports = function(grunt) {
       }
     },
 
+    svgmin: {
+      options: {
+        plugins: [
+          { removeViewBox: false },
+          { removeUselessStrokeAndFill: false }
+        ]
+      },
+
+      dist: {
+        files: {
+          'web/dist/images/menu.svg': ['web/images/*.svg']
+        }
+      }
+    },
+
     jade: {
       html: {
         files: {
           'web/dist/': ['web/*.jade']
         },
+
         options: {
           client: false,
           pretty: true
@@ -126,6 +142,10 @@ module.exports = function(grunt) {
       uglify: {
         files: ['web/js/**/*.js'],
         tasks: ['uglify']
+      },
+      svgmin: {
+        files: ['web/images/**/*.svg'],
+        tasks: ['svgmin']
       },
       jade: {
         files: ['web/**/*.jade'],
