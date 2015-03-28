@@ -124,7 +124,7 @@ module.exports = function(grunt) {
         dot: true
       },
       dist: {
-        src: ['dist/', 'web/dist/']
+        src: ['web/dist/']
       }
     },
 
@@ -160,10 +160,11 @@ module.exports = function(grunt) {
     'watch'
   ]);
 
-  grunt.registerTasks('view' [
-    'connect',
-    'open',
-    'watch'
+  // Clean the web/dist folder which is only for viewing the grid in action
+  // locally
+  //
+  grunt.registerTask('clean', [
+    'clean'
   ]);
 
   grunt.registerTask('default', ['serve']);
