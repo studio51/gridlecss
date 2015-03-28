@@ -3,7 +3,7 @@
   @include flex(1);
   @include flex-direction;
 
-  @mixin phone-styles($bwidth: 1px, $bradius: 3em) {
+  @mixin phone-styles($bwidth: 1px, $bradius: 40px) {
     background-color: #fff;
     border: $bwidth solid rgba(#C9CDC0, 1);
     border-bottom: none !important;
@@ -14,7 +14,7 @@
   }
 
   .outter-frame {
-    @include phone-styles(2px, 3em);
+    @include phone-styles(2px);
 
     @include flexbox;
     @include flex-direction;
@@ -40,7 +40,7 @@
   }
 
   .inner-frame {
-    @include phone-styles(1px, .2em);
+    @include phone-styles(1px, 2px);
 
     overflow: auto;
     position: relative;
