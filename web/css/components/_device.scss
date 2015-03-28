@@ -6,7 +6,7 @@
   @mixin phone-styles($bwidth: 1px, $bradius: 3em) {
     background-color: #fff;
     border: $bwidth solid rgba(#C9CDC0, 1);
-    border-bottom: none;
+    border-bottom: none !important;
     border-top-left-radius: $bradius;
     border-top-right-radius: $bradius;
 
