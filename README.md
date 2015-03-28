@@ -1,36 +1,53 @@
-# Gridle.CSS
+# GridleCSS
 
-We created Gridle.CSS for another side project we're currently working on,
-booqmark.it . At first, with booqmark.it, we've used Bootstrap and it did a
-great job, untill we started designing the user interface, we found that with
-Bootstrap, we had to overwrite too much in order to achieve a "flat" design and
-get rid of that 'bootstrap' look that many websites have these days.
+We created GridleCSS for another side project we're currently working on, which
+you should totally check! :D
 
-Current flexbox grids out there are good, but they're not exactly what we need
-either. So what better way to get what you want than to create your own? Plus,
-learning flexbox was on our to-do list for far too long!
+[Booqmark.it]
+
+With booqmark.it we've used Bootstrap and it did a great job, until we started
+creating the UI, like most websites this day, we've approached a flat style.
+We found Bootstrap inadequate for creating the UI we wanted.. so we've created
+our own.
 
 ## Features
 
-| Responsive  | Fluid | Offsets | Auto | Nested | Alignment | Distribution | Reversed | Reordering | Basic | Sized |
+| Responsive  | Fluid | Offsets | Nested | Auto Width | Alignments | Distributed | Reversed | Reordering | Masonry |
 | ----------- | ----- | ------- | ---- | ------ | --------- | ------------ | -------- | ---------- | ----- | ----- |
 
 ## Components
 
-At the moment, there are no components, but we do plan to create a few ( feel free to create your own and add them here ) .
+At the moment we don't have any components nor do we think we'll ever add any in
+this repository. GridleCSS was only created as a grid.
 
-* Buttons
-* Tables
-* Forms
-* Alerts
-* Pagination
+If you do whish to create components, do a pull request and we'll keep them in
+separate branches until we decide what's the best way to showcase them as a
+whole.
 
 ## Installation
 
 ``` bash
 git clone git@github.com:studio51/framework-gridlecss.git
-grunt
+npm install
 ```
+
+GridleCSS uses [Grunt.JS] as our Task Runner. If you're not familiar with grunt,
+you should check it out.
+
+There are 3 tasks that matter if you want to develop on GridleCSS:
+
+`grunt`
+Will compile everything (SASS, JADE and JS) for you and launch a server for
+previewing the Grid.
+Any changes you make to the SASS files will show on the website as we use Watch
+and LiveReload.
+
+`grunt build`
+This just build the `web/dist` folder for the gh-pages, that means everything
+compiled is also minified, whereas `grunt` gives you unminifed assets.
+
+`grunt clean`
+Removes the `web/dist` folder.
 
 ## Pull Requests are welcome!
 
@@ -59,3 +76,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+[Booqmark.it]:https://github.com/studio51/web-booqmark.it
+[Grunt.JS]:http://gruntjs.com/
