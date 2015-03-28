@@ -155,7 +155,12 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('serve', [
-    // 'clean',
+    'connect',
+    'open',
+    'watch'
+  ]);
+
+  grunt.registerTasks('view' [
     'connect',
     'open',
     'watch'
