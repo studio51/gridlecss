@@ -3,17 +3,27 @@ article#grid-basic
   .grid
 
     header
-      h3 Basic Grid
+      h3 The Grid
 
     section
 
       .row
-        .cell.cell-xs-3 cell-xs-3
-        .cell.cell-xs-6 cell-xs-6
-        .cell.cell-xs-3 cell-xs-3
+        .cell.cell-xs auto-xs
+        .cell.cell-xs.cell-sm-3.cell-md-7.cell-lg
+          span.visible-xs auto-xs
+          span.visible-sm cell-sm-3
+          span.visible-md cell-md-7
+          span.visible-lg auto-lg
+
+        .cell.cell-xs auto-xs
 
       .row
-        .cell.cell-xs-10 cell-xs-10
+        .cell.cell-xs-9.cell-sm-7.cell-md-5.cell-lg-3
+          span.visible-xs cell-xs-9
+          span.visible-sm cell-sm-7
+          span.visible-md cell-md-5
+          span.visible-lg cell-lg-3
+
         .cell.cell-xs auto
 
       .row
@@ -22,9 +32,10 @@ article#grid-basic
 
         .cell.cell-xs-10.hidden-xs
           .row
-            .cell.cell-xs-4 cell-xs-4
-            .cell.cell-xs-4 cell-xs-4
-            .cell.cell-xs-4 cell-xs-4
+            .cell.cell-xs xs-auto
+            .cell.cell-xs-3 cell-xs-3
+            .cell.cell-xs xs-auto
+            .cell.cell-xs-1 cel-xs-1
 
           .row
             .cell.cell-xs-2 cell-xs-2

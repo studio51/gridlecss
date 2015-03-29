@@ -52,7 +52,7 @@ $flex-alignments: "x" ("start" "center" "end"),
   --grid-sm-container: calc( #{$grid-sm-min} / 1.1);
   --grid-md-container: calc( #{$grid-md-min} / 1.1);
   --grid-lg-container: calc( #{$grid-lg-min} / 1.1);
-  --grid-gutter: 0;
+  --grid-gutter: 2px;
   --grid-gutter-calc: calc( var(--grid-gutter) / 2);
 }
 
