@@ -22,6 +22,11 @@
     padding-left: .7em;
     padding-right: .7em;
 
+    @include media("screen", "lg") {
+      padding-left: 3em;
+      padding-right: 3em;
+    }
+
     .burger-button {
       background: #fff;
       border: $theme-border--size solid rgba(nth($bluejeans, 1), 1);
@@ -51,11 +56,19 @@
     width: 6px;
     height: 6px;
     background-color: #C9CDC0;
-    margin-top: 1em;
+    margin-top: 1.5em;
     border-radius: 100%;
 
     @include media("screen", "sm") {
       display: none;
+    }
+
+    @include media("screen", "lg") {
+      display: block;
+      width: 10px;
+      height: 10px;
+      background-color: rgba(nth($grass, 1), 1);
+      margin-bottom: 1.5em;
     }
   }
 
@@ -67,7 +80,9 @@
     margin-bottom: 2.5em;
     border-radius: 50em;
     position: relative;
-
+    @include media("screen", "lg") {
+      display: none;
+    }
     &:before {
       content: '';
       position: absolute;

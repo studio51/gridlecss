@@ -136,7 +136,7 @@ module.exports = function(grunt) {
         files: 'Gruntfile.js'
       },
       sass: {
-        files: ['grid/*.scss', 'web/css/**/*.scss'],
+        files: ['grid/**/*.scss', 'web/css/**/*.scss'],
         tasks: ['sass', 'postcss', 'cssnext', 'cssmin']
       },
       uglify: {

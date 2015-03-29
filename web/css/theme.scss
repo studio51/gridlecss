@@ -2,8 +2,40 @@ html{font-family:sans-serif;}body{margin:0;}article,aside,details,figcaption,fig
 
 @import "../../grid/gridlecss";
 
-@import "components/visibility";
-@import "components/columns"; // wip
+@include media("screen", "xs") {
+  .visible-sm,
+  .visible-md,
+  .visible-lg { display: none !important; }
+  .visible-xs {
+    display: block !important;
+  }
+}
+
+@include media("screen", "sm") {
+  .visible-xs,
+  .visible-md,
+  .visible-lg { display: none !important; }
+  .visible-sm {
+    display: block !important;
+  }
+}
+
+@include media("screen", "md") {
+  .visible-xs,
+  .visible-sm,
+  .visible-lg { display: none !important; }
+  .visible-md { display: block !important; }
+}
+
+@include media("screen", "lg") {
+
+  .visible-xs,
+  .visible-sm,
+  .visible-md { display: none !important; }
+  .visible-lg { display: block !important; }
+}
+
+@import "components/columns";
 
 *,
 *:before,
@@ -49,27 +81,16 @@ $aqua:        #4FC1E9, #3BAFDA; // blue
 $lavender:    #AC92EC, #967ADC; // purple
 $pinkrose:    #EC87C0, #D770AD; // pink
 $lightgray:   #F5F7FA, #E6E9ED; // white/gray
-$mediumgray:  #F4F3EE, #AAB2BD; // gray
-$mediumgray:  #CCD1D9, #AAB2BD; // gray
+$mediumgray:  #f6f6f6, #F4F4F4; // gray
 $darkgray:    #656D78, #434A54; // black
 
 $newgreen: #D5E1A3;
 
-$bluejeans: #5D9CEC, #47A3DA; // blue
+$bluejeans: #42A2DC, #10689A; // blue
 
 $theme-spacing: 15px;
 $theme-border--size: 1px;
 $theme-border--radius: 2px;
-
-
-//////////// Theme
-//
-// Header
-//
-//// Brand
-//// Devices
-//// Navigation
-//
 
 html, body {
   height: 100%;
@@ -87,13 +108,10 @@ body {
 .header {
   color: #fff;
   height: 100%;
-  background-color: rgba(nth($bluejeans, 2), 1);
+  background-color: rgba(nth($bluejeans, 1), 1);
 }
 
-  .grid {
-    padding-left: $theme-spacing;
-    padding-right: $theme-spacing;
-  }
+
 
 // Header
 
@@ -117,6 +135,8 @@ body {
 
   li {
     @include flex(1);
+
+    margin-left: $theme-spacing;
   }
 
   .btn {
@@ -124,20 +144,25 @@ body {
     display: flex;
     // justify-content: flex-end;
     // text-align: flex-end;
-    text-indent: -9999%;
+    // text-indent: -9999%;
 
     @include media("screen", "sm") {
       padding-top: $theme-spacing * 2;
       padding-bottom: $theme-spacing * 2;
       flex: 1;
-      // justify-content: flex-start;
-      // text-align: flex-start;
-      text-indent: 0;
-      border: 1px solid #fff;
+      align-items: center;
+      // text-indent: 0;
+      border: $theme-border--size solid #fff;
+      padding-top: $theme-spacing / 2;
+      padding-bottom: $theme-spacing / 2;
+      padding-left: $theme-spacing;
+      padding-right: $theme-spacing;
+      border-radius: $theme-border--radius * 2;
     }
 
     .fa {
       font-size: 1.2em;
+      margin-right: $theme-spacing;
     }
 
     span {
@@ -154,9 +179,8 @@ body {
 @import "components/device";
 
 .footer {
-  background-color: #efefef;
   padding-bottom: $theme-spacing * 2;
-  padding-top: $theme-spacing * 2;
+  padding-top: $theme-spacing;
 
   a {
     font-size: 1em;
@@ -164,18 +188,29 @@ body {
 }
 
   article {
-    padding-top: $theme-spacing * 2;
-    padding-bottom: $theme-spacing * 2;
+    padding-top: $theme-spacing;
+    padding-bottom: $theme-spacing;
+      color: nth($bluejeans, 2);
+  .grid {
+    padding-top: $theme-spacing;
+    padding-left: $theme-spacing;
+    padding-right: $theme-spacing;
+    padding-bottom: $theme-spacing;
+    box-shadow: 0 3px 0 0px rgba(nth($bluejeans, 2), .1),
+                0 1px 0 1px rgba(nth($bluejeans, 2), .1);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 
+  }
     .row {
-      margin-top: 2px;
-      margin-left: var(--grid-gutter-calc);
-      margin-right: var(--grid-gutter-calc);
+      margin-left: -( var(--grid-gutter-calc));
+      margin-right: -( var(--grid-gutter-calc));
     }
 
     .cell {
-      margin-left: -( var(--grid-gutter-calc));
-      margin-right: -( var(--grid-gutter-calc));
+      margin-top: 2px;
+      margin-left: var(--grid-gutter-calc);
+      margin-right: var(--grid-gutter-calc);
     }
 
     header {
@@ -188,8 +223,13 @@ body {
       margin-top: $theme-spacing;
     }
 
-    .cell:not(.no-fill) {
-      background-color: rgba(nth($mediumgray, 1), .2);
+    .cell {
+      background-color: rgba(nth($bluejeans, 2), .1);
+
+      .cell {
+
+      }
+
       padding: 10px;
       font-size: .5em;
     }
@@ -204,11 +244,11 @@ body {
       }
     }
 
-    &:nth-child(even) {
-      background-color: rgba(nth($mediumgray, 1), .2);
+    // &:nth-child(even) {
+    //   background-color: rgba(nth($mediumgray, 1), .2);
 
-      .cell:not(.no-fill) {
-        background-color: rgba(#fff, 1);
-      }
-    }
+    //   .cell:not(.no-fill) {
+    //     background-color: rgba(#fff, 1);
+    //   }
+    // }
   }
