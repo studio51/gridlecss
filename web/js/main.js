@@ -21,4 +21,11 @@ $(document).ready(function() {
   $('.source').each(function(i, block) {
     hljs.highlightBlock(block);
   });
+
+$('.social-likes').socialLikes({
+    url: 'https://github.com/studio51/gridlecss',
+    title: 'GridleCSS, yet another flexbox grid!',
+    counters: true,
+    singleTitle: 'Spread the word, daug!'
+});
 });

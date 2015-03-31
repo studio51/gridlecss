@@ -33,17 +33,9 @@ html(lang="en")
               p.brand-motto Yet Another Flex Grid framework!
 
           .cell.cell-xs-3.cell-sm-6
-
-            ul.social-buttons
-              li
-                a.btn.btn-md.btn-git(href="https://github.com/studio51/framework-gridlecss")
-                  i.fa.fa-github
-                  span.hidden-xs View on Github
-
-              li
-                a.btn.btn-md.btn-twt(href="https://twitter.com/intent/tweet?text=A new simple Flexbox Grid on the block! Check it out http://studio51.github.io/framework-gridlecss/ &via=studiofifty1")
-                  i.fa.fa-twitter
-                  span.hidden-xs Spread the word
+            a.btn.btn-md.btn-git(href="https://github.com/studio51/framework-gridlecss")
+              i.fa.fa-github
+              span.hidden-xs View on Github
 
         .row.row-auto
           .cell.cell-xs
@@ -68,6 +60,12 @@ html(lang="en")
 
                         li(class="animated-#{i++}")
                           a.btn.btn-sm(href="#", data-target="#grid-#{val}") #{val}
+
+        .row.row-half
+          .social-likes
+            .facebook Facebook
+            .twitter(data-via="studiofifty1", data-related="pacMakaveli") Twitter
+            .plusone Google+
 
     main.main
 

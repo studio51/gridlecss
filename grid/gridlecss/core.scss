@@ -1,7 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+
 *,
 *:before,
 *:after {
-  @include box-sizing;
+  box-sizing: inherit;
 }
 
 .grid,
@@ -134,7 +138,7 @@
       }
 
       .cell-#{ $breakpoint }-offset-#{ $i } {
-        margin-left: calc(#{ $calc } - #{ var(--grid-gutter) });
+        margin-left: calc(#{ $calc } + #{ var(--grid-gutter-calc) }) !important;
       }
     }
   }
