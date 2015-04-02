@@ -2,6 +2,21 @@ html{font-family:sans-serif;}body{margin:0;}article,aside,details,figcaption,fig
 
 @import "../../grid/gridlecss";
 
+@import "helpers/animations";
+@import "helpers/mixins";
+@import "helpers/columns";
+
+@mixin background-animation($color-list, $duration) {
+
+  $size: #{ 200 * length($color-list)}%;
+
+  background: linear-gradient(105deg, $color-list);
+  background-size: $size $size;
+  animation: rotate #{ $duration }s ease infinite;
+}
+
+
+
 @include media("screen", "xs") {
   .visible-sm,
   .visible-md,
@@ -35,7 +50,6 @@ html{font-family:sans-serif;}body{margin:0;}article,aside,details,figcaption,fig
   .visible-lg { display: block !important; }
 }
 
-@import "components/columns";
 
 h1, h2, h3, h4, h5, h6,
 p {
@@ -90,11 +104,7 @@ $theme-spacing: 15px;
 $theme-border--size: 1px;
 $theme-border--radius: 2px;
 
-@keyframes rotate {
-    0%{background-position:0% 18%}
-    50%{background-position:100% 83%}
-    100%{background-position:0% 18%}
-}
+
 
 html, body {
   height: 100%;
@@ -108,34 +118,16 @@ body {
     font-size: 100%;
   }
 }
-  @mixin background-animation($color-list, $duration) {
 
-    $size: #{ 200 * length($color-list)}%;
-
-    // $color-list is an array of colors
-
-    background: linear-gradient(105deg, $color-list);
-    background-size: $size $size;
-
-    animation: rotate #{ $duration }s ease infinite;
-  }
 .header {
   color: #fff;
   height: 100%;
-  // background-color: rgba(nth($bluejeans, 1), 1);
   overflow: hidden;
 
-  @include background-animation((nth($bluejeans, 1), nth($bluejeans, 2), nth($bluejeans, 2), nth($mint, 1)), 30);
-
-  // background: linear-gradient(105deg, nth($bluejeans, 1), nth($bluejeans, 2), nth($bluejeans, 2), nth($mint, 1), #0e1537);
-  // background-size: 1000% 1000%;
-
-  // animation: rotate 33s ease infinite;
+  @include background-animation((nth($bluejeans, 1), nth($mint, 1), nth($aqua, 1), 30);
 }
 
-
-
-@import "components/interactive_bar";
+@import "partials/social";
 
 // Header
 
@@ -199,8 +191,8 @@ body {
 //   }
 // }
 
-@import "components/navigation";
-@import "components/device";
+@import "partials/navigation";
+@import "partials/device";
 
 .footer {
   padding-bottom: $theme-spacing * 2;
