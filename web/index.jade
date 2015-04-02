@@ -28,27 +28,25 @@ html(lang="en")
 
             .brand
               h1.brand-name GridleCSS
-                span.brand-pronunciation /ɡrɪd.lɛx/
+                span.brand-name--pronunciation /ɡrɪd.lɛx/
 
               p.brand-motto Yet Another Flex Grid framework!
 
           .cell.cell-xs-2.cell-sm-3
-            a.btn.btn-md.btn-git(href="https://github.com/studio51/framework-gridlecss")
+            a.btn.btn-md.btn--git(href="https://github.com/studio51/framework-gridlecss")
               i.fa.fa-github
               span.hidden-xs View on Github
 
         .row.row-auto
           .cell.cell-xs
 
-            .device
-              .outter-frame.cells-middle
+            .device.device-white
+              .device-frame--outter
+                .device-buttons--iphone
+                .device-camera
+                .device-speaker--iphone
 
-                a#toggle-menu.burger-button(href="#", role="show-menu")
-                  img(src="images/menu.svg", title="Burger menu button", alt="Show Menu")
-
-                .camera
-                .mic
-                .inner-frame
+                .device-frame--inner
 
                   nav.nav-menu(role="navigation")
                     ul
@@ -61,21 +59,26 @@ html(lang="en")
                         li(class="animated-#{i++}")
                           a.btn.btn-sm(href="#", data-target="#grid-#{val}") #{val}
 
-        .row.cells-middle.interactive-bar
+                .device-button
+
+                a#toggle-menu.nav-menu--trigger(href="#", role="navigation-menu-trigger")
+                  img(src="images/menu.svg", title="Burger menu button", alt="Show Menu", height="50")
+
+        .row.cells-middle.row--social
           .cell.cell-xs-4
             .social-likes
-              a.btn.btn-facebook.facebook Facebook
-              a.btn.btn-twitter.twitter(data-via="studiofifty1", data-related="pacMakaveli") Twitter
-              a.btn.btn-plusone.plusone Google+
+              a.btn.btn--facebook.facebook Facebook
+              a.btn.btn--twitter.twitter(data-via="studiofifty1", data-related="pacMakaveli") Twitter
+              a.btn.btn--plusone.plusone Google+
 
           .cell.cell-xs-offset-6.cell-xs-2
-            ul.media-buttons
+            ul.list-inline.list--buttons
               li
-                a.btn.btn-demo(href="", title="")
+                a.btn.btn--demo(href="", title="")
                   | Demo
 
               li
-                a.btn.btn-download(href="", title="")
+                a.btn.btn--download(href="", title="")
                   | Download
 
     main.main

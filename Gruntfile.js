@@ -44,7 +44,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           "<%= grid_build_dir %>/gridle.css": "<%= grid_dir %>/gridle.scss",
-          "<%= theme_css_dir %>/theme.css": "<%= theme_dir %>/theme.scss"
+          "web/dist/css/theme.css": "web/css/theme.scss"
         }
       }
     },
@@ -153,7 +153,7 @@ module.exports = function(grunt) {
       },
       sass: {
         files: ['grid/**/*.scss', 'web/css/**/*.scss'],
-        tasks: ['sass', 'postcss', 'cssnext', 'cssbeautifier', 'cssmin']
+        tasks: ['sass', 'postcss', 'cssnext', 'cssmin']
       },
       uglify: {
         files: ['web/js/**/*.js'],
