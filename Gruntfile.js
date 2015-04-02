@@ -69,6 +69,15 @@ module.exports = function(grunt) {
       }
     },
 
+    cssbeautifier : {
+      files : ['dist/gridle.css', 'web/dist/css/theme.css'],
+      options : {
+        indent: ' ',
+        openbrace: 'end-of-line',
+        autosemicolon: true
+      }
+    },
+
     cssmin: {
       options: {
         shorthandCompacting: false,
@@ -137,7 +146,7 @@ module.exports = function(grunt) {
       },
       sass: {
         files: ['grid/**/*.scss', 'web/css/**/*.scss'],
-        tasks: ['sass', 'postcss', 'cssnext', 'cssmin']
+        tasks: ['sass', 'postcss', 'cssnext', 'cssbeautifier', 'cssmin']
       },
       uglify: {
         files: ['web/js/**/*.js'],
