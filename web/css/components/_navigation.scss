@@ -11,7 +11,7 @@
     @include flex(1);
     @include flex-direction;
 
-    font-size: 70%;
+    font-size: 50%;
     display: none;
     height: 100%;
     position: absolute;
@@ -40,6 +40,10 @@
 
         &.animated-#{$i} {
           animation-delay: unquote("#{$delay}s");
+        }
+
+        &:last-child {
+          border-bottom: none;
         }
       }
 

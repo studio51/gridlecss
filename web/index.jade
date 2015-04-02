@@ -8,7 +8,7 @@ html(lang="en")
 
     title GridleCSS | Yet another Flexbox Grid
 
-    meta(name='description', content='Yet Another Flexbox Grid')
+    meta(name='description', content='A simple 12/24 columns Flexbox Grid created in SASS by Vlad Radulescu @ Studio51')
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Open+Sans+Condensed:300,700,300italic|Raleway:400,200,300,100,500,600,700,800,900')
@@ -32,7 +32,7 @@ html(lang="en")
 
               p.brand-motto Yet Another Flex Grid framework!
 
-          .cell.cell-xs-3.cell-sm-6
+          .cell.cell-xs-2.cell-sm-3
             a.btn.btn-md.btn-git(href="https://github.com/studio51/framework-gridlecss")
               i.fa.fa-github
               span.hidden-xs View on Github
@@ -61,11 +61,22 @@ html(lang="en")
                         li(class="animated-#{i++}")
                           a.btn.btn-sm(href="#", data-target="#grid-#{val}") #{val}
 
-        .row.row-half
-          .social-likes
-            .facebook Facebook
-            .twitter(data-via="studiofifty1", data-related="pacMakaveli") Twitter
-            .plusone Google+
+        .row.cells-middle.interactive-bar
+          .cell.cell-xs-4
+            .social-likes
+              a.btn.btn-facebook.facebook Facebook
+              a.btn.btn-twitter.twitter(data-via="studiofifty1", data-related="pacMakaveli") Twitter
+              a.btn.btn-plusone.plusone Google+
+
+          .cell.cell-xs-offset-6.cell-xs-2
+            ul.media-buttons
+              li
+                a.btn.btn-demo(href="", title="")
+                  | Demo
+
+              li
+                a.btn.btn-download(href="", title="")
+                  | Download
 
     main.main
 

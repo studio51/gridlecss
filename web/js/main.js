@@ -22,10 +22,11 @@ $(document).ready(function() {
     hljs.highlightBlock(block);
   });
 
-$('.social-likes').socialLikes({
-    url: 'https://github.com/studio51/gridlecss',
-    title: 'GridleCSS, yet another flexbox grid!',
-    counters: true,
-    singleTitle: 'Spread the word, daug!'
-});
+  $('.social-likes').socialLikes({
+      // url: 'http://studio51.github.io/gridlecss',
+      url: 'http://codyhouse.co/gem/css-contact-form/',
+      title: 'GridleCSS, yet another flexbox grid!',
+      counters: true,
+      singleTitle: 'Spread the word, daug!'
+  });
 });

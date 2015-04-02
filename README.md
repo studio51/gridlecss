@@ -1,17 +1,19 @@
 # GridleCSS
 
-We created GridleCSS for [Booqmark.it], a side project we're currently working
-on. You should totally check it! :D
-
-With booqmark.it we've used Bootstrap and it did a great job, until we started
-creating the UI, like most websites this day, we've approached a flat style.
-We found Bootstrap inadequate for creating the UI we wanted.. so we've created
-our own framework, with flex.
+GridleCSS is a flexible, responsive CSS framework, powered by SASS and Flex.
 
 ## Features
 
-| Responsive  | Fluid | Offsets | Nested | Auto Width | Alignments | Distributed | Reversed | Reordering | Masonry |
-| ----------- | ----- | ------- | ---- | ------ | --------- | ------------ | -------- | ---------- | ----- | ----- |
+Responsive
+Fluid
+Offsets
+Nested
+Auto Widths
+Alignments
+Distributed
+Reversed
+Reordering
+Masonry
 
 ## Customization
 
