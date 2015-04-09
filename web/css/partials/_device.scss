@@ -1,97 +1,91 @@
 .device {
+  &--iphone {
+    // visible iphone size
+  }
+
   @include flexbox;
   @include flex(1);
   @include flex-direction;
 
-  @mixin phone-styles($bwidth: 1px, $bradius: 40px) {
-    background-color: #fff;
-    border: $bwidth solid rgba(#C9CDC0, 1);
-    border-bottom: none !important;
-    border-top-left-radius: $bradius;
-    border-top-right-radius: $bradius;
+  &-frame {
 
-    @include flex(1);
-  }
+    &--outter {
+      // background-color: #000;
+      // border: 3px solid rgba(#C9CDC0, 1);
+      // border-bottom: none !important;
+      // border-top-left-radius: 38px;
+      // border-top-right-radius: 38px;
 
-  .outter-frame {
-    @include phone-styles(2px);
+      @include flex(1);
+      @include flexbox;
+      @include flex-direction;
 
-    @include flexbox;
-    @include flex-direction;
+      // padding-left: .7em;
+      // padding-right: .7em;
 
-    padding-left: .7em;
-    padding-right: .7em;
-
-    @include media("screen", "lg") {
-      padding-left: 3em;
-      padding-right: 3em;
+      // @include media("screen", "lg") {
+      //   padding-left: 3em;
+      //   padding-right: 3em;
+      // }
     }
 
-    .burger-button {
-      background: #fff;
-      border: $theme-border--size solid rgba(nth($bluejeans, 1), 1);
-      border-radius: 100%;
-      bottom: $theme-spacing * 1.5;
-      box-shadow: 0 0 0 2px #fff;
-      display: block;
-      left: 0;
-      margin: 0 auto;
-      padding: $theme-spacing / 1.5;
-      position: absolute;
-      right: 0;
-      z-index: 1;
-      width: 2.5em;
+    &--inner {
+      @include flex(1);
+
+      // background-color: #fff;
+      // overflow: auto;
+      // position: relative;
+      // width: 100%;
     }
   }
 
-  .inner-frame {
-    @include phone-styles(1px, 2px);
+  &-buttons {
 
-    overflow: auto;
-    position: relative;
-    width: 100%;
   }
 
-  .camera {
-    width: 6px;
-    height: 6px;
-    background-color: #C9CDC0;
-    margin-top: 1.5em;
-    border-radius: 100%;
+  &-camera {
+    // width: 6px;
+    // height: 6px;
+    // background-color: #C9CDC0;
+    // margin-top: 1.5em;
+    // border-radius: 100%;
+    // align-self: center;
 
-    @include media("screen", "sm") {
-      display: none;
-    }
+    // @include media("screen", "sm") {
+    //   display: none;
+    // }
 
-    @include media("screen", "lg") {
-      display: block;
-      width: 10px;
-      height: 10px;
-      background-color: rgba(nth($grass, 1), 1);
-      margin-bottom: 1.5em;
-    }
+    // @include media("screen", "lg") {
+    //   display: block;
+    //   width: 10px;
+    //   height: 10px;
+    //   background-color: rgba(nth($grass, 1), 1);
+    //   margin-bottom: 1.5em;
+    // }
   }
 
-  .mic {
-    width: 45px;
-    height: 5px;
-    background-color: #C9CDC0;
-    margin-top: 1em;
-    margin-bottom: 2.5em;
-    border-radius: 50em;
-    position: relative;
-    @include media("screen", "lg") {
-      display: none;
-    }
-    &:before {
-      content: '';
-      position: absolute;
-      left: -2em;
-      top: -2px;
-      width: 10px;
-      height: 10px;
-      border-radius: 100%;
-      background: #C9CDC0;
-    }
+  &-speaker {
+    // width: 45px;
+    // height: 5px;
+    // background-color: #C9CDC0;
+    // margin-top: 1em;
+    // margin-bottom: 2.5em;
+    // border-radius: 50em;
+    // position: relative;
+
+    // @include media("screen", "lg") {
+    //   display: none;
+    // }
+
+    // &:before {
+    //   content: '';
+    //   position: absolute;
+    //   left: -2em;
+    //   top: -2px;
+    //   width: 10px;
+    //   height: 10px;
+    //   border-radius: 100%;
+    //   background: #C9CDC0;
+    // }
   }
 }

@@ -1,11 +1,11 @@
-html {
-  box-sizing: border-box;
-}
-
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
 }
 
 .grid,
@@ -34,7 +34,7 @@ html {
   &-first { order: -1 }
   &-last { order: 1 }
 
-  width: 100%;
+  // width: 100%;
 }
 
 %cell-styles {
