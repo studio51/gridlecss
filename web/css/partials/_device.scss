@@ -1,7 +1,4 @@
 .device {
-  &--iphone {
-    // visible iphone size
-  }
 
   @include flexbox;
   @include flex(1);
@@ -10,82 +7,121 @@
   &-frame {
 
     &--outter {
-      // background-color: #000;
-      // border: 3px solid rgba(#C9CDC0, 1);
-      // border-bottom: none !important;
-      // border-top-left-radius: 38px;
-      // border-top-right-radius: 38px;
 
       @include flex(1);
       @include flexbox;
       @include flex-direction;
 
-      // padding-left: .7em;
-      // padding-right: .7em;
+      background-color: #fff;
+      border: 2px solid rgba(#C9CDC0, 1);
+      border-bottom: none;
+      border-top-left-radius: 38px;
+      border-top-right-radius: 38px;
+      padding-left: 10px;
+      padding-right: 10px;
 
-      // @include media("screen", "lg") {
-      //   padding-left: 3em;
-      //   padding-right: 3em;
-      // }
+      @include media("screen", "sm") {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+      @include media("screen", "md") {
+        background-color: #000;
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+
+      @include media("screen", "lg") {
+        border: none;
+      }
     }
 
     &--inner {
       @include flex(1);
 
-      // background-color: #fff;
+      background-color: #fff;
+      border: 1px solid rgba(#C9CDC0, 1);
+      border-bottom: none;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      position: relative;
+
       // overflow: auto;
-      // position: relative;
-      // width: 100%;
+
+      @include media("screen", "md") {
+        border: none;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
     }
   }
 
-  &-buttons {
-
-  }
+  &-buttons { }
 
   &-camera {
-    // width: 6px;
-    // height: 6px;
-    // background-color: #C9CDC0;
-    // margin-top: 1.5em;
-    // border-radius: 100%;
-    // align-self: center;
+    align-self: center;
+    background-color: #C9CDC0;
+    border-radius: 100%;
+    height: 6px;
+    margin-top: 1em;
+    width: 6px;
 
-    // @include media("screen", "sm") {
-    //   display: none;
-    // }
+    @include media("screen", "sm") {
+      display: none;
+    }
 
-    // @include media("screen", "lg") {
-    //   display: block;
-    //   width: 10px;
-    //   height: 10px;
-    //   background-color: rgba(nth($grass, 1), 1);
-    //   margin-bottom: 1.5em;
-    // }
+    @include media("screen", "md") {
+      background-color: rgba(nth($grass, 1), 1);
+      display: block;
+      margin-bottom: 1.5em;
+      margin-top: 1.5em;
+    }
+
+    @include media("screen", "lg") {
+      margin-bottom: 2em;
+      margin-top: 1em;
+    }
   }
 
   &-speaker {
-    // width: 45px;
-    // height: 5px;
-    // background-color: #C9CDC0;
-    // margin-top: 1em;
-    // margin-bottom: 2.5em;
-    // border-radius: 50em;
-    // position: relative;
+    align-self: center;
+    background-color: #C9CDC0;
+    border-radius: 50px;
+    height: 4px;
+    margin-bottom: 2.5em;
+    margin-top: 1em;
+    position: relative;
+    width: 45px;
 
-    // @include media("screen", "lg") {
-    //   display: none;
-    // }
+    @include media("screen", "sm") {
+      height: 10px;
+      margin-bottom: 2em;
+      margin-top: 2em;
+      width: 10px;
+    }
 
-    // &:before {
-    //   content: '';
-    //   position: absolute;
-    //   left: -2em;
-    //   top: -2px;
-    //   width: 10px;
-    //   height: 10px;
-    //   border-radius: 100%;
-    //   background: #C9CDC0;
-    // }
+    @include media("screen", "md") {
+      display: none;
+    }
+
+    &:before {
+      background: #C9CDC0;
+      border-radius: 100%;
+      content: '';
+      height: 10px;
+      left: -25px;
+      position: absolute;
+      top: -3px;
+      width: 10px;
+
+      @include media("screen", "sm") {
+        height: 5px;
+        width: 5px;
+        top: 2.5px;
+        left: -15px;
+      }
+    }
   }
+
+  &-button { }
 }

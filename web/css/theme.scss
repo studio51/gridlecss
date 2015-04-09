@@ -10,7 +10,6 @@
 
 html, body {
   height: 100%;
-
 }
 
 @import "partials/reset";
@@ -27,8 +26,12 @@ body {
 .header {
   height: 100%;
   overflow: hidden;
-  padding-left: $theme-spacing;
-  padding-right: $theme-spacing;
+
+  @include media("screen", "xs") {
+
+    padding-left: $theme-spacing;
+    padding-right: $theme-spacing;
+  }
 
   @include background-animation((
     nth($bluejeans, 1),
