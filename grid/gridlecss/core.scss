@@ -1,12 +1,12 @@
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  @include box-sizing;
 }
 
-html {
-  box-sizing: border-box;
-}
+// html {
+//   @include box-sizing;
+// }
 
 .grid,
 .grid-fluid {
@@ -24,6 +24,9 @@ html {
   @include flex-direction(row);
   @include flex-wrap;
 
+  margin-left: -1px;
+  margin-right: -1px;
+
   &.reverse {
     @include flex-direction(row-reverse);
   }
@@ -31,10 +34,13 @@ html {
 
 .cell {
 
+  margin-left: 1px;
+  margin-right: 1px;
+
   &-first { order: -1 }
   &-last { order: 1 }
 
-  // width: 100%;
+  width: 100%;
 }
 
 %cell-styles {
