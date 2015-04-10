@@ -11,7 +11,7 @@
     @include flex(1);
     @include flex-direction;
 
-    font-size: 70%;
+    font-size: 50%;
     display: none;
     height: 100%;
     position: absolute;
@@ -23,7 +23,7 @@
       @include flex(1);
 
       animation-fill-mode: both;
-      animation-duration: 1s;
+      animation-duration: 2s;
       animation-name: bounceInDown;
       background: #fff;
       border-bottom: 1px solid #efefef;
@@ -41,6 +41,10 @@
         &.animated-#{$i} {
           animation-delay: unquote("#{$delay}s");
         }
+
+        &:last-child {
+          border-bottom: none;
+        }
       }
 
       a {
@@ -56,32 +60,31 @@
       }
     }
   }
-}
 
-@keyframes bounceInDown {
-  0%, 60%, 75%, 90%, 100% {
-    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  }
+  &--trigger {
+    background: #fff;
+    border: $theme-border--size solid rgba(nth($bluejeans, 1), 1);
+    border-radius: 100%;
+    bottom: $theme-spacing * 5.5;
+    box-shadow: 0 0 0 2px #fff;
+    display: block;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    width: 2.5em;
 
-  0% {
-    opacity: 0;
-    transform: translate3d(0, -3000px, 0);
-  }
+    img {
+      height: 39px;
+      padding-bottom: 7px;
+      padding-left: 11px;
+      padding-right: 7px;
+      padding-top: 10px;
 
-  60% {
-    opacity: 1;
-    transform: translate3d(0, 25px, 0);
-  }
-
-  75% {
-    transform: translate3d(0, -10px, 0);
-  }
-
-  90% {
-    transform: translate3d(0, 5px, 0);
-  }
-
-  100% {
-    transform: none;
+      @include media("screen", "sm") {
+        height: 50px;
+      }
+    }
   }
 }

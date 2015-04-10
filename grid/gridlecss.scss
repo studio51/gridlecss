@@ -49,6 +49,7 @@ $flex-alignments: "x" ("start" "center" "end"),
 // Configuration
 //
 :root {
+  // --grid-xs-container: calc( #{$grid-sm-min} / 1.1);
   --grid-sm-container: calc( #{$grid-sm-min} / 1.1);
   --grid-md-container: calc( #{$grid-md-min} / 1.1);
   --grid-lg-container: calc( #{$grid-lg-min} / 1.1);

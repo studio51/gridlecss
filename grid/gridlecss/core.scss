@@ -4,6 +4,10 @@
   @include box-sizing;
 }
 
+// html {
+//   @include box-sizing;
+// }
+
 .grid,
 .grid-fluid {
   @include box-sizing;
@@ -20,12 +24,18 @@
   @include flex-direction(row);
   @include flex-wrap;
 
+  margin-left: -1px;
+  margin-right: -1px;
+
   &.reverse {
     @include flex-direction(row-reverse);
   }
 }
 
 .cell {
+
+  margin-left: 1px;
+  margin-right: 1px;
 
   &-first { order: -1 }
   &-last { order: 1 }
@@ -134,7 +144,7 @@
       }
 
       .cell-#{ $breakpoint }-offset-#{ $i } {
-        margin-left: calc(#{ $calc } - #{ var(--grid-gutter) });
+        margin-left: calc(#{ $calc } + #{ var(--grid-gutter-calc) }) !important;
       }
     }
   }

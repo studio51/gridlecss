@@ -6,6 +6,13 @@ module.exports = function(grunt) {
     appDir: 'web'
   };
 
+  var grid_dir        = 'grid/',
+      theme_dir       = 'web/',
+      grid_build_dir  = 'dist/',
+      theme_build_dir = theme_dir + 'dist/';
+      theme_css_dir   = theme_dir + 'dist/css';
+      theme_js_dir    = theme_dir + 'dist/js';
+
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.initConfig({
@@ -19,7 +26,7 @@ module.exports = function(grunt) {
       },
       dist: {
         options: {
-          base: ['web/dist/']
+          base: [theme_build_dir]
         }
       }
     },
@@ -36,8 +43,8 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/gridle.css': 'grid/gridle.scss',
-          'web/dist/css/theme.css': 'web/css/theme.scss'
+          "<%= grid_build_dir %>/gridle.css": "<%= grid_dir %>/gridle.scss",
+          "web/dist/css/theme.css": "web/css/theme.scss"
         }
       }
     },
@@ -69,6 +76,15 @@ module.exports = function(grunt) {
       }
     },
 
+    cssbeautifier : {
+      files : ['dist/gridle.css', 'web/dist/css/theme.css'],
+      options : {
+        indent: ' ',
+        openbrace: 'end-of-line',
+        autosemicolon: true
+      }
+    },
+
     cssmin: {
       options: {
         shorthandCompacting: false,
@@ -86,7 +102,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'web/dist/js/main.min.js': ['web/js/main.js']
+          'web/dist/js/main.min.js': ['web/js/**/*.js']
         }
       }
     },

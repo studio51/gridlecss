@@ -1,0 +1,133 @@
+.row--social {
+  align-items: center;
+  background-color: #fff;
+  padding-bottom: $theme-spacing;
+  padding-top: $theme-spacing;
+  position: relative;
+
+  &:before,
+  &:after {
+    background-color: #fff;
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &:before {
+    left: -100%;
+  }
+
+  &:after {
+    right: -100%;
+  }
+}
+
+.social-likes {
+  display: flex;
+
+  &__button {
+    font-weight: 500;
+  }
+
+  &__counter {
+    border-radius: 100%;
+    color: #fff;
+    font-size: 50%;
+    margin-left: 15px;
+    padding: 5px;
+    position: relative;
+
+    &:before {
+      border-bottom: 7px solid transparent;
+      border-left: 5px solid transparent;
+      border-radius: 100%;
+      border-top: 7px solid transparent;
+      content: '';
+      left: -8px;
+      position: absolute;
+      top: 3px;
+    }
+
+    &_empty {
+      display: none;
+    }
+
+    &_facebook {
+      background-color: rgba($color_facebook, 1);
+
+      &:before {
+        border-right: 8px solid rgba($color_facebook, 1);
+      }
+    }
+
+    &_twitter {
+      background-color: rgba($color_twitter, 1);
+
+      &:before {
+        border-right: 8px solid rgba($color_twitter, 1);
+      }
+    }
+
+    &_plusone {
+      background-color: rgba($color_google, 1);
+
+      &:before {
+        border-right: 8px solid rgba($color_google, 1);
+      }
+    }
+  }
+
+  .btn {
+    cursor: pointer;
+    flex: 1;
+    font-size: 1.5em;
+    line-height: $theme-spacing;
+    padding-bottom: $theme-spacing / 4;
+    padding-top: $theme-spacing / 4;
+
+    &--facebook {
+      color: rgba($color_facebook, 1);
+    }
+
+    &--twitter {
+      color: rgba($color_twitter, 1);
+    }
+
+    &--plusone {
+      color: rgba($color_google, 1);
+    }
+  }
+}
+
+.list {
+
+  &--buttons {
+    display: flex;
+
+    li {
+      flex: 1 0 auto;
+      margin-left: $theme-spacing / 2;
+    }
+
+    .btn {
+      border-radius: 2px;
+      color: #fff;
+      display: block;
+      font-size: .9em;
+      padding-bottom: $theme-spacing / 2;
+      padding-left: $theme-spacing;
+      padding-right: $theme-spacing;
+      padding-top: $theme-spacing / 2;
+
+      &--demo {
+        background-color: nth($mint, 1);
+      }
+
+      &--download {
+        background-color: nth($bluejeans, 1);
+      }
+    }
+  }
+}
