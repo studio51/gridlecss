@@ -5,6 +5,10 @@
   .visible-xs {
     display: block !important;
   }
+
+  .hidden-xs {
+    display: none;
+  }
 }
 
 @include media("screen", "sm") {
@@ -14,6 +18,10 @@
   .visible-sm {
     display: block !important;
   }
+
+  .hidden-xs {
+    display: block;
+  }
 }
 
 @include media("screen", "md") {
@@ -21,6 +29,7 @@
   .visible-sm,
   .visible-lg { display: none !important; }
   .visible-md { display: block !important; }
+
 }
 
 @include media("screen", "lg") {
@@ -29,4 +38,6 @@
   .visible-sm,
   .visible-md { display: none !important; }
   .visible-lg { display: block !important; }
+
+
 }

@@ -32,8 +32,8 @@ html(lang="en")
 
               p.brand-motto Yet Another Flex Grid framework!
 
-          .cell.cell-xs-2
-            a.btn.btn-md.btn--git(href="https://github.com/studio51/framework-gridlecss")
+          .cell.cell-xs-2.cell-sm-3.cell-lg-2
+            a.btn.btn-md.btn--git(href="https://github.com/studio51/gridlecss")
               i.fa.fa-github
               span.hidden-xs View on Github
 
@@ -47,6 +47,8 @@ html(lang="en")
                 .device-speaker
 
                 .device-frame--inner
+
+                  include templates/device-content.jade
 
                   nav.nav-menu(role="navigation")
                     ul
@@ -64,23 +66,21 @@ html(lang="en")
                 a#toggle-menu.nav-menu--trigger(href="#", role="navigation-menu-trigger")
                   img(src="images/menu.svg", title="Burger menu button", alt="Show Menu", height="50")
 
-        //- .row.cells-middle.row--social
         .row.row--social
-          .cell.cell-xs-4
+          .cell.cell-sm-6
+            p Free advertising!
+
             .social-likes
               a.btn.btn--facebook.facebook Facebook
               a.btn.btn--twitter.twitter(data-via="studiofifty1", data-related="pacMakaveli") Twitter
               a.btn.btn--plusone.plusone Google+
 
-          .cell.cell-xs-offset-6.cell-xs-2
+          .cell.cell-sm-offset-2.cell-sm-4.hidden-xs
             ul.list-inline.list--buttons
               li
-                a.btn.btn--demo(href="", title="")
-                  | Demo
-
+                a.btn.btn--demo(href="", title="") Demo
               li
-                a.btn.btn--download(href="", title="")
-                  | Download
+                a.btn.btn--download(href="https://github.com/studio51/gridlecss/archive/v1.0-beta.1.zip", title="GridleCSS Beta 1") Download Beta
 
     main.main
 
@@ -108,8 +108,7 @@ html(lang="en")
               a(href="//creative-studio51.co.uk") Studio51
 
           .cell.cell-xs-1.cells-bottom
-            p
-              | v1.0.0
+            p v1.0.0
 
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js')

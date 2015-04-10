@@ -44,9 +44,8 @@
       border-bottom: none;
       border-top-left-radius: 2px;
       border-top-right-radius: 2px;
+      overflow: auto;
       position: relative;
-
-      // overflow: auto;
 
       @include media("screen", "md") {
         border: none;

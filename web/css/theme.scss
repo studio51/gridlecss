@@ -28,7 +28,6 @@ body {
   overflow: hidden;
 
   @include media("screen", "xs") {
-
     padding-left: $theme-spacing;
     padding-right: $theme-spacing;
   }
@@ -37,21 +36,34 @@ body {
     nth($bluejeans, 1),
     nth($mint, 1),
     nth($aqua, 1),
-    #6FA2D1
   ), 30);
 
   .btn {
 
     &--git {
-      background-color: #4183c4;
       border-radius: $theme-border--radius;
       color: #fff;
+      font-size: 2.5em;
       line-height: $theme-spacing;
-      padding: $theme-spacing / 2;
+      text-align: right;
+
+      @include media("screen", "sm") {
+        background-color: #4183c4;
+        font-size: 1.5em;
+        margin-right: $theme-spacing / 2;
+        padding: $theme-spacing / 2;
+        text-align: left;
+      }
 
       i {
-        vertical-align: middle;
         margin-right: $theme-spacing / 2;
+        vertical-align: middle;
+      }
+
+      @include media("screen", "sm") {
+        span {
+          display: inline-block;
+        }
       }
     }
   }
@@ -59,7 +71,12 @@ body {
 
 .brand {
   color: #fff;
-  padding: $theme-spacing 0;
+  padding-bottom: $theme-spacing;
+  padding-top: $theme-spacing;
+
+  @include media("screen", "md") {
+    padding: ( $theme-spacing * 3 ) 0;
+  }
 
   &-name {
 

@@ -23,8 +23,7 @@ $(document).ready(function() {
   });
 
   $('.social-likes').socialLikes({
-      // url: 'http://studio51.github.io/gridlecss',
-      url: 'http://codyhouse.co/gem/css-contact-form/',
+      url: 'http://studio51.github.io/gridlecss',
       title: 'GridleCSS, yet another flexbox grid!',
       counters: true,
       singleTitle: 'Spread the word, daug!'
