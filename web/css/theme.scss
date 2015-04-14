@@ -87,54 +87,56 @@ body {
   }
 }
 
+@import "partials/demos";
+
 @import "partials/device";
 @import "partials/navigation";
 @import "partials/social";
 
-// section {
+article {
+  border: 1px solid red;
+  padding-bottom: $theme-spacing * 2;
+  padding-top: $theme-spacing * 2;
 
-//   .row {
-//     border: 1px solid red;
+  header {
+    margin-bottom: $theme-spacing;
+  }
+}
 
-//     .cell {
-//       background-color: rgba(#efefef, .4);
-//     }
-//   }
-// }
-//     .row {
+section {
+  font-size: .5em !important;
 
-//       margin-left: -( var(--grid-gutter-calc));
-//       margin-right: -( var(--grid-gutter-calc));
-//     }
+  .cell {
+    background-color: rgba(nth($bluejeans, 1), .1);
+    padding: $theme-spacing / 2;
+    margin-bottom: 1px;
+    margin-top: 1px;
+  }
+}
 
-//     .cell {
-//       margin-top: 2px;
-//       margin-left: var(--grid-gutter-calc);
-//       margin-right: var(--grid-gutter-calc);
-//     }
-// .demo-alignment .row {
-//   height: 10em;
+.demo-alignment .row {
+  height: 10em;
 
-//   span {
-//     border-bottom: 1px dotted rgba(0, 0, 0, .4);
-//     padding: 3px 0;
-//   }
-// }
+  span {
+    border-bottom: 1px dotted rgba(0, 0, 0, .4);
+    padding: 3px 0;
+  }
+}
 
-// .demo-baseline {
-//   &-1 {
-//     height: 5em;
+.demo-baseline {
+  &-1 {
+    height: 5em;
 
-//     span {
-//       font-size: 3em;
-//     }
-//   }
+    span {
+      font-size: 3em;
+    }
+  }
 
-//   &-2 {
-//     height: 9em;
+  &-2 {
+    height: 9em;
 
-//     span {
-//       font-size: 4.5em;
-//     }
-//   }
-// }
+    span {
+      font-size: 4.5em;
+    }
+  }
+}

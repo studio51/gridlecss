@@ -1,0 +1,11 @@
+.alert {
+  border-radius: $theme-border--radius;
+  color: #fff;
+  font-weight: 500;
+  margin: $theme-spacing;
+  padding: $theme-spacing;
+
+  &-info {
+    background-color: rgba(nth($bluejeans, 1), 1);
+  }
+}

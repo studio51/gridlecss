@@ -57,6 +57,10 @@
         padding-left: $theme-spacing;
         padding-right: $theme-spacing;
         text-transform: capitalize;
+
+        &:hover {
+          background-color: #efefef;
+        }
       }
     }
   }
