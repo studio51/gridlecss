@@ -94,12 +94,28 @@ body {
 @import "partials/social";
 
 article {
-  border: 1px solid red;
   padding-bottom: $theme-spacing * 2;
   padding-top: $theme-spacing * 2;
 
+  @include media("screen", "xs") {
+    padding-left: $theme-spacing;
+    padding-right: $theme-spacing;
+  }
+
   header {
     margin-bottom: $theme-spacing;
+
+    h3 {
+      color: nth($darkgray, 2);
+    }
+
+    p {
+      color: nth($darkgray, 1);
+    }
+  }
+
+  &:nth-child(odd) {
+    background-color: rgba(nth($mediumgray, 1), 1);
   }
 }
 
@@ -107,10 +123,41 @@ section {
   font-size: .5em !important;
 
   .cell {
-    background-color: rgba(nth($bluejeans, 1), .1);
-    padding: $theme-spacing / 2;
+    background-color: rgba(nth($darkgray, 1), .05);
+    color: nth($darkgray, 1f);
     margin-bottom: 1px;
     margin-top: 1px;
+    padding: $theme-spacing / 2;
+  }
+
+  .row-title {
+    font-size: 2em;
+    padding-bottom: $theme-spacing;
+    padding-top: $theme-spacing;
+  }
+}
+
+.footer {
+  padding-bottom: $theme-spacing * 2;
+  padding-top: $theme-spacing * 2;
+
+  p, a {
+    color: nth($darkgray, 1);
+    font-size: .8em;
+  }
+
+  a {
+    border: 1px solid rgba(nth($darkgray, 1), 1);
+    border-radius: $theme-border--radius;
+    font-size: .6em;
+    padding: 5px;
+  }
+
+  span {
+    color: rgba(nth($grapefruit, 1), 1);
+    font-size: 1em;
+    margin-left: $theme-spacing / 2;
+    margin-right: $theme-spacing / 2;
   }
 }
 
@@ -139,4 +186,8 @@ section {
       font-size: 4.5em;
     }
   }
+}
+
+.text-center {
+  text-align: center;
 }

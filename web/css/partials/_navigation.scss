@@ -26,7 +26,7 @@
       animation-duration: 2s;
       animation-name: bounceInDown;
       background: #fff;
-      border-bottom: 1px solid #efefef;
+      border-bottom: 1px solid rgba(nth($mediumgray, 1), 1);
 
       @for $i from 1 through 13 {
         @if $i < 10 {
@@ -59,7 +59,7 @@
         text-transform: capitalize;
 
         &:hover {
-          background-color: #efefef;
+          background-color: rgba(nth($mediumgray, 1), 1);
         }
       }
     }
