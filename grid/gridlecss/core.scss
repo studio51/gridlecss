@@ -24,8 +24,8 @@
   @include flex-direction(row);
   @include flex-wrap;
 
-  margin-left: -1px;
-  margin-right: -1px;
+  margin-left: -( var(--grid-gutter-calc));
+  margin-right: -( var(--grid-gutter-calc));
 
   &.reverse {
     @include flex-direction(row-reverse);
@@ -34,8 +34,8 @@
 
 .cell {
 
-  margin-left: 1px;
-  margin-right: 1px;
+  margin-left: var(--grid-gutter-calc);
+  margin-right: var(--grid-gutter-calc);
 
   &-first { order: -1 }
   &-last { order: 1 }
@@ -138,6 +138,7 @@
       $calc: (( 100 / $grid-columns ) * $i ) * 1%;
 
       .cell-#{ $breakpoint }-#{ $i } {
+        // @include flex-basis($calc);
         @include flex-basis(calc(#{ $calc } - #{ var(--grid-gutter) }));
 
         max-width: $calc;
