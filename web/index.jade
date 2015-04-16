@@ -53,7 +53,7 @@ html(lang="en")
                   nav.nav-menu(role="navigation")
                     ul
 
-                      - var nav_items = ['basic', 'responsive', 'fluid', 'offset', 'nested', 'auto', 'alignment', 'distribution', 'reversed', 'reordered', 'masonry']
+                      - var nav_items = ['basic', 'responsive', 'fluid', 'offset', 'nested', 'auto', 'alignment', 'distribution', 'reversed', 'reordered']
                       - var i = 1
 
                       each val in nav_items
@@ -94,7 +94,6 @@ html(lang="en")
       include templates/distribution-grid.jade
       include templates/reversed-grid.jade
       include templates/reordering-grid.jade
-      include templates/masonry-grid.jade
 
     footer.footer
 
