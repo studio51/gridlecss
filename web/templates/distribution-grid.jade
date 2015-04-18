@@ -3,47 +3,55 @@ article#grid-distribution
   .grid
 
     header
-      h3 Distribution
-      p
-        | Add classes to distribute the contents of a row or column
+      h3.title Distribution
 
-    section.text-center
+    section
 
-      .row.cells-between
-        .cell.cell-xs-1 between
-        .cell.cell-xs-1 between
-        .cell.cell-xs-1 between
-        .cell.cell-xs-1 between
-        .cell.cell-xs-1 between
+      .row
+        .cell.cell-xs-12.cell-sm.no-fill
+          p.description
+            | Flex items are displayed with equal spacing between them, first and
+            | last flex items are aligned to the edges of the flex container
 
-      .row.cells-around
-        .cell.cell-xs-1 around
-        .cell.cell-xs-2 around
-        .cell.cell-xs-1 around
+          .cell
+            .row.distribute-between.text-center
+              .cell.cell-xs-3 distribute-between
+              .cell.cell-xs-3 distribute-between
+              .cell.cell-xs-3 distribute-between
 
-      .row.cells-around
-        .cell.cell-xs-2 around
-        .cell.cell-xs-3 around
-        .cell.cell-xs-2 around
+        .cell.cell-xs-12.cell-sm.no-fill
+          p.description
+            | Flex items are displayed with equal spacing around every flex item,
+            | even the first and the last flex items
 
-      .row.cells-around
-        .cell.cell-xs-3 around
-        .cell.cell-xs-4 around
-        .cell.cell-xs-3 around
+          .cell
+            .row.distribute-around.text-center
+              .cell.cell-xs-3 distribute-around
+              .cell.cell-xs-3 distribute-around
+              .cell.cell-xs-3 distribute-around
 
-      .row.cells-around
-        .cell.cell-xs-2 around
-        .cell.cell-xs-3 around
-        .cell.cell-xs-2 around
 
-      .row.cells-around
-        .cell.cell-xs-1 around
-        .cell.cell-xs-2 around
-        .cell.cell-xs-1 around
+      h2.title Distribution by Viewport
+      p.description
+        | You can also specify what distribution rule should be considered
+        | depending on the viewport by adding the viewport class
 
-      .row.cells-between
-        .cell.cell-xs-1 between
-        .cell.cell-xs-1 between
-        .cell.cell-xs-1 between
-        .cell.cell-xs-1 between
-        .cell.cell-xs-1 between
+      .cell
+        .row.distribute-around.distribute-sm-between.distribute-md-around.distribute-lg-between.text-center
+          .cell.cell-xs-3
+            .visible-xs distribute-around
+            .visible-sm distribute-sm-between
+            .visible-md distribute-md-around
+            .visible-lg distribute-lg-between
+
+          .cell.cell-xs-3
+            .visible-xs distribute-around
+            .visible-sm distribute-sm-between
+            .visible-md distribute-md-around
+            .visible-lg distribute-lg-between
+
+          .cell.cell-xs-3
+            .visible-xs distribute-around
+            .visible-sm distribute-sm-between
+            .visible-md distribute-md-around
+            .visible-lg distribute-lg-between
