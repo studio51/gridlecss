@@ -1,61 +1,183 @@
-//////////////////////////////////////
-//
-// Author: Vladut Radulescu @ Studio51
-// MIT LICENSE © 2015 Studio51
-//
+@import "config";
 
-// The number of columns our grid will have
-//
-// GridleCSS supports up to 24 columns. Beyond that, it's up to you to make it
-// work
-//
-$grid-columns: 12;
-// $grid-columns: 24;
-
-// TODO v1.2: Create a single variable out of $grid-breakpoints and $grid-*-min
-
-// Grid breakpoints
-//
-$grid-breakpoints: "xs" "sm" "md" "lg";
-
-// Grid breakpoints
-// If you want to add more, just make sure you respect the naming convention:
-//
-// // $grid-#{key}-min: #{value};
-// //
-// // // key must be present in $grid-breakpoints ^;
-// // // value is the px/em value;
-//
-// $grid-sm-min: 40.063em;
-// $grid-md-min: 64.063em;
-// $grid-lg-min: 90.063em;
-//
-$grid-sm-min: 768px;
-$grid-md-min: 982px;
-$grid-lg-min: 1200px;
-
-// Distribution for around and between
-//
-$flex-distribution: true;
-$flex-distributions: "around" "between";
-
-// Alignments for main axis  (x): start, center, end
-// Alignments for cross axis (y): top, middle, bottom, baseline
-//
-$flex-alignment: true;
-$flex-alignments: "x" ("start" "center" "end"),
-                  "y" ("top"("flex-start"), "middle"("center"), "bottom"("flex-end"), "baseline"("baseline"));
-
-// Configuration
-//
 :root {
-  // --grid-xs-container: calc( #{$grid-sm-min} / 1.1);
-  --grid-sm-container: calc( #{$grid-sm-min} / 1.1);
-  --grid-md-container: calc( #{$grid-md-min} / 1.1);
-  --grid-lg-container: calc( #{$grid-lg-min} / 1.1);
-  --grid-gutter: 2px;
+  --grid-sm-container: calc( #{ $grid-sm-min });
+  --grid-md-container: calc( #{ $grid-md-min });
+  --grid-lg-container: calc( #{ $grid-lg-min });
+  --grid-gutter: $grid-gutter;
   --grid-gutter-calc: calc( var(--grid-gutter) / 2);
 }
 
 @import "gridlecss/mixins";
-@import "gridlecss/core";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.grid,
+.grid--fluid {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+  .row,
+  .column {
+    display: flex;
+  }
+
+  .row {
+    flex-wrap: wrap;
+    margin-left: -( var(--grid-gutter-calc));
+    margin-right: -( var(--grid-gutter-calc));
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .column {
+    flex-direction: column;
+
+    &--reverse {
+      flex-direction: column-reverse;
+    }
+  }
+
+    @if $flex-distribution {
+      @each $distribution in $flex-distributions {
+
+        .distribute-#{ $distribution } {
+          justify-content: space-#{ $distribution };
+        }
+      }
+    }
+
+    @if $flex-alignment {
+      @each $alignment in $flex-alignments {
+        @include flex-alignments( ".align-", nth($alignment, 1), nth($alignment, 2), "parent");
+      }
+    }
+
+    .cell {
+      margin-left: var(--grid-gutter-calc);
+      margin-right: var(--grid-gutter-calc);
+      width: 100%;
+
+      &-order {
+        &--first {
+          order: -1;
+        }
+
+        &--last {
+          order: 1;
+        }
+      }
+
+      @if $flex-alignment {
+
+        &-align {
+
+          @each $alignment in $flex-alignments {
+            @include flex-alignments( "&--", "y", nth($alignment, 2), "child");
+          }
+        }
+      }
+    }
+
+    %cell-styles {
+      flex: 1 0;
+    }
+
+@each $breakpoint in $grid-breakpoints {
+
+  @include media("screen", $breakpoint) {
+
+    .grid {
+      width: var(--grid-#{ $breakpoint }-container);
+    }
+
+    // Compiles: distribute-* for each viewport
+    //
+    .distribute-#{ $breakpoint } {
+
+      @if $flex-distribution {
+        @each $distribution-option in $flex-distributions {
+
+          &-#{ $distribution-option } {
+            justify-content: space-#{ $distribution-option };
+          }
+        }
+      }
+    }
+
+    // Compiles: align-* for each viewport
+    //
+    .align-#{ $breakpoint } {
+
+      @if $flex-alignment {
+        @each $align-option in $flex-alignments {
+          @include flex-alignments( "&-", nth($align-option, 1), nth($align-option, 2), "parent");
+        }
+      }
+    }
+
+    // Compiles: cell-*, cell-*-# and cell-*-offset-# for each viewport
+    //
+    @for $i from 1 through $grid-columns {
+
+      .cell-#{ $breakpoint },
+      .cell-#{ $breakpoint }-#{ $i },
+      .cell-#{ $breakpoint }-offset-#{ $i } {
+        @extend %cell-styles;
+      }
+    }
+
+    // Compiles: cell-* for each viewport
+    //
+    .cell-#{ $breakpoint } {
+      flex: 1 0;
+      max-width: 100%;
+
+      &-order {
+        &--first {
+          order: -1;
+        }
+
+        &--last {
+          order: 1;
+        }
+      }
+
+      @if $flex-alignment {
+
+        &-align {
+
+          @each $alignment in $flex-alignments {
+            @include flex-alignments( "&--", "y", nth($alignment, 2), "child");
+          }
+        }
+      }
+    }
+
+    @for $i from 1 through $grid-columns {
+      $grid-column-width: (( 100 / $grid-columns ) * $i ) * 1%;
+      $grid-gutter-calc: $grid-gutter / ( $grid-gutter * 0 + 1 );
+
+      // Compiles: cell-*-# for each viewport
+      //
+      .cell-#{ $breakpoint }-#{ $i } {
+        flex-basis: $grid-column-width - $grid-gutter-calc;
+        max-width: $grid-column-width;
+      }
+
+      // Compiles: cell-*-offset-# for each viewport
+      //
+      .cell-#{ $breakpoint }-offset-#{ $i } {
+        margin-left: $grid-column-width;
+      }
+    }
+  }
+}
