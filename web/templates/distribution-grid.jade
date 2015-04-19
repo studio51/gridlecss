@@ -1,15 +1,15 @@
 article#grid-distribution
 
-  .grid
+  .grid--fluid
 
     header
-      h3.title Distribution
+      h3.section-title Distribution
 
     section
 
       .row
         .cell.cell-xs-12.cell-sm.no-fill
-          p.description
+          p.section-description
             | Flex items are displayed with equal spacing between them, first and
             | last flex items are aligned to the edges of the flex container
 
@@ -20,7 +20,7 @@ article#grid-distribution
               .cell.cell-xs-3 distribute-between
 
         .cell.cell-xs-12.cell-sm.no-fill
-          p.description
+          p.section-description
             | Flex items are displayed with equal spacing around every flex item,
             | even the first and the last flex items
 
@@ -30,9 +30,8 @@ article#grid-distribution
               .cell.cell-xs-3 distribute-around
               .cell.cell-xs-3 distribute-around
 
-
-      h2.title Distribution by Viewport
-      p.description
+      h3.section-title Distribution by Viewport
+      p.section-description
         | You can also specify what distribution rule should be considered
         | depending on the viewport by adding the viewport class
 
