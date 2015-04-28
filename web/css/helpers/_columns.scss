@@ -1,23 +1,29 @@
-// Please note that this helper is work in progress, it will be introduced in v1.1
-//
+// Milestone: v2.0
 
-.grid-columns {
-  @include flexbox;
-  @include flex-direction;
-
+.columns {
+  display: flex;
+  flex-direction: column;
   height: 100%;
-}
 
-.row {
-  &-half {
-    flex: .5;
+  // @for $i from 1 through $grid-columns {
+    // $grid-column-height: (( 100 / $grid-columns ) * $i ) * 1%;
+
+    // .col-xs-#{ $i } {
+      // height: $grid-column-height;
+      // flex: $i - .5;
+      // border: 1px solid red;
+    // }
+  // }
+
+  .row-xs-1 {
+    flex: 1;
   }
 
-  &-auto {
+  .row-xs-auto {
     flex: 5;
   }
 
-  &-whole {
+  .row-xs-2 {
     flex: 1;
   }
 }

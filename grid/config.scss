@@ -1,0 +1,71 @@
+//////////////////////////////////////
+//
+// Author: Vladut Radulescu @ Studio51
+// MIT LICENSE © 2015 Studio51
+
+// Enable Bootstrap OR Foundation as your additional framework in order to
+// provide a fallback for older browsers that don't support flexbox.
+// Please note that this will change the way you write your grid, so please read
+// the documentation before enabling any of these
+//
+// Options: [true / false]
+//
+// $grid-bootstrap: false;
+// $grid-foundation: false;
+//
+// Milestone v2.0
+
+// Grid gutters
+//
+// (!) *giggle* Your gutter will be automatically halfed once compiled.
+// $grid-gutter: 10px will compile a gutter of 5px
+//
+$grid-gutter: 0 !default;
+
+// In order to minimze the compiled CSS, we've left out some rules that are
+// default.
+// If you experience any issues with the grid please let us know by opening an
+// issue on Github and enable the following variable.
+//
+// Options: [true / false]
+//
+$grid-minimal: true !default;
+
+// The number of columns the grid will have
+// GridleCSS supports up to 24 columns. Beyond that, it's up to you to make it
+// work
+//
+// Options: [12 / 24]
+//
+$grid-columns: 12 !default;
+
+// Grid breakpoints
+//
+// Options: [xs sm md lg]
+//
+$grid-breakpoints: "xs" "sm" "md" "lg";
+
+// Grid breakpoints
+// If you want to add more, just make sure you respect the naming convention:
+//
+// $grid-#{key}-min: #{value};
+//
+// $grid-sm-min: 40.063em;
+// $grid-md-min: 64.063em;
+// $grid-lg-min: 90.063em;
+//
+$grid-sm-min: 768px;
+$grid-md-min: 982px;
+$grid-lg-min: 1200px;
+
+// Distribute the cells spacing around or between them
+//
+$flex-distribution: true !default;
+$flex-distributions: "around" "between";
+
+// Alignments for main axis  (x): left, center, right
+// Alignments for cross axis (y): top, middle, bottom, baseline
+//
+$flex-alignment: true !default;
+$flex-alignments: "x" ("center"("center"), "right"("flex-end")),
+                  "y" ("top"("flex-start"), "middle"("center"), "bottom"("flex-end"), "baseline"("baseline"), "stretch"("stretch"));

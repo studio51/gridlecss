@@ -1,3 +1,5 @@
+$grid-gutter: 2px !default;
+
 @import "../../grid/gridlecss";
 
 @import "helpers/variables";
@@ -16,21 +18,27 @@ html, body {
 
 body {
   font-family: 'Raleway', sans-serif;
-  font-size: 80%;
+  // font-size: 80%;
+    font-size: 100%;
 
   @include media("screen", "sm") {
-    font-size: 100%;
+    // font-size: 100%;
   }
+}
+
+.grid--fluid {
+  padding-left: $theme-spacing;
+  padding-right: $theme-spacing;
+}
+
+.column,
+.column .cell {
+  border: 1px solid red;
 }
 
 .header {
   height: 100%;
-  overflow: hidden;
-
-  @include media("screen", "xs") {
-    padding-left: $theme-spacing;
-    padding-right: $theme-spacing;
-  }
+  // overflow: hidden;
 
   @include background-animation((
     nth($bluejeans, 1),
@@ -98,8 +106,8 @@ article {
   padding-top: $theme-spacing * 2;
 
   @include media("screen", "xs") {
-    padding-left: $theme-spacing;
-    padding-right: $theme-spacing;
+    // padding-left: $theme-spacing;
+    // padding-right: $theme-spacing;
   }
 
   header {
@@ -122,7 +130,7 @@ article {
 section {
   font-size: .5em !important;
 
-  .cell {
+  .cell:not(.no-fill) {
     background-color: rgba(nth($darkgray, 1), .05);
     color: nth($darkgray, 1f);
     margin-bottom: 1px;

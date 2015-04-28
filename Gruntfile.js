@@ -43,7 +43,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          "<%= grid_build_dir %>/gridle.css": "<%= grid_dir %>/gridle.scss",
+          "dist/gridle.css": "grid/gridlecss.scss",
           "web/dist/css/theme.css": "web/css/theme.scss"
         }
       }
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
         map: false,
         processors: [
           require('autoprefixer-core')({
-            browsers: ['last 5 versions', '> 5%'],
+            browsers: ['last 5 versions', '> 15%', 'IE 10']
           }).postcss
         ]
       },
@@ -153,16 +153,16 @@ module.exports = function(grunt) {
       },
       sass: {
         files: ['grid/**/*.scss', 'web/css/**/*.scss'],
-        tasks: ['sass', 'postcss', 'cssnext', 'cssmin']
+        tasks: ['sass', 'postcss', 'cssnext']
       },
-      uglify: {
-        files: ['web/js/**/*.js'],
-        tasks: ['uglify']
-      },
-      svgmin: {
-        files: ['web/images/**/*.svg'],
-        tasks: ['svgmin']
-      },
+      // uglify: {
+      //   files: ['web/js/**/*.js'],
+      //   tasks: ['uglify']
+      // },
+      // svgmin: {
+      //   files: ['web/images/**/*.svg'],
+      //   tasks: ['svgmin']
+      // },
       jade: {
         files: ['web/**/*.jade'],
         tasks: ['jade']
