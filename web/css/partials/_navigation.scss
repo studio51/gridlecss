@@ -7,9 +7,9 @@
   }
 
   ul {
-    @include flexbox;
-    @include flex(1);
-    @include flex-direction;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
 
     font-size: 50%;
     display: none;
@@ -19,9 +19,8 @@
     width: 100%;
 
     li {
-      @include flexbox;
-      @include flex(1);
-
+    display: flex;
+    flex: 1;
       animation-fill-mode: both;
       animation-duration: 2s;
       animation-name: bounceInDown;
@@ -48,8 +47,8 @@
       }
 
       a {
-        @include flexbox;
-        @include flex(1);
+        display: flex;
+        flex: 1;
 
         align-items: center;
         color: rgba(nth($bluejeans, 2), 1);
