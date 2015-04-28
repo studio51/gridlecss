@@ -30,11 +30,9 @@
   }
 
   .row {
-    flex-wrap: wrap;
-
-    flex-direction: row;
     flex: 0 1 auto;
-
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-left: -( var(--grid-gutter-calc));
     margin-right: -( var(--grid-gutter-calc));
 
@@ -94,10 +92,8 @@
 
     %cell-styles {
       display: flex;
-      flex: 0 1 auto;
+      flex: 1 0 auto;
       flex-direction: column;
-      flex-grow: 0;
-      flex-shrink: 0;
     }
 
 @each $breakpoint in $grid-breakpoints {
@@ -137,7 +133,6 @@
     //
     @for $i from 1 through $grid-columns {
 
-      .cell-#{ $breakpoint },
       .cell-#{ $breakpoint }-#{ $i },
       .cell-#{ $breakpoint }-offset-#{ $i } {
         @extend %cell-styles;
@@ -147,9 +142,7 @@
     // Compiles: cell-* for each viewport
     //
     .cell-#{ $breakpoint } {
-      // flex: 1 0;
-      flex-grow: 1;
-      flex-basis: 0;
+      flex: 1 0;
       max-width: 100%;
 
       &-order {
