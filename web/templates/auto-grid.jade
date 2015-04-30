@@ -1,20 +1,18 @@
-article#grid-auto
-
-  .grid--fluid
+section#grid-basic
+  .grid
 
     header
-      h3 Auto Width
-      p
+      h4.section-title Auto Width
+      p.section-description
         | Add any number of auto sizing cells to a row. Let the grid figure it
         | out
 
-    section
+    article
 
       .row
-        .cell.cell-xs auto
-        .cell.cell-xs auto
-        .cell.cell-xs auto
-        .cell.cell-xs auto
+
+        - for( var i = 0; i < 4; ++i )
+          .cell.cell-xs auto
 
       .row
         .cell.cell-xs-3 cell-xs-3
@@ -22,20 +20,35 @@ article#grid-auto
         .cell.cell-xs-2 cell-xs-2
         .cell.cell-xs auto
 
-      .row
-        .cell.no-fill
-          p
-            | You can also specify on which viewport the grid should figure it
-            | out whether or not it should apply it.
+    article
+
+      header
+        h5.section-title Auto Width on Viewport
+        p.section-description
+          | You can also specify on which viewport the grid should figure it
+          | out whether or not it should apply it.
 
       .row
         .cell.cell-sm.cell-md-3
-          span.visible-sm auto
+          span.visible-xs full-xs
+          span.visible-sm auto-sm
           span.visible-md cell-md-3
+          span.visible-lg auto-lg
 
-        .cell.cell-sm.cell-md auto
+        .cell.cell-sm.cell-md
+          span.visible-xs full-xs
+          span.visible-sm auto-sm
+          span.visible-md auto-md
+          span.visible-lg auto-lg
+
         .cell.cell-sm.cell-md-2
-          span.visible-sm auto
+          span.visible-xs full-xs
+          span.visible-sm auto-sm
           span.visible-md cell-md-2
+          span.visible-lg auto-lg
 
-        .cell.cell-sm.cell-md auto
+        .cell.cell-sm.cell-md
+          span.visible-xs full-xs
+          span.visible-sm auto-sm
+          span.visible-md auto-md
+          span.visible-lg auto-lg
