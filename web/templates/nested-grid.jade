@@ -1,44 +1,33 @@
-article#grid-nested
-
-  .grid--fluid
+section#grid-nested
+  .grid
 
     header
-      h3 Gridcellceptional!
-      p
+      h4.section-title Gridcellceptional!
+      p.section-description
         | A cell, inside a row, inside a cell, inside a row.. ooh you get it!
 
-    section
+    article
 
       .row
-        .cell.cell-sm-6
+        .cell.cell-md-6
           .row
-            .cell.cell-xs-12
-              .row
-                .cell.cell-xs-3
-                  .row
-                    .cell.cell-xs-4
-                    .cell.cell-xs-4
-                    .cell.cell-xs-4
-                .cell.cell-xs-3
-                  .row
-                    .cell.cell-xs-4
-                    .cell.cell-xs-4
-                    .cell.cell-xs-4
-                .cell.cell-xs-3
-                  .row
-                    .cell.cell-xs-4
-                    .cell.cell-xs-4
-                    .cell.cell-xs-4
-                .cell.cell-xs-3
-                  .row
-                    .cell.cell-xs-4
-                    .cell.cell-xs-4
-                    .cell.cell-xs-4
+            .cell.cell-xs
 
-        .cell.cell-sm-6
-          .row
-            .cell.cell-xs-12
               .row
-                .cell.cell-xs-12
+
+                - for( var i = 0; i < 4; i++ )
+
+                  .cell.cell-xs-3
+                    .row
+
+                      - for( var ic = 0; ic < 3; ic++ )
+
+                        .cell.cell-xs-4
+
+        .cell.cell-md-6
+          .row
+            .cell.cell-xs
+              .row
+                .cell.cell-xs
                   .row
-                    .cell.cell-xs-12
+                    .cell.cell-xs
