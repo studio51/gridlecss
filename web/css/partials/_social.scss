@@ -1,9 +1,8 @@
 .row--social {
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
-  align-items: center;
   background-color: #fff;
-  padding-bottom: $theme-spacing;
-  padding-top: $theme-spacing;
+  padding-bottom: $theme-spacing * 2;
+  padding-top: $theme-spacing * 2;
   position: relative;
 
   &:before,
@@ -23,14 +22,18 @@
   &:after {
     right: -100%;
   }
+
+  ul {
+    @extend .row;
+  }
+}
+
+.browsers {
+  @extend .cell-align--left;
 }
 
 .social-likes {
-  display: flex;
-
-  &__button {
-    font-weight: 500;
-  }
+  @extend .cell-align--right;
 
   &__counter {
     border-radius: 100%;
@@ -59,6 +62,7 @@
       background-color: rgba($color_facebook, 1);
 
       &:before {
+        content: "'asd'";
         border-right: 8px solid rgba($color_facebook, 1);
       }
     }
@@ -81,54 +85,54 @@
   }
 
   .btn {
-    cursor: pointer;
-    flex: 1;
-    font-size: 1.5em;
-    line-height: $theme-spacing;
-    padding-bottom: $theme-spacing / 4;
-    padding-top: $theme-spacing / 4;
+    // cursor: pointer;
+    // flex: 1;
+    // font-size: 1.5em;
+    // line-height: $theme-spacing;
+    // padding-bottom: $theme-spacing / 4;
+    // padding-top: $theme-spacing / 4;
 
-    &--facebook {
-      color: rgba($color_facebook, 1);
-    }
+    // &--facebook {
+    //   color: rgba($color_facebook, 1);
+    // }
 
-    &--twitter {
-      color: rgba($color_twitter, 1);
-    }
+    // &--twitter {
+    //   color: rgba($color_twitter, 1);
+    // }
 
-    &--plusone {
-      color: rgba($color_google, 1);
-    }
+    // &--plusone {
+    //   color: rgba($color_google, 1);
+    // }
   }
 }
 
 .list {
 
-  &--buttons {
-    display: flex;
+  // &--buttons {
+  //   display: flex;
 
-    li {
-      flex: 1 0 auto;
-      margin-left: $theme-spacing / 2;
-    }
+  //   li {
+  //     flex: 1 0 auto;
+  //     margin-left: $theme-spacing / 2;
+  //   }
 
-    .btn {
-      border-radius: 2px;
-      color: #fff;
-      display: block;
-      font-size: .9em;
-      padding-bottom: $theme-spacing / 2;
-      padding-left: $theme-spacing;
-      padding-right: $theme-spacing;
-      padding-top: $theme-spacing / 2;
+  //   .btn {
+  //     border-radius: 2px;
+  //     color: #fff;
+  //     display: block;
+  //     font-size: .9em;
+  //     padding-bottom: $theme-spacing / 2;
+  //     padding-left: $theme-spacing;
+  //     padding-right: $theme-spacing;
+  //     padding-top: $theme-spacing / 2;
 
-      &--demo {
-        background-color: nth($mint, 1);
-      }
+  //     &--demo {
+  //       background-color: nth($mint, 1);
+  //     }
 
-      &--download {
-        background-color: nth($bluejeans, 1);
-      }
-    }
-  }
+  //     &--download {
+  //       background-color: nth($bluejeans, 1);
+  //     }
+  //   }
+  // }
 }
