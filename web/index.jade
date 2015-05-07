@@ -1,6 +1,6 @@
 !!! 5
 
-- var version = '0.9.1.beta1'
+- var version = '1.0.rc1'
 
 html(lang="en")
   head
@@ -23,7 +23,7 @@ html(lang="en")
 
     header.header
 
-      .grid--fluid.columns
+      .grid.columns
 
         .row.align-middle
           .cell.cell-xs
@@ -34,11 +34,11 @@ html(lang="en")
 
               p.brand-motto Yet Another Flex Grid framework!
 
-          .cell.cell-xs-2.cell-sm-3.cell-lg-2
+          .cell.cell-xs-1
 
-            a.btn.btn-md.btn--git(href="https://github.com/studio51/gridlecss")
+            a.btn.btn-md.btn--git(href="https://github.com/studio51/gridlecss", title="View the source code on GitHub")
               i.fa.fa-github
-              span.hidden-xs View on Github
+              span.hidden-xs
 
         .row.row-xs-auto
           .cell.cell-xs
@@ -101,9 +101,9 @@ html(lang="en")
 
     footer.footer
 
-      .grid--fluid
+      .grid
         .row
-          .cell.cell-xs
+          .cell.cell-xs-6
             p
               | Crafted with
               span &#9829;
@@ -112,18 +112,39 @@ html(lang="en")
               | &nbsp; © 2015 and maintained by &nbsp;
               a(href="//creative-studio51.co.uk") Studio51
 
-          .cell.cell-xs-1.cells-bottom
-            p v#{version}
+          .cell.cell-xs-6
+            ul
+              li
+                a(href="//github.com/studio51/gridlecss/releases/tag/v#{version}") v#{version}
+
+              li
+                a(href="//github.com/studio51/gridlecss/blob/master/CHANGELOG.md") Changelog
 
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js')
+    script(src='//code.jquery.com/ui/1.11.4/jquery-ui.min.js')
 
     script(src='js/main.min.js')
-
     script.
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-46120010-2', 'auto');
-        ga('send', 'pageview');
+      $(function() {
+        var h = $('article').outerHeight(),
+            w = $('article').width();
+
+        $('.resizable').resizable({
+          containment: 'article',
+          maxHeight: h,
+          maxWidth: w,
+          grid: 50,
+
+          resize: function( event, ui ) {
+            $('.grid').css('width', '100px');
+          }
+        });
+      });
+    script.
+      //- (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      //-   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      //-   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      //-   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      //-   ga('create', 'UA-46120010-2', 'auto');
+      //-   ga('send', 'pageview');
