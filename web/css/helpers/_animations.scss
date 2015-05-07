@@ -39,3 +39,23 @@
     transform: none;
   }
 }
+
+@keyframes bounce {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(0, 15px, 0);
+  }
+}
+
+.bounce {
+  animation-name: bounce;
+}
+
+@mixin animated($animation-duration, $animation-iteration) {
+  animation-duration: $animation-duration;
+  animation-iteration-count: $animation-iteration;
+  animation-fill-mode: both;
+}
