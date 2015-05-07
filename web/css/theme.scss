@@ -1,173 +1,172 @@
-$grid-gutter: 2px !default;
+/*
 
+  GridleCSS Theme v1.0
+
+  Author: @pacMakaveli90
+  Author URL: http://creative-studio51.co.uk/
+
+*/
+
+@import "gridlecss";
 @import "../../grid/gridlecss";
 
 @import "helpers/variables";
 @import "helpers/columns";
-
 @import "helpers/mixins";
 @import "helpers/animations";
-
 @import "helpers/visibility";
 
+@import "partials/reset";
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700,200italic,400italic,700italic);
 html, body {
   height: 100%;
 }
 
-@import "partials/reset";
-
-body {
-  font-family: 'Raleway', sans-serif;
-  // font-size: 80%;
+  body {
+    // font-family: 'Raleway', sans-serif;
+    // font-family: source-code-pro, monospace;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 100%;
-
-  @include media("screen", "sm") {
-    // font-size: 100%;
   }
-}
 
-.grid--fluid {
-  padding-left: $theme-spacing;
-  padding-right: $theme-spacing;
-}
+    @include media("screen", "xs") {
+      .grid {
+        padding-left: $theme-spacing;
+        padding-right: $theme-spacing;
+      }
+    }
 
-.column,
-.column .cell {
-  border: 1px solid red;
-}
+    .header {
+      @include background-animation((nth($bluejeans, 1), nth($mint, 1), nth($aqua, 1)), 30);
 
-.header {
-  height: 100%;
-  // overflow: hidden;
+      height: 100%;
+      overflow: hidden;
 
-  @include background-animation((
-    nth($bluejeans, 1),
-    nth($mint, 1),
-    nth($aqua, 1),
-  ), 30);
+      .btn {
+        text-align: right;
 
-  .btn {
-
-    &--git {
-      border-radius: $theme-border--radius;
-      color: #fff;
-      font-size: 2.5em;
-      line-height: $theme-spacing;
-      text-align: right;
-
-      @include media("screen", "sm") {
-        background-color: #4183c4;
-        font-size: 1.5em;
-        margin-right: $theme-spacing / 2;
-        padding: $theme-spacing / 2;
-        text-align: left;
+        &--git {
+          color: #fff;
+          font-size: 1.5em;
+          line-height: $theme-spacing;
+        }
       }
 
-      i {
-        margin-right: $theme-spacing / 2;
-        vertical-align: middle;
-      }
+      .brand {
+        color: #fff;
+        padding-bottom: $theme-spacing * 2;
+        padding-top: $theme-spacing * 2;
 
-      @include media("screen", "sm") {
-        span {
-          display: inline-block;
+        @include media("screen", "md") {
+          padding: ( $theme-spacing * 3 ) 0;
+        }
+
+        &-name {
+
+          &--pronunciation {
+            font-weight: 100;
+            font-size: .5em;
+            margin-left: $theme-spacing / 2;
+          }
         }
       }
     }
-  }
-}
 
-.brand {
-  color: #fff;
-  padding-bottom: $theme-spacing;
-  padding-top: $theme-spacing;
+    @import "partials/demos";
 
-  @include media("screen", "md") {
-    padding: ( $theme-spacing * 3 ) 0;
-  }
+    @import "partials/device";
+    @import "partials/navigation";
+    @import "partials/social";
 
-  &-name {
+    // Grid Sections
 
-    &--pronunciation {
-      font-weight: 300;
-      margin-left: $theme-spacing / 2;
-    }
-  }
-}
-
-@import "partials/demos";
-
-@import "partials/device";
-@import "partials/navigation";
-@import "partials/social";
-
-article {
-  padding-bottom: $theme-spacing * 2;
-  padding-top: $theme-spacing * 2;
-
-  @include media("screen", "xs") {
-    // padding-left: $theme-spacing;
-    // padding-right: $theme-spacing;
-  }
-
-  header {
-    margin-bottom: $theme-spacing;
-
-    h3 {
-      color: nth($darkgray, 2);
+    .main {
+      background-color: $theme-background-color;
+      padding-bottom: $theme-spacing * 3;
     }
 
-    p {
-      color: nth($darkgray, 1);
+    section {
+      // padding-bottom: $theme-spacing;
+      // padding-top: $theme-spacing;
     }
+
+    // .section-description {
+    //   font-size: .8em;
+    // }
+
+    section {
+    //   padding-bottom: $theme-spacing * 2;
+    //   padding-top: $theme-spacing * 2;
+
+    //   &:nth-child(odd) {
+    //     background-color: rgba(nth($mediumgray, 1), 1);
+    //   }
+
+      header {
+        padding-bottom: $theme-spacing * 3;
+        padding-top: $theme-spacing * 3;
+      }
+
+      .section-title {
+        font-size: 2em;
+        font-weight: 200;
+        color: $colour0;
+      }
+
+      .section-description {
+        font-weight: 400;
+        color: $colour2;
+        padding-top: $theme-spacing / 2;
+        font-size: 1em;
+      }
+    }
+
+      article {
+        background-color: $theme-box-color;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        padding: $theme-spacing * 2;
+
+        header {
+          padding-bottom: 0;
+          padding-top: 0;
+        }
+
+        .cell:not(.no-style) {
+          background-color: rgba(nth($darkgray, 1), .05);
+          margin-bottom: 1px;
+          margin-top: 1px;
+          font-size: $theme-spacing / 1.5;
+          padding: $theme-spacing / 2;
+        }
+
+        // &.separator {
+        //   $gutter: $theme-spacing / 2;
+
+        //   > .row {
+        //     margin-left: -($gutter);
+        //     margin-right: -($gutter);
+
+        //     > .cell {
+        //       margin-left: $gutter;
+        //       margin-right: $gutter;
+        //     }
+        //   }
+        // }
+      }
+
+
+  footer {
+    background-color: #fff;
+    padding-bottom: $theme-spacing * 3;
+    padding-top: $theme-spacing * 3;
   }
 
-  &:nth-child(odd) {
-    background-color: rgba(nth($mediumgray, 1), 1);
-  }
-}
+/*
 
-section {
-  font-size: .5em !important;
+  Irrelevant CSS for the purpose of demonstrating the Grid' features
 
-  .cell:not(.no-fill) {
-    background-color: rgba(nth($darkgray, 1), .05);
-    color: nth($darkgray, 1f);
-    margin-bottom: 1px;
-    margin-top: 1px;
-    padding: $theme-spacing / 2;
-  }
-
-  .row-title {
-    font-size: 2em;
-    padding-bottom: $theme-spacing;
-    padding-top: $theme-spacing;
-  }
-}
-
-.footer {
-  padding-bottom: $theme-spacing * 2;
-  padding-top: $theme-spacing * 2;
-
-  p, a {
-    color: nth($darkgray, 1);
-    font-size: .8em;
-  }
-
-  a {
-    border: 1px solid rgba(nth($darkgray, 1), 1);
-    border-radius: $theme-border--radius;
-    font-size: .6em;
-    padding: 5px;
-  }
-
-  span {
-    color: rgba(nth($grapefruit, 1), 1);
-    font-size: 1em;
-    margin-left: $theme-spacing / 2;
-    margin-right: $theme-spacing / 2;
-  }
-}
+*/
 
 .demo-alignment .row {
   height: 10em;

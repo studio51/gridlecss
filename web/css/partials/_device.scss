@@ -1,21 +1,19 @@
 .device {
-  // border: 1px solid red;
-  // @extend .row;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
+  @extend .cell-xs;
+
+  position: relative;
+
   &-frame {
 
     &--outter {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-
       background-color: #fff;
       border: 2px solid rgba(#C9CDC0, 1);
       border-bottom: none;
       border-top-left-radius: 38px;
       border-top-right-radius: 38px;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
       padding-left: 10px;
       padding-right: 10px;
 
@@ -36,12 +34,12 @@
     }
 
     &--inner {
-    flex: 1;
       background-color: #fff;
       border: 1px solid rgba(#C9CDC0, 1);
       border-bottom: none;
       border-top-left-radius: 2px;
       border-top-right-radius: 2px;
+      flex: 1;
       overflow: auto;
       position: relative;
 

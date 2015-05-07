@@ -7,20 +7,18 @@
   }
 
   ul {
-    display: flex;
+    display: none;
     flex: 1;
     flex-direction: column;
-
-    font-size: 50%;
-    display: none;
+    font-size: 80%;
     height: 100%;
     position: absolute;
     top: 0;
     width: 100%;
 
     li {
-    display: flex;
-    flex: 1;
+      display: flex;
+      flex: 1;
       animation-fill-mode: both;
       animation-duration: 2s;
       animation-name: bounceInDown;
@@ -47,12 +45,11 @@
       }
 
       a {
-        display: flex;
-        flex: 1;
-
         align-items: center;
         color: rgba(nth($bluejeans, 2), 1);
+        display: flex;
         font-weight: 700;
+        flex: 1;
         padding-left: $theme-spacing;
         padding-right: $theme-spacing;
         text-transform: capitalize;
@@ -68,26 +65,21 @@
     background: #fff;
     border: $theme-border--size solid rgba(nth($bluejeans, 1), 1);
     border-radius: 100%;
-    bottom: $theme-spacing * 5.5;
+    bottom: $theme-spacing;
     box-shadow: 0 0 0 2px #fff;
-    display: block;
+    display: flex;
     left: 0;
     margin: 0 auto;
     position: absolute;
     right: 0;
     z-index: 1;
-    width: 2.5em;
+    width: 50px;
 
     img {
-      height: 39px;
-      padding-bottom: 7px;
-      padding-left: 11px;
-      padding-right: 7px;
-      padding-top: 10px;
-
-      @include media("screen", "sm") {
-        height: 50px;
-      }
+      padding-bottom: 13px;
+      padding-left: 13px;
+      padding-right: 12px;
+      padding-top: 12px;
     }
   }
 }
