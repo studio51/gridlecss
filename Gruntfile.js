@@ -17,7 +17,8 @@ module.exports = function(grunt) {
 
     sass: {
       options: {
-        sourceMap: true
+        sourceMap: true,
+        outputStyle: 'compressed'
       },
 
       dist: {
@@ -79,7 +80,7 @@ module.exports = function(grunt) {
 
   // Compiles the GridleCSS.css files from source
   //
-  grunt.registerTask('build', [
+  grunt.registerTask('compile', [
     'sass',
     'postcss',
     'cssnext'
@@ -89,9 +90,9 @@ module.exports = function(grunt) {
   //
   grunt.registerTask('prettify', [
     'cssbeautifier',
-    'cssmin',
+    'cssmin'
   ]);
 
-  grunt.registerTask('default', ['clean', 'build']);
-  grunt.registerTask('ship', ['clean', 'build', 'prettify']);
+  grunt.registerTask('default', ['clean', 'compile']);
+  grunt.registerTask('ship', ['clean', 'compile', 'prettify']);
 }
