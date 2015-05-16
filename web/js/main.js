@@ -10,6 +10,15 @@ $(document).ready(function() {
     }, 1000);
   });
 
+  $('.show-css').on('click', function(e) {
+    e.preventDefault();
+
+    var target = $(this).attr('href'),
+        parent = $('section' + target);
+
+    parent.toggleClass('css');
+  });
+
   // var stickyNavTop = $('.main').offset().top;
 
   // var stickyNav = function(){

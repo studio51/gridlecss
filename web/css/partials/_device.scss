@@ -66,7 +66,7 @@
     }
 
     @include media("screen", "md") {
-      background-color: rgba(nth($grass, 1), 1);
+      background-color: rgba($green, 1);
       display: block;
       margin-bottom: 1.5em;
       margin-top: 1.5em;

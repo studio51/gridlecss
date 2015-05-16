@@ -1,56 +1,37 @@
-$colour0: #525252;
-$colour1: #EBEBEB;
-$colour2: #999999;
-$colour3: #4EA1DF;
-$colour4: #555555;
-$colour5: #2E7D32;
-$colour6: #0077AA;
-$colour7: #DA564A;
-$colour8: #F0F2F1;
-$colour9: #AEAEAE;
-$colour10: #F4645F;
-$colour11: #80878C;
-$colour12: #AAAAAA;
-$colour13: #FAFAFA;
-$colour14: #333333;
-$colour15: #E5E5E5;
-$colour16: #C8C8C8;
-// Social Media brand colors
-//
-$color-facebook: #3b5998;
-$color-twitter: #55acee;
-$color-googleplus: #dd4b39;
-$color-reddit: #ff4500;
-$color-digg: #000000;
-$color-pinterest: #cc2127;
+$green:       #A0D468;
+$lightgreen:  #D5E1A3;
+$darkgreen:   #8CC152;
+$blue:        #42A2DC;
+$lightblue:   #4FC1E9;
+$darkblue:    #10689A;
+$red:         #DA564A;
+$lightred:    #ED5565;
+$darkred:     #DA4453;
+$yellow:      #FFCE54;
+$darkyellow:  #FCBB42;
+$orange:      #FC6E51;
+$darkorange:  #E9573F;
+$purple:      #AC92EC;
+$darkpurple:  #967ADC;
+$white:       #FFFFFF;
+$gray:        #F0F0F0;
+$lightgray:   #E5E5E5;
+$darkgray:    #E5E5E5;
+$black:       #333333;
 
-$theme-spacing: 15px;
+$color-facebook:    #3b5998;
+$color-twitter:     #55acee;
+$color-googleplus:  #dd4b39;
+$color-reddit:      #ff4500;
+$color-digg:        #000000;
+$color-pinterest:   #cc2127;
 
-$theme-border--color: $colour2;
+$theme-border--color: #999999;
 $theme-border--radius: 2px;
 $theme-border--size: 1px;
 
-$theme-background-color: $colour8;
-$theme-box-color: #FFFFFF;
-$theme-box-shadow-color: $colour4;
+$theme-background-color: $gray;
+$theme-box-color: $white;
+$theme-box-shadow-color: #555555;
 
-$grapefruit:  #ED5565, #DA4453; // red
-$bittersweet: #FC6E51, #E9573F; // orange
-$sunflower:   #FFCE54, #FCBB42; // yellow
-$grass:       #A0D468, #8CC152; // green
-$mint:        #48CFAD, #37BC9B; // green
-$aqua:        #4FC1E9, #3BAFDA; // blue
-$lavender:    #AC92EC, #967ADC; // purple
-$pinkrose:    #EC87C0, #D770AD; // pink
-$lightgray:   #F5F7FA, #E6E9ED; // white/gray
-
-$mediumgray:  #F7F7F8, #EFEFEF;
-
-$darkgray:    #656D78, #434A54; // black
-
-$new_gray: #F0F0F0, #F9F9F9, #E7E7E7;
-
-$newgreen: #D5E1A3;
-
-$bluejeans: #42A2DC, #10689A; // blue
-
+$theme-spacing: 15px;

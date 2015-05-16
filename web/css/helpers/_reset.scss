@@ -27,3 +27,11 @@ ul {
   padding: 0;
   margin: 0;
 }
+
+a:not(.btn) {
+  color: $blue;
+
+  &:hover {
+    color: $darkblue;
+  }
+}
