@@ -2,16 +2,8 @@ module.exports = function(grunt) {
 
   var appConfig = {
     host: 'localhost',
-    port: 1337,
-    appDir: 'web'
+    port: 1337
   };
-
-  var grid_dir        = 'grid/',
-      theme_dir       = 'web/',
-      grid_build_dir  = 'dist/',
-      theme_build_dir = theme_dir + 'dist/';
-      theme_css_dir   = theme_dir + 'dist/css';
-      theme_js_dir    = theme_dir + 'dist/js';
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
@@ -24,9 +16,10 @@ module.exports = function(grunt) {
         port: appConfig.port,
         livereload: true,
       },
+
       dist: {
         options: {
-          base: [theme_build_dir]
+          base: 'dist/'
         }
       }
     },
@@ -37,26 +30,24 @@ module.exports = function(grunt) {
       }
     },
 
+    clean: {
+      options: {
+        dot: true
+      },
+
+      dist: {
+        src: ['dist/']
+      }
+    },
+
     sass: {
       options: {
         sourceMap: true
       },
-      dist: {
-        files: {
-          "dist/gridle.css": "grid/gridlecss.scss",
-          "web/dist/css/theme.css": "web/css/theme.scss"
-        }
-      }
-    },
 
-    cssnext: {
-      options: {
-        sourcemap: false
-      },
       dist: {
         files: {
-          'dist/gridle.css': 'dist/gridle.css',
-          'web/dist/css/theme.css': 'web/dist/css/theme.css'
+          'dist/css/theme.css': 'css/theme.scss'
         }
       }
     },
@@ -72,14 +63,26 @@ module.exports = function(grunt) {
       },
 
       dist: {
-        src: ['dist/gridle.css', 'web/dist/css/theme.css']
+        src: ['dist/css/theme.css']
+      }
+    },
+
+    cssnext: {
+      options: {
+        sourcemap: false
+      },
+
+      dist: {
+        files: {
+          'dist/css/theme.css': 'dist/css/theme.css'
+        }
       }
     },
 
     cssbeautifier : {
-      files : ['dist/gridle.css', 'web/dist/css/theme.css'],
+      files : ['dist/css/theme.css'],
       options : {
-        indent: ' ',
+        indent: '  ',
         openbrace: 'end-of-line',
         autosemicolon: true
       }
@@ -93,8 +96,7 @@ module.exports = function(grunt) {
 
       target: {
         files: {
-          'dist/gridle.min.css': ['dist/gridle.css'],
-          'web/dist/css/theme.min.css': ['web/dist/css/theme.css'],
+          'dist/css/theme.min.css': ['dist/css/theme.css'],
         }
       }
     },
@@ -102,22 +104,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'web/dist/js/main.min.js': ['web/js/**/*.js']
-        }
-      }
-    },
-
-    svgmin: {
-      options: {
-        plugins: [
-          { removeViewBox: false },
-          { removeUselessStrokeAndFill: false }
-        ]
-      },
-
-      dist: {
-        files: {
-          'web/dist/images/menu.svg': ['web/images/*.svg']
+          'dist/js/main.min.js': ['js/**/*.js']
         }
       }
     },
@@ -125,22 +112,13 @@ module.exports = function(grunt) {
     jade: {
       html: {
         files: {
-          'web/dist/': ['web/*.jade']
+          'dist/': ['*.jade']
         },
 
         options: {
           client: false,
           pretty: true
         }
-      }
-    },
-
-    clean: {
-      options: {
-        dot: true
-      },
-      dist: {
-        src: ['web/dist/']
       }
     },
 
@@ -152,36 +130,48 @@ module.exports = function(grunt) {
         files: 'Gruntfile.js'
       },
       sass: {
-        files: ['grid/**/*.scss', 'web/css/**/*.scss'],
+        files: ['css/**/*.scss'],
         tasks: ['sass', 'postcss', 'cssnext']
       },
       uglify: {
-        files: ['web/js/**/*.js'],
+        files: ['js/**/*.js'],
         tasks: ['uglify']
       },
-      // svgmin: {
-      //   files: ['web/images/**/*.svg'],
-      //   tasks: ['svgmin']
-      // },
       jade: {
-        files: ['web/**/*.jade'],
+        files: ['**/*.jade'],
         tasks: ['jade']
       }
     }
   });
 
-  grunt.registerTask('serve', [
+  grunt.registerTask('compile-css', [
+    'sass',
+    'postcss',
+    'cssnext'
+  ]);
+
+  grunt.registerTask('compile-js', [
+    'uglify'
+  ]);
+
+  grunt.registerTask('compile-html', [
+    'jade'
+  ]);
+
+  grunt.registerTask('compile-theme', ['compile-css', 'compile-js', 'compile-html']);
+
+  grunt.registerTask('prettify', [
+    'cssbeautifier',
+    'cssmin',
+  ]);
+
+  grunt.registerTask('preview', [
     'connect',
     'open',
     'watch'
   ]);
 
-  // Clean the web/dist folder which is only for viewing the grid in action
-  // locally
-  //
-  grunt.registerTask('clean', [
-    'clean'
-  ]);
-
-  grunt.registerTask('default', ['serve']);
+  grunt.registerTask('default', ['preview']);
+  grunt.registerTask('compile', ['clean', 'compile-theme']);
+  grunt.registerTask('ship', ['clean', 'compile', 'prettify']);
 }
