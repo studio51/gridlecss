@@ -42,12 +42,13 @@ module.exports = function(grunt) {
 
     sass: {
       options: {
-        sourceMap: true
+        sourceMap: true,
+        outputStyle: 'compressed'
       },
 
       dist: {
         files: {
-          'dist/css/theme.css': 'css/theme.scss'
+          'dist/css/theme.css': 'css/**/*.scss'
         }
       }
     },
