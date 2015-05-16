@@ -1,16 +1,14 @@
-section#grid-reordered
-  .grid
+section#grid-reordered.css
 
-    header
-      h4.section-title Reordering
-      p.section-description
-        | Add classes to reorder cells
+  header
+    h2.section-title #{reordered}
+    p.section-description #{reordered_description}
 
-    article
+  article.toggle
 
-      .row
-        .cell.cell-xs.cell-order--last 1
-        .cell.cell-xs 2
-        .cell.cell-xs.cell-order--first 3
-        .cell.cell-xs 4
-        .cell.cell-xs 5
+    .row
+      .cell.cell-xs.cell-order--last 1
+      .cell.cell-xs 2
+      .cell.cell-xs.cell-order--first 3
+      .cell.cell-xs 4
+      .cell.cell-xs 5

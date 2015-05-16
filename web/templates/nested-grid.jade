@@ -1,33 +1,31 @@
 section#grid-nested
-  .grid
 
-    header
-      h4.section-title Gridcellceptional!
-      p.section-description
-        | A cell, inside a row, inside a cell, inside a row.. ooh you get it!
+  header
+    h2.section-title #{nested}
+    p.section-description #{nested_description}
 
-    article
+  article.toggle
 
-      .row
-        .cell.cell-xs-12.cell-md-6
-          .row
-            .cell.cell-xs
+    .row
+      .cell.cell-xs-12.cell-md-7
+        .row
+          .cell.cell-xs
 
-              .row
+            .row
 
-                - for( var i = 0; i < 4; i++ )
+              - for( var i = 0; i < 4; i++ )
 
-                  .cell.cell-xs-3
-                    .row
-
-                      - for( var ic = 0; ic < 3; ic++ )
-
-                        .cell.cell-xs-4
-
-        .cell.cell-xs-12.cell-md-6
-          .row
-            .cell.cell-xs
-              .row
-                .cell.cell-xs
+                .cell.cell-xs-3
                   .row
-                    .cell.cell-xs
+
+                    - for( var ia = 0; ia < 3; ia++ )
+
+                      .cell.cell-xs-4
+
+      .cell.cell-xs-12.cell-md-5
+        .row
+          .cell.cell-xs
+            .row
+              .cell.cell-xs
+                .row
+                  .cell.cell-xs

@@ -1,36 +1,40 @@
 section#grid-fluid
-  .grid
 
-    header
-      h4.section-title Fluid Layout
-      p.section-description
-        | Percent based widths allow fluid resizing of columns and rows
+  header
 
-    article
+    .row
+      .cell.cell-xs-8
+        h2.section-title #{fluid}
+        p.section-description #{fluid_description}
 
-      .row
-        .cell.cell-xs auto-xs
+      .cell.cell-xs.cell-align--center
+        a.btn.btn-md.btn-blue.show-css(href="#grid-fluid", title="Toggle CSS classes") Toggle CSS
 
-      .row
-        .cell.cell-xs-1 cell-xs-1
-        .cell.cell-xs-11 cell-xs-11
+  article.toggle
 
-      .row
-        .cell.cell-xs-2 cell-xs-2
-        .cell.cell-xs-10 cell-xs-10
+    .row
+      .cell.cell-xs auto-xs
 
-      .row
-        .cell.cell-xs-3 cell-xs-3
-        .cell.cell-xs-9 cell-xs-9
+    .row
+      .cell.cell-xs-1 cell-xs-1
+      .cell.cell-xs-11 cell-xs-11
 
-      .row
-        .cell.cell-xs-4 cell-xs-4
-        .cell.cell-xs-8 cell-xs-8
+    .row
+      .cell.cell-xs-2 cell-xs-2
+      .cell.cell-xs-10 cell-xs-10
 
-      .row
-        .cell.cell-xs-5 cell-xs-5
-        .cell.cell-xs-7 cell-xs-7
+    .row
+      .cell.cell-xs-3 cell-xs-3
+      .cell.cell-xs-9 cell-xs-9
 
-      .row
-        .cell.cell-xs-6 cell-xs-6
-        .cell.cell-xs-6 cell-xs-6
+    .row
+      .cell.cell-xs-4 cell-xs-4
+      .cell.cell-xs-8 cell-xs-8
+
+    .row
+      .cell.cell-xs-5 cell-xs-5
+      .cell.cell-xs-7 cell-xs-7
+
+    .row
+      .cell.cell-xs-6 cell-xs-6
+      .cell.cell-xs-6 cell-xs-6

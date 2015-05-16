@@ -1,18 +1,25 @@
 section#grid-distribution
-  .grid
 
-    header
-      h4.section-title Distribution
+  header
 
-    article.separator
+    .row
+      .cell.cell-xs-8
+        h2.section-title #{distribution}
+        p.section-description #{distribution_description}
 
-      .row
-        .cell.cell-sm.no-style
+      .cell.cell-xs.cell-align--center
+        a.btn.btn-md.btn-blue.show-css(href="#grid-distribution", title="Toggle CSS classes") Toggle CSS
 
-          header
-            p.section-description
-              | Flex items are displayed with equal spacing between them, first and
-              | last flex items are aligned to the edges of the flex container
+  article.children
+
+    .row
+      .cell.cell-sm.unstyled
+
+        header
+          h3.section-title #{distribution_between}
+          p.section-description #{distribution_between_description}
+
+        article.toggle
 
           .row
             .cell
@@ -21,12 +28,13 @@ section#grid-distribution
                 .cell.cell-xs-3 distribute-between
                 .cell.cell-xs-3 distribute-between
 
-        .cell.cell-sm.no-style
+      .cell.cell-sm.unstyled
 
-          header
-            p.section-description
-              | Flex items are displayed with equal spacing around every flex item,
-              | even the first and the last flex items
+        header
+          h3.section-title #{distribution_around}
+          p.section-description #{distribution_around_description}
+
+        article.toggle
 
           .row
             .cell
@@ -35,16 +43,16 @@ section#grid-distribution
                 .cell.cell-xs-3 distribute-around
                 .cell.cell-xs-3 distribute-around
 
-      .row
-        .cell.cell-sm.no-style
+    .row
+      .cell.cell-xs.unstyled
 
-          header
-            h4.section-title Distribution by Viewport
-            p.section-description
-              | You can also specify what distribution rule should be considered
-              | depending on the viewport by adding the viewport class
+        header
+          h3.section-title #{distribution_viewport}
+          p.section-description #{distribution_viewport_description}
 
-          .row
+        article.toggle
+
+         .row
             .cell
               .row.distribute-around.distribute-sm-between.distribute-md-around.distribute-lg-between.text-center
                 .cell.cell-xs-3
