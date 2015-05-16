@@ -1,6 +1,15 @@
 .nav-menu {
   height: 100%;
 
+  .sticky {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    border-top: 0;
+  }
+
   ul {
     display: flex;
     flex: 1;

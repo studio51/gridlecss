@@ -1,32 +1,64 @@
 $(document).ready(function() {
 
   $('.nav-menu .btn').on('click', function(e) {
-      e.preventDefault();
+    e.preventDefault();
 
-      var target = $(this).data('target');
+    var target = $(this).data('target');
 
-      $('html, body').stop().animate({
-         scrollTop: $(target).offset().top
-      }, 1000);
+    $('html, body').stop().animate({
+       scrollTop: $(target).offset().top
+    }, 1000);
   });
 
-  // $('#toggle-menu').on('click', function(e) {
-  //   e.preventDefault();
+  // var stickyNavTop = $('.main').offset().top;
 
-  //   var menu = $('.nav-menu');
+  // var stickyNav = function(){
+  //   var scrollTop = $(window).scrollTop();
 
-  //   $(menu).toggleClass('open');
+  //   if (scrollTop > stickyNavTop) {
+  //     $('.nav-menu').addClass('sticky');
+  //   } else {
+  //     $('.nav-menu').removeClass('sticky');
+  //   }
+  // };
+
+  // stickyNav();
+
+  // $(window).scroll(function() {
+  //     stickyNav();
   // });
 
-  $('.source').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
-
-  $('.social-likes').socialLikes({
-      url: 'http://studio51.github.io/gridlecss',
-      title: 'GridleCSS, yet another flexbox grid!',
-      counters: true,
-      singleTitle: 'Spread the word, daug!'
+  $('.social-buttons--container ul').sharegg({
+    data: {
+      url: 'https://studio51.github.io/gridlecss',
+      title: 'GridleCSS, yet another flexbox grid!'
+    },
+    buttons: {
+      facebook: {
+        show: true,
+        count: true
+      },
+      googleplus: {
+        show: true,
+        count: true
+      },
+      twitter: {
+        show: true,
+        count: true
+      },
+      pinterest: {
+        show: true,
+        count: true
+      },
+      digg: {
+        show: true,
+        count: true
+      },
+      reddit: {
+        show: true,
+        count: true
+      },
+    }
   });
 
   /* open folding content */
@@ -36,6 +68,8 @@ $(document).ready(function() {
     var menu = $('.nav-menu');
 
     $(menu).toggleClass('open');
+    $(this).toggleClass('close');
+
   });
 
   /* close folding content */

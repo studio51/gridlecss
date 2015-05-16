@@ -1,6 +1,6 @@
 /*
 
-  GridleCSS Theme v1.0
+  GridleCSS Theme v1.0.rc1
 
   Author: @pacMakaveli90
   Author URL: http://creative-studio51.co.uk/
@@ -17,6 +17,8 @@
 @import "helpers/mixins";
 @import "helpers/animations";
 @import "helpers/visibility";
+
+@import "components/buttons";
 
 @import "partials/reset";
 
@@ -88,8 +90,17 @@ html, body {
     section {
 
       header {
-        padding-bottom: $theme-spacing * 3;
-        padding-top: $theme-spacing * 3;
+      //   padding-bottom: $theme-spacing * 3;
+      //   padding-top: $theme-spacing * 3;
+
+
+        background-color: $theme-box-color;
+        box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2),
+                    1px 2px 0px rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+        padding: $theme-spacing * 2;
+        margin: ( $theme-spacing * 2 )0;
+
       }
 
       .section-title {
@@ -107,10 +118,6 @@ html, body {
     }
 
       article {
-        background-color: $theme-box-color;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-        border-radius: 3px;
-        padding: $theme-spacing * 2;
 
         header {
           padding-bottom: 0;
@@ -126,37 +133,70 @@ html, body {
         }
       }
 
+.footer {
+  background-color: #fff;
+  color: $theme-border--color;
+  padding-bottom: $theme-spacing * 2;
+  padding-top: $theme-spacing * 2;
+  text-align: center;
 
-  footer {
+  a {
+    color: $colour3;
+    font-weight: 400;
+  }
 
-    background-color: #fff;
-    color: $colour2;
-    padding-bottom: $theme-spacing * 3;
-    padding-top: $theme-spacing * 3;
+  &-links {
+    display: flex;
+    flex: 1;
+    margin-left: -( $theme-spacing );
+    margin-right: -( $theme-spacing );
 
-    hr {
-      border-color: #fff;
+    li {
+      display: flex;
+      flex: 1 0 auto;
+      margin-left: $theme-spacing;
+      margin-right: $theme-spacing;
+      text-align: center;
+
+      @include media("screen", "sm") {
+        flex: 0 1 auto;
+        text-align: left;
+      }
+
+      a {
+        padding-bottom: $theme-spacing;
+        padding-top: $theme-spacing;
+        width: 100%;
+      }
     }
   }
 
-  .footer {
-    &-links {
-      @extend .align-xs-middle;
+  hr {
+    border: $theme-border--size solid $theme-background-color;
+    margin-bottom: $theme-spacing * 2;
+    margin-top: $theme-spacing;
+  }
 
-      display: flex;
+  p {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: ( $theme-spacing - 5px );
+  }
 
-      li {
-        @extend .cell;
-        @extend .cell-xs;
-      }
-    }
+  span {
+    color: $colour10;
+  }
 
+  @include media("screen", "sm") {
     &-copyright {
+      text-align: left;
     }
 
     &-credits {
+      text-align: right;
     }
   }
+}
 
 /*
 
@@ -194,3 +234,4 @@ html, body {
 .text-center {
   text-align: center;
 }
+

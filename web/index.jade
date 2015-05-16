@@ -1,5 +1,7 @@
 !!! 5
 
+- var name = 'GridleCSS'
+- var description = 'Yet another flex grid framework!'
 - var version = '1.0.rc1'
 
 html(lang="en")
@@ -8,7 +10,7 @@ html(lang="en")
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
 
-    title GridleCSS | Yet another Flexbox Grid
+    title #{ name } | #{ description }
 
     meta(name='description', content='A simple to use 12/24 columns Grid created with CSS Flex in SASS. Crafted with love by Vlad Radulescu @ Studio51')
     meta(name='viewport', content='width=device-width, initial-scale=1')
@@ -29,10 +31,10 @@ html(lang="en")
           .cell.cell-xs
 
             .brand
-              h1.brand-name GridleCSS
+              h1.brand-name #{ name }
                 span.brand-name--pronunciation /ɡrɪd.lɛx/
 
-              p.brand-motto Yet Another Flex Grid framework!
+              p.brand-motto #{ description }
 
           .cell.cell-xs-1
 
@@ -69,27 +71,17 @@ html(lang="en")
                             li(class="animated-#{i++}")
                               a.btn.btn-sm(href="#", data-target="#grid-#{val}") #{val}
 
-                .device-button
-
-                a#toggle-menu.nav-menu--trigger(href="#", role="navigation-menu-trigger")
-                  img(src="images/menu.svg", title="Burger menu button", alt="Show Menu", height="50")
-
         .row.row--social
-          .cell.cell-sm-6
-            ul.browsers
-              li IE
-              li Opera
-              li Chrome
-              li Firefox
+          .cell.cell-sm-5
+            a.btn.btn--outline(href="http://caniuse.com/#feat=flexbox") Can I use?
 
-          .cell.cell-sm-6
-            ul.social-likes
-              li
-                a.btn.btn--facebook.facebook Facebook
-              li
-                a.btn.btn--twitter.twitter(data-via="studiofifty1", data-related="pacMakaveli") Twitter
-              li
-                a.btn.btn--plusone.plusone Google+
+          .cell.cell-sm-2
+            a#toggle-menu.nav-menu--trigger(href="#", aria-label="Toggle Navigation", role="navigation-trigger")
+              span.lines
+
+          .cell.cell-sm-5
+            .social-buttons--container
+              ul.social-buttons
 
     main.main
 
@@ -115,28 +107,20 @@ html(lang="en")
             li
               a(href="//github.com/studio51/gridlecss/blob/master/CHANGELOG.md") Changelog
             li
-              a(href="//github.com/studio51/gridlecss/releases/tag/v#{version}") GridleCSS v#{version}
+              a(href="//github.com/studio51/gridlecss/releases/tag/v#{version}") #{ name } v#{version}
 
         hr
 
-        .row.align-xs-center
-          .cell.cell-xs-12.cell-sm-4.align-left
+        .row
+          .cell.cell-xs-12.cell-sm-4
             p.footer-copyright
-              © GridleCSS 2015
+              © #{ name } 2015
 
-          .cell.cell-xs-12.cell-sm-8.align-bottom
-            p.footer-credits
-              | Crafted with
-              span &#9829;
-              | by &nbsp;
-              a(href="//twitter.com/pacMakaveli90") Vlad Radulescu
-              | &nbsp; and maintained by &nbsp;
-              a(href="//creative-studio51.co.uk") Studio51
+          .cell.cell-xs-12.cell-sm-8
+            <p class="footer-credits">Crafted with <span>&#9829;</span> by <a href="//twitter.com/pacMakaveli90">Vlad Radulescu</a> and maintained by <a href="//creative-studio51.co.uk">Studio51</a>
 
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
-    script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js')
     script(src='//code.jquery.com/ui/1.11.4/jquery-ui.min.js')
-
     script(src='js/main.min.js')
     script.
       //- (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
