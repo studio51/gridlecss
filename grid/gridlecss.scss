@@ -158,6 +158,10 @@
         }
       }
 
+      &-offset {
+        margin-left: $grid-gutter !important;
+      }
+
       @if $flex-alignment {
 
         &-align {
@@ -183,7 +187,7 @@
       // Compiles: cell-*-offset-# for each viewport
       //
       .cell-#{ $breakpoint }-offset-#{ $i } {
-        margin-left: $grid-column-width;
+        margin-left: $grid-column-width !important;
       }
     }
   }
