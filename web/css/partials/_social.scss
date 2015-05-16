@@ -1,18 +1,18 @@
 .row--social {
-  align-items: center;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
   background-color: #fff;
-  padding-bottom: $theme-spacing;
-  padding-top: $theme-spacing;
+  padding-bottom: $theme-spacing * 2;
+  padding-top: $theme-spacing * 2;
   position: relative;
 
   &:before,
   &:after {
-    // background-color: #fff;
-    // content: '';
-    // height: 100%;
-    // position: absolute;
-    // top: 0;
-    // width: 100%;
+    background-color: #fff;
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 
   &:before {
@@ -22,112 +22,94 @@
   &:after {
     right: -100%;
   }
-}
 
-.social-likes {
-  display: flex;
-
-  &__button {
-    font-weight: 500;
-  }
-
-  &__counter {
-    border-radius: 100%;
-    color: #fff;
-    font-size: 50%;
-    margin-left: 15px;
-    padding: 5px 10px;
-    position: relative;
-
-    &:before {
-      border-bottom: 7px solid transparent;
-      border-left: 5px solid transparent;
-      border-radius: 100%;
-      border-top: 7px solid transparent;
-      content: '';
-      left: -8px;
-      position: absolute;
-      top: 3px;
-    }
-
-    &_empty {
-      display: none;
-    }
-
-    &_facebook {
-      background-color: rgba($color_facebook, 1);
-
-      &:before {
-        border-right: 8px solid rgba($color_facebook, 1);
-      }
-    }
-
-    &_twitter {
-      background-color: rgba($color_twitter, 1);
-
-      &:before {
-        border-right: 8px solid rgba($color_twitter, 1);
-      }
-    }
-
-    &_plusone {
-      background-color: rgba($color_google, 1);
-
-      &:before {
-        border-right: 8px solid rgba($color_google, 1);
-      }
-    }
-  }
-
-  .btn {
-    cursor: pointer;
-    flex: 1;
-    font-size: 1.5em;
-    line-height: $theme-spacing;
-    padding-bottom: $theme-spacing / 4;
-    padding-top: $theme-spacing / 4;
-
-    &--facebook {
-      color: rgba($color_facebook, 1);
-    }
-
-    &--twitter {
-      color: rgba($color_twitter, 1);
-    }
-
-    &--plusone {
-      color: rgba($color_google, 1);
-    }
+  ul {
+    @extend .row;
   }
 }
 
-.list {
+.social {
 
-  &--buttons {
+  &-buttons {
     display: flex;
+    flex-direction: row;
+  }
 
-    li {
-      flex: 1 0 auto;
-      margin-left: $theme-spacing / 2;
-    }
+  &-btn {
+    display: flex;
+    flex: 1;
+    margin-left: $theme-spacing / 2;
 
     .btn {
-      border-radius: 2px;
-      color: #fff;
-      display: block;
-      font-size: .9em;
-      padding-bottom: $theme-spacing / 2;
-      padding-left: $theme-spacing;
-      padding-right: $theme-spacing;
-      padding-top: $theme-spacing / 2;
+      display: flex;
+      width: 100%;
 
-      &--demo {
-        background-color: nth($mint, 1);
+      .fa {
+        display: inline-block;
+        min-width: 40px;
+        text-align: center;
+        color: $colour2;
+        line-height: 25px;
+        vertical-align: middle;
       }
 
-      &--download {
-        background-color: nth($bluejeans, 1);
+      $social-media-list: "facebook", "twitter", "googleplus", "pinterest", "reddit", "digg";
+      $social-media-colors: $color-facebook, $color-twitter, $color-googleplus, $color-pinterest, $color-reddit, $color-digg;
+
+      @for $i from 1 through length($social-media-list) {
+
+        &--#{ nth($social-media-list, $i) } {
+          border-color: nth($social-media-colors, $i);
+          // filter: grayscale(50%);
+
+          .social-counter {
+            background-color: nth($social-media-colors, $i);
+          }
+
+          .fa {
+            color: nth($social-media-colors, $i);
+          }
+
+          &:hover {
+            filter: grayscale(0);
+
+            .social-counter {
+              &:before {
+                border-right-color: nth($social-media-colors, $i);
+              }
+            }
+          }
+        }
       }
+
+      &--googleplus {
+        .fa-googleplus:before {
+          content: "\f0d5";
+        }
+      }
+    }
+  }
+
+  &-counter {
+    border-bottom-right-radius: $theme-border--radius - 1;
+    border-top-right-radius: $theme-border--radius - 1;
+    color: #fff;
+    flex: 1;
+    font-size: 10px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    position: relative;
+    text-align: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: $theme-spacing / 2;
+      border-bottom: 5px dashed transparent;
+      border-left: 5px dashed transparent;
+      border-right: 5px dashed transparent;
+      border-top: 5px dashed transparent;
     }
   }
 }

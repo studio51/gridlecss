@@ -1,56 +1,66 @@
-article#grid-distribution
-
+section#grid-distribution
   .grid
 
     header
-      h3.header-title Distribution
+      h4.section-title Distribution
 
-    section
+    article.separator
 
       .row
-        .cell.cell-xs-12.cell-sm.no-fill
-          p.header-description
-            | Flex items are displayed with equal spacing between them, first and
-            | last flex items are aligned to the edges of the flex container
+        .cell.cell-sm.no-style
 
-          .cell
-            .row.distribute-between.text-center
-              .cell.cell-xs-3 distribute-between
-              .cell.cell-xs-3 distribute-between
-              .cell.cell-xs-3 distribute-between
+          header
+            p.section-description
+              | Flex items are displayed with equal spacing between them, first and
+              | last flex items are aligned to the edges of the flex container
 
-        .cell.cell-xs-12.cell-sm.no-fill
-          p.header-description
-            | Flex items are displayed with equal spacing around every flex item,
-            | even the first and the last flex items
+          .row
+            .cell
+              .row.distribute-between.text-center
+                .cell.cell-xs-3 distribute-between
+                .cell.cell-xs-3 distribute-between
+                .cell.cell-xs-3 distribute-between
 
-          .cell
-            .row.distribute-around.text-center
-              .cell.cell-xs-3 distribute-around
-              .cell.cell-xs-3 distribute-around
-              .cell.cell-xs-3 distribute-around
+        .cell.cell-sm.no-style
 
-      h3.header-title Distribution by Viewport
-      p.header-description
-        | You can also specify what distribution rule should be considered
-        | depending on the viewport by adding the viewport class
+          header
+            p.section-description
+              | Flex items are displayed with equal spacing around every flex item,
+              | even the first and the last flex items
 
-      .cell
-        .row.distribute-around.distribute-sm-between.distribute-md-around.distribute-lg-between.text-center
-          .cell.cell-xs-3
-            .visible-xs distribute-around
-            .visible-sm distribute-sm-between
-            .visible-md distribute-md-around
-            .visible-lg distribute-lg-between
+          .row
+            .cell
+              .row.distribute-around.text-center
+                .cell.cell-xs-3 distribute-around
+                .cell.cell-xs-3 distribute-around
+                .cell.cell-xs-3 distribute-around
 
-          .cell.cell-xs-3
-            .visible-xs distribute-around
-            .visible-sm distribute-sm-between
-            .visible-md distribute-md-around
-            .visible-lg distribute-lg-between
+      .row
+        .cell.cell-sm.no-style
 
-          .cell.cell-xs-3
-            .visible-xs distribute-around
-            .visible-sm distribute-sm-between
-            .visible-md distribute-md-around
-            .visible-lg distribute-lg-between
+          header
+            h4.section-title Distribution by Viewport
+            p.section-description
+              | You can also specify what distribution rule should be considered
+              | depending on the viewport by adding the viewport class
+
+          .row
+            .cell
+              .row.distribute-around.distribute-sm-between.distribute-md-around.distribute-lg-between.text-center
+                .cell.cell-xs-3
+                  .visible-xs distribute-xs-around
+                  .visible-sm distribute-sm-between
+                  .visible-md distribute-md-around
+                  .visible-lg distribute-lg-between
+
+                .cell.cell-xs-3
+                  .visible-xs distribute-xs-around
+                  .visible-sm distribute-sm-between
+                  .visible-md distribute-md-around
+                  .visible-lg distribute-lg-between
+
+                .cell.cell-xs-3
+                  .visible-xs distribute-xs-around
+                  .visible-sm distribute-sm-between
+                  .visible-md distribute-md-around
+                  .visible-lg distribute-lg-between

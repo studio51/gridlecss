@@ -1,26 +1,29 @@
 .nav-menu {
+  height: 100%;
 
-  &.open {
-    ul {
-      display: flex;
-    }
+  .sticky {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    border-top: 0;
   }
 
   ul {
     display: flex;
     flex: 1;
     flex-direction: column;
-
-    font-size: 50%;
-    display: none;
+    font-size: 80%;
     height: 100%;
+    left: 0;
     position: absolute;
     top: 0;
     width: 100%;
 
     li {
-    display: flex;
-    flex: 1;
+      display: flex;
+      flex: 1;
       animation-fill-mode: both;
       animation-duration: 2s;
       animation-name: bounceInDown;
@@ -47,12 +50,11 @@
       }
 
       a {
-        display: flex;
-        flex: 1;
-
         align-items: center;
         color: rgba(nth($bluejeans, 2), 1);
+        display: flex;
         font-weight: 700;
+        flex: 1;
         padding-left: $theme-spacing;
         padding-right: $theme-spacing;
         text-transform: capitalize;
@@ -65,28 +67,57 @@
   }
 
   &--trigger {
-    background: #fff;
-    border: $theme-border--size solid rgba(nth($bluejeans, 1), 1);
-    border-radius: 100%;
-    bottom: $theme-spacing * 5.5;
-    box-shadow: 0 0 0 2px #fff;
-    display: block;
-    left: 0;
-    margin: 0 auto;
-    position: absolute;
-    right: 0;
-    z-index: 1;
-    width: 2.5em;
+    align-self: center;
+    flex: 1;
 
-    img {
-      height: 39px;
-      padding-bottom: 7px;
-      padding-left: 11px;
-      padding-right: 7px;
-      padding-top: 10px;
+    &:hover {
+      .lines {
 
-      @include media("screen", "sm") {
-        height: 50px;
+        &:before { top: $theme-spacing - 2; }
+        &:after { top: -( $theme-spacing - 2 ); }
+      }
+    }
+
+    .lines,
+    .lines:before,
+    .lines:after {
+      background-color: $theme-border--color;
+      border-radius: $theme-border--radius;
+      display: inline-block;
+      height: $theme-spacing / 2.5;
+      transition: .5s;
+      width: $theme-spacing * 2.5;
+    }
+
+    .lines {
+      position: relative;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+      }
+
+      &:before { top: $theme-spacing - 4; }
+      &:after { top: -( $theme-spacing - 4 ); }
+    }
+
+    &.close {
+      .lines {
+        background: transparent;
+
+        &:before, &:after{
+          top: 0;
+          transform-origin: 50% 50%;
+        }
+
+        &:before{
+          transform: rotate3d(0, 0, 1, 45deg);
+        }
+
+        &:after{
+          transform: rotate3d(0, 0, 1, -45deg);
+        }
       }
     }
   }

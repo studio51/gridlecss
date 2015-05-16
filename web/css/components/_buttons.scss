@@ -1,0 +1,9 @@
+.btn {
+  border-radius: $theme-border--radius;
+  display: block;
+  width: auto;
+
+  &--outline {
+    border: $theme-border--size solid $theme-border--color;
+  }
+}

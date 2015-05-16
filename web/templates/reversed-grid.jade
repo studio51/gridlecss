@@ -1,23 +1,13 @@
-article#grid-reversed
-
+section#grid-reversed
   .grid
 
     header
-      h3 Reversing
-      p
+      h4.section-title Reversing
 
-    section
+    article
 
       .row.row--reverse
-        .cell.cell-xs 1
-        .cell.cell-xs 2
-        .cell.cell-xs 3
-        .cell.cell-xs 4
-        .cell.cell-xs 5
-        .cell.cell-xs 6
-        .cell.cell-xs 7
-        .cell.cell-xs 8
-        .cell.cell-xs 9
-        .cell.cell-xs 10
-        .cell.cell-xs 11
-        .cell.cell-xs 12
+
+        - for( var i = 1; i < 13; ++i )
+          .cell.cell-xs #{i}
+

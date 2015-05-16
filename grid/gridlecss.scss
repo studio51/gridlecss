@@ -1,9 +1,9 @@
 @import "config";
 
 :root {
-  --grid-sm-container: calc( #{ $grid-sm-min });
-  --grid-md-container: calc( #{ $grid-md-min });
-  --grid-lg-container: calc( #{ $grid-lg-min });
+  --grid-sm-container: calc( #{ $grid-sm-min + $grid-gutter });
+  --grid-md-container: calc( #{ $grid-md-min + $grid-gutter });
+  --grid-lg-container: calc( #{ $grid-lg-min + $grid-gutter });
   --grid-gutter: $grid-gutter;
   --grid-gutter-calc: calc( var(--grid-gutter) / 2);
 }
@@ -67,7 +67,8 @@
     .cell {
       margin-left: var(--grid-gutter-calc);
       margin-right: var(--grid-gutter-calc);
-      width: 100%;
+      flex-basis: 100%;
+      max-width: 100%;
 
       &-order {
         &--first {
@@ -133,6 +134,7 @@
     //
     @for $i from 1 through $grid-columns {
 
+      .cell-#{ $breakpoint },
       .cell-#{ $breakpoint }-#{ $i },
       .cell-#{ $breakpoint }-offset-#{ $i } {
         @extend %cell-styles;
@@ -143,6 +145,7 @@
     //
     .cell-#{ $breakpoint } {
       flex: 1 0;
+      flex-basis: 0;
       max-width: 100%;
 
       &-order {
