@@ -89,7 +89,7 @@ module.exports = function(grunt) {
   //
   grunt.registerTask('prettify', [
     'cssbeautifier',
-    'cssmin',
+    'cssmin'
   ]);
 
   grunt.registerTask('default', ['clean', 'compile']);

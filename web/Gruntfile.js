@@ -162,16 +162,17 @@ module.exports = function(grunt) {
 
   grunt.registerTask('prettify', [
     'cssbeautifier',
-    'cssmin',
+    'cssmin'
   ]);
 
   grunt.registerTask('preview', [
+    'compile-theme',
     'connect',
     'open',
     'watch'
   ]);
 
-  grunt.registerTask('default', ['preview']);
+  grunt.registerTask('default', ['clean', 'preview']);
   grunt.registerTask('compile', ['clean', 'compile-theme']);
   grunt.registerTask('ship', ['clean', 'compile', 'prettify']);
 }
