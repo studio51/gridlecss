@@ -55,18 +55,18 @@
       }
 
       &-a {
-        background-color: nth($sunflower, 1);
+        background-color: $yellow;
 
         .btn {
-          background-color: nth($sunflower, 2);
+          background-color: $darkyellow;
         }
       }
 
       &-b {
-        background-color: nth($lavender, 1);
+        background-color: $purple;
 
         .btn {
-          background-color: nth($lavender, 2);
+          background-color: $darkpurple;
         }
       }
     }
@@ -79,7 +79,7 @@
   z-index: 1;
   height: 100%;
   width: 100%;
-  background-color: rgba(28, 23, 38, 0.6);
+  background-color: rgba(28, 23, 38, 0.7);
   opacity: 0;
 }
 .fold-is-open .cd-gallery::before {

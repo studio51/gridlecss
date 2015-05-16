@@ -28,7 +28,7 @@
       animation-duration: 2s;
       animation-name: bounceInDown;
       background: #fff;
-      border-bottom: 1px solid rgba(nth($mediumgray, 1), 1);
+      border-bottom: 1px solid rgba($gray, 1);
 
       @for $i from 1 through 13 {
         @if $i < 10 {
@@ -51,7 +51,7 @@
 
       a {
         align-items: center;
-        color: rgba(nth($bluejeans, 2), 1);
+        color: rgba($blue, 1);
         display: flex;
         font-weight: 700;
         flex: 1;
@@ -60,15 +60,20 @@
         text-transform: capitalize;
 
         &:hover {
-          background-color: rgba(nth($mediumgray, 1), 1);
+          background-color: rgba($gray, 1);
         }
       }
     }
   }
 
   &--trigger {
-    align-self: center;
-    flex: 1;
+    display: flex;
+    align-self: flex-end;
+    position: relative;
+
+    @include media("screen", "sm") {
+      align-self: center;
+    }
 
     &:hover {
       .lines {
@@ -90,7 +95,6 @@
     }
 
     .lines {
-      position: relative;
 
       &:before,
       &:after {

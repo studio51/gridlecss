@@ -1,6 +1,6 @@
 /*
 
-  GridleCSS Theme v1.0.rc1
+  GridleCSS Theme v1.0.0
 
   Author: @pacMakaveli90
   Author URL: http://creative-studio51.co.uk/
@@ -9,26 +9,34 @@
 
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700,200italic,400italic,700italic);
 
+// GridleCSS
+
 @import "gridlecss";
 @import "../../grid/gridlecss";
 
 @import "helpers/variables";
+
+// Helpers
+
+@import "helpers/reset";
+
 @import "helpers/columns";
 @import "helpers/mixins";
 @import "helpers/animations";
 @import "helpers/visibility";
-
-@import "components/buttons";
-
-@import "partials/reset";
 
 html, body {
   height: 100%;
 }
 
   body {
+    background-color: $theme-background-color;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 100%;
+    font-size: 70%;
+
+    @include media("screen", "sm") {
+      font-size: 80%;
+    }
   }
 
     @include media("screen", "xs") {
@@ -38,195 +46,50 @@ html, body {
       }
     }
 
-    .header {
-      @include background-animation((nth($bluejeans, 1), nth($mint, 1), nth($aqua, 1)), 30);
+// Components
 
-      height: 100%;
-      overflow: hidden;
+@import "components/buttons";
 
-      .btn {
-        text-align: right;
+// Theme Partials
 
-        &--git {
-          color: #fff;
-          font-size: 2em;
-          line-height: $theme-spacing;
-        }
-      }
+@import "partials/header";
+@import "partials/demos";
 
-      .brand {
-        color: #fff;
-        padding-bottom: $theme-spacing * 2;
-        padding-top: $theme-spacing * 2;
+@import "partials/device";
+@import "partials/navigation";
+@import "partials/social";
 
-        @include media("screen", "md") {
-          padding: ( $theme-spacing * 3 ) 0;
-        }
+@import "partials/main";
+@import "partials/footer";
 
-        &-name {
-
-          &--pronunciation {
-            font-weight: 100;
-            font-size: .5em;
-            margin-left: $theme-spacing / 2;
-          }
-        }
-      }
-    }
-
-    @import "partials/demos";
-
-    @import "partials/device";
-    @import "partials/navigation";
-    @import "partials/social";
-
-    // Grid Sections
-
-    .main {
-      background-color: $theme-background-color;
-      padding-bottom: $theme-spacing * 3;
-    }
-
-    section {
-
-      header {
-      //   padding-bottom: $theme-spacing * 3;
-      //   padding-top: $theme-spacing * 3;
-
-
-        background-color: $theme-box-color;
-        box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2),
-                    1px 2px 0px rgba(0, 0, 0, 0.1);
-        border-radius: 3px;
-        padding: $theme-spacing * 2;
-        margin: ( $theme-spacing * 2 )0;
-
-      }
-
-      .section-title {
-        font-size: 2em;
-        font-weight: 200;
-        color: $colour0;
-      }
-
-      .section-description {
-        font-weight: 400;
-        color: $colour2;
-        padding-top: $theme-spacing / 2;
-        font-size: 1em;
-      }
-    }
-
-      article {
-
-        header {
-          padding-bottom: 0;
-          padding-top: 0;
-        }
-
-        .cell:not(.no-style) {
-          background-color: rgba(nth($darkgray, 1), .05);
-          margin-bottom: 1px;
-          margin-top: 1px;
-          font-size: $theme-spacing / 1.5;
-          padding: $theme-spacing / 2;
-        }
-      }
-
-.footer {
-  background-color: #fff;
-  color: $theme-border--color;
-  padding-bottom: $theme-spacing * 2;
-  padding-top: $theme-spacing * 2;
-  text-align: center;
-
-  a {
-    color: $colour3;
-    font-weight: 400;
-  }
-
-  &-links {
-    display: flex;
-    flex: 1;
-    margin-left: -( $theme-spacing );
-    margin-right: -( $theme-spacing );
-
-    li {
-      display: flex;
-      flex: 1 0 auto;
-      margin-left: $theme-spacing;
-      margin-right: $theme-spacing;
-      text-align: center;
-
-      @include media("screen", "sm") {
-        flex: 0 1 auto;
-        text-align: left;
-      }
-
-      a {
-        padding-bottom: $theme-spacing;
-        padding-top: $theme-spacing;
-        width: 100%;
-      }
-    }
-  }
-
-  hr {
-    border: $theme-border--size solid $theme-background-color;
-    margin-bottom: $theme-spacing * 2;
-    margin-top: $theme-spacing;
-  }
-
-  p {
-    font-size: 14px;
-    font-weight: 300;
-    margin-bottom: ( $theme-spacing - 5px );
-  }
-
-  span {
-    color: $colour10;
-  }
-
-  @include media("screen", "sm") {
-    &-copyright {
-      text-align: left;
-    }
-
-    &-credits {
-      text-align: right;
-    }
-  }
-}
 
 /*
 
-  Irrelevant CSS for the purpose of demonstrating the Grid' features
+  Just for showcasing GridleCSS Alignments features
 
 */
 
-.demo-alignment .row {
-  height: 10em;
+#grid-alignment.css {
 
-  span {
-    border-bottom: 1px dotted rgba(0, 0, 0, .4);
-    padding: 3px 0;
-  }
-}
-
-.demo-baseline {
-  &-1 {
-    height: 5em;
+  .demo-alignment .row {
+    height: 10em;
 
     span {
-      font-size: 3em;
+      border-bottom: 1px dotted rgba($black, .4);
     }
   }
 
-  &-2 {
-    height: 9em;
+  .demo-baseline {
+    &-1 {
+      span {
+        font-size: 10em;
+      }
+    }
 
-    span {
-      font-size: 4.5em;
+    &-2 {
+      span {
+        font-size: 15em;
+      }
     }
   }
 }
@@ -234,4 +97,3 @@ html, body {
 .text-center {
   text-align: center;
 }
-

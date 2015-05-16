@@ -1,0 +1,83 @@
+section {
+
+  @include media("screen", "sm") {
+
+    .children {
+
+      .spaced {
+        margin-top: $theme-spacing;
+      }
+
+      > .row {
+        margin-left: -( $theme-spacing / 2 );
+        margin-right: -( $theme-spacing / 2 );
+
+        > [class*="cell"] {
+          margin-left: $theme-spacing / 2;
+          margin-right: $theme-spacing / 2;
+        }
+      }
+    }
+  }
+
+  &.css {
+
+    .toggle {
+
+      .cell {
+        font-size: 40%;
+        padding: 10px;
+        font-weight: 300;
+      }
+    }
+  }
+
+  header {
+    background-color: $theme-box-color;
+    border-left: 2px solid $theme-border--color;
+    box-shadow: 0 2px 1px 0 rgba($gray, .3);
+    border-radius: $theme-border--radius;
+    margin-bottom: $theme-spacing;
+    margin-top: $theme-spacing;
+    padding: $theme-spacing * 2;
+
+    .section-title {
+      font-size: 2em;
+      font-weight: 200;
+      color: $black;
+    }
+
+    .section-description {
+      font-weight: 400;
+      color: $darkgray;
+      font-size: 1em;
+    }
+
+    .cell:last-child {
+      text-align: right; // TODO: Look into .align-right not working properly
+    }
+  }
+
+  article {
+
+    header {
+      border-left: 4px solid $white;
+      // margin-top: 0;
+      padding: $theme-spacing;
+
+      .section-title {
+        font-size: 1.5em;
+      }
+    }
+
+    .cell:not(.unstyled) {
+      background-color: rgba($gray, .4);
+      font-size: 0;
+      margin-bottom: 1px;
+      margin-left: 1px;
+      margin-right: 1px;
+      margin-top: 1px;
+      padding: $theme-spacing / 1.5;
+    }
+  }
+}
