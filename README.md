@@ -1,87 +1,68 @@
-# GridleCSS
+## GridleCSS
 
 http://studio51.github.io/gridlecss/
 
-GridleCSS is a flexible, responsive CSS framework, powered by SASS and Flex.
+A flexible, responive CSS framework powered by the Flexbox Layout module and
+SASS.
 
-## Features
+### Features
 
-Responsive
-Fluid
-Offsets
-Nested
-Auto Widths
-Alignments
-Distributed
-Reversed
-Reordering
-Masonry
+* 12 columns flex grid
+* Responsive Grid
+* Fluid Layout
+* Layout Offsets
+* Alignments
+* Layout Distribution
+* Flex Reverse
+* Flex Reorder
+* **Viewport specific rules**
 
-## Customization
+### Customization
 
-`grid/gridlecss.scss` has variables that can be customized and it's also, poorly,
-documented.
+GridleCSS comes with a ocuple of customizable variables which will affect the
+way your grid is compiled.
 
-## Components
+Increasing the number of columns: `$grid-columns: n !default;` <br />
+Adding more breakpoints: `$grid-breakpoints: "xs" "sm" "md" "lg";` <br />
+Adjusting the responsive breakpoints of the grid: `$grid-*-min: x;` <br />
 
-At the moment we don't have any components nor do we think we'll ever add any in
-this repository( please read bellow ). GridleCSS was only created as a grid not
-as a replacement for Bootstrap or Foundation.
+Read `grid/config.scss` for more informations.
 
-However, we do accept pull requests for components. For now we will keep them in
-separate branches untill we decide what's the best way to showcase both
-GridleCSS and components.
+### Components
 
-## Installation
+We're not sure ether or not it's worth spending time creating components when
+there's so much out there.
+Watch this space, we might change our mind.
+
+### Installation
 
 ``` bash
-git clone git@github.com:studio51/framework-gridlecss.git
-npm install
+$ git clone git@github.com:studio51/gridlecss.git
+$ npm install
 ```
 
-GridleCSS uses [Grunt.JS] as a task runner. If you're not familiar with grunt,
-you should check it out.
+We use [Grunt.JS] as our Task Runner in order to compile the SASS files.
+If you haven't used Grunt before, be sure to check out the Getting Started
+guide, as it explains how to create a Gruntfile as well as install and use Grunt
+plugins.
 
-There are 3 tasks that matter if you want to develop on GridleCSS:
+`$ grunt`
 
-`grunt`
-Will compile everything and launch the server for previewing the Grid.
-Any changes you make to the SASS files will show on the website.
+This is the default task which will `clean` the `dist` folder and `compile` the
+SASS files.
 
-`grunt build`
-This just builds the `web/dist` folder for the `gh-pages`, that means everything
-compiled is also minified, whereas `grunt` gives you unminifed assets.
+`$ grunt ship`
 
-`grunt clean`
-Removes the `web/dist` folder.
+If you make any changes to GridleCSS and whish to make a pull request or use it,
+use this task which will `clean`, `compile`, and `prettify` the SASS files which
+will give you `gridle.css`, `gridle.css.map` and `gridle.min.css`
 
-## Pull Requests are welcome!
 
-`#wip`
+### Pull Requests are welcome!
 
-# License
+### License
 
-The MIT License (MIT)
+MIT &copy; [Studio51]
 
-Copyright (c) 2014 Studio51
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-[Booqmark.it]:https://github.com/studio51/web-booqmark.it
-[Grunt.JS]:http://gruntjs.com/
+[Studio51]:http://creative-studio51.co.uk
+[Grunt.JS]:http://gruntjs.com
