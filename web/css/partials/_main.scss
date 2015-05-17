@@ -36,6 +36,11 @@ section {
       @include media("screen", "xs") { margin-top: $theme-spacing; }
       @include media("screen", "sm") { margin-top: $grid-gutter; }
     }
+
+    &-sm {
+      @include media("screen", "xs") { margin-top: $theme-spacing; }
+      @include media("screen", "md") { margin-top: $grid-gutter; }
+    }
   }
 
   header {

@@ -1,15 +1,6 @@
 .nav-menu {
   height: 100%;
 
-  .sticky {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: 0;
-    z-index: 100;
-    border-top: 0;
-  }
-
   ul {
     display: flex;
     flex: 1;
@@ -67,17 +58,14 @@
   }
 
   &--trigger {
-    display: flex;
     align-self: flex-end;
-    position: relative;
+    display: flex;
+    padding: 10px 0;
 
-    @include media("screen", "sm") {
-      align-self: center;
-    }
+    @include media("screen", "sm") { align-self: center; }
 
     &:hover {
       .lines {
-
         &:before { top: $theme-spacing - 2; }
         &:after { top: -( $theme-spacing - 2 ); }
       }
@@ -95,6 +83,7 @@
     }
 
     .lines {
+      position: relative;
 
       &:before,
       &:after {
