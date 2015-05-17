@@ -39,7 +39,7 @@ If you make any changes to GridleCSS Theme and whish to make a pull request or
 use it, use this task which will `clean`, `compile`, and `prettify` all the
 resources used by the theme.
 
-### Pull Requests are welcome!
+### Open for pull requests
 
 Before making any pull requests, make sure the Theme looks as it should by using
 the `$ grunt` task.

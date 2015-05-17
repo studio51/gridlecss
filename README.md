@@ -30,8 +30,8 @@ Read `grid/config.scss` for more informations.
 
 ### Components
 
-We're not sure ether or not it's worth spending time creating components when
-there's so much out there.
+We're not sure wether or not it's worth spending time creating components when
+there's so much out there already. <br />
 Watch this space, we might change our mind.
 
 ### Installation
@@ -57,8 +57,11 @@ If you make any changes to GridleCSS and whish to make a pull request or use it,
 use this task which will `clean`, `compile`, and `prettify` the SASS files which
 will give you `gridle.css`, `gridle.css.map` and `gridle.min.css`
 
+### Open for pull requests
 
-### Pull Requests are welcome!
+Before making any pull requests, make sure the Theme `web/` looks as it should
+by using the `$ grunt` task inside the `web/` folder which will launch a preview
+of the theme.
 
 ### License
 
