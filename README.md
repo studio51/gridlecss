@@ -37,8 +37,8 @@ Watch this space, we might change our mind.
 ### Installation
 
 ``` bash
-git clone git@github.com:studio51/framework-gridlecss.git
-npm install
+$ git clone git@github.com:studio51/gridlecss.git
+$ npm install
 ```
 
 We use [Grunt.JS] as our Task Runner in order to compile the SASS files.
@@ -62,7 +62,7 @@ will give you `gridle.css`, `gridle.css.map` and `gridle.min.css`
 
 ### License
 
-MIT &copy; Studio51
+MIT &copy; [Studio51]
 
 [Studio51]:http://creative-studio51.co.uk
 [Grunt.JS]:http://gruntjs.com
