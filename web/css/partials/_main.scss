@@ -1,12 +1,10 @@
 section {
+  border-bottom: 1px solid $lightgray;
+  padding: $theme-spacing 0;
 
   @include media("screen", "sm") {
 
     .children {
-
-      .spaced {
-        margin-top: $theme-spacing;
-      }
 
       > .row {
         margin-left: -( $theme-spacing / 2 );
@@ -26,58 +24,58 @@ section {
 
       .cell {
         font-size: 40%;
-        padding: 10px;
         font-weight: 300;
       }
     }
   }
 
-  header {
-    background-color: $theme-box-color;
-    border-left: 2px solid $theme-border--color;
-    box-shadow: 0 2px 1px 0 rgba($gray, .3);
-    border-radius: $theme-border--radius;
-    margin-bottom: $theme-spacing;
+  .spaced {
     margin-top: $theme-spacing;
-    padding: $theme-spacing * 2;
 
-    .section-title {
-      font-size: 2em;
-      font-weight: 200;
-      color: $black;
-    }
-
-    .section-description {
-      font-weight: 400;
-      color: $darkgray;
-      font-size: 1em;
-    }
-
-    .cell:last-child {
-      text-align: right; // TODO: Look into .align-right not working properly
+    &-xs {
+      @include media("screen", "xs") { margin-top: $theme-spacing; }
+      @include media("screen", "sm") { margin-top: $grid-gutter; }
     }
   }
+
+  header {
+    background-color: $white;
+    border-left: 2px solid $lightblue;
+    box-shadow: 0 2px 1px 0 rgba($darkgray, .3);
+    border-radius: $theme-border--radius;
+    margin-bottom: $theme-spacing;
+    padding: $theme-spacing * 2;
+
+    /* TODO: Fix the .align-right class to do what it's supposed to */
+
+    .cell:last-child { text-align: right; }
+  }
+
+  .section-title {
+    font-size: 2em;
+    font-weight: 200;
+  }
+
+  .section-description { color: $darkgray; }
 
   article {
 
     header {
-      border-left: 4px solid $white;
-      // margin-top: 0;
+      border-left: 2px solid $yellow;
       padding: $theme-spacing;
 
       .section-title {
         font-size: 1.5em;
       }
+
+      .section-description { font-size: .9em; }
     }
 
     .cell:not(.unstyled) {
-      background-color: rgba($gray, .4);
+      background-color: rgba($darkgray, .1);
       font-size: 0;
-      margin-bottom: 1px;
-      margin-left: 1px;
-      margin-right: 1px;
-      margin-top: 1px;
-      padding: $theme-spacing / 1.5;
+      margin: 1px;
+      padding: $theme-spacing / 2;
     }
   }
 }
