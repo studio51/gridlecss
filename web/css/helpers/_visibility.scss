@@ -1,4 +1,4 @@
-@include media("screen", "xs") {
+@include breakpoint("xs") {
   .visible-sm,
   .visible-md,
   .visible-lg { display: none !important; }
@@ -7,11 +7,11 @@
   }
 
   .hidden-xs {
-    display: none;
+    display: none !important;
   }
 }
 
-@include media("screen", "sm") {
+@include breakpoint("sm") {
   .visible-xs,
   .visible-md,
   .visible-lg { display: none !important; }
@@ -20,11 +20,11 @@
   }
 
   .hidden-xs {
-    display: block;
+    display: block!important;
   }
 }
 
-@include media("screen", "md") {
+@include breakpoint("md") {
   .visible-xs,
   .visible-sm,
   .visible-lg { display: none !important; }
@@ -32,7 +32,7 @@
 
 }
 
-@include media("screen", "lg") {
+@include breakpoint("lg") {
 
   .visible-xs,
   .visible-sm,

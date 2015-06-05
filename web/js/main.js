@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
-  $('.nav-menu .btn').on('click', function(e) {
+  $('.nav-menu a.btn').on('click', function(e) {
     e.preventDefault();
-
+    alert('1')
     var target = $(this).data('target');
-
+    alert('2')
     $('html, body').stop().animate({
        scrollTop: $(target).offset().top
     }, 1000);
@@ -18,24 +18,6 @@ $(document).ready(function() {
 
     parent.toggleClass('css');
   });
-
-  // var stickyNavTop = $('.main').offset().top;
-
-  // var stickyNav = function(){
-  //   var scrollTop = $(window).scrollTop();
-
-  //   if (scrollTop > stickyNavTop) {
-  //     $('.nav-menu').addClass('sticky');
-  //   } else {
-  //     $('.nav-menu').removeClass('sticky');
-  //   }
-  // };
-
-  // stickyNav();
-
-  // $(window).scroll(function() {
-  //     stickyNav();
-  // });
 
   $('.social-buttons--container ul').sharegg({
     data: {
@@ -88,7 +70,7 @@ $(document).ready(function() {
   });
   $('.cd-gallery').on('click', function(event){
     /* detect click on .cd-gallery::before when the .cd-folding-panel is open */
-    if($(event.target).is('.cd-gallery') && $('.fold-is-open').length > 0 ) toggleContent('', false);
+    // if($(event.target).is('.cd-gallery') && $('.fold-is-open').length > 0 ) toggleContent('', false);
   })
 
   function openItemInfo(url) {
@@ -97,7 +79,6 @@ $(document).ready(function() {
 
   function toggleContent(url, bool) {
     if( bool ) {
-      /* load and show new content */
       var foldingContent = $('.cd-fold-content');
       foldingContent.load(url+' .cd-fold-content > *', function(event){
         setTimeout(function(){
@@ -108,19 +89,8 @@ $(document).ready(function() {
 
       });
     } else {
-      /* close the folding panel */
-      var mq = viewportSize();
       $('.cd-folding-panel').removeClass('is-open');
       $('.cd-main').removeClass('fold-is-open');
-
-      (mq == 'mobile' || $('.no-csstransitions').length > 0 )
-        /* according to the mq, immediately remove the .overflow-hidden or wait for the end of the animation */
-        ? $('body').removeClass('overflow-hidden')
-
-        : $('.cd-main').find('.cd-item').eq(0).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-          $('body').removeClass('overflow-hidden');
-          $('.cd-main').find('.cd-item').eq(0).off('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend');
-        });
     }
 
   }

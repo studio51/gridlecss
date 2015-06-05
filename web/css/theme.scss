@@ -11,10 +11,9 @@
 
 // GridleCSS
 
-@import "gridlecss";
-@import "../../grid/gridlecss";
-
 @import "helpers/variables";
+
+@import "gridlecss";
 
 // Helpers
 
@@ -32,14 +31,15 @@ html, body {
   body {
     background-color: $theme-background-color;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 70%;
+    font-size: 100%;
+    // font-size: 70%;
 
-    @include media("screen", "sm") {
-      font-size: 80%;
+    @include breakpoint("sm") {
+      // font-size: 80%;
     }
   }
 
-    @include media("screen", "xs") {
+    @include breakpoint("xs") {
       .grid {
         padding-left: $theme-spacing;
         padding-right: $theme-spacing;
@@ -61,7 +61,6 @@ html, body {
 
 @import "partials/main";
 @import "partials/footer";
-
 
 /*
 

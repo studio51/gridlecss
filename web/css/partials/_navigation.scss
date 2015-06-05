@@ -3,23 +3,23 @@
 
   ul {
     display: flex;
-    flex: 1;
+    // flex: 1;
     flex-direction: column;
-    font-size: 80%;
+    // font-size: 80%;
     height: 100%;
-    left: 0;
+    // left: 0;
     position: absolute;
-    top: 0;
+    // top: 0;
     width: 100%;
 
     li {
       display: flex;
       flex: 1;
+      animation-duration: $animation-duration;
       animation-fill-mode: both;
-      animation-duration: 2s;
       animation-name: bounceInDown;
       background: #fff;
-      border-bottom: 1px solid rgba($gray, 1);
+      border-bottom: $theme-border--size solid rgba($gray, .8);
 
       @for $i from 1 through 13 {
         @if $i < 10 {
@@ -34,20 +34,14 @@
         &.animated-#{$i} {
           animation-delay: unquote("#{$delay}s");
         }
-
-        &:last-child {
-          border-bottom: none;
-        }
       }
 
       a {
         align-items: center;
-        color: rgba($blue, 1);
+        color: $blue;
         display: flex;
-        font-weight: 700;
         flex: 1;
-        padding-left: $theme-spacing;
-        padding-right: $theme-spacing;
+        padding: 0 $theme-spacing;
         text-transform: capitalize;
 
         &:hover {

@@ -1,5 +1,5 @@
 .header {
-  @include background-animation(($blue, $darkgreen, $lightblue), 30);
+  @include background-animation(($blue, $green, $yellow), 30);
 
   height: 100%;
   overflow: hidden;
@@ -9,7 +9,7 @@
 
     &--git {
       color: #fff;
-      font-size: 2em;
+      // font-size: 2em;
       line-height: $theme-spacing;
     }
   }
@@ -27,7 +27,7 @@
 
       &--pronunciation {
         font-weight: 100;
-        font-size: .5em;
+        // font-size: .5em;
         margin-left: $theme-spacing / 2;
       }
     }
