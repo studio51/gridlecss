@@ -1,0 +1,104 @@
+.row--social {
+  background-color: #fff;
+  box-shadow: 0 0 30px 0 rgba($black, .4);
+  padding: $theme-spacing 0;
+  position: relative;
+  z-index: 1;
+
+  @include media("screen", "md") { padding: ( $theme-spacing * 2 ) 0; }
+
+  > .cell {
+    @extend .cell-align--center;
+  }
+
+  &:before,
+  &:after {
+    background-color: #fff;
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &:before { left: -100%; }
+  &:after { right: -100%; }
+
+  ul {
+    @extend .row;
+  }
+}
+
+.social {
+
+  &-btn {
+    flex: 1;
+    margin-left: $theme-spacing / 2;
+
+    .btn {
+      padding: 0;
+      width: 100%;
+      justify-content: center;
+
+      /* TODO: Fix media queries to only apply to current viewport */
+
+      @include media("screen", "sm") { padding: 10px; }
+      @include media("screen", "lg") { padding: 0; }
+
+      .fa {
+        align-self: center;
+        min-width: 40px;
+        text-align: center;
+
+        &-googleplus:before { content: "\f0d5"; }
+      }
+
+      $social-media-list: "facebook", "twitter", "googleplus", "pinterest", "reddit", "digg";
+      $social-media-colors: $color-facebook, $color-twitter, $color-googleplus, $color-pinterest, $color-reddit, $color-digg;
+
+      @for $i from 1 through length($social-media-list) {
+
+        &--#{ nth($social-media-list, $i) } {
+          border-color: nth($social-media-colors, $i);
+
+          .social-counter { background-color: nth($social-media-colors, $i); }
+          .fa { color: nth($social-media-colors, $i); }
+
+          &:hover {
+
+            .social-counter {
+              &:before { border-right-color: nth($social-media-colors, $i); }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-counter {
+    border-radius: 100%;
+    flex: 1;
+    font-size: .5em;
+    justify-content: center;
+    margin: $theme-spacing / 2;
+    padding: 3px 0;
+    position: relative;
+    text-align: center;
+
+    /* TODO: Fix media queries to only apply to current viewport */
+
+    @include media("screen", "sm") { display: none; }
+    @include media("screen", "lg") { display: flex; }
+
+    &:before {
+      border-bottom: 5px dashed transparent;
+      border-left: 5px dashed transparent;
+      border-right: 5px dashed transparent;
+      border-top: 5px dashed transparent;
+      content: '';
+      left: -8px;
+      position: absolute;
+      top: 5px;
+    }
+  }
+}

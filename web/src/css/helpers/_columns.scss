@@ -1,0 +1,29 @@
+// Milestone: v2.0
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  // @for $i from 1 through $grid-columns {
+    // $grid-column-height: (( 100 / $grid-columns ) * $i ) * 1%;
+
+    // .col-xs-#{ $i } {
+      // height: $grid-column-height;
+      // flex: $i - .5;
+      // border: 1px solid red;
+    // }
+  // }
+
+  .row-xs-1 {
+    flex: 1;
+  }
+
+  .row-xs-auto {
+    flex: 5;
+  }
+
+  .row-xs-2 {
+    flex: 1;
+  }
+}

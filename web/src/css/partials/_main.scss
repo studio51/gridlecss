@@ -1,0 +1,87 @@
+section {
+  border-bottom: 1px solid $lightgray;
+  padding: $theme-spacing 0;
+
+  @include media("screen", "sm") {
+
+    .children {
+
+      > .row {
+        margin-left: -( $theme-spacing / 2 );
+        margin-right: -( $theme-spacing / 2 );
+
+        > [class*="cell"] {
+          margin-left: $theme-spacing / 2;
+          margin-right: $theme-spacing / 2;
+        }
+      }
+    }
+  }
+
+  &.css {
+
+    .toggle {
+
+      .cell {
+        font-size: 100%;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .spaced {
+    margin-top: $theme-spacing;
+
+    &-xs {
+      @include media("screen", "xs") { margin-top: $theme-spacing; }
+      @include media("screen", "sm") { margin-top: $grid-gutter; }
+    }
+
+    &-sm {
+      @include media("screen", "xs") { margin-top: $theme-spacing; }
+      @include media("screen", "md") { margin-top: $grid-gutter; }
+    }
+  }
+
+  header {
+    background-color: $white;
+    border-left: 2px solid $lightblue;
+    box-shadow: 0 2px 1px 0 rgba($darkgray, .2);
+    border-radius: $theme-border--radius;
+    margin-bottom: $theme-spacing;
+    padding: $theme-spacing * 2;
+
+    /* TODO: Fix the .align-right class to do what it's supposed to */
+
+    .cell:last-child { text-align: right; }
+  }
+
+  .section-title {
+    // font-size: 2em;
+    font-weight: 200;
+  }
+
+  .section-description { color: $darkgray; }
+
+  article {
+
+    header {
+      border-left: 2px solid $yellow;
+      padding: $theme-spacing;
+
+      .section-title {
+        // font-size: 1.5em;
+      }
+
+      .section-description { font-size: .9em; }
+    }
+
+    .cell:not(.unstyled) {
+      background-color: rgba($darkgray, .1);
+      // font-size: 0;
+      // margin-bottom: 1px;
+      // margin-top: 1px;
+      // padding: $theme-spacing / 2;
+    }
+  }
+}

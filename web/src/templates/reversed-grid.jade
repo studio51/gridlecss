@@ -1,0 +1,14 @@
+section#grid-reversed.css
+
+  header
+    h2.section-title #{reversed}
+    p.section-description #{reversed_description}
+
+  article.toggle
+
+    .row.row--reverse
+
+      - for( var i = 1; i < 13; ++i )
+
+        .cell.cell-xs #{i}
+

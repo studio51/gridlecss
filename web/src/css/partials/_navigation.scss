@@ -1,0 +1,26 @@
+.nav-menu {
+  display: flex;
+}
+
+.list-header {
+  display: flex;
+  padding: 16px 0 8px 0;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1em;
+}
+
+.list-item {
+  display: inline-flex;
+
+  margin: 0 !important;
+  padding: 16px 32px;
+  background-color: #fff;
+  border-bottom: 1px solid #efefef;
+  font-size: .8em;
+  border-radius: 3px;
+}
+
+.list-item:last-child {
+  border: none;
+}

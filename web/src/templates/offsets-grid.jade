@@ -1,0 +1,60 @@
+section#grid-offset
+
+  header
+
+    .row
+      .cell.cell-xs-8
+        h2.section-title #{offset}
+        p.section-description #{offset_description}
+
+      .cell.cell-xs.cell-align--center
+        a.btn.btn-md.btn-blue.show-css(href="#grid-offset", title="Toggle CSS classes") Toggle CSS
+
+  article.children
+
+    .row
+      .cell.cell-xs-12.cell-sm-7.unstyled
+
+        article.toggle
+
+          - for( var i = 1; i < 12; ++i )
+            - var offset = (i - 12)
+
+            .row
+              div(class="cell cell-xs-offset#{offset} cell-xs-#{i}") offset#{offset}
+
+      .cell.cell-xs-12.cell-sm-5.unstyled.spaced-xs
+
+        header
+          h3.section-title #{offset_viewport}
+          p.section-description #{offset_viewport_description}
+
+        article.toggle
+
+          .row
+            .cell.cell-xs-3.cell-sm-offset-9.cell-md-4.cell-md-offset-4.cell-lg-2.cell-lg-offset-4
+              span.visible-xs xs, cell-xs-3
+              span.visible-sm sm, cell-xs-3 cell-sm-offset-9
+              span.visible-md md, cell-md-4 cell-md-offset-4
+              span.visible-lg lg, cell-lg-2 cell-lg-offset-4
+
+          .row
+            .cell.cell-xs-3.cell-xs-offset-3.cell-sm-offset-6.cell-md-4.cell-md-offset-4.cell-lg-2.cell-lg-offset-5
+              span.visible-xs xs, cell-xs-3 cell-xs-offset-3
+              span.visible-sm sm, cell-xs-3 cell-sm-offset-6
+              span.visible-md md, cell-md-4 cell-md-offset-4
+              span.visible-lg lg, cell-lg-2 cell-lg-offset-5
+
+          .row
+            .cell.cell-xs-3.cell-xs-offset-6.cell-sm-offset-3.cell-md-4.cell-md-offset-4.cell-lg-2.cell-lg-offset-6
+              span.visible-xs xs, cell-xs-3 cell-xs-offset-6
+              span.visible-sm sm, cell-xs-3 cell-sm-offset-3
+              span.visible-md md, cell-md-4 cell-md-offset-4
+              span.visible-lg lg, cell-lg-2 cell-lg-offset-6
+
+          .row
+            .cell.cell-xs-3.cell-xs-offset-9.cell-sm-offset.cell-md-4.cell-md-offset-4.cell-lg-2.cell-lg-offset-7
+              span.visible-xs xs, cell-xs-3 cell-xs-offset-9
+              span.visible-sm sm, cell-xs-3 cell-sm-offset
+              span.visible-md md, cell-md-4 cell-md-offset-4
+              span.visible-lg lg, cell-lg-2 cell-lg-offset-7

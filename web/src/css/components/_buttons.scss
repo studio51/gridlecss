@@ -1,0 +1,33 @@
+$buttons: green, blue, orange, yellow, red;
+$color: $green, $blue, $orange, $yellow, $red;
+$darker: $darkgreen, $darkblue, $darkorange, $darkyellow, $darkred;
+
+@mixin btn-shadow($color) {
+  box-shadow: 0 2px 0 rgba($color, .8);
+}
+
+.btn {
+  border-radius: $theme-border--radius;
+  color: #fff;
+  display: inline-flex;
+  font-weight: 300;
+  line-height: $theme-spacing;
+  padding: ( $theme-spacing / 2 ) $theme-spacing;
+
+  &--outline {
+    border: $theme-border--size solid $theme-border--color;
+  }
+
+  @for $i from 1 through length($buttons) {
+
+    &-#{ nth($buttons, $i )} {
+      background-color: saturate(nth($color, $i), 10%);
+
+      @include btn-shadow(nth($darker, $i));
+
+      &:hover {
+        background-color: nth($color, $i);
+      }
+    }
+  }
+}

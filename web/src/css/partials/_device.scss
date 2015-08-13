@@ -1,0 +1,169 @@
+// .device {
+//   @extend .cell-xs;
+
+//   position: relative;
+
+//   &-frame {
+
+//     &--outter {
+//       background-color: #fff;
+//       border: 2px solid rgba(#C9CDC0, 1);
+//       border-bottom: none;
+//       border-top-left-radius: 38px;
+//       border-top-right-radius: 38px;
+//       display: flex;
+//       flex: 1;
+//       flex-direction: column;
+//       padding-left: 10px;
+//       padding-right: 10px;
+
+//       @include media("screen", "sm") {
+//         padding-left: 25px;
+//         padding-right: 25px;
+//       }
+
+//       @include media("screen", "md") {
+//         background-color: #000;
+//         padding-left: 50px;
+//         padding-right: 50px;
+//       }
+
+//       @include media("screen", "lg") {
+//         border: none;
+//       }
+//     }
+
+//     &--inner {
+//       background-color: #fff;
+//       border: 1px solid rgba(#C9CDC0, 1);
+//       border-bottom: none;
+//       border-top-left-radius: 2px;
+//       border-top-right-radius: 2px;
+//       display: flex;
+//       flex: 1;
+//       height: 100%;
+//       overflow: auto;
+//       position: relative;
+
+//       @include media("screen", "md") {
+//         border: none;
+//         border-top-left-radius: 0;
+//         border-top-right-radius: 0;
+//       }
+//     }
+//   }
+
+//   &-camera {
+//     align-self: center;
+//     background-color: #C9CDC0;
+//     border-radius: 100%;
+//     height: 6px;
+//     margin-top: 1em;
+//     width: 6px;
+
+//     @include media("screen", "sm") {
+//       display: none;
+//     }
+
+//     @include media("screen", "md") {
+//       background-color: rgba($green, 1);
+//       display: block;
+//       margin-bottom: 1.5em;
+//       margin-top: 1.5em;
+//     }
+
+//     @include media("screen", "lg") {
+//       margin-bottom: 2em;
+//       margin-top: 1em;
+//     }
+//   }
+
+//   &-speaker {
+//     align-self: center;
+//     background-color: #C9CDC0;
+//     border-radius: 50px;
+//     height: 4px;
+//     margin-bottom: 2.5em;
+//     margin-top: 1em;
+//     position: relative;
+//     width: 45px;
+
+//     @include media("screen", "sm") {
+//       height: 10px;
+//       margin-bottom: 2em;
+//       margin-top: 2em;
+//       width: 10px;
+//     }
+
+//     @include media("screen", "md") {
+//       display: none;
+//     }
+
+//     &:before {
+//       background: #C9CDC0;
+//       border-radius: 100%;
+//       content: '';
+//       height: 10px;
+//       left: -25px;
+//       position: absolute;
+//       top: -3px;
+//       width: 10px;
+
+//       @include media("screen", "sm") {
+//         height: 5px;
+//         width: 5px;
+//         top: 2.5px;
+//         left: -15px;
+//       }
+//     }
+//   }
+// }
+.pca-hold {
+  width: 300px;
+}
+.pca-hold .pca-main {
+  display: block;
+  position: relative;
+  background-color: #ffffff;
+  border: 21px solid #1d2d2d;
+  border-bottom: 30px solid #1d2d2d;
+  border-radius: 15px;
+  height: 372px;
+}
+.pca-hold .pca-main:after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  -ms-transform: translate(-50%,0);
+  -o-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  width: 3.3px;
+  height: 3.3px;
+  background-color: #959595;
+  border-radius: 100%;
+}
+.pca-hold .pca-inner {
+  display: block;
+}
+.pca-hold .pca-sub {
+  display: block;
+  text-align: center;
+  position: relative;
+  height: 0;
+}
+.pca-hold .pca-sub .pca-bot {
+  border-radius: 100%;
+  width: 18px;
+  height: 18px;
+  display: block;
+  background-color: transparent;
+  z-index: 2;
+  margin: -6px auto 0 auto;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.6);
+  -webkit-transform: translate(0,-100%);
+  -ms-transform: translate(0,-100%);
+  -o-transform: translate(0,-100%);
+  transform: translate(0,-100%);
+}

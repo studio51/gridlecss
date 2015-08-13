@@ -2,7 +2,9 @@ module.exports = function(grunt) {
 
   var appConfig = {
     host: 'localhost',
-    port: 1337
+    port: 1338,
+    src_dir: 'src/',
+    dist_dir: 'dist/'
   };
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
@@ -11,22 +13,57 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     appConfig: appConfig,
 
-    connect: {
-      options: {
-        port: appConfig.port,
-        livereload: true,
+    watch: {
+      grunt: {
+        files: 'Gruntfile.js'
       },
-
-      dist: {
-        options: {
-          base: 'dist/'
-        }
+      sass: {
+        files: ['<%= appConfig.src_dir %>css/**/*.scss'],
+        tasks: ['sass', 'postcss', 'cssnext']
+      },
+      uglify: {
+        files: ['<%= appConfig.src_dir %>js/**/*.js'],
+        tasks: ['uglify']
+      },
+      jade: {
+        files: ['<%= appConfig.src_dir %>**/*.jade'],
+        tasks: ['jade']
       }
     },
 
-    open: {
-      server: {
-        path: "http://<%= appConfig.host %>:<%= appConfig.port %>"
+    browserSync: {
+      dev: {
+        bsFiles: {
+          src: [
+            'css/*.css',
+            '**/*.html',
+            'img/*.jpg',
+            'img/*.png',
+          ],
+        },
+
+        options: {
+          watchTask: true,
+          server: {
+            baseDir: appConfig.dist_dir
+          },
+          debugInfo: true,
+          logConnections: true,
+          notify: true,
+          plugins: [
+            {
+              module: 'bs-html-injector',
+              options: {
+                files: '<%= appConfig.dist_dir %>*.html'
+              }
+            }
+          ],
+          ghostMode: {
+            scroll: true,
+            links: true,
+            forms: true
+          }
+        }
       }
     },
 
@@ -36,7 +73,20 @@ module.exports = function(grunt) {
       },
 
       dist: {
-        src: ['dist/']
+        src: ['<%= appConfig.dist_dir %>']
+      }
+    },
+
+    copy: {
+      src: {
+        files: [{
+          expand: true,
+          dot: true,
+          flatten: true,
+          src: ['bower_components/font-awesome/fonts/*', '<%= appConfig.src_dir %>fonts/*'],
+          dest: '<%= appConfig.dist_dir %>fonts/',
+          filter: 'isFile'
+        }]
       }
     },
 
@@ -47,23 +97,23 @@ module.exports = function(grunt) {
 
       dist: {
         files: {
-          'dist/css/theme.css': 'css/theme.scss'
+          '<%= appConfig.dist_dir %>css/main.min.css': '<%= appConfig.src_dir %>css/main.scss'
         }
       }
     },
 
-    postcss: {
+   postcss: {
       options: {
         map: false,
         processors: [
           require('autoprefixer-core')({
             browsers: ['last 5 versions', '> 15%', 'IE 10']
-          }).postcss
+          })
         ]
       },
 
       dist: {
-        src: ['dist/css/theme.css']
+        src: ['<%= appConfig.dist_dir %>css/main.min.css']
       }
     },
 
@@ -74,13 +124,13 @@ module.exports = function(grunt) {
 
       dist: {
         files: {
-          'dist/css/theme.css': 'dist/css/theme.css'
+          '<%= appConfig.dist_dir %>css/main.min.css': '<%= appConfig.dist_dir %>css/main.min.css'
         }
       }
     },
 
     cssbeautifier : {
-      files : ['dist/css/theme.css'],
+      files : ['<%= appConfig.dist_dir %>css/main.min.css'],
       options : {
         indent: '  ',
         openbrace: 'end-of-line',
@@ -96,15 +146,19 @@ module.exports = function(grunt) {
 
       target: {
         files: {
-          'dist/css/theme.min.css': ['dist/css/theme.css'],
+          '<%= appConfig.dist_dir %>css/main.min.css': ['<%= appConfig.dist_dir %>css/main.min.css'],
         }
       }
     },
 
     uglify: {
       dist: {
+        options: {
+          beautify: true
+        },
+
         files: {
-          'dist/js/main.min.js': ['js/**/*.js']
+          '<%= appConfig.dist_dir %>js/main.min.js': ['<%= appConfig.src_dir %>js/**/*.js']
         }
       }
     },
@@ -112,7 +166,7 @@ module.exports = function(grunt) {
     jade: {
       html: {
         files: {
-          'dist/': ['*.jade']
+          '<%= appConfig.dist_dir %>': ['<%= appConfig.src_dir %>*.jade']
         },
 
         options: {
@@ -122,24 +176,65 @@ module.exports = function(grunt) {
       }
     },
 
-    watch: {
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: 'whitmoretearooms.co.uk',
+          port: 21,
+          authKey: '/.ftppass'
+        },
+        src: 'app',
+        dest: '/public_html/test',
+        exclusions: ['**/.DS_Store']
+      }
+    },
+
+    imagemin: {
+      png: {
+        options: {
+          optimizationLevel: 7
+        },
+        files: [
+          {
+            expand: true,
+            cwd: '<%= appConfig.src_dir %>img/',
+            src: ['**/*.png'],
+            dest: '<%= appConfig.dist_dir %>img/',
+            ext: '.png'
+          }
+        ]
+      },
+
+      jpg: {
+        options: {
+          progressive: true
+        },
+        files: [
+          {
+            expand: true,
+            cwd: '<%= appConfig.src_dir %>img/',
+            src: ['**/*.jpg'],
+            dest: '<%= appConfig.dist_dir %>img/',
+            ext: '.jpg'
+          }
+        ]
+      }
+    },
+
+    svgmin: {
       options: {
-        livereload: true
+        plugins: [
+          { collapseGroups: false },
+          { removeUnknownsAndDefaults: false }
+        ]
       },
-      grunt: {
-        files: 'Gruntfile.js'
-      },
-      sass: {
-        files: ['css/**/*.scss'],
-        tasks: ['sass', 'postcss', 'cssnext']
-      },
-      uglify: {
-        files: ['js/**/*.js'],
-        tasks: ['uglify']
-      },
-      jade: {
-        files: ['**/*.jade'],
-        tasks: ['jade']
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= appConfig.src_dir %>img',
+          src: '{,*/}*.svg',
+          dest: '<%= appConfig.dist_dir %>img'
+        }]
       }
     }
   });
@@ -147,7 +242,10 @@ module.exports = function(grunt) {
   grunt.registerTask('compile-css', [
     'sass',
     'postcss',
-    'cssnext'
+    'cssnext',
+    'imagemin',
+    'svgmin',
+    'copy'
   ]);
 
   grunt.registerTask('compile-js', [
@@ -167,12 +265,11 @@ module.exports = function(grunt) {
 
   grunt.registerTask('preview', [
     'compile-theme',
-    'connect',
-    'open',
+    'browserSync',
     'watch'
   ]);
 
   grunt.registerTask('default', ['clean', 'preview']);
-  grunt.registerTask('compile', ['clean', 'compile-theme']);
-  grunt.registerTask('ship', ['clean', 'compile', 'prettify']);
+  grunt.registerTask('prepare', ['clean', 'compile-theme', 'prettify']);
+  grunt.registerTask('deploy', ['ship', 'ftp-deploy'])
 }

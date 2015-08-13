@@ -1,0 +1,31 @@
+section#grid-nested
+
+  header
+    h2.section-title #{nested}
+    p.section-description #{nested_description}
+
+  article.toggle
+
+    .row
+      .cell.cell-xs-12.cell-md-7
+        .row
+          .cell.cell-xs
+
+            .row
+
+              - for( var i = 0; i < 4; i++ )
+
+                .cell.cell-xs-3
+                  .row
+
+                    - for( var ia = 0; ia < 3; ia++ )
+
+                      .cell.cell-xs-4
+
+      .cell.cell-xs-12.cell-md-5
+        .row
+          .cell.cell-xs
+            .row
+              .cell.cell-xs
+                .row
+                  .cell.cell-xs
