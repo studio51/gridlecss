@@ -1,0 +1,21 @@
+{
+  "name": "GridleCSS",
+  "version": "1.0.0",
+  "homepage": "https://github.com/studio51/framework-gridlex",
+  "authors": [
+    "Vlad Radulescu <pacMakaveli90@gmail.co.uk>"
+  ],
+  "description": "''",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "font-awesome": "~4.4.0",
+    "gridlecss": "*"
+  }
+}

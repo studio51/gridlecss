@@ -1,0 +1,67 @@
+section#grid-auto
+
+  header
+
+    .row
+      .cell.cell-xs-8
+        h2.section-title #{auto}
+        p.section-description #{auto_description}
+
+      .cell.cell-xs.cell-align--center
+        a.btn.btn-md.btn-blue.show-css(href="#grid-auto", title="Toggle CSS classes") Toggle CSS
+
+  article.children
+
+    .row
+      .cell-xs-12.cell-md.unstyled
+
+        header
+          h3.section-title #{auto_additional}
+          p.section-description #{auto_additional_description}
+
+        article.toggle
+
+          .row
+
+            - for( var i = 0; i < 4; ++i )
+
+              .cell.cell-xs auto
+
+          .row
+            .cell.cell-xs-3 cell-xs-3
+            .cell.cell-xs auto
+            .cell.cell-xs-2 cell-xs-2
+            .cell.cell-xs auto
+
+      .cell-xs-12.cell-md.unstyled.spaced-sm
+
+        header
+          h3.section-title #{auto_additional_two}
+          p.section-description #{auto_additional_two_description}
+
+        article.toggle
+
+          .row
+            .cell.cell-sm.cell-md-3.cell-lg
+              span.visible-xs full-xs
+              span.visible-sm auto-sm
+              span.visible-md cell-md-3
+              span.visible-lg auto-lg
+
+            .cell.cell-sm.cell-md.cell-lg
+              span.visible-xs full-xs
+              span.visible-sm auto-sm
+              span.visible-md auto-md
+              span.visible-lg auto-lg
+
+            .cell.cell-sm.cell-md-2.cell-lg
+              span.visible-xs full-xs
+              span.visible-sm auto-sm
+              span.visible-md cell-md-2
+              span.visible-lg auto-lg
+
+            .cell.cell-sm.cell-md.cell-lg
+              span.visible-xs full-xs
+              span.visible-sm auto-sm
+              span.visible-md auto-md
+              span.visible-lg auto-lg

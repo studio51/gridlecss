@@ -1,0 +1,9 @@
+@mixin background-animation($color-list, $duration) {
+
+  $size: 200 * length($color-list);
+  $size: unquote("#{ $size }%");
+
+  background: linear-gradient(105deg, $color-list);
+  background-size: $size $size;
+  animation: rotate #{ $duration }s ease infinite;
+}

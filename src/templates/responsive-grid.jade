@@ -1,0 +1,52 @@
+section#grid-responsive
+
+  header
+
+    .row
+      .cell.cell-xs-8
+        h2.section-title #{responsive}
+        p.section-description #{responsive_description}
+
+      .cell.cell-xs.cell-align--center
+        a.btn.btn-md.btn-blue.show-css(href="#grid-responsive", title="Toggle CSS classes") Toggle CSS
+
+  article.toggle
+
+    .row
+      .cell.cell-xs-5.cell-sm-4.cell-md-3.cell-lg-2
+        span.visible-xs cell-xs-5
+        span.visible-sm cell-sm-4
+        span.visible-md cell-md-3
+        span.visible-lg cell-lg-2
+
+      .cell.cell-xs-2.cell-sm-4.cell-md-6.cell-lg-8
+        span.visible-xs cell-xs-2
+        span.visible-sm cell-sm-4
+        span.visible-md cell-md-6
+        span.visible-lg cell-lg-8
+
+      .cell.cell-xs-5.cell-sm-4.cell-md-3.cell-lg-2
+        span.visible-xs cell-xs-5
+        span.visible-sm cell-sm-4
+        span.visible-md cell-md-3
+        span.visible-lg cell-lg-2
+
+    .row
+      .cell.cell-xs-3.cell-sm-3.cell-md-2.cell-lg-2
+        span.visible-xs cell-xs-3
+        span.visible-sm cell-sm-3
+        span.visible-md cell-md-2
+        span.visible-lg cell-lg-2
+
+      .cell.cell-xs-9.cell-sm-6.cell-md-2.cell-lg-2
+        span.visible-xs cell-xs-9
+        span.visible-sm cell-sm-6
+        span.visible-md cell-md-2
+        span.visible-lg cell-lg-2
+
+      .cell.cell-xs.cell-sm-3.cell-md-8.cell-lg
+        span.visible-xs cell-xs
+        span.visible-sm cell-sm-3
+        span.visible-md cell-md-8
+        span.visible-lg cell-lg
+

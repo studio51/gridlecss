@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GridleCSS | Yet another flex grid framework!</title>
+    <meta name="description" content="A simple to use 12/24 columns Grid created with CSS Flex in SASS. Crafted with love by Vlad Radulescu @ Studio51">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.min.css">
+  </head>
+  <body class="body">
+    <header class="header">
+      <div class="grid">
+        <div class="row">
+          <div class="cell cell-xs-12 cell-sm-3">
+            <div class="row">
+              <div class="cell cell-xs-12">
+                <div class="brand">
+                  <h1 class="brand-name">GridleCSS<span class="brand-name--pronunciation">/ɡrɪd.lɛx/</span></h1>
+                  <p class="brand-motto">Yet another flex grid framework!</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-12">
+                <nav role="navigation" class="nav-menu">
+                  <ul class="list-unstyled">
+                    <li class="list-item animated-1"><a href="#" data-target="#grid-basic" class="btn btn-sm list-item-link">basic</a></li>
+                    <li class="list-item animated-2"><a href="#" data-target="#grid-responsive" class="btn btn-sm list-item-link">responsive</a></li>
+                    <li class="list-item animated-3"><a href="#" data-target="#grid-fluid" class="btn btn-sm list-item-link">fluid</a></li>
+                    <li class="list-item animated-4"><a href="#" data-target="#grid-offset" class="btn btn-sm list-item-link">offset</a></li>
+                    <li class="list-item animated-5"><a href="#" data-target="#grid-nested" class="btn btn-sm list-item-link">nested</a></li>
+                    <li class="list-item animated-6"><a href="#" data-target="#grid-auto" class="btn btn-sm list-item-link">auto</a></li>
+                    <li class="list-item animated-7"><a href="#" data-target="#grid-alignment" class="btn btn-sm list-item-link">alignment</a></li>
+                    <li class="list-item animated-8"><a href="#" data-target="#grid-distribution" class="btn btn-sm list-item-link">distribution</a></li>
+                    <li class="list-item animated-9"><a href="#" data-target="#grid-reversed" class="btn btn-sm list-item-link">reversed</a></li>
+                    <li class="list-item animated-10"><a href="#" data-target="#grid-reordered" class="btn btn-sm list-item-link">reordered</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-12">
+                <div class="social-buttons--container">
+                  <ul class="social-buttons"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cell cell-xs-12 cell-sm-9">
+            <div class="pca-hold">
+              <div class="pca-main">
+                <div class="pca-inner">
+                  <div class="device-demo--container">
+                    <div class="device-demo--content device-demo--side_a"><a href="" title="Check out some Demos" class="btn btn-round btn-yellow"><i class="fa fa-lightbulb-o"></i></a>
+                      <p>More demos will be made available soon.</p>
+                    </div>
+                    <div class="device-demo--side device-demo--side_b"><a href="https://github.com/studio51/gridlecss/archive/v1.0.rc1.zip" title="GridleCSS v1.0.rc1" class="btn btn-round btn-purple"><i class="fa fa-arrow-down"></i></a>
+                      <p>Download GridleCSS v1.0.rc1</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pca-sub">
+                <div class="pca-top"></div>
+                <div class="pca-mid">
+                  <div class="pca-part"></div>
+                </div>
+                <div class="pca-bot"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="grid">
+        <section id="grid-basic">
+          <header>
+            <div class="row">
+              <div class="cell cell-xs cell-sm-10">
+                <h2 class="section-title">GridleCSS</h2>
+                <p class="section-description">GridleCSS in all it's glory! Flexible cells, viewport specific rules and more..</p>
+              </div>
+              <div class="cell cell-xs cell-align--center"><a href="#grid-basic" title="Toggle CSS classes" class="btn btn-md btn-blue show-css">Toggle CSS</a></div>
+            </div>
+          </header>
+          <article class="toggle">
+            <div class="row">
+              <div class="cell cell-xs">auto-xs</div>
+              <div class="cell cell-xs cell-sm-3 cell-md-7 cell-lg"><span class="visible-xs">auto-xs</span><span class="visible-sm">cell-sm-3</span><span class="visible-md">cell-md-7</span><span class="visible-lg">auto-lg</span></div>
+              <div class="cell cell-xs">auto-xs</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-9 cell-sm-7 cell-md-5 cell-lg-3"><span class="visible-xs">cell-xs-9</span><span class="visible-sm">cell-sm-7</span><span class="visible-md">cell-md-5</span><span class="visible-lg">cell-lg-3</span></div>
+              <div class="cell cell-xs">auto</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos
+                blanditiis odit et ratione, id laboriosam sapiente consequuntur
+                laborum officia, impedit eligendi natus quisquam dolor in at
+                aliquam, tempore maiores est.
+              </div>
+              <div class="cell cell-sm-10">
+                <div class="row">
+                  <div class="cell cell-xs">xs-auto</div>
+                  <div class="cell cell-xs-3">cell-xs-3</div>
+                  <div class="cell cell-xs">xs-auto</div>
+                  <div class="cell cell-xs-1">cel-xs-1</div>
+                </div>
+                <div class="row">
+                  <div class="cell cell-xs-4">cell-xs-4</div>
+                  <div class="cell cell-xs-3">cell-xs-3</div>
+                  <div class="cell cell-xs-4">cell-xs-4</div>
+                  <div class="cell cell-xs-1">cell-xs-1</div>
+                </div>
+                <div class="row">
+                  <div class="cell cell-xs-2">cell-xs-2</div>
+                  <div class="cell cell-xs-2">cell-xs-2</div>
+                  <div class="cell cell-xs-2">cell-xs-2</div>
+                  <div class="cell cell-xs-2">cell-xs-2</div>
+                  <div class="cell cell-xs-2">cell-xs-2</div>
+                  <div class="cell cell-xs-2">cell-xs-2</div>
+                </div>
+                <div class="row">
+                  <div class="cell cell-xs-1">cell-xs-1</div>
+                  <div class="cell cell-xs-1">cell-xs-1</div>
+                  <div class="cell cell-xs-1">cell-xs-1</div>
+                  <div class="cell cell-xs-1">cell-xs-1</div>
+                  <div class="cell cell-xs-1">cell-xs-1</div>
+                  <div class="cell cell-xs-1">cell-xs-1</div>
+                  <div class="cell cell-xs-1">cell-xs-1</div>
+                  <div class="cell cell-xs-1">cell-xs-1</div>
+                  <div class="cell cell-xs-1">cell-xs-1</div>
+                  <div class="cell cell-xs-1">cell-xs-1</div>
+                  <div class="cell cell-xs-1">cell-xs-1</div>
+                  <div class="cell cell-xs-1">cell-xs-1</div>
+                </div>
+                <div class="row">
+                  <div class="cell cell-xs-12">cell-xs-12</div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section id="grid-responsive">
+          <header>
+            <div class="row">
+              <div class="cell cell-xs-8">
+                <h2 class="section-title">Responsive</h2>
+                <p class="section-description">Responsive modifiers enable specifing different column sizes, offsets alignment and distribution at certain viewport widths.</p>
+              </div>
+              <div class="cell cell-xs cell-align--center"><a href="#grid-responsive" title="Toggle CSS classes" class="btn btn-md btn-blue show-css">Toggle CSS</a></div>
+            </div>
+          </header>
+          <article class="toggle">
+            <div class="row">
+              <div class="cell cell-xs-5 cell-sm-4 cell-md-3 cell-lg-2"><span class="visible-xs">cell-xs-5</span><span class="visible-sm">cell-sm-4</span><span class="visible-md">cell-md-3</span><span class="visible-lg">cell-lg-2</span></div>
+              <div class="cell cell-xs-2 cell-sm-4 cell-md-6 cell-lg-8"><span class="visible-xs">cell-xs-2</span><span class="visible-sm">cell-sm-4</span><span class="visible-md">cell-md-6</span><span class="visible-lg">cell-lg-8</span></div>
+              <div class="cell cell-xs-5 cell-sm-4 cell-md-3 cell-lg-2"><span class="visible-xs">cell-xs-5</span><span class="visible-sm">cell-sm-4</span><span class="visible-md">cell-md-3</span><span class="visible-lg">cell-lg-2</span></div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-3 cell-sm-3 cell-md-2 cell-lg-2"><span class="visible-xs">cell-xs-3</span><span class="visible-sm">cell-sm-3</span><span class="visible-md">cell-md-2</span><span class="visible-lg">cell-lg-2</span></div>
+              <div class="cell cell-xs-9 cell-sm-6 cell-md-2 cell-lg-2"><span class="visible-xs">cell-xs-9</span><span class="visible-sm">cell-sm-6</span><span class="visible-md">cell-md-2</span><span class="visible-lg">cell-lg-2</span></div>
+              <div class="cell cell-xs cell-sm-3 cell-md-8 cell-lg"><span class="visible-xs">cell-xs</span><span class="visible-sm">cell-sm-3</span><span class="visible-md">cell-md-8</span><span class="visible-lg">cell-lg</span></div>
+            </div>
+          </article>
+        </section>
+        <section id="grid-fluid">
+          <header>
+            <div class="row">
+              <div class="cell cell-xs-8">
+                <h2 class="section-title">Fluid Layout</h2>
+                <p class="section-description">Percent based widths allow fluid resizing of columns and rows</p>
+              </div>
+              <div class="cell cell-xs cell-align--center"><a href="#grid-fluid" title="Toggle CSS classes" class="btn btn-md btn-blue show-css">Toggle CSS</a></div>
+            </div>
+          </header>
+          <article class="toggle">
+            <div class="row">
+              <div class="cell cell-lg">auto-xs</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-1">cell-xs-1</div>
+              <div class="cell cell-xs-11">cell-xs-11</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-2">cell-xs-2</div>
+              <div class="cell cell-xs-10">cell-xs-10</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-3">cell-xs-3</div>
+              <div class="cell cell-xs-9">cell-xs-9</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-4">cell-xs-4</div>
+              <div class="cell cell-xs-8">cell-xs-8</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-5">cell-xs-5</div>
+              <div class="cell cell-xs-7">cell-xs-7</div>
+            </div>
+            <div class="row">
+              <div class="cell cell-xs-6">cell-xs-6</div>
+              <div class="cell cell-xs-6">cell-xs-6</div>
+            </div>
+          </article>
+        </section>
+        <section id="grid-offset">
+          <header>
+            <div class="row">
+              <div class="cell cell-xs-8">
+                <h2 class="section-title">Offsets</h2>
+                <p class="section-description"></p>
+              </div>
+              <div class="cell cell-xs cell-align--center"><a href="#grid-offset" title="Toggle CSS classes" class="btn btn-md btn-blue show-css">Toggle CSS</a></div>
+            </div>
+          </header>
+          <article class="children">
+            <div class="row">
+              <div class="cell cell-xs-12 cell-sm-7 unstyled">
+                <article class="toggle">
+                  <div class="row">
+                    <div class="cell cell-xs-offset-11 cell-xs-1">offset-11</div>
+                  </div>
+                  <div class="row">
+                    <div class="cell cell-xs-offset-10 cell-xs-2">offset-10</div>
+                  </div>
+                  <div class="row">
+                    <div class="cell cell-xs-offset-9 cell-xs-3">offset-9</div>
+                  </div>
+                  <div class="row">
+                    <div class="cell cell-xs-offset-8 cell-xs-4">offset-8</div>
+                  </div>
+                  <div class="row">
+                    <div class="cell cell-xs-offset-7 cell-xs-5">offset-7</div>
+                  </div>
+                  <div class="row">
+                    <div class="cell cell-xs-offset-6 cell-xs-6">offset-6</div>
+                  </div>
+                  <div class="row">
+                    <div class="cell cell-xs-offset-5 cell-xs-7">offset-5</div>
+                  </div>
+                  <div class="row">
+                    <div class="cell cell-xs-offset-4 cell-xs-8">offset-4</div>
+                  </div>
+                  <div class="row">
+                    <div class="cell cell-xs-offset-3 cell-xs-9">offset-3</div>
+                  </div>
+                  <div class="row">
+                    <div class="cell cell-xs-offset-2 cell-xs-10">offset-2</div>
+                  </div>
+                  <div class="row">
+                    <div class="cell cell-xs-offset-1 cell-xs-11">offset-1</div>
+                  </div>
+                </article>
+              </div>
+              <div class="cell cell-xs-12 cell-sm-5 unstyled spaced-xs">
+                <header>
+                  <h3 class="section-title">Offsets by viewport</h3>
+                  <p class="section-description"></p>
+                </header>
+                <article class="toggle">
+                  <div class="row">
+                    <div class="cell cell-xs-3 cell-sm-offset-9 cell-md-4 cell-md-offset-4 cell-lg-2 cell-lg-offset-4"><span class="visible-xs">xs, cell-xs-3</span><span class="visible-sm">sm, cell-xs-3 cell-sm-offset-9</span><span class="visible-md">md, cell-md-4 cell-md-offset-4</span><span class="visible-lg">lg, cell-lg-2 cell-lg-offset-4</span></div>
+                  </div>
+                  <div class="row">
+                    <div class="cell cell-xs-3 cell-xs-offset-3 cell-sm-offset-6 cell-md-4 cell-md-offset-4 cell-lg-2 cell-lg-offset-5"><span class="visible-xs">xs, cell-xs-3 cell-xs-offset-3</span><span class="visible-sm">sm, cell-xs-3 cell-sm-offset-6</span><span class="visible-md">md, cell-md-4 cell-md-offset-4</span><span class="visible-lg">lg, cell-lg-2 cell-lg-offset-5</span></div>
+                  </div>
+                  <div class="row">
+                    <div class="cell cell-xs-3 cell-xs-offset-6 cell-sm-offset-3 cell-md-4 cell-md-offset-4 cell-lg-2 cell-lg-offset-6"><span class="visible-xs">xs, cell-xs-3 cell-xs-offset-6</span><span class="visible-sm">sm, cell-xs-3 cell-sm-offset-3</span><span class="visible-md">md, cell-md-4 cell-md-offset-4</span><span class="visible-lg">lg, cell-lg-2 cell-lg-offset-6</span></div>
+                  </div>
+                  <div class="row">
+                    <div class="cell cell-xs-3 cell-xs-offset-9 cell-sm-offset cell-md-4 cell-md-offset-4 cell-lg-2 cell-lg-offset-7"><span class="visible-xs">xs, cell-xs-3 cell-xs-offset-9</span><span class="visible-sm">sm, cell-xs-3 cell-sm-offset</span><span class="visible-md">md, cell-md-4 cell-md-offset-4</span><span class="visible-lg">lg, cell-lg-2 cell-lg-offset-7</span></div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section id="grid-nested">
+          <header>
+            <h2 class="section-title">Gridcellceptional!</h2>
+            <p class="section-description">A cell, inside a row, inside a cell, inside a row.. oh you get it!</p>
+          </header>
+          <article class="toggle">
+            <div class="row">
+              <div class="cell cell-xs-12 cell-md-7">
+                <div class="row">
+                  <div class="cell cell-xs">
+                    <div class="row">
+                      <div class="cell cell-xs-3">
+                        <div class="row">
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                        </div>
+                      </div>
+                      <div class="cell cell-xs-3">
+                        <div class="row">
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                        </div>
+                      </div>
+                      <div class="cell cell-xs-3">
+                        <div class="row">
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                        </div>
+                      </div>
+                      <div class="cell cell-xs-3">
+                        <div class="row">
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                          <div class="cell cell-xs-4"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cell cell-xs-12 cell-md-5">
+                <div class="row">
+                  <div class="cell cell-xs">
+                    <div class="row">
+                      <div class="cell cell-xs">
+                        <div class="row">
+                          <div class="cell cell-xs"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section id="grid-auto">
+          <header>
+            <div class="row">
+              <div class="cell cell-xs-8">
+                <h2 class="section-title">Auto GridleCSS</h2>
+                <p class="section-description"></p>
+              </div>
+              <div class="cell cell-xs cell-align--center"><a href="#grid-auto" title="Toggle CSS classes" class="btn btn-md btn-blue show-css">Toggle CSS</a></div>
+            </div>
+          </header>
+          <article class="children">
+            <div class="row">
+              <div class="cell-xs-12 cell-md unstyled">
+                <header>
+                  <h3 class="section-title">Auto Width</h3>
+                  <p class="section-description">Add any number of auto sizing cells to a row. Let the grid figure it out</p>
+                </header>
+                <article class="toggle">
+                  <div class="row">
+                    <div class="cell cell-xs">auto</div>
+                    <div class="cell cell-xs">auto</div>
+                    <div class="cell cell-xs">auto</div>
+                    <div class="cell cell-xs">auto</div>
+                  </div>
+                  <div class="row">
+                    <div class="cell cell-xs-3">cell-xs-3</div>
+                    <div class="cell cell-xs">auto</div>
+                    <div class="cell cell-xs-2">cell-xs-2</div>
+                    <div class="cell cell-xs">auto</div>
+                  </div>
+                </article>
+              </div>
+              <div class="cell-xs-12 cell-md unstyled spaced-sm">
+                <header>
+                  <h3 class="section-title">Auto Width on Viewport</h3>
+                  <p class="section-description">You can also specify on which viewport the grid should figure it out whether or not it should apply it.</p>
+                </header>
+                <article class="toggle">
+                  <div class="row">
+                    <div class="cell cell-sm cell-md-3 cell-lg"><span class="visible-xs">full-xs</span><span class="visible-sm">auto-sm</span><span class="visible-md">cell-md-3</span><span class="visible-lg">auto-lg</span></div>
+                    <div class="cell cell-sm cell-md cell-lg"><span class="visible-xs">full-xs</span><span class="visible-sm">auto-sm</span><span class="visible-md">auto-md</span><span class="visible-lg">auto-lg</span></div>
+                    <div class="cell cell-sm cell-md-2 cell-lg"><span class="visible-xs">full-xs</span><span class="visible-sm">auto-sm</span><span class="visible-md">cell-md-2</span><span class="visible-lg">auto-lg</span></div>
+                    <div class="cell cell-sm cell-md cell-lg"><span class="visible-xs">full-xs</span><span class="visible-sm">auto-sm</span><span class="visible-md">auto-md</span><span class="visible-lg">auto-lg</span></div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section id="grid-alignment">
+          <header>
+            <div class="row">
+              <div class="cell cell-xs-8">
+                <h2 class="section-title">Alignments</h2>
+                <p class="section-description"></p>
+              </div>
+              <div class="cell cell-xs cell-align--center"><a href="#grid-alignment" title="Toggle CSS classes" class="btn btn-md btn-blue show-css">Toggle CSS</a></div>
+            </div>
+          </header>
+          <article class="children">
+            <div class="row">
+              <div class="cell cell-xs-12 cell-md-7 unstyled">
+                <div class="row">
+                  <div class="cell cell-xs-12 unstyled">
+                    <header>
+                      <h3 class="section-title">Alignments on Parent elements</h3>
+                      <p class="section-description">This defines the alignment along the main axis. It helps distribute extra free space left over when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size.</p>
+                    </header>
+                    <article class="toggle">
+                      <div class="row">
+                        <div class="cell cell-xs">
+                          <div class="row align-left">
+                            <div class="cell cell-xs-7">align-left</div>
+                          </div>
+                        </div>
+                        <div class="cell cell-xs">
+                          <div class="row align-center">
+                            <div class="cell cell-xs-7">align-center</div>
+                          </div>
+                        </div>
+                        <div class="cell cell-xs">
+                          <div class="row align-right">
+                            <div class="cell cell-xs-7">align-right</div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="row spaced">
+                  <div class="cell cell-xs-12 unstyled">
+                    <header>
+                      <h3 class="section-title"></h3>
+                      <p class="section-description">Similar to the above except you can specify the behaviour of how flex-items are laid out along the cross axis, instead of main axis, of the current line.</p>
+                    </header>
+                    <article class="toggle">
+                      <div class="row demo-alignment text-center">
+                        <div class="cell cell-xs">
+                          <div class="row">
+                            <div class="cell">align-stretch</div>
+                          </div>
+                        </div>
+                        <div class="cell cell-xs">
+                          <div class="row align-top">
+                            <div class="cell">.align-top</div>
+                          </div>
+                        </div>
+                        <div class="cell cell-xs">
+                          <div class="row align-middle">
+                            <div class="cell">align-middle</div>
+                          </div>
+                        </div>
+                        <div class="cell cell-xs">
+                          <div class="row align-bottom">
+                            <div class="cell">align-bottom</div>
+                          </div>
+                        </div>
+                        <div class="cell cell-sm-6">
+                          <div class="row align-baseline">
+                            <div class="cell cell-xs demo-baseline-1"><span>baseline</span></div>
+                            <div class="cell cell-xs demo-baseline-2"><span>baseline</span></div>
+                            <div class="cell cell-xs"><span>baseline</span></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="cell cell-xs-12">
+                          <div class="row demo-alignment align-sm-top align-md-middle align-lg-bottom text-center">
+                            <div class="cell cell-xs">
+                              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              Saepe, reprehenderit ipsum atque distinctio ad, nihil
+                              repudiandae ut omnis dignissimos suscipit non quos debitis
+                              inventore fuga alias. Quod ut nesciunt aut.
+                            </div>
+                            <div class="cell cell-xs">
+                              <div class="visible-xs">stretch</div>
+                              <div class="visible-sm">align-sm-top</div>
+                              <div class="visible-md">align-md-middle</div>
+                              <div class="visible-lg">align-lg-bottom</div>
+                            </div>
+                            <div class="cell cell-xs">
+                              <div class="visible-xs">stretch</div>
+                              <div class="visible-sm">align-sm-top</div>
+                              <div class="visible-md">align-md-middle</div>
+                              <div class="visible-lg">align-lg-bottom</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+              <div class="cell cell-xs-12 cell-md-5 unstyled">
+                <div class="row">
+                  <div class="cell cell-xs-12 unstyled">
+                    <header>
+                      <h3 class="section-title">Alignments on Child elements</h3>
+                      <p class="section-description">This property will allow the default alignment, or the one specified on the parent to be overridden for indvidual flex items</p>
+                    </header>
+                    <article class="toggle">
+                      <div class="row demo-alignment text-center">
+                        <div class="cell">
+                          <div class="row align-top">
+                            <div class="cell cell-xs-1">auto</div>
+                            <div class="cell cell-xs cell-align--top">cell-align--top</div>
+                            <div class="cell cell-xs cell-align--middle">cell-align--middle</div>
+                            <div class="cell cell-xs cell-align--bottom">cell-align--bottom</div>
+                            <div class="cell cell-xs cell-align--stretch">cell-align--stretch</div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="row spaced">
+                  <div class="cell cell-xs-12 unstyled">
+                    <header>
+                      <h3 class="section-title">Alignment by Viewport</h3>
+                      <p class="section-description">You can also specify what alignment rule should be considered depending on the viewport by adding the viewport class</p>
+                    </header>
+                    <article class="toggle">
+                      <div class="row demo-alignment text-center">
+                        <div class="cell">
+                          <div class="row align-top">
+                            <div class="cell cell-xs-1">auto</div>
+                            <div class="cell cell-xs cell-xs-align--stretch cell-sm-align--middle cell-md-align--stretch cell-lg-align--top">
+                              <div class="visible-xs">cell-xs-align--stretch</div>
+                              <div class="visible-sm">cell-sm-align--middle</div>
+                              <div class="visible-md">cell-md-align--stretch</div>
+                              <div class="visible-lg">cell-lg-align--top</div>
+                            </div>
+                            <div class="cell cell-xs cell-xs-align--stretch cell-sm-align--middle cell-md-align--bottom cell-lg-align--middle">
+                              <div class="visible-xs">cell-xs-align--stretch</div>
+                              <div class="visible-sm">cell-sm-align--middle</div>
+                              <div class="visible-md">cell-md-align--bottom</div>
+                              <div class="visible-lg">cell-lg-align--middle</div>
+                            </div>
+                            <div class="cell cell-xs cell-xs-align--stretch cell-sm-align--middle cell-md-align--middle cell-lg-align--bottom">
+                              <div class="visible-xs">cell-xs-align--stretch</div>
+                              <div class="visible-sm">cell-sm-align--middle</div>
+                              <div class="visible-md">cell-md-align--middle</div>
+                              <div class="visible-lg">cell-lg-align--bottom</div>
+                            </div>
+                            <div class="cell cell-xs cell-xs-align--stretch cell-sm-align--middle cell-md-align--top cell-lg-align--stretch">
+                              <div class="visible-xs">cell-xs-align--stretch</div>
+                              <div class="visible-sm">cell-sm-align--middle</div>
+                              <div class="visible-md">cell-md-align--top</div>
+                              <div class="visible-lg">cell-lg-align--stretch</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section id="grid-distribution">
+          <header>
+            <div class="row">
+              <div class="cell cell-xs-8">
+                <h2 class="section-title">Distribution</h2>
+                <p class="section-description"></p>
+              </div>
+              <div class="cell cell-xs cell-align--center"><a href="#grid-distribution" title="Toggle CSS classes" class="btn btn-md btn-blue show-css">Toggle CSS</a></div>
+            </div>
+          </header>
+          <article class="children">
+            <div class="row">
+              <div class="cell cell-sm unstyled">
+                <header>
+                  <h3 class="section-title"></h3>
+                  <p class="section-description">Flex items are displayed with equal spacing between them, first and last flex items are aligned to the edges of the flex container</p>
+                </header>
+                <article class="toggle">
+                  <div class="row">
+                    <div class="cell">
+                      <div class="row distribute-between text-center">
+                        <div class="cell cell-xs-3">distribute-between</div>
+                        <div class="cell cell-xs-3">distribute-between</div>
+                        <div class="cell cell-xs-3">distribute-between</div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="cell cell-sm unstyled">
+                <header>
+                  <h3 class="section-title"></h3>
+                  <p class="section-description">Flex items are displayed with equal spacing around every flex item, even the first and the last flex items</p>
+                </header>
+                <article class="toggle">
+                  <div class="row">
+                    <div class="cell">
+                      <div class="row distribute-around text-center">
+                        <div class="cell cell-xs-3">distribute-around</div>
+                        <div class="cell cell-xs-3">distribute-around</div>
+                        <div class="cell cell-xs-3">distribute-around</div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="row spaced">
+              <div class="cell cell-xs unstyled">
+                <header>
+                  <h3 class="section-title">Distribution by Viewport</h3>
+                  <p class="section-description">You can also specify what distribution rule should be considered depending on the viewport by adding the viewport class</p>
+                </header>
+                <article class="toggle">
+                  <div class="row">
+                    <div class="cell">
+                      <div class="row distribute-around distribute-sm-between distribute-md-around distribute-lg-between text-center">
+                        <div class="cell cell-xs-3">
+                          <div class="visible-xs">distribute-xs-around</div>
+                          <div class="visible-sm">distribute-sm-between</div>
+                          <div class="visible-md">distribute-md-around</div>
+                          <div class="visible-lg">distribute-lg-between</div>
+                        </div>
+                        <div class="cell cell-xs-3">
+                          <div class="visible-xs">distribute-xs-around</div>
+                          <div class="visible-sm">distribute-sm-between</div>
+                          <div class="visible-md">distribute-md-around</div>
+                          <div class="visible-lg">distribute-lg-between</div>
+                        </div>
+                        <div class="cell cell-xs-3">
+                          <div class="visible-xs">distribute-xs-around</div>
+                          <div class="visible-sm">distribute-sm-between</div>
+                          <div class="visible-md">distribute-md-around</div>
+                          <div class="visible-lg">distribute-lg-between</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section id="grid-reversed" class="css">
+          <header>
+            <h2 class="section-title">Reversing</h2>
+            <p class="section-description">Add classes to reverse cells direction</p>
+          </header>
+          <article class="toggle">
+            <div class="row row--reverse">
+              <div class="cell cell-xs">1</div>
+              <div class="cell cell-xs">2</div>
+              <div class="cell cell-xs">3</div>
+              <div class="cell cell-xs">4</div>
+              <div class="cell cell-xs">5</div>
+              <div class="cell cell-xs">6</div>
+              <div class="cell cell-xs">7</div>
+              <div class="cell cell-xs">8</div>
+              <div class="cell cell-xs">9</div>
+              <div class="cell cell-xs">10</div>
+              <div class="cell cell-xs">11</div>
+              <div class="cell cell-xs">12</div>
+            </div>
+          </article>
+        </section>
+        <section id="grid-reordered" class="css">
+          <header>
+            <h2 class="section-title">Reordering</h2>
+            <p class="section-description">Add classes to reorder cells</p>
+          </header>
+          <article class="toggle">
+            <div class="row">
+              <div class="cell cell-xs cell-order--last">1</div>
+              <div class="cell cell-xs">2</div>
+              <div class="cell cell-xs cell-order--first">3</div>
+              <div class="cell cell-xs">4</div>
+              <div class="cell cell-xs">5</div>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="grid">
+        <div class="row">
+          <ul class="footer-links">
+            <li><a href="//github.com/studio51/gridlecss/blob/master/DOCUMENTATION.md">Documentation</a></li>
+            <li><a href="//github.com/studio51/gridlecss/blob/master/CHANGELOG.md">Changelog</a></li>
+            <li><a href="//github.com/studio51/gridlecss/releases/tag/v1.0.rc1">GridleCSS v1.0.rc1</a></li>
+          </ul>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="cell cell-xs-12 cell-sm-4">
+            <p class="footer-copyright">© GridleCSS 2015</p>
+          </div>
+          <div class="cell cell-xs-12 cell-sm-8"><p class="footer-credits">Crafted with <span>&#9829;</span> by <a href="//twitter.com/pacMakaveli90">Vlad Radulescu</a> and maintained by <a href="//creative-studio51.co.uk">Studio51</a></div>
+        </div>
+      </div>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
