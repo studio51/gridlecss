@@ -1,3 +1,0 @@
-## GridleCSS Documentation
-
-Coming soon

@@ -1,5 +1,0 @@
-npm-*
-node_modules
-
-# Ignore web/dist as it's only used by gh-pages branch
-web/dist
