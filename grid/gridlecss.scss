@@ -1,6 +1,7 @@
 @import "config";
 
 :root {
+  --grid-xs-container: 100%;
   --grid-sm-container: calc( #{ $grid-sm-min + $grid-gutter });
   --grid-md-container: calc( #{ $grid-md-min + $grid-gutter });
   --grid-lg-container: calc( #{ $grid-lg-min + $grid-gutter });
