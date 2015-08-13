@@ -1,0 +1,14 @@
+{
+  "name": "gridlecss",
+  "homepage": "https://github.com/studio51/gridlecss",
+  "_release": "d4a0a83eae",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d4a0a83eae93f316a3d53d944a777f0dd7744175"
+  },
+  "_source": "git://github.com/studio51/gridlecss.git",
+  "_target": "*",
+  "_originalSource": "gridlecss",
+  "_direct": true
+}

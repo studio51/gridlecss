@@ -1,0 +1,34 @@
+{
+  "name": "GridleCSS",
+  "version": "1.0.0",
+  "description": "Yet another flexbox framework!",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/studio51/gridlecss.git"
+  },
+  "keywords": [
+    "CSS",
+    "Grid",
+    "Flexbox",
+    "SASS",
+    "NPM"
+  ],
+  "author": "Vlad Radulescu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/studio51/gridlecss/issues"
+  },
+  "homepage": "https://studio51.github.io/gridlecss",
+  "devDependencies": {
+    "autoprefixer-core": "^5.1.11",
+    "cssnext": "^1.4.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-cssbeautifier": "^0.1.2",
+    "grunt-cssnext": "^1.0.0",
+    "grunt-postcss": "^0.4.0",
+    "grunt-sass": "^1.0.0",
+    "matchdep": "^0.3.0"
+  }
+}

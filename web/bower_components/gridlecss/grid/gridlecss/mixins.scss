@@ -1,0 +1,56 @@
+// Conditional Media Query
+//
+// http://codepen.io/dsheiko/pen/KeLGy
+//
+@function translate-media-condition( $condition ) {
+  $map: (
+    "screen": "only screen",
+    "xs": " ",
+    "sm": " and (min-width: #{$grid-sm-min})",
+    "md": " and (min-width: #{$grid-md-min})",
+    "lg": " and (min-width: #{$grid-lg-min})"
+  );
+
+  @return map-get( $map, $condition );
+}
+
+@mixin media($args...) {
+  $query: "";
+
+  @each $arg in $args {
+    $query: $query + translate-media-condition($arg);
+  }
+
+  @media #{ $query }  { @content; }
+}
+
+// Generate Flex Alignments
+//
+@mixin flex-alignments( $parent, $axis, $class, $requester ) {
+
+  @each $element in $class {
+
+    $selector: nth($element, 1);
+    $rule: unquote(nth($element, 2));
+
+    #{ $parent }#{ $selector } {
+
+      @if $axis == "x" {
+
+        justify-content: $rule;
+        text-align: $rule;
+
+      } @else if $axis == "y" {
+
+        @if $requester == "parent" {
+
+          align-items: $rule;
+
+        } @else {
+
+          align-self: $rule;
+        }
+      }
+    }
+  }
+}

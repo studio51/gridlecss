@@ -1,0 +1,149 @@
+section#grid-alignment
+
+  header
+
+    .row
+      .cell.cell-xs-8
+        h2.section-title #{alignment}
+        p.section-description #{alignment_description}
+
+      .cell.cell-xs.cell-align--center
+        a.btn.btn-md.btn-blue.show-css(href="#grid-alignment", title="Toggle CSS classes") Toggle CSS
+
+  article.children
+
+    .row
+      .cell.cell-xs-12.cell-md-7.unstyled
+        .row
+          .cell.cell-xs-12.unstyled
+
+            header
+              h3.section-title #{alignment_additional}
+              p.section-description #{alignment_additional_description}
+
+            article.toggle
+
+              .row
+                .cell.cell-xs
+                  .row.align-left
+                    .cell.cell-xs-7 align-left
+
+                .cell.cell-xs
+                  .row.align-center
+                    .cell.cell-xs-7 align-center
+
+                .cell.cell-xs
+                  .row.align-right
+                    .cell.cell-xs-7 align-right
+
+        .row.spaced
+          .cell.cell-xs-12.unstyled
+
+            header
+              h3.section-title #{alignment_additional_two}
+              p.section-description #{alignment_additional_two_description}
+
+            article.toggle
+
+              .row.demo-alignment.text-center
+                .cell.cell-xs
+                  .row
+                    .cell align-stretch
+
+                .cell.cell-xs
+                  .row.align-top
+                    .cell .align-top
+
+                .cell.cell-xs
+                  .row.align-middle
+                    .cell align-middle
+
+                .cell.cell-xs
+                  .row.align-bottom
+                    .cell align-bottom
+
+                .cell.cell-sm-6
+                  .row.align-baseline
+                    .cell.cell-xs.demo-baseline-1
+                      span baseline
+                    .cell.cell-xs.demo-baseline-2
+                      span baseline
+                    .cell.cell-xs
+                      span baseline
+
+              .row
+                .cell.cell-xs-12
+                  .row.demo-alignment.align-sm-top.align-md-middle.align-lg-bottom.text-center
+                    .cell.cell-xs
+                      | Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      | Saepe, reprehenderit ipsum atque distinctio ad, nihil
+                      | repudiandae ut omnis dignissimos suscipit non quos debitis
+                      | inventore fuga alias. Quod ut nesciunt aut.
+
+                    .cell.cell-xs
+                      .visible-xs stretch
+                      .visible-sm align-sm-top
+                      .visible-md align-md-middle
+                      .visible-lg align-lg-bottom
+
+                    .cell.cell-xs
+                      .visible-xs stretch
+                      .visible-sm align-sm-top
+                      .visible-md align-md-middle
+                      .visible-lg align-lg-bottom
+
+      .cell.cell-xs-12.cell-md-5.unstyled
+        .row
+          .cell.cell-xs-12.unstyled
+
+            header
+              h3.section-title #{alignment_additional_three}
+              p.section-description #{alignment_additional_three_description}
+
+            article.toggle
+
+              .row.demo-alignment.text-center
+                .cell
+                  .row.align-top
+                    .cell.cell-xs-1 auto
+                    .cell.cell-xs.cell-align--top cell-align--top
+                    .cell.cell-xs.cell-align--middle cell-align--middle
+                    .cell.cell-xs.cell-align--bottom cell-align--bottom
+                    .cell.cell-xs.cell-align--stretch cell-align--stretch
+
+        .row.spaced
+          .cell.cell-xs-12.unstyled
+
+            header
+              h3.section-title #{alignment_additional_four}
+              p.section-description #{alignment_additional_four_description}
+
+            article.toggle
+
+              .row.demo-alignment.text-center
+                .cell
+                  .row.align-top
+                    .cell.cell-xs-1 auto
+                    .cell.cell-xs.cell-xs-align--stretch.cell-sm-align--middle.cell-md-align--stretch.cell-lg-align--top
+                      .visible-xs cell-xs-align--stretch
+                      .visible-sm cell-sm-align--middle
+                      .visible-md cell-md-align--stretch
+                      .visible-lg cell-lg-align--top
+
+                    .cell.cell-xs.cell-xs-align--stretch.cell-sm-align--middle.cell-md-align--bottom.cell-lg-align--middle
+                      .visible-xs cell-xs-align--stretch
+                      .visible-sm cell-sm-align--middle
+                      .visible-md cell-md-align--bottom
+                      .visible-lg cell-lg-align--middle
+
+                    .cell.cell-xs.cell-xs-align--stretch.cell-sm-align--middle.cell-md-align--middle.cell-lg-align--bottom
+                      .visible-xs cell-xs-align--stretch
+                      .visible-sm cell-sm-align--middle
+                      .visible-md cell-md-align--middle
+                      .visible-lg cell-lg-align--bottom
+
+                    .cell.cell-xs.cell-xs-align--stretch.cell-sm-align--middle.cell-md-align--top.cell-lg-align--stretch
+                      .visible-xs cell-xs-align--stretch
+                      .visible-sm cell-sm-align--middle
+                      .visible-md cell-md-align--top
+                      .visible-lg cell-lg-align--stretch

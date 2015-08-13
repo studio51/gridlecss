@@ -1,0 +1,74 @@
+section#grid-distribution
+
+  header
+
+    .row
+      .cell.cell-xs-8
+        h2.section-title #{distribution}
+        p.section-description #{distribution_description}
+
+      .cell.cell-xs.cell-align--center
+        a.btn.btn-md.btn-blue.show-css(href="#grid-distribution", title="Toggle CSS classes") Toggle CSS
+
+  article.children
+
+    .row
+      .cell.cell-sm.unstyled
+
+        header
+          h3.section-title #{distribution_between}
+          p.section-description #{distribution_between_description}
+
+        article.toggle
+
+          .row
+            .cell
+              .row.distribute-between.text-center
+                .cell.cell-xs-3 distribute-between
+                .cell.cell-xs-3 distribute-between
+                .cell.cell-xs-3 distribute-between
+
+      .cell.cell-sm.unstyled
+
+        header
+          h3.section-title #{distribution_around}
+          p.section-description #{distribution_around_description}
+
+        article.toggle
+
+          .row
+            .cell
+              .row.distribute-around.text-center
+                .cell.cell-xs-3 distribute-around
+                .cell.cell-xs-3 distribute-around
+                .cell.cell-xs-3 distribute-around
+
+    .row.spaced
+      .cell.cell-xs.unstyled
+
+        header
+          h3.section-title #{distribution_viewport}
+          p.section-description #{distribution_viewport_description}
+
+        article.toggle
+
+         .row
+            .cell
+              .row.distribute-around.distribute-sm-between.distribute-md-around.distribute-lg-between.text-center
+                .cell.cell-xs-3
+                  .visible-xs distribute-xs-around
+                  .visible-sm distribute-sm-between
+                  .visible-md distribute-md-around
+                  .visible-lg distribute-lg-between
+
+                .cell.cell-xs-3
+                  .visible-xs distribute-xs-around
+                  .visible-sm distribute-sm-between
+                  .visible-md distribute-md-around
+                  .visible-lg distribute-lg-between
+
+                .cell.cell-xs-3
+                  .visible-xs distribute-xs-around
+                  .visible-sm distribute-sm-between
+                  .visible-md distribute-md-around
+                  .visible-lg distribute-lg-between
