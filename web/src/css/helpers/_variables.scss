@@ -16,7 +16,7 @@ $darkpurple:  #967ADC;
 $white:       #FFFFFF;
 $gray:        #F0F0F0;
 $lightgray:   #E5E5E5;
-$darkgray:    #E5E5E5;
+$darkgray:    #999999;
 $black:       #333333;
 
 $color-facebook:    #3b5998;
@@ -26,7 +26,9 @@ $color-reddit:      #ff4500;
 $color-digg:        #000000;
 $color-pinterest:   #cc2127;
 
-$theme-border--color: #999999;
+$animation-duration: 3s;
+
+$theme-border--color: $darkgray;
 $theme-border--radius: 2px;
 $theme-border--size: 1px;
 

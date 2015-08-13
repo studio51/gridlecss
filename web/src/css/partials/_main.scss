@@ -23,7 +23,7 @@ section {
     .toggle {
 
       .cell {
-        font-size: 40%;
+        font-size: 100%;
         font-weight: 300;
       }
     }
@@ -46,7 +46,7 @@ section {
   header {
     background-color: $white;
     border-left: 2px solid $lightblue;
-    box-shadow: 0 2px 1px 0 rgba($darkgray, .3);
+    box-shadow: 0 2px 1px 0 rgba($darkgray, .2);
     border-radius: $theme-border--radius;
     margin-bottom: $theme-spacing;
     padding: $theme-spacing * 2;
@@ -57,7 +57,7 @@ section {
   }
 
   .section-title {
-    font-size: 2em;
+    // font-size: 2em;
     font-weight: 200;
   }
 
@@ -70,7 +70,7 @@ section {
       padding: $theme-spacing;
 
       .section-title {
-        font-size: 1.5em;
+        // font-size: 1.5em;
       }
 
       .section-description { font-size: .9em; }
@@ -78,9 +78,10 @@ section {
 
     .cell:not(.unstyled) {
       background-color: rgba($darkgray, .1);
-      font-size: 0;
-      margin: 1px;
-      padding: $theme-spacing / 2;
+      // font-size: 0;
+      // margin-bottom: 1px;
+      // margin-top: 1px;
+      // padding: $theme-spacing / 2;
     }
   }
 }

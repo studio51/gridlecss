@@ -1,0 +1,74 @@
+.device {
+  &-demo {
+    &--content {
+      @extend .row;
+
+      margin: 0;
+      width: 100%;
+    }
+
+    &--side {
+      &-a,
+      &-b {
+        @extend .cell;
+        @extend .cell-xs-12;
+        @extend .cell-sm-6;
+
+        @extend .align-center;
+        @extend .align-middle;
+
+        margin: 0;
+
+        .btn {
+          @include animated(15s, infinite);
+          @extend .bounce;
+
+          border-radius: 100%;
+          color: #fff;
+          padding: 15px;
+          overflow: hidden;
+          text-align: center;
+
+          .fa {
+            font-size: 2em;
+            position: relative;
+            width: 40px;
+            z-index: 1;
+
+            &::after {
+              content: "";
+              width: 74px;
+              height: 74px;
+              position: absolute;
+              top: 5px;
+              left: 10px;
+              z-index: -1;
+            }
+          }
+        }
+
+        p {
+          color: #fff;
+          font-weight: 300;
+          margin-top: $theme-spacing * 2;
+        }
+      }
+
+      &-a {
+        background-color: $yellow;
+
+        .btn {
+          background-color: $darkyellow;
+        }
+      }
+
+      &-b {
+        background-color: $purple;
+
+        .btn {
+          background-color: $darkpurple;
+        }
+      }
+    }
+  }
+}
