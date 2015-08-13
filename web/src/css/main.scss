@@ -2,58 +2,56 @@
 
   GridleCSS Theme v1.0.0
 
-  Author: @pacMakaveli90
-  Author URL: http://creative-studio51.co.uk/
+  Author      : Vlad Radulescu
+  Twitter     : @pacMakaveli90
+  Github      : pacMakaveli90
+
+  Author URL  : http://creative-studio51.co.uk/
+  Project URL : https://github.com/studio51/gridlecss/tree/gh-pages
 
 */
 
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700,200italic,400italic,700italic);
+@import '../../../grid/gridlecss';
 
 // GridleCSS
 
-@import "helpers/variables";
-
-@import "gridlecss";
+@import 'helpers/variables';
 
 // Helpers
 
-@import "helpers/reset";
+@import 'helpers/reset';
 
-@import "helpers/columns";
-@import "helpers/mixins";
-@import "helpers/animations";
-@import "helpers/visibility";
+@import 'helpers/columns';
+@import 'helpers/mixins';
+@import 'helpers/animations';
+@import 'helpers/visibility';
 
 html, body {
   height: 100%;
-}
-
-.grid {
-  border: 1px solid red;
 }
 
   body {
     background-color: $theme-background-color;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 100%;
-    // font-size: 70%;
   }
 
 // Components
 
-// @import "components/buttons";
+// @import 'components/buttons';
 
 // Theme Partials
 
-@import "partials/header";
+@import 'partials/header';
 
-@import "partials/navigation";
+@import 'partials/navigation';
 
-@import "partials/device";
-@import "partials/demos";
+@import 'partials/device';
+@import 'partials/demos';
 
-@import "partials/main";
-// @import "partials/footer";
+@import 'partials/main';
+// @import 'partials/footer';
 
 /*
 
