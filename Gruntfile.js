@@ -35,10 +35,11 @@ module.exports = function(grunt) {
       dev: {
         bsFiles: {
           src: [
-            'css/*.css',
-            '**/*.html',
-            'img/*.jpg',
-            'img/*.png',
+            '<%= appConfig.dist_dir %>css/*.css',
+            '<%= appConfig.dist_dir %>js/*.js',
+            '<%= appConfig.dist_dir %>*.html',
+            '<%= appConfig.dist_dir %>img/*.jpg',
+            '<%= appConfig.dist_dir %>img/*.png',
           ],
         },
 
@@ -62,6 +63,12 @@ module.exports = function(grunt) {
             scroll: true,
             links: true,
             forms: true
+          }
+        },
+
+        bsReload: {
+          all: {
+            reload: true
           }
         }
       }
@@ -245,7 +252,7 @@ module.exports = function(grunt) {
     'cssnext',
     'imagemin',
     'svgmin',
-    'copy'
+    // 'copy'
   ]);
 
   grunt.registerTask('compile-js', [
@@ -269,7 +276,7 @@ module.exports = function(grunt) {
     'watch'
   ]);
 
-  grunt.registerTask('default', ['clean', 'preview']);
-  grunt.registerTask('prepare', ['clean', 'compile-theme', 'prettify']);
+  grunt.registerTask('default', ['preview']);
+  grunt.registerTask('prepare', ['compile-theme', 'prettify']);
   grunt.registerTask('deploy', ['ship', 'ftp-deploy'])
 }

@@ -18,38 +18,24 @@ html(lang="en")
   body.body
 
     header.header
+
       .grid
         .row
-          .cell.cell-xs-12.cell-sm-3
+          .cell.cell-xs-10
 
-            .row
-              .cell.cell-xs-12
-                .brand
-                  h1.brand-name #{ name }
-                    span.brand-name--pronunciation /ɡrɪd.lɛx/
+            .brand
+              h1.brand-name #{ name }
+                span.brand-name--pronunciation /ɡrɪd.lɛx/
 
-                  p.brand-motto #{ description }
+              p.brand-motto #{ description }
 
-            .row
-              .cell.cell-xs-12
+          .cell.cell-xs-2
 
-                nav.nav-menu(role='navigation')
-                  ul.list-unstyled
+            .social-buttons--container
+              ul.social-buttons
 
-                    - var nav_items = ['basic', 'responsive', 'fluid', 'offset', 'nested', 'auto', 'alignment', 'distribution', 'reversed', 'reordered']
-                    - var i = 1
-
-                    each val in nav_items
-
-                      li(class="list-item animated-#{i++}")
-                        a.btn.btn-sm.list-item-link(href="#", data-target="#grid-#{val}") #{val}
-
-            .row
-              .cell.cell-xs-12
-                .social-buttons--container
-                  ul.social-buttons
-
-          .cell.cell-xs-12.cell-sm-9
+        .row.column
+          .cell
 
             .pca-hold
               .pca-main
@@ -81,25 +67,28 @@ html(lang="en")
     footer.footer
 
       .grid
-
         .row
-          ul.footer-links
-            li
-              a(href="//github.com/studio51/gridlecss/blob/master/DOCUMENTATION.md") Documentation
-            li
-              a(href="//github.com/studio51/gridlecss/blob/master/CHANGELOG.md") Changelog
-            li
-              a(href="//github.com/studio51/gridlecss/releases/tag/v#{version}") #{ name } v#{version}
+          .cell.cell-xs-12.cell-sm-3
 
-        hr
+            ul.list-unstyled.footer-links
+              li
+                a(href="//github.com/studio51/gridlecss/blob/master/DOCUMENTATION.md") Documentation
+              li
+                a(href="//github.com/studio51/gridlecss/blob/master/CHANGELOG.md") Changelog
+              li
+                a(href="//github.com/studio51/gridlecss/releases/tag/v#{version}") #{ name } v#{version}
 
-        .row
-          .cell.cell-xs-12.cell-sm-4
-            p.footer-copyright
-              © #{ name } 2015
+          .cell.cell-xs.cell-sm
 
-          .cell.cell-xs-12.cell-sm-8
-            <p class="footer-credits">Crafted with <span>&#9829;</span> by <a href="//twitter.com/pacMakaveli90">Vlad Radulescu</a> and maintained by <a href="//creative-studio51.co.uk">Studio51</a>
+            .row
+              .cell
+
+                <p class="footer-credits">Crafted with <span>&#9829;</span> by <a href="//twitter.com/pacMakaveli90">Vlad Radulescu</a> and maintained by <a href="//creative-studio51.co.uk">Studio51</a>
+
+              .cell
+
+                p.footer-copyright
+                  © #{ name } 2015
 
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
     script(src='js/main.min.js')

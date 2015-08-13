@@ -12,10 +12,13 @@
 */
 
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700,200italic,400italic,700italic);
+
+// GridleCSS
+
 @import './bower_components/font-awesome/scss/font-awesome';
 @import './bower_components/gridlecss/grid/gridlecss';
 
-// GridleCSS
+// Variables
 
 @import 'helpers/variables';
 
@@ -23,8 +26,6 @@
 
 @import 'helpers/reset';
 
-@import 'helpers/columns';
-@import 'helpers/mixins';
 @import 'helpers/animations';
 @import 'helpers/visibility';
 
@@ -45,46 +46,61 @@ html, body {
 // Theme Partials
 
 @import 'partials/header';
-
 @import 'partials/navigation';
-
 @import 'partials/device';
-@import 'partials/demos';
 
-@import 'partials/main';
-// @import 'partials/footer';
+// @import 'partials/demos';
 
-/*
+// @import 'partials/main';
+// // @import 'partials/footer';
 
-  Just for showcasing GridleCSS Alignments features
+// /*
 
-*/
+//   Just for showcasing GridleCSS Alignments features
 
-// #grid-alignment.css {
+// */
 
-//   .demo-alignment .row {
-//     height: 10em;
+// // #grid-alignment.css {
 
-//     span {
-//       border-bottom: 1px dotted rgba($black, .4);
-//     }
-//   }
+// //   .demo-alignment .row {
+// //     height: 10em;
 
-//   .demo-baseline {
-//     &-1 {
-//       span {
-//         font-size: 10em;
-//       }
-//     }
+// //     span {
+// //       border-bottom: 1px dotted rgba($black, .4);
+// //     }
+// //   }
 
-//     &-2 {
-//       span {
-//         font-size: 15em;
-//       }
-//     }
-//   }
-// }
+// //   .demo-baseline {
+// //     &-1 {
+// //       span {
+// //         font-size: 10em;
+// //       }
+// //     }
 
-// .text-center {
-//   text-align: center;
-// }
+// //     &-2 {
+// //       span {
+// //         font-size: 15em;
+// //       }
+// //     }
+// //   }
+// // }
+
+// // .text-center {
+// //   text-align: center;
+// // }
+
+
+  .grid {
+    border: 2px solid red;
+    padding: 2px;
+  }
+
+  .row {
+    border: 2px solid purple;
+    padding: 2px;
+  }
+
+  .cell {
+    border: 2px solid green;
+    padding: 2px;
+  }
