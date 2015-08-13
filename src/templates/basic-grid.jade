@@ -1,65 +1,311 @@
-section#grid-basic
+section.module-content
 
-  header
+  .row
+    .cell.cell-sm.unstyled
 
-    .row
-      .cell.cell-xs.cell-sm-10
-        h2.section-title #{basic}
-        p.section-description #{basic_description}
+      #grid-basic
 
-      .cell.cell-xs.cell-align--center
-        a.btn.btn-md.btn-blue.show-css(href="#grid-basic", title="Toggle CSS classes") Toggle CSS
+        section.module-section
+          header
+            h3.module-title #{basic}
+            p.module-description #{basic_description}
 
-  article.toggle
+          article
 
-    .row
-      .cell.cell-xs auto-xs
-      .cell.cell-xs.cell-sm-3.cell-md-7.cell-lg
-        span.visible-xs auto-xs
-        span.visible-sm cell-sm-3
-        span.visible-md cell-md-7
-        span.visible-lg auto-lg
+            .cells-container
+              .row
+                .cell.cell-xs auto-xs
+                .cell.cell-xs.cell-sm-3.cell-md-7.cell-lg
+                  span.visible-xs auto-xs
+                  span.visible-sm cell-sm-3
+                  span.visible-md cell-md-7
+                  span.visible-lg auto-lg
 
-      .cell.cell-xs auto-xs
+                .cell.cell-xs auto-xs
 
-    .row
-      .cell.cell-xs-9.cell-sm-7.cell-md-5.cell-lg-3
-        span.visible-xs cell-xs-9
-        span.visible-sm cell-sm-7
-        span.visible-md cell-md-5
-        span.visible-lg cell-lg-3
+              .row
+                .cell.cell-xs-9.cell-sm-7.cell-md-5.cell-lg-3
+                  span.visible-xs cell-xs-9
+                  span.visible-sm cell-sm-7
+                  span.visible-md cell-md-5
+                  span.visible-lg cell-lg-3
 
-      .cell.cell-xs auto
+                .cell.cell-xs auto
 
-    .row
-      .cell.cell-xs
-        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos
-        | blanditiis odit et ratione, id laboriosam sapiente consequuntur
-        | laborum officia, impedit eligendi natus quisquam dolor in at
-        | aliquam, tempore maiores est.
+              .row
+                .cell.cell-xs
+                  | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos
+                  | blanditiis odit et ratione, id laboriosam sapiente consequuntur
+                  | laborum officia, impedit eligendi natus quisquam dolor in at
+                  | aliquam, tempore maiores est.
 
-      .cell.cell-sm-10
-        .row
-          .cell.cell-xs xs-auto
-          .cell.cell-xs-3 cell-xs-3
-          .cell.cell-xs xs-auto
-          .cell.cell-xs-1 cel-xs-1
+                .cell.cell-sm-10
+                  .row
+                    .cell.cell-xs xs-auto
+                    .cell.cell-xs-3 cell-xs-3
+                    .cell.cell-xs xs-auto
+                    .cell.cell-xs-1 cel-xs-1
 
-        .row
-          .cell.cell-xs-4 cell-xs-4
-          .cell.cell-xs-3 cell-xs-3
-          .cell.cell-xs-4 cell-xs-4
-          .cell.cell-xs-1 cell-xs-1
+                  .row
+                    .cell.cell-xs-4 cell-xs-4
+                    .cell.cell-xs-3 cell-xs-3
+                    .cell.cell-xs-4 cell-xs-4
+                    .cell.cell-xs-1 cell-xs-1
 
-        .row
+                  .row
 
-          - for( var i = 0; i < 6; ++i )
-            .cell.cell-xs-2 cell-xs-2
+                    - for( var i = 0; i < 6; ++i )
+                      .cell.cell-xs-2 cell-xs-2
 
-        .row
+                  .row
 
-          - for( var i = 0; i < 12; ++i )
-            .cell.cell-xs-1 cell-xs-1
+                    - for( var i = 0; i < 12; ++i )
+                      .cell.cell-xs-1 cell-xs-1
 
-        .row
-          .cell.cell-xs-12 cell-xs-12
+                  .row
+                    .cell.cell-xs-12 cell-xs-12
+
+  .margin.mh16
+
+  .row
+    .cell.cell-sm.unstyled
+
+      #grid-responsive
+
+        section.module-section
+          header
+            h3.module-title #{responsive}
+            p.module-description #{responsive_description}
+
+          article
+
+            .cells-container
+              .row
+                .cell.cell-xs-5.cell-sm-4.cell-md-3.cell-lg-2
+                  span.visible-xs cell-xs-5
+                  span.visible-sm cell-sm-4
+                  span.visible-md cell-md-3
+                  span.visible-lg cell-lg-2
+
+                .cell.cell-xs-2.cell-sm-4.cell-md-6.cell-lg-8
+                  span.visible-xs cell-xs-2
+                  span.visible-sm cell-sm-4
+                  span.visible-md cell-md-6
+                  span.visible-lg cell-lg-8
+
+                .cell.cell-xs-5.cell-sm-4.cell-md-3.cell-lg-2
+                  span.visible-xs cell-xs-5
+                  span.visible-sm cell-sm-4
+                  span.visible-md cell-md-3
+                  span.visible-lg cell-lg-2
+
+              .row
+                .cell.cell-xs-3.cell-sm-3.cell-md-2.cell-lg-2
+                  span.visible-xs cell-xs-3
+                  span.visible-sm cell-sm-3
+                  span.visible-md cell-md-2
+                  span.visible-lg cell-lg-2
+
+                .cell.cell-xs-9.cell-sm-6.cell-md-2.cell-lg-2
+                  span.visible-xs cell-xs-9
+                  span.visible-sm cell-sm-6
+                  span.visible-md cell-md-2
+                  span.visible-lg cell-lg-2
+
+                .cell.cell-xs.cell-sm-3.cell-md-8.cell-lg
+                  span.visible-xs cell-xs
+                  span.visible-sm cell-sm-3
+                  span.visible-md cell-md-8
+                  span.visible-lg cell-lg
+
+  .margin.mh16
+
+  .row
+    .cell.cell-sm.unstyled
+
+      #grid-fluid
+
+        section.module-section
+          header
+            h3.module-title #{fluid}
+            p.module-description #{fluid_description}
+
+          article
+
+            .cells-container
+
+              .row
+                .cell.cell-lg auto-xs
+
+              .row
+                .cell.cell-xs-1 cell-xs-1
+                .cell.cell-xs-11 cell-xs-11
+
+              .row
+                .cell.cell-xs-2 cell-xs-2
+                .cell.cell-xs-10 cell-xs-10
+
+              .row
+                .cell.cell-xs-3 cell-xs-3
+                .cell.cell-xs-9 cell-xs-9
+
+              .row
+                .cell.cell-xs-4 cell-xs-4
+                .cell.cell-xs-8 cell-xs-8
+
+              .row
+                .cell.cell-xs-5 cell-xs-5
+                .cell.cell-xs-7 cell-xs-7
+
+              .row
+                .cell.cell-xs-6 cell-xs-6
+                .cell.cell-xs-6 cell-xs-6
+
+  .margin.mh16
+
+  .row
+    .cell.cell-sm.unstyled
+
+      #grid-reversed
+
+        section.module-section
+          header
+            h3.module-title #{reversed}
+            p.module-description #{reversed_description}
+
+          article
+
+            .cells-container
+              .row.row--reverse
+
+                - for( var i = 1; i < 13; ++i )
+
+                  .cell.cell-xs #{i}
+
+
+    .margin.mv16
+
+    .cell.cell-sm-5.unstyled
+
+      #grid-reordered
+
+        section.module-section
+          header
+            h3.module-title #{reordered}
+            p.module-description #{reordered_description}
+
+          article
+
+            .cells-container
+              .row
+                .cell.cell-xs.cell-order--last 1
+                .cell.cell-xs 2
+                .cell.cell-xs.cell-order--first 3
+                .cell.cell-xs 4
+                .cell.cell-xs 5
+
+  .margin.mh16
+
+  .row
+    .cell.cell-sm.unstyled
+
+      #grid-auto
+
+        section.module-section
+          header
+            h3.module-title #{auto_additional}
+            p.module-description #{auto_additional_description}
+
+          article
+
+            .cells-container
+              .row
+
+                - for( var i = 0; i < 4; ++i )
+
+                  .cell.cell-xs auto
+
+              .row
+                .cell.cell-xs-3 cell-xs-3
+                .cell.cell-xs auto
+                .cell.cell-xs-2 cell-xs-2
+                .cell.cell-xs auto
+
+    .margin.mv16
+
+    .cell.cell-sm.unstyled
+
+        section.module-section
+          header
+            h3.module-title #{auto_additional_two}
+            p.module-description #{auto_additional_two_description}
+
+          article
+
+            .cells-container
+              .row
+                .cell.cell-sm.cell-md-3.cell-lg
+                  span.visible-xs full-xs
+                  span.visible-sm auto-sm
+                  span.visible-md cell-md-3
+                  span.visible-lg auto-lg
+
+                .cell.cell-sm.cell-md.cell-lg
+                  span.visible-xs full-xs
+                  span.visible-sm auto-sm
+                  span.visible-md auto-md
+                  span.visible-lg auto-lg
+
+                .cell.cell-sm.cell-md-2.cell-lg
+                  span.visible-xs full-xs
+                  span.visible-sm auto-sm
+                  span.visible-md cell-md-2
+                  span.visible-lg auto-lg
+
+                .cell.cell-sm.cell-md.cell-lg
+                  span.visible-xs full-xs
+                  span.visible-sm auto-sm
+                  span.visible-md auto-md
+                  span.visible-lg auto-lg
+
+  .margin.mh16
+
+  .row
+    .cell.cell-sm.unstyled
+
+      #grid-nested
+
+      section.module-section
+
+        header
+          h2.module-title #{nested}
+          p.module-description #{nested_description}
+
+        article
+
+          .cells-container
+            .row
+              .cell.cell-sm
+
+                .row
+                  .cell
+
+                    .row
+
+                      - for( var na = 0; na < 4; na++ )
+
+                        .cell.cell-xs
+                          .row
+
+                            - for( var nb = 0; nb < 3; nb++ )
+
+                              .cell.cell-xs
+
+              .cell.cell-sm
+
+                .row
+                  .cell
+                    .row
+                      .cell
+                        .row
+                          .cell
