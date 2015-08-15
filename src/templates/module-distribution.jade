@@ -1,0 +1,43 @@
+.module
+  h1.module-title Module: Distribution
+
+  section.module-content#grid-distribution
+
+    .row
+      .cell.cell-sm.unstyled
+
+        section.module-section
+          header
+            //- h3.module-title #{distribution_between}
+            p.module-description #{distribution_between_description}
+
+          article
+
+            include modules/distribution-between
+
+      .margin.mv16
+
+      .cell.cell-sm.unstyled
+
+        section.module-section
+          header
+            //- h3.module-title #{distribution_around}
+            p.module-description #{distribution_around_description}
+
+          article
+
+            include modules/distribution-around
+
+    .margin.mh16
+
+    .row
+      .cell.unstyled
+
+        section.module-section
+          header
+            h3.module-title #{distribution_viewport}
+            p.module-description #{distribution_viewport_description}
+
+          article
+
+            include modules/distribution-viewport

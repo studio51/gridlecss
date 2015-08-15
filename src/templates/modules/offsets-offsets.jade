@@ -1,0 +1,10 @@
+.cells-container
+
+  - for( var i = 1; i < 12; ++i )
+    - var offset = (i - 12)
+
+    .row
+      div(class="cell cell-xs-offset#{offset} cell-xs-#{i}") offset#{offset}
+
+  .row
+    .cell.cell-xs-12 no-offset
