@@ -15,6 +15,8 @@
 
 // GridleCSS
 
+$grid-gutter: 2px !default;
+
 @import './bower_components/font-awesome/scss/font-awesome';
 @import './bower_components/gridlecss/grid/gridlecss';
 
@@ -49,10 +51,8 @@ html, body {
 @import 'partials/navigation';
 @import 'partials/device';
 
-// @import 'partials/demos';
-
-// @import 'partials/main';
-// // @import 'partials/footer';
+@import 'partials/theme';
+// @import 'partials/footer';
 
 // /*
 
@@ -60,47 +60,57 @@ html, body {
 
 // */
 
-// // #grid-alignment.css {
+#grid-alignment.css {
 
-// //   .demo-alignment .row {
-// //     height: 10em;
+  .demo-alignment .row {
+    height: 10em;
 
-// //     span {
-// //       border-bottom: 1px dotted rgba($black, .4);
-// //     }
-// //   }
-
-// //   .demo-baseline {
-// //     &-1 {
-// //       span {
-// //         font-size: 10em;
-// //       }
-// //     }
-
-// //     &-2 {
-// //       span {
-// //         font-size: 15em;
-// //       }
-// //     }
-// //   }
-// // }
-
-// // .text-center {
-// //   text-align: center;
-// // }
-
-
-  .grid {
-    border: 2px solid red;
-    padding: 2px;
+    span {
+      border-bottom: 1px dotted rgba($black, .4);
+    }
   }
 
-  .row {
-    border: 2px solid purple;
-    padding: 2px;
-  }
+  .demo-baseline {
+    &-1 {
+      span {
+        font-size: 10em;
+      }
+    }
 
-  .cell {
-    border: 2px solid green;
-    padding: 2px;
+    &-2 {
+      span {
+        font-size: 15em;
+      }
+    }
   }
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+.module-section {
+
+}
+
+.module-title {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+}
+
+.margin {
+  display: block;
+  width: 1px;
+  height: 1px;
+}
+
+.mh16 {
+  margin-bottom: $theme-spacing;
+  margin-top: $theme-spacing;
+}
+
+.mv16 {
+  margin-left: $theme-spacing;
+  margin-right: $theme-spacing;
+}
