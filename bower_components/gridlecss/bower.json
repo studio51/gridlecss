@@ -1,0 +1,29 @@
+{
+  "name": "gridlecss",
+  "version": "Yet another FlexGrid framework",
+  "homepage": "http://studio51.github.io/gridlecss/",
+  "authors": [
+    "Vlad Radulescu <pacMakaveli90@gmail.co.uk>"
+  ],
+  "main": [
+    "gridlecss/css/main.css",
+    "gridlecss/sass/main.scss"
+  ],
+  "description": "Yet another FlexGrid framework",
+  "keywords": [
+    "Grid",
+    "CSS",
+    "Flex",
+    "CSS3",
+    "SASS"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "*.json",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

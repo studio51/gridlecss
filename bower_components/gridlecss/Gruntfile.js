@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 
       dist: {
         files: {
-          'dist/css/gridle.css': 'sass/gridle.scss'
+          'dist/gridle.css': 'grid/gridlecss.scss'
         }
       }
     },
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
       },
 
       dist: {
-        src: ['dist/css/gridle.css']
+        src: ['dist/gridle.css']
       }
     },
 
@@ -49,13 +49,13 @@ module.exports = function(grunt) {
 
       dist: {
         files: {
-          'dist/css/gridle.css': 'dist/css/gridle.css'
+          'dist/gridle.css': 'dist/gridle.css'
         }
       }
     },
 
     cssbeautifier : {
-      files : ['dist/css/gridle.css'],
+      files : ['dist/gridle.css'],
       options : {
         indent: '  ',
         openbrace: 'end-of-line',
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
 
       target: {
         files: {
-          'dist/css/gridle.min.css': ['dist/css/gridle.css']
+          'dist/gridle.min.css': ['dist/gridle.css']
         }
       }
     }

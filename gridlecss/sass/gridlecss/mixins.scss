@@ -1,29 +1,3 @@
-// Conditional Media Query
-//
-// http://codepen.io/dsheiko/pen/KeLGy
-//
-@function translate-media-condition( $condition ) {
-  $map: (
-    "screen": "only screen",
-    "xs": " ",
-    "sm": " and (min-width: #{$grid-sm-min})",
-    "md": " and (min-width: #{$grid-md-min})",
-    "lg": " and (min-width: #{$grid-lg-min})"
-  );
-
-  @return map-get( $map, $condition );
-}
-
-@mixin media($args...) {
-  $query: "";
-
-  @each $arg in $args {
-    $query: $query + translate-media-condition($arg);
-  }
-
-  @media #{ $query }  { @content; }
-}
-
 // Generate Flex Alignments
 //
 @mixin flex-alignments( $parent, $axis, $class, $requester ) {

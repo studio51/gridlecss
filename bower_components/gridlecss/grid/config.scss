@@ -39,19 +39,24 @@ $grid-minimal: true !default;
 //
 $grid-columns: 12 !default;
 
-$mq-base-font-size: 16px !default;
-$mq-responsive: true !default;
-$mq-breakpoints: (
-  sm: 40em,
-  md: 64em,
-  lg: 90em,
-  xl: 120em
+// Grid breakpoints
+//
+// Options: [xs sm md lg]
+//
+$grid-breakpoints: "xs" "sm" "md" "lg";
 
-) !default;
-
-$mq-static-breakpoint: desktop !default;
-$mq-show-breakpoints: () !default;
-$mq-media-type: all !default;
+// Grid breakpoints
+// If you want to add more, just make sure you respect the naming convention:
+//
+// $grid-#{key}-min: #{value};
+//
+// $grid-sm-min: 40.063em;
+// $grid-md-min: 64.063em;
+// $grid-lg-min: 90.063em;
+//
+$grid-sm-min: 768px;
+$grid-md-min: 982px;
+$grid-lg-min: 1200px;
 
 // Distribute the cells spacing around or between them
 //
