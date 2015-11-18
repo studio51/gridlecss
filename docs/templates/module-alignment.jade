@@ -1,0 +1,62 @@
+.module
+  h1.module-title Module: Aligments
+
+  section.module-content#grid-alignment
+
+    .row
+      .cell.cell-md.unstyled
+
+        .row
+          .cell.unstyled
+
+            section.module-section
+              header
+                h3.module-title #{alignment_additional}
+                p.module-description #{alignment_additional_description}
+
+              article
+
+                include modules/alignment-main
+
+          .margin.mh16
+
+          .cell.unstyled
+
+            section.module-section
+              header
+                //- h3.module-title #{alignment_additional_two}
+                p.module-description #{alignment_additional_two_description}
+
+              article
+
+                include modules/alignment-cross
+
+      .margin.mv16
+
+      .cell.cell-md.unstyled
+
+        .row
+          .cell.unstyled
+
+            section.module-section
+              header
+                h3.module-title #{alignment_additional_three}
+                p.module-description #{alignment_additional_three_description}
+
+              article
+
+                include modules/alignment-child
+
+          .margin.mh16
+
+          .cell.unstyled
+
+            section.module-section
+              header
+                h3.module-title #{alignment_additional_four}
+                p.module-description #{alignment_additional_four_description}
+
+              article
+
+                include modules/alignment-viewport
+

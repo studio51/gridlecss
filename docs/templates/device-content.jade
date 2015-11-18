@@ -1,0 +1,30 @@
+.grid
+  .row
+    .cell
+
+      nav.nav-menu(role='navigation')
+        ul.list-unstyled
+
+          - var nav_items = ['basic', 'responsive', 'fluid', 'offset', 'nested', 'auto', 'alignment', 'distribution', 'reversed', 'reordered']
+          - var i = 1
+
+          each val in nav_items
+
+            li(class="list-item animated-#{i++}")
+              a.btn.btn-sm.list-item-link(href="#", data-target="#grid-#{val}") #{val}
+
+    .cell
+
+      .device-demo--container
+        .device-demo--content.device-demo--side_a
+          a.btn.btn-round.btn-yellow(href="", title="Check out some Demos")
+            i.fa.fa-lightbulb-o
+
+          p
+            | More demos will be made available soon.
+
+        .device-demo--side.device-demo--side_b
+          a.btn.btn-round.btn-purple(href="https://github.com/studio51/gridlecss/archive/v#{version}.zip", title="GridleCSS v#{version}")
+            i.fa.fa-arrow-down
+          p
+            | Download GridleCSS v#{version}

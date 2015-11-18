@@ -30,10 +30,9 @@ module.exports = function(grunt) {
     postcss: {
       options: {
         map: false,
+        diff: true,
         processors: [
-          require('autoprefixer-core')({
-            browsers: ['last 5 versions', '> 15%', 'IE 10']
-          }).postcss
+          require('autoprefixer') ({ browsers: ['last 5 versions', '> 15%', 'IE 10'] })
         ]
       },
 
@@ -54,26 +53,44 @@ module.exports = function(grunt) {
       }
     },
 
-    cssbeautifier : {
-      files : ['dist/css/gridle.css'],
-      options : {
-        indent: '  ',
-        openbrace: 'end-of-line',
-        autosemicolon: true
-      }
-    },
+    // cssbeautifier : {
+    //   files : ['dist/css/gridle.css'],
+    //   options : {
+    //     indent: '  ',
+    //     openbrace: 'end-of-line',
+    //     autosemicolon: true
+    //   }
+    // },
 
-    cssmin: {
-      options: {
-        shorthandCompacting: false,
-        roundingPrecision: -1
+    // cssmin: {
+    //   options: {
+    //     shorthandCompacting: false,
+    //     roundingPrecision: -1
+    //   },
+
+    //   target: {
+    //     files: {
+    //       'dist/css/gridle.min.css': ['dist/css/gridle.css']
+    //     }
+    //   }
+    // }
+
+    copy: {
+      main: {
+        files: [
+          // includes files within path
+          {expand: true, src: ['path/*'], dest: 'dest/', filter: 'isFile'},
+
+          // includes files within path and its sub-directories
+          {expand: true, src: ['path/**'], dest: 'dest/'},
+
+          // makes all src relative to cwd
+          {expand: true, cwd: 'path/', src: ['**'], dest: 'dest/'},
+
+          // flattens results to a single level
+          {expand: true, flatten: true, src: ['path/**'], dest: 'dest/', filter: 'isFile'},
+        ],
       },
-
-      target: {
-        files: {
-          'dist/css/gridle.min.css': ['dist/css/gridle.css']
-        }
-      }
     }
   });
 

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GridleCSS | Yet another flex grid framework!</title>
+    <meta name="description" content="A simple to use 12/24 columns Grid created with CSS Flex in SASS. Crafted with love by Vlad Radulescu @ Studio51">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.min.css">
+  </head>
+  <body class="body">
+    <main class="main">
+      <div class="grid">
+        <div class="module">
+          <h1 class="module-title">Module: The Grid</h1>
+          <section class="module-content">
+            <div class="row">
+              <div class="cell cell-sm unstyled">
+                <div id="grid-basic">
+                  <section class="module-section">
+                    <header>
+                      <h3 class="module-title">GridleCSS</h3>
+                      <p class="module-description">GridleCSS in all it's glory! Flexible cells, viewport specific rules and more..</p>
+                    </header>
+                    <article>
+                      <div class="cells-container">
+                        <div class="row">
+                          <div class="cell cell-xs">auto-xs</div>
+                          <div class="cell cell-xs cell-sm-3 cell-md-7 cell-lg"><span class="visible-xs">auto-xs</span><span class="visible-sm">cell-sm-3</span><span class="visible-md">cell-md-7</span><span class="visible-lg">auto-lg</span></div>
+                          <div class="cell cell-xs">auto-xs</div>
+                        </div>
+                        <div class="row">
+                          <div class="cell cell-xs-9 cell-sm-7 cell-md-5 cell-lg-3"><span class="visible-xs">cell-xs-9</span><span class="visible-sm">cell-sm-7</span><span class="visible-md">cell-md-5</span><span class="visible-lg">cell-lg-3</span></div>
+                          <div class="cell cell-xs">auto</div>
+                        </div>
+                        <div class="row">
+                          <div class="cell cell-xs">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos
+                            blanditiis odit et ratione, id laboriosam sapiente consequuntur
+                            laborum officia, impedit eligendi natus quisquam dolor in at
+                            aliquam, tempore maiores est.
+                          </div>
+                          <div class="cell cell-sm-10">
+                            <div class="row">
+                              <div class="cell cell-xs">xs-auto</div>
+                              <div class="cell cell-xs-3">cell-xs-3</div>
+                              <div class="cell cell-xs">xs-auto</div>
+                              <div class="cell cell-xs-1">cel-xs-1</div>
+                            </div>
+                            <div class="row">
+                              <div class="cell cell-xs-4">cell-xs-4</div>
+                              <div class="cell cell-xs-3">cell-xs-3</div>
+                              <div class="cell cell-xs-4">cell-xs-4</div>
+                              <div class="cell cell-xs-1">cell-xs-1</div>
+                            </div>
+                            <div class="row">
+                              <div class="cell cell-xs-2">cell-xs-2</div>
+                              <div class="cell cell-xs-2">cell-xs-2</div>
+                              <div class="cell cell-xs-2">cell-xs-2</div>
+                              <div class="cell cell-xs-2">cell-xs-2</div>
+                              <div class="cell cell-xs-2">cell-xs-2</div>
+                              <div class="cell cell-xs-2">cell-xs-2</div>
+                            </div>
+                            <div class="row">
+                              <div class="cell cell-xs-1">cell-xs-1</div>
+                              <div class="cell cell-xs-1">cell-xs-1</div>
+                              <div class="cell cell-xs-1">cell-xs-1</div>
+                              <div class="cell cell-xs-1">cell-xs-1</div>
+                              <div class="cell cell-xs-1">cell-xs-1</div>
+                              <div class="cell cell-xs-1">cell-xs-1</div>
+                              <div class="cell cell-xs-1">cell-xs-1</div>
+                              <div class="cell cell-xs-1">cell-xs-1</div>
+                              <div class="cell cell-xs-1">cell-xs-1</div>
+                              <div class="cell cell-xs-1">cell-xs-1</div>
+                              <div class="cell cell-xs-1">cell-xs-1</div>
+                              <div class="cell cell-xs-1">cell-xs-1</div>
+                            </div>
+                            <div class="row">
+                              <div class="cell cell-xs-12">cell-xs-12</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </section>
+                </div>
+              </div>
+            </div>
+            <div class="margin mh16"></div>
+            <div class="row">
+              <div class="cell cell-sm unstyled">
+                <div id="grid-responsive">
+                  <section class="module-section">
+                    <header>
+                      <h3 class="module-title">Responsive</h3>
+                      <p class="module-description">Responsive modifiers enable specifing different column sizes, offsets alignment and distribution at certain viewport widths.</p>
+                    </header>
+                    <article>
+                      <div class="cells-container">
+                        <div class="row">
+                          <div class="cell cell-xs-5 cell-sm-4 cell-md-3 cell-lg-2"><span class="visible-xs">cell-xs-5</span><span class="visible-sm">cell-sm-4</span><span class="visible-md">cell-md-3</span><span class="visible-lg">cell-lg-2</span></div>
+                          <div class="cell cell-xs-2 cell-sm-4 cell-md-6 cell-lg-8"><span class="visible-xs">cell-xs-2</span><span class="visible-sm">cell-sm-4</span><span class="visible-md">cell-md-6</span><span class="visible-lg">cell-lg-8</span></div>
+                          <div class="cell cell-xs-5 cell-sm-4 cell-md-3 cell-lg-2"><span class="visible-xs">cell-xs-5</span><span class="visible-sm">cell-sm-4</span><span class="visible-md">cell-md-3</span><span class="visible-lg">cell-lg-2</span></div>
+                        </div>
+                        <div class="row">
+                          <div class="cell cell-xs-3 cell-sm-3 cell-md-2 cell-lg-2"><span class="visible-xs">cell-xs-3</span><span class="visible-sm">cell-sm-3</span><span class="visible-md">cell-md-2</span><span class="visible-lg">cell-lg-2</span></div>
+                          <div class="cell cell-xs-9 cell-sm-6 cell-md-2 cell-lg-2"><span class="visible-xs">cell-xs-9</span><span class="visible-sm">cell-sm-6</span><span class="visible-md">cell-md-2</span><span class="visible-lg">cell-lg-2</span></div>
+                          <div class="cell cell-xs cell-sm-3 cell-md-8 cell-lg"><span class="visible-xs">cell-xs</span><span class="visible-sm">cell-sm-3</span><span class="visible-md">cell-md-8</span><span class="visible-lg">cell-lg</span></div>
+                        </div>
+                      </div>
+                    </article>
+                  </section>
+                </div>
+              </div>
+            </div>
+            <div class="margin mh16"></div>
+            <div class="row">
+              <div class="cell cell-sm unstyled">
+                <div id="grid-fluid">
+                  <section class="module-section">
+                    <header>
+                      <h3 class="module-title">Fluid Layout</h3>
+                      <p class="module-description">Percent based widths allow fluid resizing of columns and rows</p>
+                    </header>
+                    <article>
+                      <div class="cells-container">
+                        <div class="row">
+                          <div class="cell cell-lg">auto-xs</div>
+                        </div>
+                        <div class="row">
+                          <div class="cell cell-xs-1">cell-xs-1</div>
+                          <div class="cell cell-xs-11">cell-xs-11</div>
+                        </div>
+                        <div class="row">
+                          <div class="cell cell-xs-2">cell-xs-2</div>
+                          <div class="cell cell-xs-10">cell-xs-10</div>
+                        </div>
+                        <div class="row">
+                          <div class="cell cell-xs-3">cell-xs-3</div>
+                          <div class="cell cell-xs-9">cell-xs-9</div>
+                        </div>
+                        <div class="row">
+                          <div class="cell cell-xs-4">cell-xs-4</div>
+                          <div class="cell cell-xs-8">cell-xs-8</div>
+                        </div>
+                        <div class="row">
+                          <div class="cell cell-xs-5">cell-xs-5</div>
+                          <div class="cell cell-xs-7">cell-xs-7</div>
+                        </div>
+                        <div class="row">
+                          <div class="cell cell-xs-6">cell-xs-6</div>
+                          <div class="cell cell-xs-6">cell-xs-6</div>
+                        </div>
+                      </div>
+                    </article>
+                  </section>
+                </div>
+              </div>
+            </div>
+            <div class="margin mh16"></div>
+            <div class="row">
+              <div class="cell cell-sm unstyled">
+                <div id="grid-reversed">
+                  <section class="module-section">
+                    <header>
+                      <h3 class="module-title">Reversing</h3>
+                      <p class="module-description">Add classes to reverse cells direction</p>
+                    </header>
+                    <article>
+                      <div class="cells-container">
+                        <div class="row row--reverse">
+                          <div class="cell cell-xs">1</div>
+                          <div class="cell cell-xs">2</div>
+                          <div class="cell cell-xs">3</div>
+                          <div class="cell cell-xs">4</div>
+                          <div class="cell cell-xs">5</div>
+                          <div class="cell cell-xs">6</div>
+                          <div class="cell cell-xs">7</div>
+                          <div class="cell cell-xs">8</div>
+                          <div class="cell cell-xs">9</div>
+                          <div class="cell cell-xs">10</div>
+                          <div class="cell cell-xs">11</div>
+                          <div class="cell cell-xs">12</div>
+                        </div>
+                      </div>
+                    </article>
+                  </section>
+                </div>
+              </div>
+              <div class="margin mv16"></div>
+              <div class="cell cell-sm-5 unstyled">
+                <div id="grid-reordered">
+                  <section class="module-section">
+                    <header>
+                      <h3 class="module-title">Reordering</h3>
+                      <p class="module-description">Add classes to reorder cells</p>
+                    </header>
+                    <article>
+                      <div class="cells-container">
+                        <div class="row">
+                          <div class="cell cell-xs cell-order--last">1</div>
+                          <div class="cell cell-xs">2</div>
+                          <div class="cell cell-xs cell-order--first">3</div>
+                          <div class="cell cell-xs">4</div>
+                          <div class="cell cell-xs">5</div>
+                        </div>
+                      </div>
+                    </article>
+                  </section>
+                </div>
+              </div>
+            </div>
+            <div class="margin mh16"></div>
+            <div class="row">
+              <div class="cell cell-sm unstyled">
+                <div id="grid-auto">
+                  <section class="module-section">
+                    <header>
+                      <h3 class="module-title">Auto Width</h3>
+                      <p class="module-description">Add any number of auto sizing cells to a row. Let the grid figure it out</p>
+                    </header>
+                    <article>
+                      <div class="cells-container">
+                        <div class="row">
+                          <div class="cell cell-xs">auto</div>
+                          <div class="cell cell-xs">auto</div>
+                          <div class="cell cell-xs">auto</div>
+                          <div class="cell cell-xs">auto</div>
+                        </div>
+                        <div class="row">
+                          <div class="cell cell-xs-3">cell-xs-3</div>
+                          <div class="cell cell-xs">auto</div>
+                          <div class="cell cell-xs-2">cell-xs-2</div>
+                          <div class="cell cell-xs">auto</div>
+                        </div>
+                      </div>
+                    </article>
+                  </section>
+                </div>
+              </div>
+              <div class="margin mv16"></div>
+              <div class="cell cell-sm unstyled">
+                <section class="module-section">
+                  <header>
+                    <h3 class="module-title">Auto Width on Viewport</h3>
+                    <p class="module-description">You can also specify on which viewport the grid should figure it out whether or not it should apply it.</p>
+                  </header>
+                  <article>
+                    <div class="cells-container">
+                      <div class="row">
+                        <div class="cell cell-sm cell-md-3 cell-lg"><span class="visible-xs">full-xs</span><span class="visible-sm">auto-sm</span><span class="visible-md">cell-md-3</span><span class="visible-lg">auto-lg</span></div>
+                        <div class="cell cell-sm cell-md cell-lg"><span class="visible-xs">full-xs</span><span class="visible-sm">auto-sm</span><span class="visible-md">auto-md</span><span class="visible-lg">auto-lg</span></div>
+                        <div class="cell cell-sm cell-md-2 cell-lg"><span class="visible-xs">full-xs</span><span class="visible-sm">auto-sm</span><span class="visible-md">cell-md-2</span><span class="visible-lg">auto-lg</span></div>
+                        <div class="cell cell-sm cell-md cell-lg"><span class="visible-xs">full-xs</span><span class="visible-sm">auto-sm</span><span class="visible-md">auto-md</span><span class="visible-lg">auto-lg</span></div>
+                      </div>
+                    </div>
+                  </article>
+                </section>
+              </div>
+            </div>
+            <div class="margin mh16"></div>
+            <div class="row">
+              <div class="cell cell-sm unstyled">
+                <div id="grid-nested"></div>
+                <section class="module-section">
+                  <header>
+                    <h2 class="module-title">Gridcellceptional!</h2>
+                    <p class="module-description">A cell, inside a row, inside a cell, inside a row.. oh you get it!</p>
+                  </header>
+                  <article>
+                    <div class="cells-container">
+                      <div class="row">
+                        <div class="cell cell-sm">
+                          <div class="row">
+                            <div class="cell">
+                              <div class="row">
+                                <div class="cell cell-xs">
+                                  <div class="row">
+                                    <div class="cell cell-xs"></div>
+                                    <div class="cell cell-xs"></div>
+                                    <div class="cell cell-xs"></div>
+                                  </div>
+                                </div>
+                                <div class="cell cell-xs">
+                                  <div class="row">
+                                    <div class="cell cell-xs"></div>
+                                    <div class="cell cell-xs"></div>
+                                    <div class="cell cell-xs"></div>
+                                  </div>
+                                </div>
+                                <div class="cell cell-xs">
+                                  <div class="row">
+                                    <div class="cell cell-xs"></div>
+                                    <div class="cell cell-xs"></div>
+                                    <div class="cell cell-xs"></div>
+                                  </div>
+                                </div>
+                                <div class="cell cell-xs">
+                                  <div class="row">
+                                    <div class="cell cell-xs"></div>
+                                    <div class="cell cell-xs"></div>
+                                    <div class="cell cell-xs"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cell cell-sm">
+                          <div class="row">
+                            <div class="cell">
+                              <div class="row">
+                                <div class="cell">
+                                  <div class="row">
+                                    <div class="cell"></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </section>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="grid">
+        <div class="row">
+          <div class="cell cell-xs-12 cell-sm-3">
+            <ul class="list-unstyled footer-links">
+              <li><a href="//github.com/studio51/gridlecss/blob/master/DOCUMENTATION.md">Documentation</a></li>
+              <li><a href="//github.com/studio51/gridlecss/blob/master/CHANGELOG.md">Changelog</a></li>
+              <li><a href="//github.com/studio51/gridlecss/releases/tag/v1.0.rc1">GridleCSS v1.0.rc1</a></li>
+            </ul>
+          </div>
+          <div class="cell cell-xs cell-sm">
+            <div class="row">
+              <div class="cell"><p class="footer-credits">Crafted with <span>&#9829;</span> by <a href="//twitter.com/pacMakaveli90">Vlad Radulescu</a> and maintained by <a href="//creative-studio51.co.uk">Studio51</a></div>
+              <div class="cell">
+                <p class="footer-copyright">© GridleCSS 2015</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
