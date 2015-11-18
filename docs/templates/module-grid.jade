@@ -1,0 +1,126 @@
+.module
+  h1.module-title Module: The Grid
+  section.module-content
+
+    .row
+      .cell.cell-sm.unstyled
+
+        #grid-basic
+
+          section.module-section
+            header
+              h3.module-title #{basic}
+              p.module-description #{basic_description}
+
+            article
+
+              include modules/grid-gridlecss.jade
+
+    .margin.mh16
+
+    .row
+      .cell.cell-sm.unstyled
+
+        #grid-responsive
+
+          section.module-section
+            header
+              h3.module-title #{responsive}
+              p.module-description #{responsive_description}
+
+            article
+
+              include modules/grid-responsive.jade
+
+    .margin.mh16
+
+    .row
+      .cell.cell-sm.unstyled
+
+        #grid-fluid
+
+          section.module-section
+            header
+              h3.module-title #{fluid}
+              p.module-description #{fluid_description}
+
+            article
+
+              include modules/grid-fluid.jade
+
+    .margin.mh16
+
+    .row
+      .cell.cell-sm.unstyled
+
+        #grid-reversed
+
+          section.module-section
+            header
+              h3.module-title #{reversed}
+              p.module-description #{reversed_description}
+
+            article
+
+              include modules/grid-reversed.jade
+
+      .margin.mv16
+
+      .cell.cell-sm-5.unstyled
+
+        #grid-reordered
+
+          section.module-section
+            header
+              h3.module-title #{reordered}
+              p.module-description #{reordered_description}
+
+            article
+
+              include modules/grid-reordered.jade
+
+    .margin.mh16
+
+    .row
+      .cell.cell-sm.unstyled
+
+        #grid-auto
+
+          section.module-section
+            header
+              h3.module-title #{auto_additional}
+              p.module-description #{auto_additional_description}
+
+            article
+
+              include modules/grid-auto.jade
+
+      .margin.mv16
+
+      .cell.cell-sm.unstyled
+
+          section.module-section
+            header
+              h3.module-title #{auto_additional_two}
+              p.module-description #{auto_additional_two_description}
+
+            article
+
+              include modules/grid-auto-viewport.jade
+
+    .margin.mh16
+
+    .row
+      .cell.cell-sm.unstyled
+
+        #grid-nested
+
+        section.module-section
+
+          header
+            h2.module-title #{nested}
+            p.module-description #{nested_description}
+
+          article
+
+              include modules/grid-nested.jade
