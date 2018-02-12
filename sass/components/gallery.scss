@@ -1,0 +1,24 @@
+.gallery {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+
+  .gallery-item {
+    max-height: 125px;
+
+    &--showcase {
+      max-height: 250px;
+      grid-column: 1;
+      grid-row: 1 / 3;
+
+      img { object-fit: cover; }
+    }
+
+    img { object-fit: cover; }
+
+    &--hidden {
+      visibility: hidden;
+      display: none;
+    }
+  }
+}

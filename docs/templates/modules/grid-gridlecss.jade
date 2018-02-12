@@ -1,0 +1,52 @@
+.cells-container
+  .row
+    .cell-xs.cell-sm-1 auto-xs
+    .cell-xs.cell-sm-3.cell-md-7.cell-lg
+      span.visible-xs auto-xs
+      span.visible-sm cell-sm-3
+      span.visible-md cell-md-7
+      span.visible-lg auto-lg
+
+    .cell-xs auto-xs
+
+  .row
+    .cell-xs-9.cell-sm-7.cell-md-5.cell-lg-3
+      span.visible-xs cell-xs-9
+      span.visible-sm cell-sm-7
+      span.visible-md cell-md-5
+      span.visible-lg cell-lg-3
+
+    .cell-xs auto
+
+  .row
+    .cell-xs
+      | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos
+      | blanditiis odit et ratione, id laboriosam sapiente consequuntur
+      | laborum officia, impedit eligendi natus quisquam dolor in at
+      | aliquam, tempore maiores est.
+
+    .cell-sm-10
+      .row
+        .cell-xs xs-auto
+        .cell-xs-3 cell-xs-3
+        .cell-xs xs-auto
+        .cell-xs-1 cel-xs-1
+
+      .row
+        .cell-xs-4 cell-xs-4
+        .cell-xs-3 cell-xs-3
+        .cell-xs-4 cell-xs-4
+        .cell-xs-1 cell-xs-1
+
+      .row
+
+        - for( var i = 0; i < 6; ++i )
+          .cell-xs-2 cell-xs-2
+
+      .row
+
+        - for( var i = 0; i < 12; ++i )
+          .cell-xs-1 cell-xs-1
+
+      .row
+        .cell-xs-12 cell-xs-12

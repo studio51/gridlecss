@@ -1,0 +1,167 @@
+$button-sizes: (
+  tiny:    ((ui(spacing) / 4), .4),
+  small:   ((ui(spacing) * 37.5 / 100), .5),
+  medium:  ((ui(spacing) / 2), .6),
+  large:   ((ui(spacing) * 63 / 100), .7),
+  big:     ((ui(spacing) * 75 / 100), .8),
+  huge:    ((ui(spacing) * 88 / 100), .9),
+  massive: (ui(spacing), 1)
+);
+
+// olive:  color(olive),
+// violet: color(violet),
+// pink:   color(pink),
+// brown:  color(brown),
+  // teal:   color(teal),
+$button-colors: ('white', 'red', 'orange', 'yellow', 'teal', 'green', 'blue', 'purple', 'gray', 'black', 'psn', 'xbox', 'steam');
+
+.btn {
+  align-items: center;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @extend .btn.-variation-round;
+  @extend .btn.-color-purple;
+  @extend .btn.-size-large;
+
+  @extend .-line-reset !optional;
+  @extend .-variation-reset !optional;
+
+  &.-variation {
+    &-rounded { border-radius: ui(border, radius); }
+    &-round   { border-radius: 250px; }
+    &-square  { border-radius: 0; }
+
+    &-solid { background-image: none !important; }
+    &-empty {
+      background-image: none !important;
+      background-color: transparent;
+    }
+
+    &-outlined { @extend .btn.-variation-empty; }
+    &-diet { padding: 0 !important; }
+  }
+
+  &.-icon {
+    @extend .btn.-icon-left;
+        
+    &-left { i.fa, i.gd { margin-right: ui(spacing) / 5; } }
+    &-right {
+      flex-direction: row-reverse;
+
+      i.fa, i.gd { margin-left: ui(spacing) / 5; }
+    }
+
+    &-only {
+      position: relative;
+
+      i.fa, i.gd {
+        position: absolute;
+        margin: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &-big {
+      i.fa, i.gd { font-size: 1.8em; }
+    }
+
+    i.fa, i.gd { line-height: 0;}
+  }
+
+  &.-state {
+    &-active { }
+    &-disabled,
+    &[disabled='disabled'],
+    &[disabled='true'] {
+      pointer-events: none;
+      
+      @extend .btn.-color-gray;
+    }
+    &-loading { }
+  }
+
+  &.-color { 
+    @each $color in $button-colors {
+      &-#{ $color } {
+        color: #fff;
+
+          &.-variation {
+            &-solid { background-color: color($color); }
+            
+            &-outlined {
+              box-shadow: inset 0 0 0 1px color($color);
+              color: color($color) !important;
+            }
+
+            &-empty { color: color($color); }
+          }
+
+          background-image: linear-gradient(140deg, color($color, light) 0%, color($color) 100%);
+          
+          &:hover  { background-image: linear-gradient(140deg, color($color, light) 0%, rgba(color($color), .8) 100%); }
+          &:active { background-image: linear-gradient(140deg, color($color) 0%, color($color) 100%); }
+
+          &_lighter { background-color: color($color, lighter) !important; }
+          &_light { background-color: color($color, light) !important; }
+          &_dark { background-color: color($color, dark) !important; }
+          &_darker { background-color: color($color, darker) !important; }
+
+        // } @else {
+        //   @if $text {
+        //     color: color($color);
+        //   }
+
+        //   &_lighter { color: color($color, lighter); }
+        //   &_light { color: color($color, light); }
+        //   &_dark { color: color($color, dark); }
+        //   &_darker { color: color($color, darker); }
+        // }
+      }
+    }
+  }
+
+  &.-size {
+    @each $size, $attributes in $button-sizes {
+      $padding:     nth($attributes, 1);
+      $font-size:   nth($attributes, 2);
+
+      &-#{ $size } {
+        font-size: #{ $font-size }em;
+        font-weight: font-weight(regular);
+        padding: $padding ($padding * 1.25);
+        
+        &.-icon {
+          &-only { padding: $padding; }
+        }
+
+        &.-variation {
+          &-rounded { border-radius: #{ $padding * 1.5 / ui(border, radius) }px; }
+        }
+      }
+    }
+  }
+
+  &-group {
+    .btn {
+      &:first-child {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+      }
+      
+      &:last-child {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+      }
+    }
+  }
+}

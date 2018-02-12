@@ -1,0 +1,104 @@
+!!! 5
+
+include dictionary
+
+html(lang="en")
+  head
+
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+    title #{ name } | #{ description }
+
+    meta(name='description', content='A simple to use 12/24 columns Grid created with CSS Flex in SASS. Crafted with love by Vlad Radulescu @ Studio51')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(rel='stylesheet', href='css/main.min.css')
+
+  body.body
+
+    //- header.header
+
+    //-   .grid
+    //-     .row
+    //-       .cell.cell-xs-10
+
+    //-         .brand
+    //-           h1.brand-name #{ name }
+    //-             span.brand-name--pronunciation /ɡrɪd.lɛx/
+
+    //-           p.brand-motto #{ description }
+
+    //-       .cell.cell-xs-2
+
+    //-         .social-buttons--container
+    //-           ul.social-buttons
+
+    //-     .row.column
+    //-       .cell
+
+    //-         .pca-hold
+    //-           .pca-main
+    //-             .pca-inner
+
+    //-               include templates/device-content.jade
+
+    //-           .pca-sub
+    //-             .pca-top
+    //-             .pca-mid
+    //-               .pca-part
+
+    //-             .pca-bot
+
+    main.main
+      .grid
+
+        include templates/module-grid.jade
+        include templates/module-offsets.jade
+        include templates/module-alignment.jade
+        include templates/module-distribution.jade
+
+
+      .grid
+
+        .span.hidden-xs hidden-xs
+        .span.hidden-sm hidden-sm
+        .span.hidden-md hidden-md
+        .span.hidden-lg hidden-lg
+
+        .span.visible-xs visible-xs
+        .span.visible-sm visible-sm
+        .span.visible-md visible-md
+        .span.visible-lg visible-lg
+
+    footer.footer
+
+      .grid
+        .row
+          .cell.cell-xs-12.cell-sm-3
+
+            ul.list-unstyled.footer-links
+              li
+                a(href="//github.com/studio51/gridlecss/blob/master/DOCUMENTATION.md") Documentation
+              li
+                a(href="//github.com/studio51/gridlecss/blob/master/CHANGELOG.md") Changelog
+              li
+                a(href="//github.com/studio51/gridlecss/releases/tag/v#{version}") #{ name } v#{version}
+
+          .cell.cell-xs.cell-sm
+
+            .row
+              .cell
+
+                <p class="footer-credits">Crafted with <span>&#9829;</span> by <a href="//twitter.com/pacMakaveli90">Vlad Radulescu</a> and maintained by <a href="//creative-studio51.co.uk">Studio51</a>
+
+              .cell
+
+                p.footer-copyright
+                  © #{ name } 2015
+
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+    script(src='js/main.min.js')
+    script(src='http://localhost:48626/takana.js')
+    script.
+       takanaClient.run({host: 'localhost:48626'});

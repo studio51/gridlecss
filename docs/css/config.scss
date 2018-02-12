@@ -39,33 +39,39 @@ $grid-minimal: true !default;
 //
 $grid-columns: 12 !default;
 
-// Grid breakpoints
-//
-// Options: [xs sm md lg]
-//
-$grid-breakpoints: "xs" "sm" "md" "lg";
+$mq-base-font-size: 16px !default;
+$mq-responsive: true !default;
+$mq-breakpoints: (
+  xs: 0,
+  sm: 40em,
+  md: 64em,
+  lg: 90em
+) !default;
 
-// Grid breakpoints
-// If you want to add more, just make sure you respect the naming convention:
-//
-// $grid-#{key}-min: #{value};
-//
-// $grid-sm-min: 40.063em;
-// $grid-md-min: 64.063em;
-// $grid-lg-min: 90.063em;
-//
-$grid-sm-min: 768px;
-$grid-md-min: 982px;
-$grid-lg-min: 1200px;
+$mq-static-breakpoint: desktop !default;
+$mq-show-breakpoints: (xs, sm, md, lg) !default;
+$mq-media-type: all !default;
 
 // Distribute the cells spacing around or between them
 //
 $flex-distribution: true !default;
-$flex-distributions: "around" "between";
+$flex-distributions: 'around' 'between';
 
 // Alignments for main axis  (x): left, center, right
 // Alignments for cross axis (y): top, middle, bottom, baseline
 //
 $flex-alignment: true !default;
-$flex-alignments: "x" ("center"("center"), "right"("flex-end")),
-                  "y" ("top"("flex-start"), "middle"("center"), "bottom"("flex-end"), "baseline"("baseline"), "stretch"("stretch"));
+$flex-alignments: 'x' ('center'('center'), 'right'('flex-end')),
+                  'y' ('top'('flex-start'), 'middle'('center'), 'bottom'('flex-end'), "baseline"("baseline"), "stretch"("stretch"));
+
+@import "gridlecss/media";
+
+// By default, GridleCSS responds to the following media queries: xs (default),
+// sm, md and lg. If $minimal-breakpoints it's set as true, then another breakp-
+// oint will be added, xl .
+
+$minial-breakpoints: false;
+
+@if $minial-breakpoints {
+  @include mq-add-breakpoint(xl, 120em);
+}

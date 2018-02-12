@@ -1,0 +1,49 @@
+// .toc-parent {
+//   position: relative;
+// }
+
+// .toc {
+//   position: fixed;
+//   // left: 0;
+//   border: 1px solid red;
+//   // left: $menuPaddingLeft;
+//   // top: 1em;
+//   // padding: 1em;
+//   // width: $menuWidth;
+//   line-height: 2;
+
+//   ul {
+//     list-style: none;
+//     padding: 0;
+//     margin: 0;
+//   }
+  
+//   ul ul {
+//     padding-left: 2em;
+//   }
+  
+//   li a {
+//     display: inline-block;
+//     color: #aaa;
+//     text-decoration: none;
+//     transition: all 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+//   }
+  
+//   li.visible>a {
+//     color: #111;
+//     transform: translate( 5px );
+//   }
+// }
+
+// .toc-marker {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   z-index: -1;
+  
+//   path {
+//     transition: all 0.3s ease;
+//   }
+// }

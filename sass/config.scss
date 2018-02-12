@@ -1,0 +1,137 @@
+//////////////////////////////////////
+//
+// Author: Vladut Radulescu @ Studio51
+// MIT LICENSE © 2015 Studio51
+
+// Enable Bootstrap OR Foundation as your additional framework in order to
+// provide a fallback for older browsers that don't support flexbox.
+// Please note that this will change the way you write your grid, so please read
+// the documentation before enabling any of these
+//
+// Options: [true / false]
+//
+// $grid-bootstrap: false;
+// $grid-foundation: false;
+//
+// Milestone v2.0
+
+// Grid gutters
+//
+// (!) *giggle* Your gutter will be automatically halfed once compiled.
+// $grid-gutter: 10px will compile a gutter of 5px
+//
+$grid-gutter: 0 !default;
+
+// In order to minimze the compiled CSS, we've left out some rules that are
+// default.
+// If you experience any issues with the grid please let us know by opening an
+// issue on Github and enable the following variable.
+//
+// Options: [true / false]
+//
+$grid-minimal: true !default;
+
+// The number of columns the grid will have
+// GridleCSS supports up to 24 columns. Beyond that, it's up to you to make it
+// work
+//
+// Options: [12 / 24]
+//
+$grid-columns: 12 !default;
+
+/// Base font size on the `<body>` element
+/// @type Number (unit)
+$mq-base-font-size: 16px !default;
+
+/// Responsive mode
+///
+/// Set to `false` to enable support for browsers that do not support @media queries,
+/// (IE <= 8, Firefox <= 3, Opera <= 9)
+///
+/// You could create a stylesheet served exclusively to older browsers,
+/// where @media queries are rasterized
+///
+/// @example scss
+///  // old-ie.scss
+///  $mq-responsive: false;
+///  @import 'main'; // @media queries in this file will be rasterized up to $mq-static-breakpoint
+///                   // larger breakpoints will be ignored
+///
+/// @type Boolean
+/// @link https://github.com/sass-mq/sass-mq#responsive-mode-off Disabled responsive mode documentation
+
+$mq-responsive: true !default;
+
+/// Breakpoint list
+///
+/// Name your breakpoints in a way that creates a ubiquitous language
+/// across team members. It will improve communication between
+/// stakeholders, designers, developers, and testers.
+///
+/// @type Map
+/// @link https://github.com/sass-mq/sass-mq#seeing-the-currently-active-breakpoint Full documentation and examples
+
+$mq-breakpoints: (
+  xs: 1px,
+  sm: 425px,
+  md: 768px,
+  lg: 1280px,
+  xl: 1440px
+) !default;
+
+// $mq-breakpoints: (
+//     mobile:  320px,
+//     tablet:  740px,
+//     desktop: 980px,
+//     wide:    1300px
+// ) !default;
+
+/// Static breakpoint (for fixed-width layouts)
+///
+/// Define the breakpoint from $mq-breakpoints that should
+/// be used as the target width for the fixed-width layout
+/// (i.e. when $mq-responsive is set to 'false') in a old-ie.scss
+///
+/// @example scss
+///  // tablet-only.scss
+///  //
+///  // Ignore all styles above tablet breakpoint,
+///  // and fix the styles (e.g. layout) at tablet width
+///  $mq-responsive: false;
+///  $mq-static-breakpoint: tablet;
+///  @import 'main'; // @media queries in this file will be rasterized up to tablet
+///                   // larger breakpoints will be ignored
+///
+/// @type String
+/// @link https://github.com/sass-mq/sass-mq#adding-custom-breakpoints Full documentation and examples
+$mq-static-breakpoint: lg !default;
+
+/// Show breakpoints in the top right corner
+///
+/// If you want to display the currently active breakpoint in the top
+/// right corner of your site during development, add the breakpoints
+/// to this list, ordered by width, e.g. (mobile, tablet, desktop).
+///
+/// @type map
+$mq-show-breakpoints: (xs, sm, md, lg) !default;
+
+/// Customize the media type (e.g. `@media screen` or `@media print`)
+/// By default sass-mq uses an "all" media type (`@media all and …`)
+///
+/// @type String
+/// @link https://github.com/sass-mq/sass-mq#changing-media-type Full documentation and examples
+$mq-media-type: all !default;
+
+// Distribute the cells spacing around or between them
+//
+$flex-distribution: true !default;
+$flex-distributions: 'around' 'between';
+
+// Alignments for main axis  (x): left, center, right
+// Alignments for cross axis (y): top, middle, bottom, baseline
+//
+$flex-alignment: true !default;
+$flex-alignments: 'x' ('center'('center'), 'right'('flex-end'), 'left'('flex-start')),
+                  'y' ('top'('flex-start'), 'middle'('center'), 'bottom'('flex-end'), "baseline"("baseline"), "stretch"("stretch"));
+
+@import "gridlecss/media";

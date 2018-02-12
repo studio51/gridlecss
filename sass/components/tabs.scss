@@ -1,0 +1,153 @@
+$tabs--border-size: ui(border, size);
+$tabs--border-color: color(gray);
+$tabs--shadow-spread: ui(spacing) / 2;
+$tabs--animation-duration: .2s;
+$tabs--animation-type: ease-in;
+
+[data-tabs-pane]:not(.active) { display: none; }
+
+.tabs {
+  position: relative;
+
+  .tab {
+    &-item {
+      border: $tabs--border-size solid $tabs--border-color;
+      display: flex;
+      margin-bottom: -$tabs--border-size;
+    }
+
+    &-url {
+      @extend .-color-purple;
+      @extend .-line-reset_2;
+      @extend .-size-medium;
+      @extend .-variation-reset;
+      @extend .-variation-uppercase;
+
+      display: flex;
+      flex: 1;
+      align-items: flex-start;
+
+      &.icon {
+        @extend .-size-small;
+        
+        svg[data-prefix='fas'], .gd { font-size: 1.5em; }
+               
+        &-top {
+          @extend .align-middle;
+
+          flex-direction: column;
+
+          svg[data-prefix='fas'], .gd { @extend .-margin-bottom_3; }
+        }
+
+        &-left {
+          svg[data-prefix='fas'], .gd { @extend .-margin-right_3; }
+        }
+      }
+      
+      &.active { color: color(black); }
+    }
+  }
+
+  &:not(.-style-vertical) {
+    border-bottom: $tabs--border-size solid $tabs--border-color;
+    box-shadow: inset 0 -#{ $tabs--shadow-spread } #{ $tabs--shadow-spread } -#{ $tabs--shadow-spread / 2 } rgba($tabs--border-color, .3);
+
+    &::before,
+    &::after {
+      background-color: $tabs--border-color;
+      bottom: -($tabs--border-size);
+      content: '';
+      height: $tabs--border-size;
+      position: absolute;
+      width: 100%;
+    }
+
+    &::before { left: -100%; }
+    &::after { right: -100%; }
+
+    .tab {
+      &-item {
+        border-bottom: none;
+        border-top-left-radius: ui(border, radius);
+        border-top-right-radius: ui(border, radius);
+        margin-right: -$tabs--border-size;
+        position: relative;
+        transition: 
+          all $tabs--animation-duration $tabs--animation-type,
+          background-color 0s $tabs--animation-type;
+
+        &.active {
+          background-color: $background-color;
+
+          &::before {
+            box-shadow: 0 0 #{ $tabs--shadow-spread / 2 } $tabs--border-size rgba(color(black), .1);
+            content: '';
+            height: 60%;
+            top: 50%; 
+            transform: translateY(-50%); 
+            position: absolute;
+            width: 100%;
+            z-index: -1;
+          }
+        }
+
+        &:hover:not(.active) { margin-top: -#{ ui(border, radius) / 2 }; }
+      }
+
+      &-url { @extend .-padding_2; }
+    }
+  }
+
+  &.-style-vertical {
+    flex-direction: column;
+
+    .tab {
+      &-item {
+        border-right: none;
+        border-top-left-radius: ui(border, radius);
+        border-bottom-left-radius: ui(border, radius);
+        transition: all $tabs--animation-duration $tabs--animation-type;
+
+        &.active { background-color: color(white); }
+
+        &:hover:not(.active) { margin-left: -#{ ui(border, radius) / 2 }; }
+      }
+
+      &-url {
+        position: relative;
+        
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          z-index: -1;
+          right: 0;
+        }
+
+        &::after {
+          border: $tabs--border-size solid $tabs--border-color;
+          border-right: none;
+          border-left: none;
+          height: calc(100% + 2px);
+          top: -1px;
+          width: 50%;
+        }
+
+        &.active {
+          &::before {
+            background: linear-gradient(to bottom, rgba($tabs--border-color, 0) 0%, rgba($tabs--border-color, 1) 15%, rgba($tabs--border-color, 1) 50%, rgba($tabs--border-color, 1) 85%, rgba($tabs--border-color, 0) 100%);
+            height: calc(100% + #{ ui(spacing) * 2 });
+            top: -(ui(spacing));
+            width: $tabs--border-size;
+          }
+
+          &::after {
+            background-color: #fff;
+            box-shadow: inset -#{ $tabs--shadow-spread } 0 #{ $tabs--shadow-spread } -#{ $tabs--shadow-spread } rgba(color(black), .1);
+          }
+        }
+      }
+    }
+  }
+}

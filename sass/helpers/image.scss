@@ -1,0 +1,56 @@
+img {
+  vertical-align: middle;
+
+  &.-variation {
+    &-round { border-radius: 250px; }
+    &-rounded { border-radius: ui(border, radius); }
+    &-centered {
+      background-position: center;
+      background-size: cover;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &-placeholder {
+      
+      // The following avoids missing images to stretch to full width due to their
+      // alt tag which in general has a long string
+      // 
+      display: block;
+      overflow: hidden;
+      background-color: color(gray, dark);
+    }
+  }
+
+  &.-size {
+    &_x100 { width: 100% }
+    &_x20  { width: 500px; }
+    &_x10  { width: 300px; }
+    &_x9   { width: 270px; }
+    &_x8   { width: 240px; }
+    &_x7   { width: 210px; }
+    &_x6   { width: 180px; }
+    &_x5   { width: 150px; }
+    &_x4   { width: 120px; }
+    &_x3   { width: 90px; }
+    &_x2   { width: 60px; }
+    &_x1   { width: 30px; }
+  
+    &-equal {
+      &.-size {
+        &_x100 { height: 100% }
+        &_x20  { height: 500px; }
+        &_x10  { height: 300px; }
+        &_x9   { height: 270px; }
+        &_x8   { height: 240px; }
+        &_x7   { height: 210px; }
+        &_x6   { height: 180px; }
+        &_x5   { height: 150px; }
+        &_x4   { height: 120px; }
+        &_x3   { height: 90px; }
+        &_x2   { height: 60px; }
+        &_x1   { height: 30px; }
+      }
+    }
+  }
+}

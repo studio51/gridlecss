@@ -1,0 +1,69 @@
+.pagination {
+  &-info { color: color(gray, dark); }
+
+  display: flex;
+
+  span {
+    display: flex;
+    line-height: .5;
+  }
+
+  a,
+  span.current,
+  span.gap { @extend .-padding_3; }
+
+  a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: color(black);
+
+    &::after {
+      display: block;
+      content: attr(title);
+      height: 0;
+      visibility: hidden;
+    }
+
+    &:hover,
+    &::after { font-weight: font-weight(bold); }
+  }
+
+  .page {
+    &.gap,
+    &.current { font-weight: font-weight(medium); }
+
+    &.gap {
+      align-self: center;
+      margin-top: -8px;
+    }
+
+    &.current {
+      border: ui(border, size) solid color(gray, dark);
+      color: color(gray, dark);
+      border-radius: 250px;
+      margin-bottom: -1px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .next,
+  .prev {
+    a {
+      font-size: font-size(huge);
+      padding-top: 5px;
+    }
+  }
+
+  .first,
+  .last {
+    a {
+      font-size: font-size(giant); 
+      padding-top: 4px;
+    }
+  }
+
+  .last { margin-right: -10px; }
+}

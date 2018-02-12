@@ -1,0 +1,115 @@
+$alert--opacity: .6;
+
+.alert {
+  border-radius: ui(border, radius);
+  display: flex;
+
+  &-icon {
+    @extend .-padding_2;
+
+    border-top-left-radius: ui(border, radius);
+    border-bottom-left-radius: ui(border, radius);
+  }
+
+  &-content {
+    @extend .-padding_2;
+
+    flex: 1;
+    border: ui(border, size) solid transparent;
+    border-left: none;
+    border-top-right-radius: ui(border, radius);
+    border-bottom-right-radius: ui(border, radius);
+
+    .title {
+      @extend .-line-reset;
+      @extend .-weight-regular;
+      @extend .-size-normal;
+      @extend .-variation-uppercase;
+    }
+
+    .message {
+      @extend .-margin-top_3;
+      @extend .-line-reset_3;
+    }
+  }
+
+  &.-variation-popout {
+    .alert {
+      &-content { border: none; }
+    }
+  }
+
+  &.-color {
+    &-blue {
+      .alert {
+        &-icon {
+          background-color: rgba(color(blue), $alert--opacity);
+
+          svg, .gd {
+            color: color(blue);
+            fill: color(blue);
+          }
+        }
+
+        &-content { border-color: rgba(color(blue), $alert--opacity); }
+
+        &.-variation-popout {
+          .alert {
+            &-content {
+              background-color: rgba(color(blue), ($alert--opacity / 2));
+            }
+          }
+        }
+      }
+    }
+
+    &-orange {
+      .alert {
+        &-icon {
+          background-color: rgba(color(orange), $alert--opacity);
+
+          svg, .gd {
+            color: color(orange);
+            fill: color(orange);
+          }
+        }
+
+        &-content { border-color: rgba(color(orange), $alert--opacity); }
+      }
+
+      &.-variation-popout {
+        .alert {
+          &-content {
+            background-color: rgba(color(orange), .1);
+          }
+        }
+      }
+    }
+
+    &-gray {
+      .alert {
+        &-icon {
+          background-color: rgba(color(gray), $alert--opacity);
+
+          svg, .gd {
+            color: color(gray);
+            fill: color(gray);
+          }
+        }
+
+        &-content { border-color: rgba(color(gray), $alert--opacity); }
+      }
+
+      &.-variation-popout {
+        .alert {
+          &-content {
+            background-color: rgba(color(gray), .1);
+          }
+        }
+      }
+    }
+
+    &-red { }
+    &-green { }
+  }
+}

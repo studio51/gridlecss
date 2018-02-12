@@ -1,0 +1,61 @@
+.badge,
+.badge-icon {
+  align-items: center;
+  border-radius: 250px;
+  display: flex;
+}
+
+.badge {
+  @extend .badge.-size-medium;
+  
+  align-self: flex-start;
+
+  &-icon {
+    @extend .-margin-right_4;
+    
+    justify-content: center;
+  }
+
+  &-text { line-height: 1; }
+
+  &.-color {
+   @each $color in $colors {
+      &-#{ $color } {
+        background-image: linear-gradient(140deg, color($color, light) 0%, color($color) 100%);
+        color: #fff;
+
+        &.-variation-solid {
+          background-color: color($color);
+          background-image: none;
+        }
+        
+        &.-variation-empty { color: color($color); }
+
+        // To be used with .-variation-solid otherwise it won't work
+        // 
+        &_lighter { background-color: color($color, lighter); }
+        &_light { background-color: color($color, light); }
+        &_dark { background-color: color($color, dark); }
+        &_darker { background-color: color($color, darker); }
+
+        .badge-icon { background-color: color($color); }
+      }
+    }
+  }
+
+  &.-size {
+    &-medium {
+      .badge-icon {
+        height: 20px;
+        width: 20px;
+      }
+
+      @extend .-padding-y_6;
+      @extend .-padding-left_6;
+      @extend .-padding-right_3;
+      
+      font-size: font-size(medium);
+      font-weight: font-weight(regular);
+    }
+  }
+}

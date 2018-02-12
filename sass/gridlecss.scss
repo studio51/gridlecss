@@ -1,0 +1,205 @@
+@import "config";
+
+@import "gridlecss/mixins";
+@import "gridlecss/media";
+
+  [class*="cell"] {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+.grid,
+.grid--fluid {
+  // height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+
+  &-auto { flex: 0 1 auto; }
+
+  &--reverse { flex-direction: row-reverse; }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  flex-wrap: nowrap;
+
+  &-auto { flex: 0 1 auto; }
+
+  &--reverse { flex-direction: row-reverse; }
+}
+
+
+//
+
+$placeholders: ();
+
+@mixin placeholder($name) {
+  @if not index($placeholders, $name) {                  // 1
+    $placeholders: append($placeholders, $name) !global; // 2
+
+    @at-root {
+      // @each $breakpoint, $value in $mq-breakpoints {        // 3
+      //   @media (min-width: $value) {                     // 4
+      //     %#{$name}-#{$breakpoint} {                     // 5
+      //       @content;                                    // 6
+      //     }
+      //   }
+      // }
+
+      %#{$name}-xs {                 // 7
+        @content;
+      }
+    }
+  }
+
+  @else {
+    @warn "Placeholder `#{$name}` already exists.";      // 8
+  }
+}
+
+@mixin _($name) {
+  @extend %#{$name}-xs !optional;
+}
+
+@include placeholder('make-cell') {
+
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+}
+
+
+@mixin grid($size, $media) {
+  @if $size == '1px' { @content } @else {
+    @include mq($from: $media) { @content }
+  }
+}
+
+@each $breakpoint in $mq-breakpoints {
+
+  $break: nth($breakpoint, 1);
+  $size: nth($breakpoint, 2);
+
+  @for $i from 1 through $grid-columns {
+
+    .cell-#{ $break },
+    .cell-#{ $break }-#{ $i },
+    .cell-#{ $break }-offset-#{ $i } {
+
+      @include _('make-cell');
+    }
+  }
+
+  .hidden {
+    @include mq($from: 'xs', $until: 'md') {
+      &-xs--sm {
+        display: none;
+      }
+    }
+  }
+
+  @include grid($size, $break) {
+
+    @if $size == 1px { } @else {
+      .grid {
+        width: $size;
+      }
+    }
+
+    @each $breakpoint in $mq-breakpoints {
+      $b: nth($breakpoint, 1);
+
+      @if $break == $b {
+
+        .hidden-#{ $b } { display: none; }
+        .visible-#{ $b } { display: block; }
+
+      } @else {
+
+        .hidden-#{ $b } { display: block; }
+        .visible-#{ $b } { display: none; }
+
+      }
+    }
+
+    @for $i from 1 through $grid-columns {
+      $grid-column-width: (( 100 / $grid-columns ) * $i ) * 1%;
+      $grid-gutter-calc: $grid-gutter / ( $grid-gutter * 0 + 1 );
+
+      .cell-#{ $break }-#{ $i } {
+        flex-basis: $grid-column-width;
+        max-width: $grid-column-width;
+      }
+
+      .cell-#{ $break }-offset-#{ $i } {
+        margin-left: $grid-column-width;
+      }
+    }
+
+    .cell-#{ $break } {
+      flex: 1 0;
+      // flex-basis: 0;
+      // max-width: 100%;
+
+      &-order {
+
+        &--first { order: -1; }
+        &--last { order: 1; }
+      }
+
+      &-auto {
+        flex: 0 1 auto;
+      }
+    }
+
+    @if $flex-distribution {
+      @each $distribution in $flex-distributions {
+
+        .distribute-#{$break}-#{ $distribution } {
+          display: flex;
+          justify-content: space-#{ $distribution };
+        }
+      }
+    }
+
+    @if $flex-alignment {
+      @each $alignment in $flex-alignments {
+        @include flex-alignments( ".align-#{ $break }-", nth($alignment, 1), nth($alignment, 2));
+      }
+    }
+  }
+}
+
+@if $flex-distribution {
+  @each $distribution in $flex-distributions {
+
+    .distribute-#{ $distribution } {
+      display: flex;
+      justify-content: space-#{ $distribution };
+    }
+  }
+}
+
+@if $flex-alignment {
+  @each $alignment in $flex-alignments {
+    @include flex-alignments( ".align-", nth($alignment, 1), nth($alignment, 2));
+  }
+}

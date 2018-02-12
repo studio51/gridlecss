@@ -1,0 +1,27 @@
+body.draggable--is-dragging {
+  [data-dropzone] {
+    border: ui(border, size) dotted color(gray, dark);
+    border-radius: ui(border, radius);
+  }
+}
+
+[data-draggable-item] { user-select: none; }
+
+[data-droppable-item] {
+  &.draggable--over {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 250px;
+      left: -5px;
+      background-color: color(green);
+      box-shadow: 0 0 0 3px #F8F8FB;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+}

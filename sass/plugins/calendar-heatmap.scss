@@ -1,0 +1,25 @@
+.react-calendar-heatmap text {
+  font-size: 10px;
+  fill: #aaa;
+}
+
+.react-calendar-heatmap .react-calendar-heatmap-small-text {
+  font-size: 5px;
+}
+
+.react-calendar-heatmap {
+  rect:hover { pointer: cursor; }
+  
+  .color-empty { fill: color(gray, darker); }
+
+  $base-color: color(purple, light);
+
+  .color-scale {
+    &-0   { fill: $base-color; }
+    &-25  { fill: darken($base-color, 10%); }
+    &-50  { fill: darken($base-color, 20%); }
+    &-75  { fill: darken($base-color, 25%); }
+    &-100 { fill: darken($base-color, 40%); }
+    &-101 { fill: darken($base-color, 50%); }
+  }
+}

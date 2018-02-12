@@ -1,0 +1,124 @@
+/*
+
+  GridleCSS Theme v1.0.0
+
+  Author      : Vlad Radulescu
+  Twitter     : @pacMakaveli90
+  Github      : pacMakaveli90
+
+  Author URL  : http://creative-studio51.co.uk/
+  Project URL : https://github.com/studio51/gridlecss/tree/gh-pages
+
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700,200italic,400italic,700italic);
+
+// GridleCSS
+
+$grid-gutter: 2px !default;
+
+@import 'gridle';
+
+.row, [class*='cell'] {
+  border: 1px solid red;
+  padding: 5px;
+  background-color: rgba(111, 111, 111, .2);
+}
+
+// @import './bower_components/font-awesome/scss/font-awesome';
+// @import './bower_components/gridlecss/grid/gridlecss';
+
+// // Variables
+
+// @import 'helpers/variables';
+
+// // Helpers
+
+// @import 'helpers/reset';
+
+// @import 'helpers/animations';
+// @import 'helpers/visibility';
+
+// html, body {
+//   height: 100%;
+// }
+
+//   body {
+//     background-color: $theme-background-color;
+//     font-family: 'Source Sans Pro', sans-serif;
+//     font-size: 100%;
+//   }
+
+// // Components
+
+// @import 'components/buttons';
+
+// // Theme Partials
+
+// @import 'partials/header';
+// @import 'partials/navigation';
+// @import 'partials/device';
+
+// @import 'partials/theme';
+// @import 'partials/footer';
+
+// /*
+
+//   Just for showcasing GridleCSS Alignments features
+
+// */
+
+// #grid-alignment.css {
+
+//   .demo-alignment .row {
+//     height: 10em;
+
+//     span {
+//       border-bottom: 1px dotted rgba($black, .4);
+//     }
+//   }
+
+//   .demo-baseline {
+//     &-1 {
+//       span {
+//         font-size: 10em;
+//       }
+//     }
+
+//     &-2 {
+//       span {
+//         font-size: 15em;
+//       }
+//     }
+//   }
+// }
+
+// .text-center {
+//   text-align: center;
+// }
+
+
+// .module-section {
+
+// }
+
+// .module-title {
+//   font-family: 'Source Sans Pro', sans-serif;
+//   font-weight: 400;
+// }
+
+// .margin {
+//   display: block;
+//   width: 1px;
+//   height: 1px;
+// }
+
+// .mh16 {
+//   margin-bottom: $theme-spacing;
+//   margin-top: $theme-spacing;
+// }
+
+// .mv16 {
+//   margin-left: $theme-spacing;
+//   margin-right: $theme-spacing;
+// }

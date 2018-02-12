@@ -1,0 +1,19 @@
+.placeholder {
+  width: 100%;
+  height: 100%;
+  border: ui(border, size) dashed color(gray, dark);
+  border-radius: ui(border, radius);
+
+  @extend .column;
+  @extend .align-center;
+  @extend .align-middle;
+  @extend .-padding;
+  @extend .-text-center;
+
+  .javascript-ready {
+    .loader { @extend .-margin-bottom_2; }
+
+    &-title { text-transform: uppercase; }
+    &-text { @extend .-size-medium; }
+  }
+}

@@ -1,0 +1,38 @@
+ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+  &.-style {
+    &-menu {
+      @extend .-style-menu.horizontal;
+
+      &.horizontal { flex-direction: row; }
+      &.vertical { flex-direction: column; }
+    }
+
+    &-list {
+      flex-direction: column;
+
+      // @extend .-margin-y_2;
+      // @extend .-padding-left_2;
+    }
+  }
+
+  &.-variation {
+    &-circle               { list-style-type: circle; }
+    &-disc                 { list-style-type: disc; }
+    &-square               { list-style-type: square; }
+    &-decimal              { list-style-type: decimal; }
+    &-decimal-leading-zero { list-style-type: decimal-leading-zero; }
+    &-lower-roman          { list-style-type: lower-roman; }
+    &-upper-roman          { list-style-type: upper-roman; }
+    &-lower-greek          { list-style-type: lower-greek; }
+    &-lower-latin          { list-style-type: lower-latin; }
+    &-upper-latin          { list-style-type: upper-latin; }
+    &-armenian             { list-style-type: armenian; }
+    &-georgian             { list-style-type: georgian; }
+    &-lower-alpha          { list-style-type: lower-alpha; }
+  }
+}
