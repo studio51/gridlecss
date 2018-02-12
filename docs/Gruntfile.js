@@ -239,7 +239,7 @@ module.exports = function(grunt) {
     'cssnext',
     'imagemin',
     'svgmin',
-    // 'copy'
+    'copy'
   ]);
 
   grunt.registerTask('compile-js', [

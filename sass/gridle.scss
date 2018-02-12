@@ -3,6 +3,11 @@
 @import "gridlecss/mixins";
 @import "gridlecss/media";
 
+  [class*="cell"] {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
 *,
 *:before,
 *:after {
@@ -11,120 +16,80 @@
 
 .grid,
 .grid--fluid {
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  height: 100%;
 }
 
-.row,
-.column {
+.row {
   display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+
+  &--reverse {
+    flex-direction: row-reverse;
+  }
 }
 
-  .row {
-    flex: 0 1 auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    margin-left: 0;
-    margin-right: 0;
-
-    &--reverse {
-      flex-direction: row-reverse;
-    }
-  }
-
-  [class*="cell"] {
-    margin-left: 0;
-    margin-right: 0;
-    flex-basis: 100%;
-    max-width: 100%;
-  }
-
-//   .column {
-//     flex-direction: column;
-
-//     &--reverse {
-//       flex-direction: column-reverse;
-//     }
-//   }
-
-//     @if $flex-distribution {
-//       @each $distribution in $flex-distributions {
-
-//         .distribute-#{ $distribution } {
-//           justify-content: space-#{ $distribution };
-//         }
-//       }
-//     }
-
-//     @if $flex-alignment {
-//       @each $alignment in $flex-alignments {
-//         @include flex-alignments( ".align-", nth($alignment, 1), nth($alignment, 2), "parent");
-//       }
-//     }
-
-//     .cell {
-
-//       &-order {
-//         &--first {
-//           order: -1;
-//         }
-
-//         &--last {
-//           order: 1;
-//         }
-//       }
-
-//       @if $flex-alignment {
-
-//         &-align {
-
-//           @each $alignment in $flex-alignments {
-//             @include flex-alignments( "&--", "y", nth($alignment, 2), "child");
-//           }
-//         }
-//       }
-//     }
-
-//     %cell-styles {
-//       display: flex;
-//       flex: 1 0 auto;
-//       flex-direction: column;
-//     }
-
-// .cell-auto {
-//   flex: 0 1 auto;
-// }
-
-%default {
+%make-cell {
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
 }
 
+@if $flex-distribution {
+  @each $distribution in $flex-distributions {
+
+    .distribute-#{ $distribution } {
+      justify-content: space-#{ $distribution };
+    }
+  }
+}
+
+@if $flex-alignment {
+  @each $alignment in $flex-alignments {
+    @include flex-alignments( ".align-", nth($alignment, 1), nth($alignment, 2), "parent");
+  }
+}
+
 @each $breakpoint in $mq-breakpoints {
 
-  $size: nth($breakpoint, 1);
-  $break: nth($breakpoint, 2);
+  $break: nth($breakpoint, 1);
+  $size: nth($breakpoint, 2);
 
-  @include mq($from: $size) {
 
-    .grid {
-      width: $break;
+
+  @include grid {
+
+    @if $size == 0 { } @else {
+      .grid {
+        width: $size;
+      }
     }
 
-    .cell-#{ $size }-auto {
-      flex: 0 1 auto;
+    @each $breakpoint in $mq-breakpoints {
+      $b: nth($breakpoint, 1);
+
+      @if $break == $b {
+
+        .hidden-#{ $b } { display: none; }
+        .visible-#{ $b } { display: block; }
+
+      } @else {
+
+        .hidden-#{ $b } { display: block; }
+        .visible-#{ $b } { display: none; }
+
+      }
     }
 
     @for $i from 1 through $grid-columns {
 
-      .cell-#{ $size },
-      .cell-#{ $size }-#{ $i },
-      .cell-#{ $size }-offset-#{ $i } {
-        @extend %default;
+      .cell-#{ $break },
+      .cell-#{ $break }-#{ $i },
+      .cell-#{ $break }-offset-#{ $i } {
+        @extend %make-cell;
       }
     }
 
@@ -132,122 +97,26 @@
       $grid-column-width: (( 100 / $grid-columns ) * $i ) * 1%;
       $grid-gutter-calc: $grid-gutter / ( $grid-gutter * 0 + 1 );
 
-      // Compiles: cell-*-# for each viewport
-      //
-      .cell-#{ $size }-#{ $i } {
+      .cell-#{ $break }-#{ $i } {
         flex-basis: $grid-column-width;
         max-width: $grid-column-width;
       }
 
-      // Compiles: cell-*-offset-# for each viewport
-      //
-      .cell-#{ $size }-offset-#{ $i } {
+      .cell-#{ $break }-offset-#{ $i } {
         margin-left: $grid-column-width;
       }
     }
+
+    .cell-#{ $break } {
+      flex: 1 0;
+      // flex-basis: 0;
+      // max-width: 100%;
+
+      &-order {
+
+        &--first { order: -1; }
+        &--last { order: 1; }
+      }
+    }
   }
-}
-
-
-//     // Compiles: distribute-* for each viewport
-//     //
-//     .distribute-#{ $breakpoint } {
-
-//       @if $flex-distribution {
-//         @each $distribution-option in $flex-distributions {
-
-//           &-#{ $distribution-option } {
-//             justify-content: space-#{ $distribution-option };
-//           }
-//         }
-//       }
-//     }
-
-//     // Compiles: align-* for each viewport
-//     //
-//     .align-#{ $breakpoint } {
-
-//       @if $flex-alignment {
-//         @each $align-option in $flex-alignments {
-//           @include flex-alignments( "&-", nth($align-option, 1), nth($align-option, 2), "parent");
-//         }
-//       }
-//     }
-
-//     // Compiles: cell-*, cell-*-# and cell-*-offset-# for each viewport
-//     //
-//     @for $i from 1 through $grid-columns {
-
-//       .cell-#{ $breakpoint },
-//       .cell-#{ $breakpoint }-#{ $i },
-//       .cell-#{ $breakpoint }-offset-#{ $i } {
-//         // @extend %cell-styles;
-//         display: flex;
-//         flex: 1 0 auto;
-//         flex-direction: column;
-//       }
-
-//       .cell-#{ $breakpoint }-auto {
-//         flex: 0 1 auto;
-//       }
-//     }
-
-//     // Compiles: cell-* for each viewport
-//     //
-//     .cell-#{ $breakpoint } {
-//       flex: 1 0;
-//       flex-basis: 0;
-//       max-width: 100%;
-
-//       &-order {
-//         &--first {
-//           order: -1;
-//         }
-
-//         &--last {
-//           order: 1;
-//         }
-//       }
-
-//       &-offset {
-//         margin-left: $grid-gutter !important;
-//       }
-
-//       @if $flex-alignment {
-
-//         &-align {
-
-//           @each $alignment in $flex-alignments {
-//             @include flex-alignments( "&--", "y", nth($alignment, 2), "child");
-//           }
-//         }
-//       }
-//     }
-
-
-  // }
-// }
-
-
-
-
-
-
-////////////
-
-.row, .column, [class*="cell"] {
-  padding: 1em;
-  background-color: rgba(136, 136, 136, .3);
-  border-radius: 3px;
-}
-
-.cell-content {
-  border: 1px solid red;
-}
-
-html, body {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
 }

@@ -1,0 +1,31 @@
+.pill {
+  @extend .-color-white;
+  @extend .-variation-solid;
+  @extend .-variation-round;
+
+  &.-color {
+    @each $color in $colors {
+      &-#{ $color } {
+        background-image: linear-gradient(140deg, color($color, light) 0%, color($color) 100%);
+
+        &.-variation-solid {
+          background-image: none;
+          background-color: color($color);
+        }
+        
+        &.-variation-empty { color: color($color); }
+
+        // To be used with .-variation-solid otherwise it won't work
+        // 
+        &_lighter { background-color: color($color, lighter); }
+        &_light { background-color: color($color, light); }
+        &_dark { background-color: color($color, dark); }
+        &_darker { background-color: color($color, darker); }
+      }
+    }
+  }
+
+  &.-variation-square { border-radius: 0; }
+  &.-variation-round { border-radius: ui(border, radius); }
+  &.-variation-rounded { border-radius: 250px; }
+}

@@ -54,9 +54,22 @@ html(lang="en")
       .grid
 
         include templates/module-grid.jade
-        //- include templates/module-offsets.jade
-        //- include templates/module-alignment.jade
-        //- include templates/module-distribution.jade
+        include templates/module-offsets.jade
+        include templates/module-alignment.jade
+        include templates/module-distribution.jade
+
+
+      .grid
+
+        .span.hidden-xs hidden-xs
+        .span.hidden-sm hidden-sm
+        .span.hidden-md hidden-md
+        .span.hidden-lg hidden-lg
+
+        .span.visible-xs visible-xs
+        .span.visible-sm visible-sm
+        .span.visible-md visible-md
+        .span.visible-lg visible-lg
 
     footer.footer
 
@@ -86,3 +99,6 @@ html(lang="en")
 
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js')
     script(src='js/main.min.js')
+    script(src='http://localhost:48626/takana.js')
+    script.
+       takanaClient.run({host: 'localhost:48626'});

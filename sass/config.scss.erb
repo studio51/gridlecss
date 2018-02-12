@@ -1,0 +1,281 @@
+$spacing: 32px;
+
+$sizes: (
+  xxsmall:  ( 0,               ant,   light ),
+  xsmall:   ( $spacing / 6,    tiny,   light ),
+  small:    ( $spacing / 5,    small,   light ),
+  medium:   ( $spacing / 4,    small,   regular ),
+  large:    ( ($spacing / 2) (($spacing / 2) + ($spacing / 4)),    small,    regular ),
+  xlarge:   ( ($spacing / 1.7) (($spacing / 2) + ($spacing / 2)),    nig,  bold ),
+  xxlarge:  ( $spacing,        giant,  bold ),
+);
+
+$background-color: #F8F8FB;
+$white:    #fff;
+$gray:     #ecf0f1;
+$black:    #34495e;
+$darkblue: '';
+$ink:      '';
+$blue:     #6DA9ED;
+$green:    #2ecc71;
+$yellow:   #f1c40f;
+$orange:   #e67e22;
+$red:      #e74c3c;
+$purple:   #9b59b6;
+$teal:     #1abc9c;
+$indigo:   '';
+
+$colors: ('white', 'gray', 'black', 'darkblue', 'ink', 'blue', 'green', 'yellow', 'orange', 'red', 'purple', 'teal', 'indigo', 'psn', 'xbox', 'steam');
+
+$config: (
+  border: (
+    size: 1px,
+    radius: 6px
+  ),
+
+  typography: (
+    size: (
+      ant:    .25em,
+      tiny:   .5em,
+      small:  .7em,
+      medium: .9em,
+      normal: 1em,
+      big:    1.2em,
+      huge:   1.5em,
+      giant:  2em,
+
+      xxs: .25em,
+      xs:  .5em,
+      sm:  .7em,
+      md:  .9em,
+      nm:  1em,
+      lg:  1.1em,
+      xl:  1.3em,
+      xxl: 2em
+    ),
+    
+    weight: (
+      thin:    100,
+      light:   300,
+      regular: 400,
+      medium:  700,
+      bold:    900
+    )
+  ),
+
+  palette: (
+    brand: (
+      primary:     #8A9EF4,
+      secondary:   #E4C7F9,
+      alternative: #D0DFEB,
+      bright:      #CED3F6,
+      dark:        #A6D2F2,
+      light:       #FDFDFD
+    ),
+
+    color: (
+      "white": (
+        base: #FFFFFF
+      ),
+      
+      "gray": (
+        lighter:  #f9fafb,
+        light:    #f4f6f8,
+        base:     #dfe3e8,
+        dark:     #c4cdd5,
+        darker:   #efefef
+      ),
+      
+      "black": (
+        lightest: #919EAB,
+        lighter:  #637381,
+        light:    #454F5B,
+        base:     #212B35
+      ),
+
+      "darkblue": (
+        light:    #B3B5CB,
+        base:     #43467F,
+        dark:     #1C2260,
+        darker:   #00044C
+      ),
+
+      "ink": (
+        lightest: #919eab,
+        lighter:  #637381,
+        light:    #454f5b,
+        base:     #212b36
+      ),
+
+      "blue": (
+        lighter:  #ebf5fa,
+        light:    #ABDCFF,
+        base:     $blue,
+        dark:     darken($blue, 10%),
+        darker:   darken($blue, 10%),
+        text:     darken($blue, 10%)
+      ),
+
+      "green": (
+        lighter:  #e3f1df,
+        light:    #bbe5b3,
+        base:     #50b83c,
+        dark:     #108043,
+        darker:   #173630,
+        text:     #414f3e
+      ),
+
+      "yellow": (
+        lighter:  #fcf1cd,
+        light:    #ffea8a,
+        base:     #eec200,
+        dark:     #9c6f19,
+        darker:   #573b00,
+        text:     #595130
+      ),
+
+      "orange": (
+        lighter:  #fcebdb,
+        light:    #FCCF31,
+        base:     $orange,
+        dark:     #c05717,
+        darker:   #4a1504,
+        text:     #594430
+      ),
+
+      "red": (
+        lighter:  #fbeae5,
+        light:    #FEB692,
+        base:     #EA5455,
+        dark:     #bf0711,
+        darker:   #330101,
+        text:     #583c35
+      ),
+
+      "purple": (
+        lighter:  #f6f0fd,
+        light:    #CE9FFC,
+        base:     #7367F0,
+        dark:     #50248f,
+        darker:   #230051,
+        text:     #50495a
+      ),
+
+      "teal": (
+        lighter:  #e0f5f5,
+        light:    #b7ecec,
+        base:     #47c1bf,
+        dark:     #00848e,
+        darker:   #003135,
+        text:     #405352
+      ),
+
+      "indigo": (
+        lighter:  #f4f5fa,
+        light:    #b3bcf5,
+        base:     #5c6ac4,
+        dark:     #202e78,
+        darker:   #000639,
+        text:     #3e4155
+      ),
+
+      'psn': (
+        lighter:  #1166ff,
+        light:    #003087,
+        base:     #003087,
+        dark:     #003087,
+        darker:   #003087,
+        text:     #003087
+      ),
+
+      'xbox': (
+        lighter:  #5bbb4c,
+        light:    #52b043,
+        base:     #52b043,
+        dark:     #52b043,
+        darker:   #52b043,
+        text:     #52b043
+      ),
+
+      'steam': (
+        lighter:  #03baff,
+        light:    #00adee,
+        base:     #00adee,
+        dark:     #00adee,
+        darker:   #00adee,
+        text:     #00adee
+      )
+    ),
+
+    network: (
+      psn:        #003087,
+      xbox:       #52b043,
+      steam:      #00adee,
+      facebook:   #3b5998,
+      twitter:    #1da1f2,
+      google:     #ea4335
+    )
+  ),
+
+  spacing: $spacing
+);
+
+@function config($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
+
+// Helper Functions that itterate through the main Configuration map
+// 
+
+@function ui($keys...) {
+  @return config($config, $keys...);
+}
+
+@function font-size($key) {
+  @return config($config, typography, size, $key);
+}
+
+@function font-weight($key) {
+  @return config($config, typography, weight, $key);
+}
+
+@function color($key, $saturation: base, $from: null) {
+  @if ($from) {
+    @return config($config, palette, $from, "#{ $key }");
+  } @else {
+    @return config($config, palette, color, "#{ $key }", $saturation);
+  }
+}
+
+// <% if Rails.env.development? %>
+//   $debug-breakpoints: false;
+// <% end %>
+
+@import '../fonts/gamesDirectory.scss';
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: $background-color;
+  color: color(black);
+  direction: ltr;
+  font: font-weight(light) 14px/1.6em 'Lato', sans-serif;
+  letter-spacing: .2px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  text-rendering: optimizelegibility;
+}
+
+main { flex: 1; }

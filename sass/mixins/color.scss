@@ -1,0 +1,40 @@
+@mixin colorize($gradient: true, $text: true) {
+  @each $color in $colors {
+    &-#{ $color } {
+
+      @if $gradient {
+        @if $text {
+          color: #fff;
+        }
+
+        background-image: linear-gradient(140deg, color($color, light) 0%, color($color) 100%);
+
+        &:hover { background-color: color($color); }
+
+        &.-variation-solid {
+          background-image: none;
+          background-color: color($color);
+        }
+        
+        &.-variation-empty { color: color($color); }
+
+        // To be used with .-variation-solid otherwise it won't work
+        // 
+        &_lighter { background-color: color($color, lighter); }
+        &_light { background-color: color($color, light); }
+        &_dark { background-color: color($color, dark); }
+        &_darker { background-color: color($color, darker); }
+
+      } @else {
+        @if $text {
+          color: color($color);
+        }
+
+        &_lighter { color: color($color, lighter); }
+        &_light { color: color($color, light); }
+        &_dark { color: color($color, dark); }
+        &_darker { color: color($color, darker); }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.sticky {
+  position: sticky;
+  width: 100%;
+  bottom: 0;
+  
+  &-container {
+    align-self: stretch;
+    position: relative;
+  }
+
+  &-top {
+    top: 0;
+    padding-top: ui(spacing) !important;
+    margin-top: -32px;
+  }
+
+  &-bottom { bottom: 0; }
+}

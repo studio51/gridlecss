@@ -1,0 +1,67 @@
+.card {
+  &.-purpose {
+    &-informational {
+      border-radius: ui(border, radius);
+      color: #fff;
+      position: relative;
+
+      .btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        box-shadow: 0 0 0 ui(border, radius) color(gray, darker);
+      }
+
+      .card {
+        &-header,
+        &-body,
+        &-footer { background-color: transparent; }
+      }
+    }
+    
+    &-attraction {
+      border-radius: ui(border, radius);
+      color: #fff;
+      position: relative;
+
+      .card {
+        &-header,
+        &-body,
+        &-footer { background-color: transparent; }
+      }
+    }
+  }
+  
+  &.-variation {
+    &-rounded { border-radius: ui(border, radius); }
+    &-square { border-radius: 0; }
+  }
+
+  &.-color {
+    @each $color in $colors {
+      &-#{ $color } {
+        &.-purpose-attraction { background-image: linear-gradient(-140deg, color($color, light) 0%, color($color) 100%); }
+      }
+    }
+  }
+
+  &-header {
+    background-color: color(gray, light);
+
+    &.-variation-transparent {
+      background-color: transparent;
+    }
+  }
+
+  &-body {
+    background-color: #fff;
+
+    &.-variation {
+      &-rounded { border-radius: ui(border, radius); }
+    }
+  }
+
+  &-footer {
+    background-color: color(gray, light)
+  }
+}

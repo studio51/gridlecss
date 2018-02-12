@@ -1,0 +1,31 @@
+.progress {
+  @extend .-text-center;
+  
+  position: relative;
+
+  &-line {
+    line-height: 0;
+  }
+
+  &-circle { }
+  
+  &-semi-circle {
+    height: 100%;
+  }
+
+  &-custom {
+    &--heart { }
+  }
+
+  &_inner { }
+
+  &.-size {
+    &-tiny   { width: 30px; }
+    &-small  { width: 60px; }
+    &-medium { width: 90px; }
+    &-normal { width: 120px; }
+    &-large  { width: 150px; }
+    &-huge   { width: 180px; }
+    &-full   { width: 100%; }
+  }
+}

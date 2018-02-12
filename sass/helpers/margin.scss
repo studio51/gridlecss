@@ -1,0 +1,187 @@
+$margin_variations: ('', 'top', 'left', 'bottom', 'right');
+$margin_sizes: ('', 2, 3, 4, 5, 6, 'x2');
+$margin_size_values: (
+  _:     ui(spacing),
+  _2:    ui(spacing) / 2,
+  _3:    ui(spacing) / 4,
+  _4:    ui(spacing) / 8,
+  _5:    #{ ui(spacing) / ( ui(spacing) / 2 ) }px,
+  _6:    #{ ui(spacing) / ui(spacing) }px,
+  _x2:   ui(spacing) * 2
+);
+
+@function margin-size($key) {
+  @if map-has-key($margin_size_values, $key) {
+    @return map-get($margin_size_values, $key);
+  }
+
+  @warn "Unknown variable '#{$key}'";
+  @return null;
+}
+
+@mixin margin($klass) {
+  @each $variation in $margin_variations {
+    $_variation: null;
+
+    @if ($variation == '') { $_variation: $variation; } @else { $_variation: "-" + $variation; }
+      
+    .-#{ $klass }#{ $_variation }_reset {
+      margin#{ $_variation }: 0;
+    }
+    
+    @each $size in $margin_sizes {
+      $_size: null;
+
+      @if ($size == '') { $_size: null; } @else { $_size: "_" + $size; }
+
+      .-#{ $klass }#{ $_variation }#{ $_size } {
+        @if ($size == '') { $_size: '_'; } @else { $_size: "_" + $size; }
+
+        margin#{ $_variation }: margin-size(#{ $_size });
+      }
+    }
+  }
+}
+
+@include margin("margin");
+
+@each $breakpoint in $mq-breakpoints {
+  $break: nth($breakpoint, 1);
+  
+  @include mq($break) {
+    @include margin("margin-#{ $break }");
+  }
+}
+
+._margin-x {
+  margin-left: -(margin-size(_) / 2);
+  margin-right: -(margin-size(_) / 2);
+
+  > [class*='cell'] {
+    margin-left: margin-size(_) / 2;
+    margin-right: margin-size(_) / 2;
+  }
+}
+
+._margin-x_2 {
+  margin-left: -(margin-size(_2) / 2);
+  margin-right: -(margin-size(_2) / 2);
+
+  > [class*='cell'] {
+    margin-left: margin-size(_2) / 2;
+    margin-right: margin-size(_2) / 2;
+  }
+}
+
+._margin-x_3 {
+  margin-left: -(margin-size(_3) / 2);
+  margin-right: -(margin-size(_3) / 2);
+
+  > [class*='cell'] {
+    margin-left: margin-size(_3) / 2;
+    margin-right: margin-size(_3) / 2;
+  }
+}
+
+._margin-x_4 {
+  margin-left: -(margin-size(_4) / 2);
+  margin-right: -(margin-size(_4) / 2);
+
+  > [class*='cell'] {
+    margin-left: margin-size(_4) / 2;
+    margin-right: margin-size(_4) / 2;
+  }
+}
+
+._margin-x_5 {
+  margin-left: -(#{ ui(spacing) / ( ui(spacing) / 2 ) }px);
+  margin-right: -(#{ ui(spacing) / ( ui(spacing) / 2 ) }px);
+
+  > [class*='cell'] {
+    margin-left:  #{ ui(spacing) / ( ui(spacing) / 2 ) }px;
+    margin-right:  #{ ui(spacing) / ( ui(spacing) / 2 ) }px;
+  }
+}
+
+._margin-x_6 {
+  margin-left: -#{ ui(spacing) / ui(spacing) / 2 }px;
+  margin-right: -#{ ui(spacing) / ui(spacing) / 2 }px;
+
+  > [class*='cell'] {
+    margin-left: #{ ui(spacing) / ui(spacing) / 2 }px;
+    margin-right: #{ ui(spacing) / ui(spacing) / 2 }px;
+  }
+}
+
+.-margin-x_reset {
+  @extend .-margin-left_reset;
+  @extend .-margin-right_reset;
+}
+
+.-margin-x {
+  @extend .-margin-left;
+  @extend .-margin-right;
+}
+
+.-margin-x_2 {
+  @extend .-margin-left_2;
+  @extend .-margin-right_2;
+}
+
+.-margin-x_3 {
+  @extend .-margin-left_3;
+  @extend .-margin-right_3;
+}
+.-margin-x_4 {
+  @extend .-margin-left_4;
+  @extend .-margin-right_4;
+}
+
+.-margin-x_5 {
+  @extend .-margin-left_5;
+  @extend .-margin-right_5;
+}
+.-margin-x_6 {
+  @extend .-margin-left_6;
+  @extend .-margin-right_6;
+}
+
+.-margin-y_reset {
+  @extend .-margin-top_reset;
+  @extend .-margin-bottom_reset;
+}
+
+.-margin-y {
+  @extend .-margin-top;
+  @extend .-margin-bottom;
+}
+
+.-margin-y_2 {
+  @extend .-margin-top_2;
+  @extend .-margin-bottom_2;
+}
+
+.-margin-y_x2 {
+  @extend .-margin-top_x2;
+  @extend .-margin-bottom_x2;
+}
+
+.-margin-y_3 {
+  @extend .-margin-top_3;
+  @extend .-margin-bottom_3;
+}
+
+.-margin-y_4 {
+  @extend .-margin-top_4;
+  @extend .-margin-bottom_4;
+}
+
+.-margin-y_5 {
+  @extend .-margin-top_5;
+  @extend .-margin-bottom_5;
+}
+
+.-margin-y_6 {
+  @extend .-margin-top_6;
+  @extend .-margin-bottom_6;
+}
